@@ -1,0 +1,56 @@
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 0
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 73,0 9 0 
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 12
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 0,0 15 2 
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 284,0 20 0 
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 21
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 22
+LIBRARY UPN_Rechner_Lib
+DESIGN button
+VIEW behav
+GRAPHIC 178,0 24 0 
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 248,0 26 0 
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 240,0 27 0 
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 258,0 28 0 
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 276,0 29 0 
+LIBRARY UPN_Rechner_Lib
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 32
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 178,0 35 0 
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 38
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 40
+DESIGN upn
+VIEW struct.bd
+GRAPHIC 178,0 42 0 
+DESIGN upn
+VIEW struct.bd
+NO_GRAPHIC 50

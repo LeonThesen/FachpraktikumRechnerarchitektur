@@ -1,0 +1,72 @@
+# vsim -f hds_args.tmp -no_autoacc -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
+# Start time: 17:38:18 on Apr 24,2024
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.upn_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.tester(behav)#1
+# Loading work.upn(struct)#1
+# Loading work.button(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+add wave -position end  sim:/upn_tb/clk
+add wave -position end  sim:/upn_tb/res_n
+add wave -position end  sim:/upn_tb/tx_n
+add wave -position end  sim:/upn_tb/upn_i/key
+add wave -position 3  sim:/upn_tb/upn_i/U_0/tx_sync
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# End time: 17:39:10 on Apr 24,2024, Elapsed time: 0:00:52
+# Errors: 0, Warnings: 0

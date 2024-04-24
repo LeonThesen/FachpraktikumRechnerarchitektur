@@ -1,0 +1,86 @@
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 0
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 41,0 9 0 
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 12
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 0,0 15 2 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 149,0 20 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 151,0 21 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 227,0 22 0 
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 23
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 24
+LIBRARY UPN_Rechner_Lib
+DESIGN clk_res_gen
+VIEW behav
+GRAPHIC 109,0 26 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 131,0 28 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 141,0 29 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 336,0 32 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 219,0 34 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 119,0 37 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 131,0 39 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 141,0 40 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 219,0 41 0 
+LIBRARY UPN_Rechner_Lib
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 44
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 109,0 47 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 336,0 48 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 119,0 49 0 
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 52
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 54
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 109,0 56 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 336,0 61 0 
+DESIGN upn_tb
+VIEW struct.bd
+GRAPHIC 119,0 65 0 
+DESIGN upn_tb
+VIEW struct.bd
+NO_GRAPHIC 72
