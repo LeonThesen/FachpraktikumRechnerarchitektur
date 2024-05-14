@@ -131,23 +131,23 @@ VExpander (VariableExpander
 vvMap [
 (vvPair
 variable "HDLDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hdl"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl"
 )
 (vvPair
 variable "HDSDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "SideDataDesignDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu/struct.bd.info"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu/struct.bd.info"
 )
 (vvPair
 variable "SideDataUserDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu/struct.bd.user"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu/struct.bd.user"
 )
 (vvPair
 variable "SourceDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "appl"
@@ -163,11 +163,11 @@ value "%(unit)_%(view)_config"
 )
 (vvPair
 variable "d"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu"
 )
 (vvPair
 variable "d_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu"
 )
 (vvPair
 variable "date"
@@ -223,7 +223,7 @@ value "pc029"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:10:55"
+value "17:38:13"
 )
 (vvPair
 variable "group"
@@ -263,11 +263,11 @@ value "May"
 )
 (vvPair
 variable "p"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu/struct.bd"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu/struct.bd"
 )
 (vvPair
 variable "p_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/cpu/struct.bd"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/cpu/struct.bd"
 )
 (vvPair
 variable "package_name"
@@ -327,7 +327,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "17:10:55"
+value "17:38:13"
 )
 (vvPair
 variable "unit"
@@ -3460,12 +3460,12 @@ tm "BdCompilerDirectivesTextMgr"
 ]
 associable 1
 )
-windowSize "-1707,5,2133,1413"
-viewArea "-111772,30769,122609,110797"
+windowSize "-4,5,2556,1413"
+viewArea "-63747,29883,153594,144738"
 cachedDiagramExtent "-12500,0,179000,95000"
 hasePageBreakOrigin 1
-pageBreakOrigin "0,0"
-lastUid 1324,0
+pageBreakOrigin "-69000,0"
+lastUid 1501,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0

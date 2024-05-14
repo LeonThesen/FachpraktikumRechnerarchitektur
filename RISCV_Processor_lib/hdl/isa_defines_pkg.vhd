@@ -9,6 +9,9 @@
 --
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+library RISCV_Processor_lib;
+use RISCV_Processor_lib.types.ALL;
+
 PACKAGE isa_defines IS
     subtype opcode_t is std_logic_vector(6 downto 0);
     -- U-Format: Upper Immediate
@@ -32,4 +35,6 @@ PACKAGE isa_defines IS
     -- I-Format-Arithmetic
     constant ADDI : op_t := "000";
     
+    -- Pseudo Instructions
+    constant NOP : word := "00000000000000000000000000010011";
 END isa_defines;

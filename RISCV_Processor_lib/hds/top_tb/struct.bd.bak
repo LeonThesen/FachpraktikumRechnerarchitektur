@@ -136,7 +136,7 @@ value "pc029"
 )
 (vvPair
 variable "graphical_source_time"
-value "16:08:11"
+value "16:34:42"
 )
 (vvPair
 variable "group"
@@ -240,7 +240,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "16:08:11"
+value "16:34:42"
 )
 (vvPair
 variable "unit"
@@ -782,8 +782,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,34500,3600"
-st "SIGNAL clk   : std_logic
-"
+st "SIGNAL clk   : std_logic"
 )
 )
 *21 (Net
@@ -801,8 +800,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3600,34500,4500"
-st "SIGNAL res_n : std_logic
-"
+st "SIGNAL res_n : std_logic"
 )
 )
 *22 (Wire

@@ -14,6 +14,7 @@ use IEEE.NUMERIC_STD.ALL;
 use IEEE.STD_LOGIC_UNSIGNED.ALL;
 library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.ALL;
+use RISCV_Processor_lib.isa_defines.ALL;
 
 ARCHITECTURE behav OF rom IS
 
@@ -25,41 +26,67 @@ ARCHITECTURE behav OF rom IS
         -- Address:  Data
         -- 0000 : 00000000
         "00000000000100001000000010010011", -- add 1 to register 1
-        -- 0001 : 00000001
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
+        NOP, -- nop
+        NOP, -- nop
         "00000000000100001000000010010011", -- add 1 to register 1
-        "00000000000100001000000010010011", -- add 1 to register 1
-        "00000000000100001000000010010011", -- add 1 to register 1
-        "00000000000100001000000010010011", -- add 1 to register 1
-
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-        "00000000000100010000000100010011", -- add 1 to register 3
-
-        -- continue setting opcodes here
-        others => ( others => '0' ) 
+        NOP, -- nop
+        NOP, -- nop
+        -- Continue setting instructions here
+        others => ( NOP ) 
     );
 BEGIN
     process(clk, res_n)

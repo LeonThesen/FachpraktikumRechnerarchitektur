@@ -1,9 +1,9 @@
 --
--- VHDL Package Header RISCV_Processor_lib.riscv_types
+-- VHDL Package Header RISCV_Processor_lib.types
 --
 -- Created:
---          by - st161569.st161569 (pc043)
---          at - 14:28:29 05/08/24
+--          by - st161569.st161569 (pc029)
+--          at - 17:22:12 05/14/24
 --
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
@@ -26,6 +26,5 @@ PACKAGE types IS
     subtype immediate_20_t is std_logic_vector(LARGE_IMMEDIATE_SIZE - 1 downto 0); -- TODO: shorten name
 
     constant EXTEND_IMM12_TO_32_BIT: std_logic_vector(31 downto 12) := (others => '0');
-
-    type instruction_t is (ADDI, ADD, BNE, ...)
 END types;
+
