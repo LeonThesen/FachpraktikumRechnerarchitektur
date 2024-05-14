@@ -1,0 +1,2 @@
+DEFAULT_FILE atom pc_if_pipeline_reg_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

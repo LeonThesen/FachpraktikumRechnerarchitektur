@@ -1,0 +1,30 @@
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+NO_GRAPHIC 0
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 224,0 16 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 234,0 17 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 239,0 18 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 249,0 19 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 229,0 20 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 244,0 21 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 24 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 25 0 
