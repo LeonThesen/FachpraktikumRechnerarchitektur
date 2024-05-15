@@ -17,10 +17,11 @@ BEGIN
         if res_n = '0' then
             operand_a <= (others => '0');
             rs2_ex <= (others => '0');
-            alu_mode_ex <= NOP_MODE;
+            alu_mode_ex <= ADDI_MODE;
             rd_addr_ex <= (others => '0');
             imm_to_alu_ex <= '0';
             imm_ex <= (others => '0');
+            rf_wena_ex <= '0';
         else 
             if clk'event and clk = '1' then
                 operand_a <= rs1_dc;
@@ -29,6 +30,7 @@ BEGIN
                 rd_addr_ex <= rd_addr_dc;
                 imm_to_alu_ex <= imm_to_alu_dc;
                 imm_ex <= imm_dc;
+                rf_wena_ex <= rf_wena_dc;
             end if;
         end if;
     end process;

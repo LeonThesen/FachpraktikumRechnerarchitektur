@@ -17,7 +17,18 @@ PACKAGE types IS
 
     constant ZERO_WORD : word := (others => '0');
 
-    type alu_mode_t is (NOP_MODE, ADD_MODE, ADDI_MODE, SUB_MODE, AND_MODE, ANDI_MODE, OR_MODE, ORI_MODE, XOR_MODE, XORI_MODE);
+    type alu_mode_t is (
+        ADDI_MODE,
+        SLTI_MODE,
+        SLTIU_MODE,
+        XORI_MODE,
+        ORI_MODE,
+        ANDI_MODE,
+        SLLI_MODE,
+        SRLI_MODE,
+        SRAI_MODE
+    );
+
     subtype register_file_t is std_logic_vector(4 downto 0);
 
     constant SMALL_IMMEDIATE_SIZE : positive := 12;

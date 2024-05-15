@@ -16,29 +16,51 @@ use RISCV_Processor_lib.types.ALL;
 
 ARCHITECTURE behav OF register_file IS
     constant NUM_REGISTERS : positive := 32;
-    type register_array is array (0 to NUM_REGISTERS - 1) of word;
-    signal x : register_array;
+    type register_array_t is array (0 to NUM_REGISTERS - 1) of word;
+    signal register_array : register_array_t;
 BEGIN
-    reset: process(all) is
+    write_port_array: process(clk, res_n) is
     begin 
         if res_n = '0' then
-            x <= (others => (others => '0'));
-            rs1_dc <= (others => '0');
-            rs2_dc <= (others => '0');
-        else      
-            rs1_dc <= x(to_integer(unsigned(rs1_addr)));
-            rs2_dc <= x(to_integer(unsigned(rs2_addr)));
-
-            -- Set x0 register to zero by default
-            x(0) <= (others => '0');
-
-            -- Protect x0 from being overwritten
-            if(unsigned(rd_addr_wb) /= 0) then 
-                -- Overwrite register value with write back result
-                x(to_integer(unsigned(rd_addr_wb))) <= mem_result_wb;
+            register_array <= (others => (others => '0'));
+        else
+            if clk'event and clk = '1' then 
+                -- Overwrite register value with write back result;
+                if rf_wena_wb = '1' then
+                    register_array(to_integer(unsigned(rd_addr_wb))) <= mem_result_wb;
+                end if;
             end if;
         end if;
-    end process reset;
+
+        -- Protect register_array0 from being overwritten    
+        register_array(0) <= (others => '0');
+    end process write_port_array;
+
+    read_port_1: process(register_array, rs1_addr, rd_addr_wb, rf_wena_wb, mem_result_wb) is
+    begin
+        if rf_wena_wb = '1' then
+            if rs1_addr = rd_addr_wb then
+                rs1_dc <= mem_result_wb;
+            else
+                rs1_dc <= register_array(to_integer(unsigned(rs1_addr)));
+            end if;
+        else 
+            rs1_dc <= register_array(to_integer(unsigned(rs1_addr)));
+        end if;
+    end process read_port_1;
+
+    read_port_2: process(register_array, rs2_addr, rd_addr_wb, rf_wena_wb, mem_result_wb) is
+    begin
+        if rf_wena_wb = '1' then
+            if rs2_addr = rd_addr_wb then
+                rs2_dc <= mem_result_wb;
+            else
+                rs2_dc <= register_array(to_integer(unsigned(rs2_addr)));
+            end if;
+        else 
+            rs2_dc <= register_array(to_integer(unsigned(rs2_addr)));
+        end if;
+    end process read_port_2;
 
 END ARCHITECTURE behav;
 
