@@ -107,19 +107,15 @@ PACKAGE isa_defines IS
     -- R-Format-Ranges
     subtype R_FORMAT_FUNCT7_RANGE is natural range 31 downto 25;
     -- I-Format-Ranges
-    subtype I_FORMAT_IMMEDIATE_WORD_RANGE is natural range 11 downto 0;
-    subtype I_FORMAT_SHIFT_AMOUNT_WORD_RANGE is natural range 4 downto 0;
-    subtype I_FORMAT_IMMEDIATE_RANGE is natural range 31 downto 20;
     subtype I_FORMAT_FUNCT7_RANGE is natural range 31 downto 25;
-    subtype I_FORMAT_SHIFT_AMOUNT_RANGE is natural range 24 downto 20;
-    -- S-Format-Ranges
-    subtype S_FORMAT_UPPER_IMMEDIATE_RANGE is natural range 31 downto 25;
-    subtype S_FORMAT_LOWER_IMMEDIATE_RANGE is natural range 11 downto 7;
+    -- B-Format-Ranges
     -- U-Format-Ranges
-    subtype U_FORMAT_IMMEDIATE_RANGE is natural range 31 downto 12;
-    subtype U_FORMAT_IMMEDIATE_WORD_RANGE is natural range 31 downto 12;
 
+    -- Functions for extracting immediates from instruction word (and shift amount)
     pure function get_i_format_imm(instruction_word: std_logic_vector) return word;
+    pure function get_s_format_imm(instruction_word: std_logic_vector) return word;
+    pure function get_b_format_imm(instruction_word: std_logic_vector) return word;
     pure function get_u_format_imm(instruction_word: std_logic_vector) return word;
+    pure function get_j_format_imm(instruction_word: std_logic_vector) return word;
     pure function get_shift_amount(instruction_word: std_logic_vector) return word;
 END isa_defines;

@@ -24,7 +24,7 @@ BEGIN
         variable intermediate_high: std_logic_vector(word'left + 1 downto word'left);
     begin
         case alu_mode_ex is
-            when ADDI_MODE | ADD_MODE => 
+            when ADDI_MODE | ADD_MODE | LUI_MODE | LB_MODE | LH_MODE | LW_MODE | LBU_MODE | LHU_MODE | SB_MODE | SH_MODE | SW_MODE => 
                 intermediate_low := std_logic_vector(unsigned('0' & operand_a(operand_a'left - 1 downto operand_a'right)) +  unsigned('0' & operand_b(operand_b'left - 1 downto operand_b'right)));
                 intermediate_high := std_logic_vector(unsigned('0' & operand_a(operand_a'left downto operand_a'left)) + unsigned('0' & operand_b(operand_b'left downto operand_b'left)) + unsigned('0' & intermediate_low(intermediate_low'left downto intermediate_low'left)));
             when others =>
@@ -42,12 +42,13 @@ BEGIN
         end if;
     end process add_sub;
 
+
     process(all) is 
     begin
         case alu_mode_ex is
             when SUB_MODE =>
                 alu_result_int <= add_sub_result_int;
-            when ADDI_MODE | ADD_MODE =>
+            when ADDI_MODE | ADD_MODE | LUI_MODE | LB_MODE | LH_MODE | LW_MODE | LBU_MODE | LHU_MODE | SB_MODE | SH_MODE | SW_MODE =>
                 alu_result_int <= add_sub_result_int;
             when SLTI_MODE | SLT_MODE =>
                 -- SLTI (set less than immediate) places the value 1 in register rd if register rs1 is less than the sign-
