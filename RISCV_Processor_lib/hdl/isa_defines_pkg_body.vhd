@@ -16,6 +16,14 @@ PACKAGE BODY isa_defines IS
         return imm;
     end function get_i_format_imm;
 
+    pure function get_u_format_imm(instruction_word: std_logic_vector) return word is
+        variable imm: word;
+    begin
+        imm := (others => instruction_word(instruction_word'left));
+        imm(U_FORMAT_IMMEDIATE_WORD_RANGE) := instruction_word(U_FORMAT_IMMEDIATE_RANGE);
+        return imm;
+    end function get_u_format_imm;
+
     pure function get_shift_amount(instruction_word: std_logic_vector) return word is
         variable imm: word;
     begin        

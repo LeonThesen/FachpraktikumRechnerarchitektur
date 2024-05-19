@@ -36,11 +36,59 @@ BEGIN
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
             when U_FORMAT_LUI =>
+                rd_addr_int <= instruction_word_dc(RD_RANGE);
+                rf_wena_dc <= '1';
+                imm_to_alu_int <= '1';
+                imm_int <= get_u_format_imm(instruction_word_dc);
             when U_FORMAT_AUIPC => 
             when J_FORMAT => 
             when B_FORMAT =>
             when R_FORMAT => 
-            when I_FORMAT_LOAD => 
+                rs1_addr_int <= instruction_word_dc(RS1_RANGE);
+                rs2_addr_int <= instruction_word_dc(RS2_RANGE);
+                rd_addr_int <= instruction_word_dc(RD_RANGE);
+                case instruction_word_dc(FUNCT3_RANGE) is
+                    when ADD_INSTR => 
+                        alu_mode_int <= ADDI_MODE;
+                    when SUB_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when SLL_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when SLT_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when SLTU_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when XOR_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when SRL_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when SRA_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when OR_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when AND_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when others => null;
+                end case;
+            when I_FORMAT_LOAD =>
+                rs1_addr_int <= instruction_word_dc(RS1_RANGE);
+                rd_addr_int <= instruction_word_dc(RD_RANGE);
+                rf_wena_dc <= '1';
+                imm_to_alu_int <= '1';
+                imm_int <= get_i_format_imm(instruction_word_dc); 
+                case instruction_word_dc(FUNCT3_RANGE) is
+                    when LB_INSTR => 
+                        alu_mode_int <= ADDI_MODE;
+                    when LH_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when LW_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when LBU_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when LHU_INSTR =>
+                        alu_mode_int <= ADDI_MODE;
+                    when others => null;
+                end case;
             when I_FORMAT_ARITHMETIC => 
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);

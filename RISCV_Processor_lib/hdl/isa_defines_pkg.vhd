@@ -117,7 +117,9 @@ PACKAGE isa_defines IS
     subtype S_FORMAT_LOWER_IMMEDIATE_RANGE is natural range 11 downto 7;
     -- U-Format-Ranges
     subtype U_FORMAT_IMMEDIATE_RANGE is natural range 31 downto 12;
+    subtype U_FORMAT_IMMEDIATE_WORD_RANGE is natural range 31 downto 12;
 
     pure function get_i_format_imm(instruction_word: std_logic_vector) return word;
+    pure function get_u_format_imm(instruction_word: std_logic_vector) return word;
     pure function get_shift_amount(instruction_word: std_logic_vector) return word;
 END isa_defines;
