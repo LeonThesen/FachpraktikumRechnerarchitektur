@@ -18,6 +18,30 @@ PACKAGE types IS
     constant ZERO_WORD : word := (others => '0');
 
     type alu_mode_t is (
+        LUI_MODE,
+        AUIPC_MODE,
+        JAL_MODE,
+        BEQ_MODE,
+        BNE_MODE,
+        BLT_MODE,
+        BGE_MODE,
+        BLTU_MODE,
+        BGEU_MODE,
+        ADD_MODE,
+        SUB_MODE,
+        SLL_MODE,
+        SLT_MODE,
+        SLTU_MODE,
+        XOR_MODE,
+        SRL_MODE,
+        SRA_MODE,
+        OR_MODE,
+        AND_MODE,
+        LB_MODE,
+        LH_MODE,
+        LW_MODE,
+        LBU_MODE,
+        LHU_MODE,
         ADDI_MODE,
         SLTI_MODE,
         SLTIU_MODE,
@@ -26,7 +50,11 @@ PACKAGE types IS
         ANDI_MODE,
         SLLI_MODE,
         SRLI_MODE,
-        SRAI_MODE
+        SRAI_MODE,
+        JALR_MODE,
+        SB_MODE,
+        SH_MODE,
+        SW_MODE
     );
 
     subtype register_file_t is std_logic_vector(4 downto 0);
