@@ -24,7 +24,7 @@ BEGIN
         variable intermediate_high: std_logic_vector(word'left + 1 downto word'left);
     begin
         case alu_mode_ex is
-            when ADDI_MODE => 
+            when ADDI_MODE | ADD_MODE => 
                 intermediate_low := std_logic_vector(unsigned('0' & operand_a(operand_a'left - 1 downto operand_a'right)) +  unsigned('0' & operand_b(operand_b'left - 1 downto operand_b'right)));
                 intermediate_high := std_logic_vector(unsigned('0' & operand_a(operand_a'left downto operand_a'left)) + unsigned('0' & operand_b(operand_b'left downto operand_b'left)) + unsigned('0' & intermediate_low(intermediate_low'left downto intermediate_low'left)));
             when others =>
@@ -45,9 +45,11 @@ BEGIN
     process(all) is 
     begin
         case alu_mode_ex is
-            when ADDI_MODE =>
+            when SUB_MODE =>
                 alu_result_int <= add_sub_result_int;
-            when SLTI_MODE =>
+            when ADDI_MODE | ADD_MODE =>
+                alu_result_int <= add_sub_result_int;
+            when SLTI_MODE | SLT_MODE =>
                 -- SLTI (set less than immediate) places the value 1 in register rd if register rs1 is less than the sign-
                 -- extended immediate when both are treated as signed numbers, else 0 is written to rd.
                 if (negative_flag xor overflow_flag) = '1' then
@@ -55,7 +57,7 @@ BEGIN
                 else 
                     alu_result_int <= (others => '0');
                 end if;
-            when SLTIU_MODE =>
+            when SLTIU_MODE | SLTU_MODE=>
                 -- SLTIU is similar but compares the values as unsigned numbers (i.e., the immediate is first sign-extended to
                 -- XLEN bits then treated as an unsigned number). Note, SLTIU rd, rs1, 1 sets rd to 1 if rs1 equals
                 -- zero, otherwise sets rd to 0 (assembler pseudo-op SEQZ rd, rs).
@@ -64,17 +66,17 @@ BEGIN
                 else 
                     alu_result_int <= (others => '0');
                 end if; 
-            when XORI_MODE =>
+            when XORI_MODE | XOR_MODE =>
                 alu_result_int <= operand_a xor operand_b;
-            when ORI_MODE =>
+            when ORI_MODE | OR_MODE =>
                 alu_result_int <= operand_a or operand_b;
-            when ANDI_MODE =>
+            when ANDI_MODE | AND_MODE =>
                 alu_result_int <= operand_a and operand_b;
-            when SLLI_MODE =>
+            when SLLI_MODE | SLL_MODE =>
                 alu_result_int <= word(shift_left(unsigned(operand_a), to_integer(unsigned(operand_b))));
-            when SRLI_MODE => 
+            when SRLI_MODE | SRL_MODE => 
                 alu_result_int <= word(shift_right(unsigned(operand_a), to_integer(unsigned(operand_b))));
-            when SRAI_MODE => 
+            when SRAI_MODE | SRA_MODE => 
                 alu_result_int <= word(shift_right(signed(operand_a), to_integer(unsigned(operand_b))));
             when others =>
                 null;
