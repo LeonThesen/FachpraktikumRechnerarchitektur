@@ -17,11 +17,14 @@ BEGIN
         if res_n = '0' then
             operand_a <= (others => '0');
             rs2_ex <= (others => '0');
-            alu_mode_ex <= ADDI_MODE;
+            alu_mode_ex <= ADD_MODE;
             rd_addr_ex <= (others => '0');
             imm_to_alu_ex <= '0';
             imm_ex <= (others => '0');
             rf_wena_ex <= '0';
+            mem_mode_ex.memory_access <= IDLE;
+            mem_mode_ex.data_width <= WORD;
+            mem_mode_ex.is_signed <= FALSE;
         else 
             if clk'event and clk = '1' then
                 operand_a <= rs1_dc;
@@ -31,6 +34,7 @@ BEGIN
                 imm_to_alu_ex <= imm_to_alu_dc;
                 imm_ex <= imm_dc;
                 rf_wena_ex <= rf_wena_dc;
+                mem_mode_ex <= mem_mode_dc;
             end if;
         end if;
     end process;

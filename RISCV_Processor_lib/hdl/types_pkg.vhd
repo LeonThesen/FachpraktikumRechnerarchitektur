@@ -10,23 +10,22 @@
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 PACKAGE types IS
-    subtype byte is std_logic_vector(7 downto 0);
-    subtype half_word is std_logic_vector(15 downto 0);
-    subtype word is std_logic_vector(31 downto 0);
-    subtype double_word is std_logic_vector(63 downto 0);
+    subtype byte_t is std_logic_vector(7 downto 0);
+    subtype half_word_t is std_logic_vector(15 downto 0);
+    subtype word_t is std_logic_vector(31 downto 0);
+    subtype double_word_t is std_logic_vector(63 downto 0);
+    constant ZERO_WORD : word_t := (others => '0');
 
-    constant ZERO_WORD : word := (others => '0');
+    type memory_access_t is (LOAD, STORE, IDLE);
+    type data_width_t is (BYTE, HALFWORD, WORD);
+
+    type mem_mode_t is record
+        memory_access: memory_access_t;
+        data_width: data_width_t;
+        is_signed: boolean;
+    end record mem_mode_t;
 
     type alu_mode_t is (
-        LUI_MODE,
-        AUIPC_MODE,
-        JAL_MODE,
-        BEQ_MODE,
-        BNE_MODE,
-        BLT_MODE,
-        BGE_MODE,
-        BLTU_MODE,
-        BGEU_MODE,
         ADD_MODE,
         SUB_MODE,
         SLL_MODE,
@@ -36,34 +35,11 @@ PACKAGE types IS
         SRL_MODE,
         SRA_MODE,
         OR_MODE,
-        AND_MODE,
-        LB_MODE,
-        LH_MODE,
-        LW_MODE,
-        LBU_MODE,
-        LHU_MODE,
-        ADDI_MODE,
-        SLTI_MODE,
-        SLTIU_MODE,
-        XORI_MODE,
-        ORI_MODE,
-        ANDI_MODE,
-        SLLI_MODE,
-        SRLI_MODE,
-        SRAI_MODE,
-        JALR_MODE,
-        SB_MODE,
-        SH_MODE,
-        SW_MODE
+        AND_MODE
     );
 
     subtype register_file_t is std_logic_vector(4 downto 0);
 
-    constant SMALL_IMMEDIATE_SIZE : positive := 12;
-    constant LARGE_IMMEDIATE_SIZE : positive := 20;
-    subtype immediate_12_t is std_logic_vector(SMALL_IMMEDIATE_SIZE - 1 downto 0); -- TODO: shorten name
-    subtype immediate_20_t is std_logic_vector(LARGE_IMMEDIATE_SIZE - 1 downto 0); -- TODO: shorten name
-
-    constant EXTEND_IMM12_TO_32_BIT: std_logic_vector(31 downto 12) := (others => '0');
+    subtype forward_select_t is std_logic_vector(1 downto 0);
 END types;
 

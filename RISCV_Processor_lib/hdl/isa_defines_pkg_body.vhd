@@ -8,58 +8,58 @@
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
 PACKAGE BODY isa_defines IS
-    pure function get_i_format_imm(instruction_word: std_logic_vector) return word is
-        variable imm: word;
+    pure function get_i_format_imm(instruction_word: std_logic_vector) return word_t is
+        variable imm: word_t;
     begin        
         imm := (11 downto 0 => instruction_word(31 downto 20),
                 others => instruction_word(31));
         return imm;
     end function get_i_format_imm;
 
-    pure function get_s_format_imm(instruction_word: std_logic_vector) return word is
-        variable imm: word;
+    pure function get_s_format_imm(instruction_word: std_logic_vector) return word_t is
+        variable imm: word_t;
     begin
         imm := (11 downto 5 => instruction_word(31 downto 25),
                 4 downto  0 => instruction_word(11 downto 7),
-                others => insturction_word(31));
+                others => instruction_word(31));
         return imm;
     end function get_s_format_imm;
 
-    pure function get_b_format_imm(instruction_word: std_logic_vector) return word is
-        variable imm: word;
+    pure function get_b_format_imm(instruction_word: std_logic_vector) return word_t is
+        variable imm: word_t;
     begin        
         imm := (12 => instruction_word(31),
                 11 => instruction_word(7),
                 10 downto 5 => instruction_word(30 downto 25),
                 4 downto 1 => instruction_word(11 downto 8),
-                0 => '0'
+                0 => '0',
                 others => instruction_word(31));
         return imm;
     end function get_b_format_imm;
 
-    pure function get_u_format_imm(instruction_word: std_logic_vector) return word is
-        variable imm: word;
+    pure function get_u_format_imm(instruction_word: std_logic_vector) return word_t is
+        variable imm: word_t;
     begin
         imm := (31 downto 12 => instruction_word(31 downto 12),
-                11 downto 0 => '0'
+                11 downto 0 => '0',
                 others => instruction_word(31));
         return imm;
     end function get_u_format_imm;
 
-    pure function get_j_format_imm(instruction_word: std_logic_vector) return word is
-        variable imm: word;
+    pure function get_j_format_imm(instruction_word: std_logic_vector) return word_t is
+        variable imm: word_t;
     begin        
         imm := (20 => instruction_word(31),
                 19 downto 12 => instruction_word(19 downto 12),
-                11 => insturction_word(20),
+                11 => instruction_word(20),
                 10 downto 1 => instruction_word(30 downto 21),
                 0 => '0',
                 others => instruction_word(31));
         return imm;
     end function get_j_format_imm;
 
-    pure function get_shift_amount(instruction_word: std_logic_vector) return word is
-        variable shift_amount: word;
+    pure function get_shift_amount(instruction_word: std_logic_vector) return word_t is
+        variable shift_amount: word_t;
     begin        
     shift_amount := (4 downto 0 => instruction_word(24 downto 20),
                      others => instruction_word(31));

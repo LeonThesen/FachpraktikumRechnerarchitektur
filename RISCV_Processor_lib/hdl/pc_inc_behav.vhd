@@ -15,7 +15,7 @@ ARCHITECTURE behav OF pc_inc IS
 BEGIN
     process(all) is 
     begin
-        pc_pf <= std_logic_vector(unsigned(pc_if) + 1); -- TODO: change to +4 later when needed
+        pc_pf <= std_logic_vector(unsigned(pc_if) + 4);
     end process;
 END ARCHITECTURE behav;
 

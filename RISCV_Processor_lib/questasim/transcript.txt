@@ -1,5 +1,5 @@
 # vsim -f hds_args.tmp -no_autoacc -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 13:47:22 on May 15,2024
+# Start time: 15:22:06 on May 21,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -10,11 +10,13 @@
 # Loading work.types
 # Loading work.cpu(struct)#1
 # Loading work.alu(behav)#1
+# Loading work.data_memory(behav)#1
 # Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
+# Loading work.isa_defines(body)
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.mem_mode_multiplexer(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
 # Loading work.pc_inc(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
@@ -26,201 +28,30 @@
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 add wave -position end  sim:/top_tb/clk
 add wave -position end  sim:/top_tb/res_n
-add wave -position end  sim:/top_tb/cpu_i/pf_if_pipeline_reg_i/pc_if
-add wave -position end  sim:/top_tb/cpu_i/register_file_i/x
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD."/=": metavalue detected, returning TRUE
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-# Warning in wave window restart: (vish-4014) No objects found matching '/top_tb/cpu_i/register_file_i/x'. 
 add wave -position end  sim:/top_tb/cpu_i/register_file_i/register_array
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+add wave -position end  sim:/top_tb/cpu_i/data_memory_i/memory_array
 run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -233,42 +64,12 @@ run
 run
 # 0
 # 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -297,107 +98,13 @@ restart -force
 # Loading work.types
 # Loading work.cpu(struct)#1
 # Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
+# Loading work.data_memory(behav)#1
 # Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.mem_mode_multiplexer(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
 # Loading work.pc_inc(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
@@ -413,77 +120,7 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -509,130 +146,9 @@ run
 run
 # 0
 # 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-add wave -position 3  sim:/top_tb/cpu_i/alu_i/negative_flag
+add wave -position 2  sim:/top_tb/cpu_i/data_memory_i/mem_mode_mem
+add wave -position 3  sim:/top_tb/cpu_i/data_memory_i/alu_result_mem
+add wave -position 4  sim:/top_tb/cpu_i/ex_mem_pipeline_reg_i/rd_addr_mem
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
@@ -643,53 +159,7 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -703,7 +173,25 @@ run
 run
 # 0
 # 
-add wave -position 4  sim:/top_tb/cpu_i/alu_i/overflow_flag
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position 3  sim:/top_tb/cpu_i/decoder_i/instruction_word_dc
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
@@ -714,18 +202,11 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
 run
 # 0
 # 
@@ -745,60 +226,13 @@ restart -force
 # Loading work.types
 # Loading work.cpu(struct)#1
 # Loading work.alu(behav)#1
+# Loading work.data_memory(behav)#1
 # Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-add wave -position 5  sim:/top_tb/cpu_i/alu_i/carry_flag
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.mem_mode_multiplexer(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
 # Loading work.pc_inc(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
@@ -814,6 +248,8 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
@@ -826,9 +262,14 @@ run
 run
 # 0
 # 
-add wave -position 6  sim:/top_tb/cpu_i/alu_i/operand_a
-add wave -position 7  sim:/top_tb/cpu_i/alu_i/operand_b
-add wave -position 8  sim:/top_tb/cpu_i/alu_i/alu_mode_ex
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/register_file_i/rs1_addr
+add wave -position end  sim:/top_tb/cpu_i/register_file_i/rs2_addr
+run
+# 0
+# 
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
@@ -839,18 +280,110 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# 0
-# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+add wave -position end  sim:/top_tb/cpu_i/register_file_i/rd_addr_wb
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# 0
-# 
-run
-# 0
-# 
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+step -over
+# hds_restart
+restart -force
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
@@ -864,11 +397,13 @@ restart -force
 # Loading work.types
 # Loading work.cpu(struct)#1
 # Loading work.alu(behav)#1
+# Loading work.data_memory(behav)#1
 # Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.mem_mode_multiplexer(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
 # Loading work.pc_inc(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
@@ -884,95 +419,11 @@ run
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -995,107 +446,5 @@ run
 run
 # 0
 # 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs2_multiplexer(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# End time: 18:31:57 on May 15,2024, Elapsed time: 4:44:35
-# Errors: 0, Warnings: 4
+# End time: 17:22:21 on May 21,2024, Elapsed time: 2:00:15
+# Errors: 0, Warnings: 7

@@ -6,16 +6,16 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN rs2_multiplexer
 VIEW interface
-GRAPHIC 261,0 16 0 
+GRAPHIC 466,0 16 0 
 DESIGN rs2_multiplexer
 VIEW interface
-GRAPHIC 266,0 17 0 
+GRAPHIC 471,0 17 0 
 DESIGN rs2_multiplexer
 VIEW interface
-GRAPHIC 276,0 18 0 
+GRAPHIC 481,0 18 0 
 DESIGN rs2_multiplexer
 VIEW interface
-GRAPHIC 271,0 19 0 
+GRAPHIC 476,0 19 0 
 DESIGN rs2_multiplexer
 VIEW interface
 GRAPHIC 1,0 22 0 

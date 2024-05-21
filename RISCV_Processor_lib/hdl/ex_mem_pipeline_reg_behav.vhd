@@ -18,11 +18,17 @@ BEGIN
             alu_result_mem <= (others => '0');
             rd_addr_mem <= (others => '0');
             rf_wena_mem <= '0';
+            store_data <= (others => '0');
+            mem_mode_mem.memory_access <= IDLE;
+            mem_mode_mem.data_width <= WORD;
+            mem_mode_mem.is_signed <= FALSE;
         else 
             if clk'event and clk = '1' then
                 alu_result_mem <= alu_result_ex;
                 rd_addr_mem <= rd_addr_ex;
                 rf_wena_mem <= rf_wena_ex;
+                store_data <= rs2_ex;
+                mem_mode_mem <= mem_mode_ex;
             end if;
         end if;
     end process;

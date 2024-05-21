@@ -16,7 +16,7 @@ use RISCV_Processor_lib.types.ALL;
 
 ARCHITECTURE behav OF register_file IS
     constant NUM_REGISTERS : positive := 32;
-    type register_array_t is array (0 to NUM_REGISTERS - 1) of word;
+    type register_array_t is array (0 to NUM_REGISTERS - 1) of word_t;
     signal register_array : register_array_t;
 BEGIN
     write_port_array: process(clk, res_n) is

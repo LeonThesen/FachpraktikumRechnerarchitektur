@@ -6,55 +6,61 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2275,0 16 0 
+GRAPHIC 2708,0 16 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2285,0 17 0 
+GRAPHIC 2718,0 17 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2290,0 18 0 
+GRAPHIC 2723,0 18 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2300,0 19 0 
+GRAPHIC 2733,0 19 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2315,0 20 0 
+GRAPHIC 2743,0 20 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2325,0 21 0 
+GRAPHIC 2758,0 21 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2330,0 22 0 
+GRAPHIC 2768,0 22 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2340,0 23 0 
+GRAPHIC 2773,0 23 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2345,0 24 0 
+GRAPHIC 2783,0 24 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2280,0 25 0 
+GRAPHIC 2788,0 25 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2295,0 26 0 
+GRAPHIC 2713,0 26 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2305,0 27 0 
+GRAPHIC 2728,0 27 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2310,0 28 0 
+GRAPHIC 2738,0 28 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2320,0 29 0 
+GRAPHIC 2748,0 29 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2335,0 30 0 
+GRAPHIC 2753,0 30 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 2350,0 31 0 
+GRAPHIC 2763,0 31 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 34 0 
+GRAPHIC 2778,0 32 0 
 DESIGN dc_ex_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 35 0 
+GRAPHIC 2793,0 33 0 
+DESIGN dc_ex_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 36 0 
+DESIGN dc_ex_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 37 0 

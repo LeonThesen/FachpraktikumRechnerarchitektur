@@ -94,9 +94,6 @@ PACKAGE isa_defines IS
     constant SH_INSTR : funct3_t := "001";
     constant SW_INSTR : funct3_t := "010";
 
-    -- Pseudo Instructions
-    constant NOP_INSTR : word := "00000000000000000000000000010011";
-
     -- Range defines
     subtype OPCODE_RANGE is natural range 6 downto 0;
     subtype RS2_RANGE is natural range 24 downto 20;
@@ -112,10 +109,10 @@ PACKAGE isa_defines IS
     -- U-Format-Ranges
 
     -- Functions for extracting immediates from instruction word (and shift amount)
-    pure function get_i_format_imm(instruction_word: std_logic_vector) return word;
-    pure function get_s_format_imm(instruction_word: std_logic_vector) return word;
-    pure function get_b_format_imm(instruction_word: std_logic_vector) return word;
-    pure function get_u_format_imm(instruction_word: std_logic_vector) return word;
-    pure function get_j_format_imm(instruction_word: std_logic_vector) return word;
-    pure function get_shift_amount(instruction_word: std_logic_vector) return word;
+    pure function get_i_format_imm(instruction_word: std_logic_vector) return word_t;
+    pure function get_s_format_imm(instruction_word: std_logic_vector) return word_t;
+    pure function get_b_format_imm(instruction_word: std_logic_vector) return word_t;
+    pure function get_u_format_imm(instruction_word: std_logic_vector) return word_t;
+    pure function get_j_format_imm(instruction_word: std_logic_vector) return word_t;
+    pure function get_shift_amount(instruction_word: std_logic_vector) return word_t;
 END isa_defines;

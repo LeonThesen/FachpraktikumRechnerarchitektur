@@ -20,7 +20,7 @@ ARCHITECTURE behav OF decoder IS
     signal rd_addr_int : register_file_t;
     signal alu_mode_int : alu_mode_t;
     signal imm_to_alu_int : std_logic;
-    signal imm_int : word;
+    signal imm_int : word_t;
 BEGIN
     process(all) is 
     begin
@@ -28,31 +28,34 @@ BEGIN
         rs1_addr_int <= (others => '0');
         rs2_addr_int <= (others => '0');
         rd_addr_int <= (others => '0');
-        alu_mode_int <= ADDI_MODE;
+        alu_mode_int <= ADD_MODE;
         imm_to_alu_int <= '0';
         imm_int <= (others => '0');
         rf_wena_dc <= '0';
+        mem_mode_dc.memory_access <= IDLE;
+        mem_mode_dc.data_width <= WORD;
+        mem_mode_dc.is_signed <= FALSE;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
-            when U_FORMAT_LUI | U_FORMAT_AUIPC =>
+            when U_FORMAT_LUI =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_u_format_imm(instruction_word_dc);
-                alu_mode_int <= LUI_MODE;
+                alu_mode_int <= ADD_MODE;
             when U_FORMAT_AUIPC =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_u_format_imm(instruction_word_dc);
-                alu_mode_int <= AUIPC_MODE; 
+                alu_mode_int <= ADD_MODE; 
             when J_FORMAT =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_j_format_imm(instruction_word_dc);
-                alu_mode_int <= JAL_MODE;  
+                alu_mode_int <= ADD_MODE;  
             when B_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
@@ -60,17 +63,18 @@ BEGIN
                 imm_int <= get_b_format_imm(instruction_word_dc);
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when BEQ_INSTR =>
-                        alu_mode_int <= BEQ_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when BNE_INSTR =>
-                        alu_mode_int <= BNE_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when BLT_INSTR =>
-                        alu_mode_int <= BLT_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when BGE_INSTR =>
-                        alu_mode_int <= BGE_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when BLTU_INSTR =>
-                        alu_mode_int <= BLTU_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when BGEU_INSTR =>
-                        alu_mode_int <= BGEU_MODE;
+                        alu_mode_int <= ADD_MODE;
+                    when others => null;
                 end case;
             when R_FORMAT => 
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
@@ -94,10 +98,14 @@ BEGIN
                         alu_mode_int <= SLTU_MODE;
                     when XOR_INSTR =>
                         alu_mode_int <= XOR_MODE;
-                    when SRL_INSTR =>
-                        alu_mode_int <= SRL_MODE;
-                    when SRA_INSTR =>
-                        alu_mode_int <= SRA_MODE;
+                    when SR_INSTR =>
+                        if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRL_INSTR_FUNCT7 then
+                            alu_mode_int <= SRL_MODE;
+                        elsif instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRA_INSTR_FUNCT7 then
+                            alu_mode_int <= SRA_MODE;
+                        else 
+                            null;
+                        end if; 
                     when OR_INSTR =>
                         alu_mode_int <= OR_MODE;
                     when AND_INSTR =>
@@ -110,17 +118,32 @@ BEGIN
                 rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_i_format_imm(instruction_word_dc); 
+                
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when LB_INSTR => 
-                        alu_mode_int <= LB_MODE;
-                    when LH_INSTR =>
-                        alu_mode_int <= LH_MODE;
-                    when LW_INSTR =>
-                        alu_mode_int <= LW_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= LOAD;
+                        mem_mode_dc.data_width <= BYTE;
+                        mem_mode_dc.is_signed <= TRUE;
                     when LBU_INSTR =>
-                        alu_mode_int <= LBU_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= LOAD;
+                        mem_mode_dc.data_width <= BYTE;
+                        mem_mode_dc.is_signed <= FALSE;
+                    when LH_INSTR =>
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= LOAD;
+                        mem_mode_dc.data_width <= HALFWORD;
+                        mem_mode_dc.is_signed <= TRUE;
                     when LHU_INSTR =>
-                        alu_mode_int <= LHU_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= LOAD;
+                        mem_mode_dc.data_width <= HALFWORD;
+                        mem_mode_dc.is_signed <= FALSE;
+                    when LW_INSTR =>
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= LOAD;
+                        mem_mode_dc.data_width <= WORD;
                     when others => null;
                 end case;
             when I_FORMAT_ARITHMETIC => 
@@ -132,26 +155,26 @@ BEGIN
                 
                 case instruction_word_dc(FUNCT3_RANGE) is 
                     when ADDI_INSTR => 
-                        alu_mode_int <= ADDI_MODE;
+                        alu_mode_int <= ADD_MODE;
                     when SLTI_INSTR => 
-                        alu_mode_int <= SLTI_MODE;
+                        alu_mode_int <= SLT_MODE;
                     when SLTIU_INSTR => 
-                        alu_mode_int <= SLTIU_MODE;
+                        alu_mode_int <= SLTU_MODE;
                     when XORI_INSTR => 
-                        alu_mode_int <= XORI_MODE;
+                        alu_mode_int <= XOR_MODE;
                     when ORI_INSTR => 
-                        alu_mode_int <= ORI_MODE;
+                        alu_mode_int <= OR_MODE;
                     when ANDI_INSTR => 
-                        alu_mode_int <= ANDI_MODE;
+                        alu_mode_int <= AND_MODE;
                     when SLLI_INSTR => 
-                        alu_mode_int <= SLLI_MODE;
+                        alu_mode_int <= SLL_MODE;
                         imm_int <= get_shift_amount(instruction_word_dc);
                     when SRI_INSTR =>
                         imm_int <= get_shift_amount(instruction_word_dc);
                         if instruction_word_dc(I_FORMAT_FUNCT7_RANGE) = SRL_INSTR_FUNCT7 then
-                            alu_mode_int <= SRLI_MODE;
+                            alu_mode_int <= SRL_MODE;
                         elsif instruction_word_dc(I_FORMAT_FUNCT7_RANGE) = SRA_INSTR_FUNCT7 then
-                            alu_mode_int <= SRAI_MODE;
+                            alu_mode_int <= SRA_MODE;
                         else 
                             null;
                         end if;                        
@@ -164,19 +187,26 @@ BEGIN
                 rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_i_format_imm(instruction_word_dc);
-                alu_mode_int <= JALR_MODE;   
+                alu_mode_int <= ADD_MODE;   
             when S_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 imm_to_alu_int <= '1';
                 imm_int <= get_s_format_imm(instruction_word_dc);
+                
                 case instruction_word_dc(FUNCT3_RANGE) is 
                     when SB_INSTR => 
-                        alu_mode_int <= SB_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= STORE;
+                        mem_mode_dc.data_width <= BYTE;
                     when SH_INSTR =>
-                        alu_mode_int <= SH_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= STORE;
+                        mem_mode_dc.data_width <= HALFWORD;
                     when SW_INSTR =>
-                        alu_mode_int <= SW_MODE;
+                        alu_mode_int <= ADD_MODE;
+                        mem_mode_dc.memory_access <= STORE;
+                        mem_mode_dc.data_width <= WORD;
                     when others => null;
                 end case;
             when others => null;

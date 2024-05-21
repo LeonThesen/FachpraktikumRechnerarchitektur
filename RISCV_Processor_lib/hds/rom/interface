@@ -27,7 +27,7 @@ appVersion "2022.3 Built on 14 Jul 2022 at 13:56:12"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 64,0
+suid 68,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -73,10 +73,10 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 61,0
+suid 65,0
 )
 )
-uid 939,0
+uid 990,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -84,12 +84,12 @@ lang 11
 m 1
 decl (Decl
 n "instruction_word_if"
-t "word"
+t "word_t"
 o 13
-suid 62,0
+suid 66,0
 )
 )
-uid 941,0
+uid 992,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -99,10 +99,10 @@ n "pc_if"
 t "std_logic_vector"
 b "(7 downto 0)"
 o 3
-suid 63,0
+suid 67,0
 )
 )
-uid 943,0
+uid 994,0
 )
 *17 (LogPort
 port (LogicalPort
@@ -111,10 +111,10 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 64,0
+suid 68,0
 )
 )
-uid 945,0
+uid 996,0
 )
 ]
 )
@@ -170,25 +170,25 @@ uid 85,0
 litem &14
 pos 0
 dimension 20
-uid 940,0
+uid 991,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 942,0
+uid 993,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 944,0
+uid 995,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 946,0
+uid 997,0
 )
 ]
 )
@@ -419,23 +419,23 @@ VExpander (VariableExpander
 vvMap [
 (vvPair
 variable "HDLDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hdl"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl"
 )
 (vvPair
 variable "HDSDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "SideDataDesignDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom/interface.info"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom/interface.info"
 )
 (vvPair
 variable "SideDataUserDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom/interface.user"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom/interface.user"
 )
 (vvPair
 variable "SourceDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "appl"
@@ -451,15 +451,15 @@ value "%(unit)_%(view)_config"
 )
 (vvPair
 variable "d"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom"
 )
 (vvPair
 variable "d_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom"
 )
 (vvPair
 variable "date"
-value "05/14/24"
+value "05/21/24"
 )
 (vvPair
 variable "day"
@@ -471,7 +471,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "14"
+value "21"
 )
 (vvPair
 variable "entity_name"
@@ -499,7 +499,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/14/24"
+value "05/21/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -511,7 +511,7 @@ value "pc029"
 )
 (vvPair
 variable "graphical_source_time"
-value "16:19:42"
+value "16:48:37"
 )
 (vvPair
 variable "group"
@@ -551,11 +551,11 @@ value "May"
 )
 (vvPair
 variable "p"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom/interface"
 )
 (vvPair
 variable "p_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/rom/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/rom/interface"
 )
 (vvPair
 variable "package_name"
@@ -615,7 +615,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "16:19:42"
+value "16:48:37"
 )
 (vvPair
 variable "unit"
@@ -650,10 +650,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 919,0
+uid 970,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 920,0
+uid 971,0
 ro 90
 va (VaSet
 vasetType 1
@@ -662,11 +662,11 @@ fg "0,65535,0"
 xt "14250,7625,15000,8375"
 )
 tg (CPTG
-uid 921,0
+uid 972,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 922,0
+uid 973,0
 va (VaSet
 font "courier,8,0"
 )
@@ -677,7 +677,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 923,0
+uid 974,0
 va (VaSet
 font "courier,8,0"
 )
@@ -691,15 +691,15 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 61,0
+suid 65,0
 )
 )
 )
 *61 (CptPort
-uid 924,0
+uid 975,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 925,0
+uid 976,0
 ro 90
 va (VaSet
 vasetType 1
@@ -708,11 +708,11 @@ fg "0,65535,0"
 xt "27000,10625,27750,11375"
 )
 tg (CPTG
-uid 926,0
+uid 977,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 927,0
+uid 978,0
 va (VaSet
 font "courier,8,0"
 )
@@ -724,12 +724,12 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 928,0
+uid 979,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,4500,61500,5400"
-st "instruction_word_if : OUT    word 
+xt "44000,4500,62500,5400"
+st "instruction_word_if : OUT    word_t 
 "
 )
 thePort (LogicalPort
@@ -737,17 +737,17 @@ lang 11
 m 1
 decl (Decl
 n "instruction_word_if"
-t "word"
+t "word_t"
 o 13
-suid 62,0
+suid 66,0
 )
 )
 )
 *62 (CptPort
-uid 929,0
+uid 980,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 930,0
+uid 981,0
 ro 90
 va (VaSet
 vasetType 1
@@ -756,11 +756,11 @@ fg "0,65535,0"
 xt "14250,10625,15000,11375"
 )
 tg (CPTG
-uid 931,0
+uid 982,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 932,0
+uid 983,0
 va (VaSet
 font "courier,8,0"
 )
@@ -771,7 +771,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 933,0
+uid 984,0
 va (VaSet
 font "courier,8,0"
 )
@@ -786,15 +786,15 @@ n "pc_if"
 t "std_logic_vector"
 b "(7 downto 0)"
 o 3
-suid 63,0
+suid 67,0
 )
 )
 )
 *63 (CptPort
-uid 934,0
+uid 985,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 935,0
+uid 986,0
 ro 90
 va (VaSet
 vasetType 1
@@ -803,11 +803,11 @@ fg "0,65535,0"
 xt "14250,8625,15000,9375"
 )
 tg (CPTG
-uid 936,0
+uid 987,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 937,0
+uid 988,0
 va (VaSet
 font "courier,8,0"
 )
@@ -818,7 +818,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 938,0
+uid 989,0
 va (VaSet
 font "courier,8,0"
 )
@@ -832,7 +832,7 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 64,0
+suid 68,0
 )
 )
 )
@@ -1547,6 +1547,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 946,0
+lastUid 997,0
 activeModelName "Symbol:CDM"
 )

@@ -27,7 +27,7 @@ appVersion "2022.3 Built on 14 Jul 2022 at 13:56:12"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 85,0
+suid 93,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -73,10 +73,10 @@ decl (Decl
 n "alu_mode_ex"
 t "alu_mode_t"
 o 5
-suid 82,0
+suid 90,0
 )
 )
-uid 1063,0
+uid 1166,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -84,36 +84,36 @@ lang 11
 m 1
 decl (Decl
 n "alu_result_ex"
-t "word"
+t "word_t"
 o 6
-suid 83,0
+suid 91,0
 )
 )
-uid 1065,0
+uid 1168,0
 )
 *16 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
 n "operand_a"
-t "word"
+t "word_t"
 o 15
-suid 84,0
+suid 92,0
 )
 )
-uid 1067,0
+uid 1170,0
 )
 *17 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
 n "operand_b"
-t "word"
+t "word_t"
 o 16
-suid 85,0
+suid 93,0
 )
 )
-uid 1069,0
+uid 1172,0
 )
 ]
 )
@@ -169,25 +169,25 @@ uid 92,0
 litem &14
 pos 0
 dimension 20
-uid 1064,0
+uid 1167,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 1066,0
+uid 1169,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 1068,0
+uid 1171,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 1070,0
+uid 1173,0
 )
 ]
 )
@@ -418,23 +418,23 @@ VExpander (VariableExpander
 vvMap [
 (vvPair
 variable "HDLDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hdl"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl"
 )
 (vvPair
 variable "HDSDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "SideDataDesignDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu/interface.info"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu/interface.info"
 )
 (vvPair
 variable "SideDataUserDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu/interface.user"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu/interface.user"
 )
 (vvPair
 variable "SourceDir"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds"
 )
 (vvPair
 variable "appl"
@@ -450,15 +450,15 @@ value "%(unit)_%(view)_config"
 )
 (vvPair
 variable "d"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu"
 )
 (vvPair
 variable "d_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu"
 )
 (vvPair
 variable "date"
-value "05/14/24"
+value "05/21/24"
 )
 (vvPair
 variable "day"
@@ -470,7 +470,7 @@ value "Tuesday"
 )
 (vvPair
 variable "dd"
-value "14"
+value "21"
 )
 (vvPair
 variable "entity_name"
@@ -498,7 +498,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/14/24"
+value "05/21/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -510,7 +510,7 @@ value "pc029"
 )
 (vvPair
 variable "graphical_source_time"
-value "14:39:42"
+value "16:48:37"
 )
 (vvPair
 variable "group"
@@ -527,6 +527,10 @@ value "VHDL"
 (vvPair
 variable "library"
 value "RISCV_Processor_lib"
+)
+(vvPair
+variable "library_downstream_QuestaSimCompiler"
+value "$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim"
 )
 (vvPair
 variable "mm"
@@ -546,11 +550,11 @@ value "May"
 )
 (vvPair
 variable "p"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu/interface"
 )
 (vvPair
 variable "p_logical"
-value "/u/home/clab/st161569/HDS/RISCV_Processor/RISCV_Processor_lib/hds/alu/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/alu/interface"
 )
 (vvPair
 variable "package_name"
@@ -610,7 +614,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "14:39:42"
+value "16:48:37"
 )
 (vvPair
 variable "unit"
@@ -645,37 +649,42 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 1043,0
+uid 1146,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 1044,0
-ro 90
+uid 1147,0
+ro 180
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "14250,13625,15000,14375"
+xt "238625,62750,239375,63500"
 )
 tg (CPTG
-uid 1045,0
+uid 1148,0
 ps "CptPortTextPlaceStrategy"
-stg "VerticalLayoutStrategy"
+stg "RightVerticalLayoutStrategy"
 f (Text
-uid 1046,0
+uid 1149,0
+ro 270
 va (VaSet
 font "courier,8,0"
 )
-xt "16000,13550,22000,14450"
+xt "238550,64500,239450,70500"
 st "alu_mode_ex"
-blo "16000,14250"
+ju 2
+blo "239250,64500"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 1047,0
+uid 1150,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,1800,62500,2700"
+st "alu_mode_ex   : IN     alu_mode_t  ;
+"
 )
 thePort (LogicalPort
 lang 11
@@ -683,151 +692,160 @@ decl (Decl
 n "alu_mode_ex"
 t "alu_mode_t"
 o 5
-suid 82,0
+suid 90,0
 )
 )
 )
 *61 (CptPort
-uid 1048,0
+uid 1151,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 1049,0
+uid 1152,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "27000,10625,27750,11375"
+xt "245000,68625,245750,69375"
 )
 tg (CPTG
-uid 1050,0
+uid 1153,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 1051,0
+uid 1154,0
 va (VaSet
 font "courier,8,0"
 )
-xt "19000,10550,26000,11450"
+xt "237000,68550,244000,69450"
 st "alu_result_ex"
 ju 2
-blo "26000,11250"
+blo "244000,69250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 1052,0
+uid 1155,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,4500,59500,5400"
+st "alu_result_ex : OUT    word_t 
+"
 )
 thePort (LogicalPort
 lang 11
 m 1
 decl (Decl
 n "alu_result_ex"
-t "word"
+t "word_t"
 o 6
-suid 83,0
+suid 91,0
 )
 )
 )
 *62 (CptPort
-uid 1053,0
+uid 1156,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 1054,0
+uid 1157,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "14250,9625,15000,10375"
+xt "232250,63625,233000,64375"
 )
 tg (CPTG
-uid 1055,0
+uid 1158,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 1056,0
+uid 1159,0
 va (VaSet
 font "courier,8,0"
 )
-xt "16000,9550,20500,10450"
+xt "234000,63550,238500,64450"
 st "operand_a"
-blo "16000,10250"
+blo "234000,64250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 1057,0
+uid 1160,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,2700,60500,3600"
+st "operand_a     : IN     word_t  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "operand_a"
-t "word"
+t "word_t"
 o 15
-suid 84,0
+suid 92,0
 )
 )
 )
 *63 (CptPort
-uid 1058,0
+uid 1161,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 1059,0
+uid 1162,0
 ro 90
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 )
-xt "14250,11625,15000,12375"
+xt "232250,73625,233000,74375"
 )
 tg (CPTG
-uid 1060,0
+uid 1163,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 1061,0
+uid 1164,0
 va (VaSet
 font "courier,8,0"
 )
-xt "16000,11550,20500,12450"
+xt "234000,73550,238500,74450"
 st "operand_b"
-blo "16000,12250"
+blo "234000,74250"
 tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 1062,0
+uid 1165,0
 va (VaSet
 font "courier,8,0"
 )
+xt "44000,3600,60500,4500"
+st "operand_b     : IN     word_t  ;
+"
 )
 thePort (LogicalPort
 lang 11
 decl (Decl
 n "operand_b"
-t "word"
+t "word_t"
 o 16
-suid 85,0
+suid 93,0
 )
 )
 )
 ]
-shape (Rectangle
-uid 9,0
+shape (Alu
+uid 1145,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
 lineColor "0,32896,0"
 lineWidth 2
 )
-xt "15000,6000,27000,21000"
+xt "233000,61000,245000,76000"
 )
 oxt "15000,6000,27000,16000"
 biTextGroup (BiTextGroup
@@ -839,18 +857,18 @@ uid 11,0
 va (VaSet
 font "courier,8,1"
 )
-xt "16000,12600,26000,13500"
+xt "234000,67600,244000,68500"
 st "RISCV_Processor_lib"
-blo "16000,13300"
+blo "234000,68300"
 )
 second (Text
 uid 12,0
 va (VaSet
 font "courier,8,1"
 )
-xt "16000,13500,17500,14400"
+xt "234000,68500,235500,69400"
 st "alu"
-blo "16000,14200"
+blo "234000,69200"
 )
 )
 gi *64 (GenericInterface
@@ -1530,6 +1548,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 1070,0
+lastUid 1173,0
 activeModelName "Symbol:CDM"
 )

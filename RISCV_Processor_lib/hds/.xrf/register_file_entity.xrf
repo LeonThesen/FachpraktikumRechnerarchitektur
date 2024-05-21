@@ -6,31 +6,31 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1166,0 16 0 
+GRAPHIC 1252,0 16 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1171,0 17 0 
+GRAPHIC 1257,0 17 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1176,0 18 0 
+GRAPHIC 1262,0 18 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1181,0 19 0 
+GRAPHIC 1267,0 19 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1186,0 20 0 
+GRAPHIC 1272,0 20 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1191,0 21 0 
+GRAPHIC 1277,0 21 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1201,0 22 0 
+GRAPHIC 1287,0 22 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1196,0 23 0 
+GRAPHIC 1282,0 23 0 
 DESIGN register_file
 VIEW interface
-GRAPHIC 1206,0 24 0 
+GRAPHIC 1292,0 24 0 
 DESIGN register_file
 VIEW interface
 GRAPHIC 1,0 27 0 
