@@ -6,22 +6,22 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 303,0 16 0 
+GRAPHIC 491,0 16 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 308,0 17 0 
+GRAPHIC 496,0 17 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 318,0 18 0 
+GRAPHIC 506,0 18 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 323,0 19 0 
+GRAPHIC 511,0 19 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 328,0 20 0 
+GRAPHIC 516,0 20 0 
 DESIGN data_memory
 VIEW interface
-GRAPHIC 313,0 21 0 
+GRAPHIC 501,0 21 0 
 DESIGN data_memory
 VIEW interface
 GRAPHIC 1,0 24 0 

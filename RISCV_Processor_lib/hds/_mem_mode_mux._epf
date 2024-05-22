@@ -1,0 +1,2 @@
+DEFAULT_FILE atom mem_mode_multiplexer_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

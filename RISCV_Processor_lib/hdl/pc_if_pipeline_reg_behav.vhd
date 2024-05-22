@@ -18,7 +18,9 @@ BEGIN
             pc_if <= (others => '0');
         else 
             if clk'event and clk = '1' then
-                pc_if <= pc_pf;
+                if stall_dc = '0' then
+                    pc_if <= pc_pf;
+                end if;
             end if;
         end if;
     end process;

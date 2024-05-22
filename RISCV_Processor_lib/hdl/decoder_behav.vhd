@@ -15,14 +15,53 @@ use RISCV_Processor_lib.isa_defines.all;
 -- Notes: NOP => ADDI x0 := x0, x0
 
 ARCHITECTURE behav OF decoder IS
+    signal instruction_word_int : word_t;
     signal rs1_addr_int : register_file_t;
     signal rs2_addr_int : register_file_t;
     signal rd_addr_int : register_file_t;
     signal alu_mode_int : alu_mode_t;
     signal imm_to_alu_int : std_logic;
     signal imm_int : word_t;
+    signal mem_mode_dc_int : mem_mode_t; 
+    signal fwd_rs1_dc_int : fwd_select_t;
+    signal fwd_rs2_dc_int : fwd_select_t;
+    signal fwd_store_data_dc_int : std_logic;
+
+    signal rs1_addr_fwd_int : register_file_t;
+    signal rd_addr_fwd_int : register_file_t;
+    signal imm_to_alu_fwd_int : std_logic;
+    signal imm_fwd_int : word_t;
+    signal alu_mode_fwd_int : alu_mode_t;
 BEGIN
-    process(all) is 
+
+    process(all) is
+    begin
+        -- Determine signals for forwarding multiplexers        
+        fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
+        fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
+        --fwd_store_data_dc_int <= determine_store_data_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
+        -- RAL, SAL
+        -- 1. Detect RAL, SAL
+        -- 2. Stall previous pipeline registers
+        -- 3. Insert Nop between e.g. lw and add
+        stall_dc <= '0';
+        fwd_store_data_dc_int <= '0';
+        if mem_mode_ex.memory_access = LOAD and (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) then -- RAL, SAL detected!
+            if rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex then
+                -- Insert NOP_INSTR and stall
+                stall_dc <= '1';
+                rs1_addr_fwd_int <= "00000";
+                rd_addr_fwd_int <= "00000";
+                imm_to_alu_fwd_int <= '1';
+                imm_fwd_int <= (others => '0');
+                alu_mode_fwd_int <= ADD_MODE;
+            end if;
+        end if;
+
+    end process;
+
+
+    process(instruction_word_dc) is 
     begin
         -- Set defaults
         rs1_addr_int <= (others => '0');
@@ -31,28 +70,24 @@ BEGIN
         alu_mode_int <= ADD_MODE;
         imm_to_alu_int <= '0';
         imm_int <= (others => '0');
-        rf_wena_dc <= '0';
-        mem_mode_dc.memory_access <= IDLE;
-        mem_mode_dc.data_width <= WORD;
-        mem_mode_dc.is_signed <= FALSE;
+        mem_mode_dc_int.memory_access <= IDLE;
+        mem_mode_dc_int.data_width <= WORD;
+        mem_mode_dc_int.is_signed <= FALSE;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
             when U_FORMAT_LUI =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_u_format_imm(instruction_word_dc);
                 alu_mode_int <= ADD_MODE;
             when U_FORMAT_AUIPC =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_u_format_imm(instruction_word_dc);
                 alu_mode_int <= ADD_MODE; 
             when J_FORMAT =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_j_format_imm(instruction_word_dc);
                 alu_mode_int <= ADD_MODE;  
@@ -80,7 +115,7 @@ BEGIN
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
+
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when ADD_SUB_INSTR => 
                         if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = ADD_INSTR_FUNCT7 then
@@ -115,46 +150,44 @@ BEGIN
             when I_FORMAT_LOAD =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
-                imm_int <= get_i_format_imm(instruction_word_dc); 
+                imm_int <= get_i_format_imm(instruction_word_dc);
                 
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when LB_INSTR => 
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= LOAD;
-                        mem_mode_dc.data_width <= BYTE;
-                        mem_mode_dc.is_signed <= TRUE;
+                        mem_mode_dc_int.memory_access <= LOAD;
+                        mem_mode_dc_int.data_width <= BYTE;
+                        mem_mode_dc_int.is_signed <= TRUE;
                     when LBU_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= LOAD;
-                        mem_mode_dc.data_width <= BYTE;
-                        mem_mode_dc.is_signed <= FALSE;
+                        mem_mode_dc_int.memory_access <= LOAD;
+                        mem_mode_dc_int.data_width <= BYTE;
+                        mem_mode_dc_int.is_signed <= FALSE;
                     when LH_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= LOAD;
-                        mem_mode_dc.data_width <= HALFWORD;
-                        mem_mode_dc.is_signed <= TRUE;
+                        mem_mode_dc_int.memory_access <= LOAD;
+                        mem_mode_dc_int.data_width <= HALFWORD;
+                        mem_mode_dc_int.is_signed <= TRUE;
                     when LHU_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= LOAD;
-                        mem_mode_dc.data_width <= HALFWORD;
-                        mem_mode_dc.is_signed <= FALSE;
+                        mem_mode_dc_int.memory_access <= LOAD;
+                        mem_mode_dc_int.data_width <= HALFWORD;
+                        mem_mode_dc_int.is_signed <= FALSE;
                     when LW_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= LOAD;
-                        mem_mode_dc.data_width <= WORD;
+                        mem_mode_dc_int.memory_access <= LOAD;
+                        mem_mode_dc_int.data_width <= WORD;
                     when others => null;
                 end case;
             when I_FORMAT_ARITHMETIC => 
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
-                imm_int <= get_i_format_imm(instruction_word_dc);                
-                
+                imm_int <= get_i_format_imm(instruction_word_dc);
+
                 case instruction_word_dc(FUNCT3_RANGE) is 
-                    when ADDI_INSTR => 
+                    when ADDI_INSTR =>
                         alu_mode_int <= ADD_MODE;
                     when SLTI_INSTR => 
                         alu_mode_int <= SLT_MODE;
@@ -184,9 +217,9 @@ BEGIN
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                rf_wena_dc <= '1';
                 imm_to_alu_int <= '1';
                 imm_int <= get_i_format_imm(instruction_word_dc);
+
                 alu_mode_int <= ADD_MODE;   
             when S_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
@@ -197,27 +230,35 @@ BEGIN
                 case instruction_word_dc(FUNCT3_RANGE) is 
                     when SB_INSTR => 
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= STORE;
-                        mem_mode_dc.data_width <= BYTE;
+                        mem_mode_dc_int.memory_access <= STORE;
+                        mem_mode_dc_int.data_width <= BYTE;
                     when SH_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= STORE;
-                        mem_mode_dc.data_width <= HALFWORD;
+                        mem_mode_dc_int.memory_access <= STORE;
+                        mem_mode_dc_int.data_width <= HALFWORD;
                     when SW_INSTR =>
                         alu_mode_int <= ADD_MODE;
-                        mem_mode_dc.memory_access <= STORE;
-                        mem_mode_dc.data_width <= WORD;
+                        mem_mode_dc_int.memory_access <= STORE;
+                        mem_mode_dc_int.data_width <= WORD;
                     when others => null;
                 end case;
             when others => null;
         end case;
     end process;
 
-    rs1_addr <= rs1_addr_int;
-    rs2_addr <= rs2_addr_int;
-    rd_addr_dc <= rd_addr_int;
-    alu_mode_dc <= alu_mode_int;
-    imm_to_alu_dc <= imm_to_alu_int;
-    imm_dc <= imm_int;
+    process(all) is 
+    begin
+    -- Decide here what signals to use: forwarding/stall signal or normal decoder ones
+        rs1_addr <= rs1_addr_int;
+        rs2_addr <= rs2_addr_int;
+        rd_addr_dc <= rd_addr_int;
+        alu_mode_dc <= alu_mode_int;
+        imm_to_alu_dc <= imm_to_alu_int;
+        imm_dc <= imm_int;
+        mem_mode_dc <= mem_mode_dc_int;
+        fwd_rs1_dc <= fwd_rs1_dc_int;
+        fwd_rs2_dc <= fwd_rs2_dc_int;
+        fwd_store_data_dc <= fwd_store_data_dc_int;
+    end process;
 END ARCHITECTURE behav;
 

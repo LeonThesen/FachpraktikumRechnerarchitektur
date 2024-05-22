@@ -1,0 +1,2 @@
+DEFAULT_FILE atom rs2_multiplexer_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

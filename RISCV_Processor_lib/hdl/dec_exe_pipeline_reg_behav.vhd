@@ -15,26 +15,30 @@ BEGIN
     process(clk, res_n) is
     begin
         if res_n = '0' then
-            operand_a <= (others => '0');
+            rs1_ex <= (others => '0');
             rs2_ex <= (others => '0');
             alu_mode_ex <= ADD_MODE;
             rd_addr_ex <= (others => '0');
             imm_to_alu_ex <= '0';
             imm_ex <= (others => '0');
-            rf_wena_ex <= '0';
             mem_mode_ex.memory_access <= IDLE;
             mem_mode_ex.data_width <= WORD;
             mem_mode_ex.is_signed <= FALSE;
+            fwd_rs1_ex <= FROM_EX;
+            fwd_rs2_ex <= FROM_EX;
+            fwd_store_data_ex <= '0';
         else 
             if clk'event and clk = '1' then
-                operand_a <= rs1_dc;
+                rs1_ex <= rs1_dc;
                 rs2_ex <= rs2_dc;
                 alu_mode_ex <= alu_mode_dc;
                 rd_addr_ex <= rd_addr_dc;
                 imm_to_alu_ex <= imm_to_alu_dc;
                 imm_ex <= imm_dc;
-                rf_wena_ex <= rf_wena_dc;
                 mem_mode_ex <= mem_mode_dc;
+                fwd_rs1_ex <= fwd_rs1_dc;
+                fwd_rs2_ex <= fwd_rs2_dc;
+                fwd_store_data_ex <= fwd_store_data_dc;
             end if;
         end if;
     end process;

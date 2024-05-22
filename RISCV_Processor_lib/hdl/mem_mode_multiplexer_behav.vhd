@@ -7,7 +7,7 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
-ARCHITECTURE behav OF mem_mode_multiplexer IS
+ARCHITECTURE behav OF mem_mode_mux IS
 BEGIN
     process(all) is
         

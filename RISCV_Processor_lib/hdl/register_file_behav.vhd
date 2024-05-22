@@ -26,19 +26,19 @@ BEGIN
         else
             if clk'event and clk = '1' then 
                 -- Overwrite register value with write back result;
-                if rf_wena_wb = '1' then
+                if rd_addr_wb /= X0_REG then
                     register_array(to_integer(unsigned(rd_addr_wb))) <= mem_result_wb;
                 end if;
             end if;
         end if;
 
-        -- Protect register_array0 from being overwritten    
+        -- Protect x0 from being overwritten    
         register_array(0) <= (others => '0');
     end process write_port_array;
 
-    read_port_1: process(register_array, rs1_addr, rd_addr_wb, rf_wena_wb, mem_result_wb) is
+    read_port_1: process(register_array, rs1_addr, rd_addr_wb, mem_result_wb) is
     begin
-        if rf_wena_wb = '1' then
+        if rd_addr_wb /= X0_REG then
             if rs1_addr = rd_addr_wb then
                 rs1_dc <= mem_result_wb;
             else
@@ -49,9 +49,9 @@ BEGIN
         end if;
     end process read_port_1;
 
-    read_port_2: process(register_array, rs2_addr, rd_addr_wb, rf_wena_wb, mem_result_wb) is
+    read_port_2: process(register_array, rs2_addr, rd_addr_wb, mem_result_wb) is
     begin
-        if rf_wena_wb = '1' then
+        if rd_addr_wb /= X0_REG then
             if rs2_addr = rd_addr_wb then
                 rs2_dc <= mem_result_wb;
             else
@@ -63,4 +63,3 @@ BEGIN
     end process read_port_2;
 
 END ARCHITECTURE behav;
-

@@ -109,10 +109,13 @@ PACKAGE isa_defines IS
     -- U-Format-Ranges
 
     -- Functions for extracting immediates from instruction word (and shift amount)
-    pure function get_i_format_imm(instruction_word: std_logic_vector) return word_t;
-    pure function get_s_format_imm(instruction_word: std_logic_vector) return word_t;
-    pure function get_b_format_imm(instruction_word: std_logic_vector) return word_t;
-    pure function get_u_format_imm(instruction_word: std_logic_vector) return word_t;
-    pure function get_j_format_imm(instruction_word: std_logic_vector) return word_t;
-    pure function get_shift_amount(instruction_word: std_logic_vector) return word_t;
+    pure function get_i_format_imm(instruction_word: word_t) return word_t;
+    pure function get_s_format_imm(instruction_word: word_t) return word_t;
+    pure function get_b_format_imm(instruction_word: word_t) return word_t;
+    pure function get_u_format_imm(instruction_word: word_t) return word_t;
+    pure function get_j_format_imm(instruction_word: word_t) return word_t;
+    pure function get_shift_amount(instruction_word: word_t) return word_t;
+
+    pure function determine_rs_fwd_signal(rs_addr : register_file_t; rd_addr_ex : register_file_t; rd_addr_mem : register_file_t) return fwd_select_t;
+    --pure function determine_store_data_fwd_signal(rs_addr : register_file_t; rd_addr_ex : register_file_t) return std_logic;
 END isa_defines;

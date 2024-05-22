@@ -18,7 +18,9 @@ BEGIN
             instruction_word_dc <= (others => '0');
         else 
             if clk'event and clk = '1' then
-                instruction_word_dc <= instruction_word_if;
+                if stall_dc = '0' then
+                    instruction_word_dc <= instruction_word_if;
+                end if;
             end if;
         end if;
     end process;

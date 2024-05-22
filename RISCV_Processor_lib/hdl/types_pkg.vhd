@@ -39,7 +39,8 @@ PACKAGE types IS
     );
 
     subtype register_file_t is std_logic_vector(4 downto 0);
+    constant X0_REG : register_file_t := (others => '0');
 
-    subtype forward_select_t is std_logic_vector(1 downto 0);
+    type fwd_select_t is (FROM_WB, FROM_MEM, FROM_EX);
 END types;
 

@@ -6,34 +6,52 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1061,0 16 0 
+GRAPHIC 2116,0 16 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1046,0 17 0 
+GRAPHIC 2126,0 17 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1051,0 18 0 
+GRAPHIC 2136,0 18 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1056,0 19 0 
+GRAPHIC 2141,0 19 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1066,0 20 0 
+GRAPHIC 2086,0 20 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1071,0 21 0 
+GRAPHIC 2091,0 21 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1076,0 22 0 
+GRAPHIC 2096,0 22 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1081,0 23 0 
+GRAPHIC 2101,0 23 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1086,0 24 0 
+GRAPHIC 2106,0 24 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1,0 27 0 
+GRAPHIC 2111,0 25 0 
 DESIGN decoder
 VIEW interface
-GRAPHIC 1,0 28 0 
+GRAPHIC 2121,0 26 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 2131,0 27 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 2146,0 28 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 2151,0 29 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 2156,0 30 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 1,0 33 0 
+DESIGN decoder
+VIEW interface
+GRAPHIC 1,0 34 0 
