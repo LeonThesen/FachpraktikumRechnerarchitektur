@@ -213,7 +213,7 @@ BEGIN
         end case;
     end process decode;
 
-    forwarding: process(rs1_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
+    forwarding: process(rs1_addr_int, rs2_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
         begin
             -- Determine signals for forwarding multiplexers        
             fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
