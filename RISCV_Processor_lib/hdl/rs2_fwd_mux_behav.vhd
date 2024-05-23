@@ -18,7 +18,6 @@ BEGIN
                     rs2_fwd_mux_out <= alu_result_mem;
                 when FROM_WB =>
                     rs2_fwd_mux_out <= mem_result_wb;
-                when others => null;
             end case;
     end process;
 END ARCHITECTURE behav;

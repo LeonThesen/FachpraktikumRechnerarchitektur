@@ -15,7 +15,6 @@ use IEEE.NUMERIC_STD.ALL;
 ARCHITECTURE behav OF alu IS
     signal alu_result_int: word_t;
     signal add_sub_result_int: word_t;
-    signal substract_result_int: word_t;
     signal negative_flag, zero_flag, overflow_flag, carry_flag: std_logic;
 BEGIN
 
@@ -75,7 +74,7 @@ BEGIN
             when SRA_MODE => 
                 alu_result_int <= word_t(shift_right(signed(operand_a), to_integer(unsigned(operand_b))));
             when others =>
-                null;
+                alu_result_int <= (others => '0');
         end case;
     end process;
 

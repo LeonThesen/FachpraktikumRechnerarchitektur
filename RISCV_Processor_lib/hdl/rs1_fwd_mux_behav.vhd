@@ -18,7 +18,6 @@ BEGIN
                 operand_a <= alu_result_mem;
             when FROM_WB =>
                 operand_a <= mem_result_wb;
-            when others => null;
         end case;
     end process;
 END ARCHITECTURE behav;

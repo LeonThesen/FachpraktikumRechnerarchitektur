@@ -26,42 +26,9 @@ ARCHITECTURE behav OF decoder IS
     signal fwd_rs1_dc_int : fwd_select_t;
     signal fwd_rs2_dc_int : fwd_select_t;
     signal fwd_store_data_dc_int : std_logic;
-
-    signal rs1_addr_fwd_int : register_file_t;
-    signal rd_addr_fwd_int : register_file_t;
-    signal imm_to_alu_fwd_int : std_logic;
-    signal imm_fwd_int : word_t;
-    signal alu_mode_fwd_int : alu_mode_t;
 BEGIN
 
-    process(all) is
-    begin
-        -- Determine signals for forwarding multiplexers        
-        fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
-        fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
-        --fwd_store_data_dc_int <= determine_store_data_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
-        -- RAL, SAL
-        -- 1. Detect RAL, SAL
-        -- 2. Stall previous pipeline registers
-        -- 3. Insert Nop between e.g. lw and add
-        stall_dc <= '0';
-        fwd_store_data_dc_int <= '0';
-        if mem_mode_ex.memory_access = LOAD and (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) then -- RAL, SAL detected!
-            if rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex then
-                -- Insert NOP_INSTR and stall
-                stall_dc <= '1';
-                rs1_addr_fwd_int <= "00000";
-                rd_addr_fwd_int <= "00000";
-                imm_to_alu_fwd_int <= '1';
-                imm_fwd_int <= (others => '0');
-                alu_mode_fwd_int <= ADD_MODE;
-            end if;
-        end if;
-
-    end process;
-
-
-    process(instruction_word_dc) is 
+    decode: process(instruction_word_dc) is 
     begin
         -- Set defaults
         rs1_addr_int <= (others => '0');
@@ -116,7 +83,7 @@ BEGIN
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
 
-                case instruction_word_dc(FUNCT3_RANGE) is
+                 case instruction_word_dc(FUNCT3_RANGE) is
                     when ADD_SUB_INSTR => 
                         if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = ADD_INSTR_FUNCT7 then
                             alu_mode_int <= ADD_MODE;
@@ -244,11 +211,29 @@ BEGIN
                 end case;
             when others => null;
         end case;
-    end process;
+    end process decode;
 
-    process(all) is 
+    forwarding: process(rs1_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
+        begin
+            -- Determine signals for forwarding multiplexers        
+            fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
+            fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
+            --fwd_store_data_dc_int <= determine_store_data_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
+            -- RAL, SAL
+            -- 1. Detect RAL, SAL
+            -- 2. Stall previous pipeline registers
+            -- 3. Insert Nop between e.g. lw and add
+            stall_dc <= '0';
+            fwd_store_data_dc_int <= '0'; --TODO: Set this for SAL, it has nothing to do with RAL
+            if mem_mode_ex.memory_access = LOAD and (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) then -- RAL, SAL detected!
+                if rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex then
+                    stall_dc <= '1';
+                end if;
+            end if;
+    end process forwarding;
+
+    set_outputs: process(all) is 
     begin
-    -- Decide here what signals to use: forwarding/stall signal or normal decoder ones
         rs1_addr <= rs1_addr_int;
         rs2_addr <= rs2_addr_int;
         rd_addr_dc <= rd_addr_int;
@@ -259,6 +244,14 @@ BEGIN
         fwd_rs1_dc <= fwd_rs1_dc_int;
         fwd_rs2_dc <= fwd_rs2_dc_int;
         fwd_store_data_dc <= fwd_store_data_dc_int;
-    end process;
+        -- When stalling we have to insert NOP
+        if stall_dc = '1' then
+            alu_mode_dc <= ADD_MODE;
+            rs1_addr <= (others => '0');
+            rd_addr_dc <= (others => '0');
+            imm_to_alu_dc <= '1';
+            imm_dc <= (others => '0');
+        end if;
+    end process set_outputs;
 END ARCHITECTURE behav;
 
