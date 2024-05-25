@@ -15,7 +15,6 @@ use RISCV_Processor_lib.isa_defines.all;
 -- Notes: NOP => ADDI x0 := x0, x0
 
 ARCHITECTURE behav OF decoder IS
-    signal instruction_word_int : word_t;
     signal rs1_addr_int : register_file_t;
     signal rs2_addr_int : register_file_t;
     signal rd_addr_int : register_file_t;
