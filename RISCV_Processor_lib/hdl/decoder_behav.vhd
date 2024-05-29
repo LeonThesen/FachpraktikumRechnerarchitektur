@@ -214,19 +214,33 @@ BEGIN
 
     forwarding: process(rs1_addr_int, rs2_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
         begin
-            -- Determine signals for forwarding multiplexers        
+            stall_dc <= '0';
+            fwd_store_data_dc_int <= '0';
+
+            -- RAW        
             fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
             fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
-            --fwd_store_data_dc_int <= determine_store_data_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
-            -- RAL, SAL
-            -- 1. Detect RAL, SAL
-            -- 2. Stall previous pipeline registers
-            -- 3. Insert Nop between e.g. lw and add
-            stall_dc <= '0';
-            fwd_store_data_dc_int <= '0'; --TODO: Set this for SAL, it has nothing to do with RAL
-            if mem_mode_ex.memory_access = LOAD and (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) then -- RAL, SAL detected!
-                if rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex then
-                    stall_dc <= '1';
+
+            if mem_mode_ex.memory_access = LOAD then      
+                if mem_mode_dc_int.memory_access = STORE then
+                    if rs1_addr_int = rd_addr_ex and rs1_addr_int /= X0_REG then
+                        -- RAL
+                        stall_dc <= '1';
+                        fwd_rs1_dc_int <= FROM_EX;
+                        fwd_rs2_dc_int <= FROM_EX;
+                    elsif rs2_addr_int = rd_addr_ex and rs2_addr_int /= X0_REG then
+                        -- SAL
+                        fwd_store_data_dc_int <= '1';
+                        fwd_rs1_dc_int <= FROM_EX;
+                        fwd_rs2_dc_int <= FROM_EX;
+                    end if;
+                else 
+                    if (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) and (rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex) then
+                        -- RAL
+                        stall_dc <= '1';
+                        fwd_rs1_dc_int <= FROM_EX;
+                        fwd_rs2_dc_int <= FROM_EX;
+                    end if;
                 end if;
             end if;
     end process forwarding;
@@ -250,6 +264,10 @@ BEGIN
             rd_addr_dc <= (others => '0');
             imm_to_alu_dc <= '1';
             imm_dc <= (others => '0');
+            rs2_addr <= (others => '0');
+            mem_mode_dc.memory_access <= IDLE;
+            mem_mode_dc.data_width <= WORD;
+            mem_mode_dc.is_signed <= FALSE;
         end if;
     end process set_outputs;
 END ARCHITECTURE behav;

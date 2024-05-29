@@ -216,7 +216,7 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "date"
-value "05/22/24"
+value "05/29/24"
 )
 (vvPair
 variable "day"
@@ -228,7 +228,7 @@ value "Wednesday"
 )
 (vvPair
 variable "dd"
-value "22"
+value "29"
 )
 (vvPair
 variable "entity_name"
@@ -256,7 +256,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/22/24"
+value "05/29/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -268,7 +268,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:12:41"
+value "12:50:43"
 )
 (vvPair
 variable "group"
@@ -372,7 +372,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "17:12:41"
+value "12:50:43"
 )
 (vvPair
 variable "unit"
@@ -1158,7 +1158,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,36000,40000,36900"
-st "SIGNAL rs2_dc              : word_t"
+st "SIGNAL rs2_dc              : word_t
+"
 )
 )
 *36 (Net
@@ -1176,7 +1177,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,1800,38000,2700"
-st "clk                 : std_logic"
+st "clk                 : std_logic
+"
 )
 )
 *37 (Net
@@ -1194,7 +1196,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,38000,3600"
-st "res_n               : std_logic"
+st "res_n               : std_logic
+"
 )
 )
 *38 (Net
@@ -1212,7 +1215,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,29700,44500,30600"
-st "SIGNAL rd_addr_ex          : register_file_t"
+st "SIGNAL rd_addr_ex          : register_file_t
+"
 )
 )
 *39 (Net
@@ -1230,7 +1234,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,25200,40000,26100"
-st "SIGNAL operand_a           : word_t"
+st "SIGNAL operand_a           : word_t
+"
 )
 )
 *40 (Net
@@ -1248,7 +1253,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,32400,44500,33300"
-st "SIGNAL rs1_addr            : register_file_t"
+st "SIGNAL rs1_addr            : register_file_t
+"
 )
 )
 *41 (Net
@@ -1266,7 +1272,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,7200,40000,8100"
-st "SIGNAL alu_result_mem      : word_t"
+st "SIGNAL alu_result_mem      : word_t
+"
 )
 )
 *42 (Net
@@ -1284,7 +1291,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,4500,42000,5400"
-st "SIGNAL alu_mode_dc         : alu_mode_t"
+st "SIGNAL alu_mode_dc         : alu_mode_t
+"
 )
 )
 *43 (Net
@@ -1302,7 +1310,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,18000,41500,18900"
-st "SIGNAL imm_to_alu_ex       : std_logic"
+st "SIGNAL imm_to_alu_ex       : std_logic
+"
 )
 )
 *44 (Net
@@ -1320,7 +1329,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,31500,44500,32400"
-st "SIGNAL rd_addr_wb          : register_file_t"
+st "SIGNAL rd_addr_wb          : register_file_t
+"
 )
 )
 *45 (Net
@@ -1338,7 +1348,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,5400,42000,6300"
-st "SIGNAL alu_mode_ex         : alu_mode_t"
+st "SIGNAL alu_mode_ex         : alu_mode_t
+"
 )
 )
 *46 (Net
@@ -1356,7 +1367,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,15300,40000,16200"
-st "SIGNAL imm_dc              : word_t"
+st "SIGNAL imm_dc              : word_t
+"
 )
 )
 *47 (Net
@@ -1374,7 +1386,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,6300,40000,7200"
-st "SIGNAL alu_result_ex       : word_t"
+st "SIGNAL alu_result_ex       : word_t
+"
 )
 )
 *48 (Net
@@ -1392,7 +1405,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,17100,41500,18000"
-st "SIGNAL imm_to_alu_dc       : std_logic"
+st "SIGNAL imm_to_alu_dc       : std_logic
+"
 )
 )
 *49 (Net
@@ -1410,7 +1424,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,24300,40000,25200"
-st "SIGNAL mem_result_wb       : word_t"
+st "SIGNAL mem_result_wb       : word_t
+"
 )
 )
 *50 (Net
@@ -1428,7 +1443,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,18900,40000,19800"
-st "SIGNAL instruction_word_dc : word_t"
+st "SIGNAL instruction_word_dc : word_t
+"
 )
 )
 *51 (Net
@@ -1446,7 +1462,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,16200,40000,17100"
-st "SIGNAL imm_ex              : word_t"
+st "SIGNAL imm_ex              : word_t
+"
 )
 )
 *52 (Net
@@ -1464,7 +1481,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,26100,40000,27000"
-st "SIGNAL operand_b           : word_t"
+st "SIGNAL operand_b           : word_t
+"
 )
 )
 *53 (Net
@@ -1482,7 +1500,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,35100,44500,36000"
-st "SIGNAL rs2_addr            : register_file_t"
+st "SIGNAL rs2_addr            : register_file_t
+"
 )
 )
 *54 (Net
@@ -1500,7 +1519,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,28800,44500,29700"
-st "SIGNAL rd_addr_dc          : register_file_t"
+st "SIGNAL rd_addr_dc          : register_file_t
+"
 )
 )
 *55 (Net
@@ -1518,7 +1538,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,30600,44500,31500"
-st "SIGNAL rd_addr_mem         : register_file_t"
+st "SIGNAL rd_addr_mem         : register_file_t
+"
 )
 )
 *56 (Net
@@ -1536,7 +1557,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,19800,40000,20700"
-st "SIGNAL instruction_word_if : word_t"
+st "SIGNAL instruction_word_if : word_t
+"
 )
 )
 *57 (Net
@@ -1554,7 +1576,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,33300,40000,34200"
-st "SIGNAL rs1_dc              : word_t"
+st "SIGNAL rs1_dc              : word_t
+"
 )
 )
 *58 (Blk
@@ -1654,7 +1677,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,27000,51000,27900"
-st "SIGNAL pc_if               : std_logic_vector(7 downto 0)"
+st "SIGNAL pc_if               : std_logic_vector(7 downto 0)
+"
 )
 )
 *63 (Blk
@@ -1754,7 +1778,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,27900,51000,28800"
-st "SIGNAL pc_pf               : std_logic_vector(7 downto 0)"
+st "SIGNAL pc_pf               : std_logic_vector(7 downto 0)
+"
 )
 )
 *68 (Blk
@@ -1853,7 +1878,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,36900,40000,37800"
-st "SIGNAL rs2_ex              : word_t"
+st "SIGNAL rs2_ex              : word_t
+"
 )
 )
 *73 (Blk
@@ -2033,7 +2059,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,8100,40000,9000"
-st "SIGNAL data_memory_result  : word_t"
+st "SIGNAL data_memory_result  : word_t
+"
 )
 )
 *82 (Net
@@ -2051,7 +2078,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,23400,40000,24300"
-st "SIGNAL mem_result_mem      : word_t"
+st "SIGNAL mem_result_mem      : word_t
+"
 )
 )
 *83 (Net
@@ -2069,7 +2097,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,20700,42000,21600"
-st "SIGNAL mem_mode_dc         : mem_mode_t"
+st "SIGNAL mem_mode_dc         : mem_mode_t
+"
 )
 )
 *84 (Net
@@ -2087,7 +2116,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,21600,42000,22500"
-st "SIGNAL mem_mode_ex         : mem_mode_t"
+st "SIGNAL mem_mode_ex         : mem_mode_t
+"
 )
 )
 *85 (Net
@@ -2105,7 +2135,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,22500,42000,23400"
-st "SIGNAL mem_mode_mem        : mem_mode_t"
+st "SIGNAL mem_mode_mem        : mem_mode_t
+"
 )
 )
 *86 (Blk
@@ -2366,7 +2397,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,38700,40000,39600"
-st "SIGNAL rs2_mem             : word_t"
+st "SIGNAL rs2_mem             : word_t
+"
 )
 )
 *99 (Net
@@ -2384,7 +2416,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,40500,40000,41400"
-st "SIGNAL store_data          : word_t"
+st "SIGNAL store_data          : word_t
+"
 )
 )
 *100 (Net
@@ -2402,7 +2435,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,34200,40000,35100"
-st "SIGNAL rs1_ex              : word_t"
+st "SIGNAL rs1_ex              : word_t
+"
 )
 )
 *101 (Net
@@ -2420,7 +2454,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9000,43000,9900"
-st "SIGNAL fwd_rs1_dc          : fwd_select_t"
+st "SIGNAL fwd_rs1_dc          : fwd_select_t
+"
 )
 )
 *102 (Net
@@ -2438,7 +2473,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,10800,43000,11700"
-st "SIGNAL fwd_rs2_dc          : fwd_select_t"
+st "SIGNAL fwd_rs2_dc          : fwd_select_t
+"
 )
 )
 *103 (Net
@@ -2456,7 +2492,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,12600,41500,13500"
-st "SIGNAL fwd_store_data_dc   : std_logic"
+st "SIGNAL fwd_store_data_dc   : std_logic
+"
 )
 )
 *104 (Net
@@ -2474,7 +2511,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,13500,41500,14400"
-st "SIGNAL fwd_store_data_ex   : std_logic"
+st "SIGNAL fwd_store_data_ex   : std_logic
+"
 )
 )
 *105 (Net
@@ -2492,7 +2530,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9900,43000,10800"
-st "SIGNAL fwd_rs1_ex          : fwd_select_t"
+st "SIGNAL fwd_rs1_ex          : fwd_select_t
+"
 )
 )
 *106 (Net
@@ -2510,7 +2549,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,11700,43000,12600"
-st "SIGNAL fwd_rs2_ex          : fwd_select_t"
+st "SIGNAL fwd_rs2_ex          : fwd_select_t
+"
 )
 )
 *107 (Net
@@ -2528,7 +2568,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,37800,40000,38700"
-st "SIGNAL rs2_fwd_mux_out     : word_t"
+st "SIGNAL rs2_fwd_mux_out     : word_t
+"
 )
 )
 *108 (Net
@@ -2546,7 +2587,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,14400,41500,15300"
-st "SIGNAL fwd_store_data_mem  : std_logic"
+st "SIGNAL fwd_store_data_mem  : std_logic
+"
 )
 )
 *109 (Net
@@ -2564,7 +2606,8 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,39600,41500,40500"
-st "SIGNAL stall_dc            : std_logic"
+st "SIGNAL stall_dc            : std_logic
+"
 )
 )
 *110 (Wire
@@ -5632,12 +5675,12 @@ tm "BdCompilerDirectivesTextMgr"
 ]
 associable 1
 )
-windowSize "-4,5,2564,1413"
-viewArea "-7363,46728,140796,124756"
+windowSize "-4,5,2556,1413"
+viewArea "146001,39530,256308,97822"
 cachedDiagramExtent "-12500,0,341000,111000"
 hasePageBreakOrigin 1
 pageBreakOrigin "-69000,0"
-lastUid 3216,0
+lastUid 3529,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
