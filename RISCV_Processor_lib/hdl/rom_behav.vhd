@@ -17,47 +17,23 @@ use RISCV_Processor_lib.types.ALL;
 use RISCV_Processor_lib.isa_defines.ALL;
 
 ARCHITECTURE behav OF rom IS
-
-    constant ROM_SIZE : integer := 2**10;
-    type rom_array is array (0 to ROM_SIZE - 1) of byte_t;
+	constant ROM_WIDTH : integer := 10;
+	subtype ROM_RANGE is natural range (ROM_WIDTH + 1) downto 2;
+    constant ROM_WORD_COUNT : integer := 2**ROM_WIDTH;
+    type rom_array is array (0 to ROM_WORD_COUNT - 1) of word_t;
+	signal instruction_word_little_endian: word_t;
 
     -- Define ROM contents
     constant ROM_CONTENTS : rom_array := (
-		0 => X"13",
-		1 => X"01",
-		2 => X"30",
-		3 => X"00",
-		4 => X"93",
-		5 => X"00",
-		6 => X"60",
-		7 => X"00",
-		8 => X"23",
-		9 => X"20",
-		10 => X"10",
-		11 => X"00",
-		12 => X"03",
-		13 => X"25",
-		14 => X"00",
-		15 => X"00",
-		16 => X"23",
-		17 => X"20",
-		18 => X"a1",
-		19 => X"00",
-		others => X"00");
+		others => X"00000000");
 BEGIN
-    process(clk, res_n)
-    variable instruction_word_little_endian: word_t;
-    begin
-        if res_n = '0' then
-            instruction_word_if <= (others => '0');
-        else 
-            if clk'event and clk = '1' then 
-                -- Read data from ROM based on the address input (--> pc_if)
-                instruction_word_if <= ROM_CONTENTS(to_integer(unsigned(pc_if)) + 3) &
-                                       ROM_CONTENTS(to_integer(unsigned(pc_if)) + 2) &
-                                       ROM_CONTENTS(to_integer(unsigned(pc_if)) + 1) &
-                                       ROM_CONTENTS(to_integer(unsigned(pc_if)) + 0);
-            end if;
-        end if;
-    end process;
+    
+	-- Read data from ROM based on the address input (--> pc_if)
+	instruction_word_little_endian = rom_array(to_integer(unsigned(pc_if(ROM_RANGE))));                
+
+	instruction_word_if <= instruction_word_little_endian(7 downto 0) & 
+						   instruction_word_little_endian(15 downto 8) & 
+						   instruction_word_little_endian(23 downto 16) & 
+						   instruction_word_little_endian(31 downto 24);
+
 END ARCHITECTURE behav;

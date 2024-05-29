@@ -7,12 +7,10 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
+
 library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.all;
 use RISCV_Processor_lib.isa_defines.all;
-
--- RISCV RV32I Instruction Words: 31 downto 0, Opcode: 6 downto 0
--- Notes: NOP => ADDI x0 := x0, x0
 
 ARCHITECTURE behav OF decoder IS
     signal rs1_addr_int : register_file_t;

@@ -41,6 +41,13 @@ PACKAGE types IS
     subtype register_file_t is std_logic_vector(4 downto 0);
     constant X0_REG : register_file_t := (others => '0');
 
-    type fwd_select_t is (FROM_WB, FROM_MEM, FROM_EX);
+    type fwd_select_t is (FROM_WB, FROM_MEM, NO_FORWARDING);
+
+    type flag_t is record
+        negative: boolean;
+        zero: boolean;
+        overflow: boolean;
+        carry: boolean;
+    end record flag_t;
 END types;
 

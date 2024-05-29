@@ -598,3 +598,6 @@ run
 run
 # 0
 # 
+# The connection to HDS has been closed
+# End time: 17:56:29 on May 29,2024, Elapsed time: 5:22:15
+# Errors: 0, Warnings: 15

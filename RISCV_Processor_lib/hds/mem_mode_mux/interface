@@ -27,7 +27,7 @@ appVersion "2022.3 Built on 14 Jul 2022 at 13:56:12"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 15,0
+suid 19,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -70,25 +70,25 @@ tm "EolColHdrMgr"
 port (LogicalPort
 lang 11
 decl (Decl
-n "alu_result_mem"
+n "data_memory_result"
 t "word_t"
-o 7
-suid 12,0
+o 32
+suid 16,0
 )
 )
-uid 275,0
+uid 326,0
 )
 *15 (LogPort
 port (LogicalPort
 lang 11
 decl (Decl
-n "data_memory_result"
+n "ex_out_mem"
 t "word_t"
-o 32
-suid 13,0
+o 7
+suid 17,0
 )
 )
-uid 277,0
+uid 328,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -97,10 +97,10 @@ decl (Decl
 n "mem_mode_mem"
 t "mem_mode_t"
 o 36
-suid 14,0
+suid 18,0
 )
 )
-uid 279,0
+uid 330,0
 )
 *17 (LogPort
 port (LogicalPort
@@ -110,10 +110,10 @@ decl (Decl
 n "mem_result_mem"
 t "word_t"
 o 33
-suid 15,0
+suid 19,0
 )
 )
-uid 281,0
+uid 332,0
 )
 ]
 )
@@ -169,25 +169,25 @@ uid 92,0
 litem &14
 pos 0
 dimension 20
-uid 276,0
+uid 327,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 278,0
+uid 329,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 280,0
+uid 331,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 282,0
+uid 333,0
 )
 ]
 )
@@ -426,11 +426,11 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "SideDataDesignDir"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer/interface.info"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux/interface.info"
 )
 (vvPair
 variable "SideDataUserDir"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer/interface.user"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux/interface.user"
 )
 (vvPair
 variable "SourceDir"
@@ -450,31 +450,31 @@ value "%(unit)_%(view)_config"
 )
 (vvPair
 variable "d"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux"
 )
 (vvPair
 variable "d_logical"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux"
 )
 (vvPair
 variable "date"
-value "05/21/24"
+value "05/29/24"
 )
 (vvPair
 variable "day"
-value "Tue"
+value "Wed"
 )
 (vvPair
 variable "day_long"
-value "Tuesday"
+value "Wednesday"
 )
 (vvPair
 variable "dd"
-value "21"
+value "29"
 )
 (vvPair
 variable "entity_name"
-value "mem_mode_multiplexer"
+value "mem_mode_mux"
 )
 (vvPair
 variable "ext"
@@ -498,7 +498,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/21/24"
+value "05/29/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -506,11 +506,11 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_host"
-value "pc029"
+value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "16:48:37"
+value "17:28:40"
 )
 (vvPair
 variable "group"
@@ -518,7 +518,7 @@ value "st161569"
 )
 (vvPair
 variable "host"
-value "pc029"
+value "pc043"
 )
 (vvPair
 variable "language"
@@ -538,7 +538,7 @@ value "05"
 )
 (vvPair
 variable "module_name"
-value "mem_mode_multiplexer"
+value "mem_mode_mux"
 )
 (vvPair
 variable "month"
@@ -550,11 +550,11 @@ value "May"
 )
 (vvPair
 variable "p"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux/interface"
 )
 (vvPair
 variable "p_logical"
-value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_multiplexer/interface"
+value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hds/mem_mode_mux/interface"
 )
 (vvPair
 variable "package_name"
@@ -614,11 +614,11 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "16:48:37"
+value "17:28:40"
 )
 (vvPair
 variable "unit"
-value "mem_mode_multiplexer"
+value "mem_mode_mux"
 )
 (vvPair
 variable "user"
@@ -649,56 +649,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 255,0
+uid 306,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 256,0
-ro 90
-va (VaSet
-vasetType 1
-fg "0,65535,0"
-)
-xt "291250,73625,292000,74375"
-)
-tg (CPTG
-uid 257,0
-ps "CptPortTextPlaceStrategy"
-stg "VerticalLayoutStrategy"
-f (Text
-uid 258,0
-va (VaSet
-font "courier,8,0"
-)
-xt "293000,73550,300500,74450"
-st "alu_result_mem"
-blo "293000,74250"
-tm "CptPortNameMgr"
-)
-)
-dt (MLText
-uid 259,0
-va (VaSet
-font "courier,8,0"
-)
-xt "44000,1800,63000,2700"
-st "alu_result_mem     : IN     word_t  ;
-"
-)
-thePort (LogicalPort
-lang 11
-decl (Decl
-n "alu_result_mem"
-t "word_t"
-o 7
-suid 12,0
-)
-)
-)
-*61 (CptPort
-uid 260,0
-ps "OnEdgeStrategy"
-shape (Triangle
-uid 261,0
+uid 307,0
 ro 90
 va (VaSet
 vasetType 1
@@ -707,11 +661,11 @@ fg "0,65535,0"
 xt "291250,79625,292000,80375"
 )
 tg (CPTG
-uid 262,0
+uid 308,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 263,0
+uid 309,0
 va (VaSet
 font "courier,8,0"
 )
@@ -722,11 +676,11 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 264,0
+uid 310,0
 va (VaSet
 font "courier,8,0"
 )
-xt "44000,2700,63000,3600"
+xt "44000,1800,63000,2700"
 st "data_memory_result : IN     word_t  ;
 "
 )
@@ -736,15 +690,61 @@ decl (Decl
 n "data_memory_result"
 t "word_t"
 o 32
-suid 13,0
+suid 16,0
+)
+)
+)
+*61 (CptPort
+uid 311,0
+ps "OnEdgeStrategy"
+shape (Triangle
+uid 312,0
+ro 90
+va (VaSet
+vasetType 1
+fg "0,65535,0"
+)
+xt "291250,74625,292000,75375"
+)
+tg (CPTG
+uid 313,0
+ps "CptPortTextPlaceStrategy"
+stg "VerticalLayoutStrategy"
+f (Text
+uid 314,0
+va (VaSet
+font "courier,8,0"
+)
+xt "293000,74550,298500,75450"
+st "ex_out_mem"
+blo "293000,75250"
+tm "CptPortNameMgr"
+)
+)
+dt (MLText
+uid 315,0
+va (VaSet
+font "courier,8,0"
+)
+xt "44000,2700,63000,3600"
+st "ex_out_mem         : IN     word_t  ;
+"
+)
+thePort (LogicalPort
+lang 11
+decl (Decl
+n "ex_out_mem"
+t "word_t"
+o 7
+suid 17,0
 )
 )
 )
 *62 (CptPort
-uid 265,0
+uid 316,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 266,0
+uid 317,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
@@ -752,11 +752,11 @@ fg "0,65535,0"
 xt "298625,80205,299375,80955"
 )
 tg (CPTG
-uid 267,0
+uid 318,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 268,0
+uid 319,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -768,7 +768,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 269,0
+uid 320,0
 va (VaSet
 font "courier,8,0"
 )
@@ -782,15 +782,15 @@ decl (Decl
 n "mem_mode_mem"
 t "mem_mode_t"
 o 36
-suid 14,0
+suid 18,0
 )
 )
 )
 *63 (CptPort
-uid 270,0
+uid 321,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 271,0
+uid 322,0
 ro 90
 va (VaSet
 vasetType 1
@@ -799,11 +799,11 @@ fg "0,65535,0"
 xt "305000,76625,305750,77375"
 )
 tg (CPTG
-uid 272,0
+uid 323,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 273,0
+uid 324,0
 va (VaSet
 font "courier,8,0"
 )
@@ -815,7 +815,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 274,0
+uid 325,0
 va (VaSet
 font "courier,8,0"
 )
@@ -830,7 +830,7 @@ decl (Decl
 n "mem_result_mem"
 t "word_t"
 o 33
-suid 15,0
+suid 19,0
 )
 )
 )
@@ -854,18 +854,18 @@ uid 11,0
 va (VaSet
 font "courier,8,1"
 )
-xt "293250,76100,303250,77000"
+xt "293500,76100,303500,77000"
 st "RISCV_Processor_lib"
-blo "293250,76800"
+blo "293500,76800"
 )
 second (Text
 uid 12,0
 va (VaSet
 font "courier,8,1"
 )
-xt "293250,77000,303750,77900"
-st "mem_mode_multiplexer"
-blo "293250,77700"
+xt "293500,77000,300000,77900"
+st "mem_mode_mux"
+blo "293500,77700"
 )
 )
 gi *64 (GenericInterface
@@ -1205,7 +1205,7 @@ fg "0,0,32768"
 bg "0,0,32768"
 font "courier,8,0"
 )
-xt "32200,49050,42700,49950"
+xt "32200,49050,49200,49950"
 st "
 %library/%unit/%view
 "
@@ -1545,6 +1545,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 282,0
+lastUid 333,0
 activeModelName "Symbol:CDM"
 )
