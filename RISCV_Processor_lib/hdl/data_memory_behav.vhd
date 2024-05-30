@@ -7,7 +7,8 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
-
+library ieee;
+use ieee.numeric_std.all;
 library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.ALL;
 
@@ -21,7 +22,7 @@ ARCHITECTURE behav OF data_memory IS
     signal data_to_be_written: word_t;
     signal write_enable: std_logic_vector(0 to 3);
 BEGIN
-    process (ex_out_mem, store_data) is
+    prepare_write: process (ex_out_mem, store_data) is
     begin
         write_enable <= (others => '0');
 
@@ -46,7 +47,7 @@ BEGIN
                     end if;
             end case;
         end if;
-    end process;
+    end process prepare_write;
 
 
     write: process (clk, res_n) is
@@ -65,45 +66,49 @@ BEGIN
         end if;
     end process write;
 
-
-    -- TODO: continue here
+    -- Memory is byte addressable but we need to able to read word, halfword and byte
     read: process(mem_mode_mem, ex_out_mem, memory_array) is
     variable read_word: word_t;
     variable read_halfword: half_word_t;
     variable read_byte: byte_t;
+    variable index: integer;
     begin
         if mem_mode_mem.memory_access = LOAD then
+            read_word := memory_array(to_integer(unsigned(ex_out_mem(MEMORY_RANGE)))); -- Access is word-aligned
             case mem_mode_mem.data_width is 
                 when BYTE =>                    
-                    read_word := memory_array(to_integer(unsigned(ex_out_mem(MEMORY_RANGE))));
-
-                    read_byte := read_word(to_integer(unsigned(ex_out_mem(1 downto 0))))
+                    -- Extract the byte from the word
+                    index := to_integer(unsigned(ex_out_mem(1 downto 0))); -- 0, 1, 2, 3
+                    read_byte := read_word(index * 8 + 7 downto index * 8);
+                    -- Sign extension
                     if mem_mode_mem.is_signed then
                         data_memory_result <= (7 downto 0 => read_byte, others => read_byte(read_byte'left));
                     else
                         data_memory_result <= (7 downto 0 => read_byte, others => '0');
                     end if;
-
+                    
                 when HALFWORD =>
-                    if to_integer(unsigned(ex_out_mem(0 downto 0))) = 0 then
-                    else
-                    end
+                    if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
+                        report "Error: Unaligned memory access[read]: Trying to read halfword from unaligned address";
+                    end if;
 
-                    read_halfword := memory_array(to_integer(unsigned(ex_out_mem)) + 1) & memory_array(to_integer(unsigned(ex_out_mem)));
+                    -- Extract the halfword from the word
+                    index := to_integer(unsigned(ex_out_mem(1 downto 1))); -- 0, 1
+                    read_halfword := memory_array(16 * index + 15 downto 16*index);
                     if mem_mode_mem.is_signed then
                         data_memory_result <= (15 downto 0 => read_halfword, others => read_halfword(read_halfword'left));
                     else
                         data_memory_result <= (15 downto 0 => read_halfword, others => '0');
                     end if;
-                when WORD =>
-                    if to_integer(unsigned(ex_out_mem(1 downto 0))) = 0 then
-                    else
-                    end
 
-                    data_memory_result <= memory_array(to_integer(unsigned(ex_out_mem)) + 3) &
-                                          memory_array(to_integer(unsigned(ex_out_mem)) + 2) &
-                                          memory_array(to_integer(unsigned(ex_out_mem)) + 1) &
-                                          memory_array(to_integer(unsigned(ex_out_mem)) + 0);
+                when WORD =>
+                    -- TODO: fix this, what is this for?
+                    if to_integer(unsigned(ex_out_mem(1 downto 0))) /= 0 then
+                        report "Error: Unaligned memory access[read]: Trying to read word from unaligned address";
+                    end if;
+
+                    data_memory_result <= read_word;
+
                 when others =>
                     data_memory_result <= (others => '1'); -- TODO: Change this, this is an error case
             end case;
@@ -111,5 +116,4 @@ BEGIN
             data_memory_result <= (others => '1'); -- TODO: Change this, this is an error case
         end if;
     end process read;
-END ARCHITECTURE behav;
-
+END ARCHITECTURE behav

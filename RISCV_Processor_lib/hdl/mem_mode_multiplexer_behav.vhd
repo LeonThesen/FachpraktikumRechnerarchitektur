@@ -10,7 +10,6 @@
 ARCHITECTURE behav OF mem_mode_mux IS
 BEGIN
     process(all) is
-        
     begin
         if mem_mode_mem.memory_access = LOAD then
             mem_result_mem <= data_memory_result;

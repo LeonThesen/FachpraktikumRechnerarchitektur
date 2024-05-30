@@ -9,5 +9,9 @@
 --
 ARCHITECTURE behav OF pc_ex_inc IS
 BEGIN
+    process(all) is 
+    begin
+        pc_ex <= std_logic_vector(unsigned(pc_dc) + 4);
+    end process;
 END ARCHITECTURE behav;
 
