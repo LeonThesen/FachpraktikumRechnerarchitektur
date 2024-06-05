@@ -9,5 +9,6 @@
 --
 ARCHITECTURE behav OF ex_out_mux IS
 BEGIN
+    ex_out_ex <= return_addr when is_return_addr else alu_result_ex;
 END ARCHITECTURE behav;
 

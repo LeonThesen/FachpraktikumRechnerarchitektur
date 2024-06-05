@@ -9,13 +9,6 @@
 --
 ARCHITECTURE behav OF mem_mode_mux IS
 BEGIN
-    process(all) is
-    begin
-        if mem_mode_mem.memory_access = LOAD then
-            mem_result_mem <= data_memory_result;
-        else
-            mem_result_mem <= alu_result_mem;
-        end if;
-    end process;
+    mem_result_mem <= data_memory_result when mem_mode_mem.memory_access = LOAD else ex_out_mem;
 END ARCHITECTURE behav;
 

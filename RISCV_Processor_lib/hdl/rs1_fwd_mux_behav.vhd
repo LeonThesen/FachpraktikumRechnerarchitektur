@@ -12,10 +12,10 @@ BEGIN
     process(all) is
     begin 
         case fwd_rs1_ex is 
-            when FROM_EX => 
+            when NO_FORWARDING => 
                 operand_a <= rs1_ex;
             when FROM_MEM => 
-                operand_a <= alu_result_mem;
+                operand_a <= ex_out_mem;
             when FROM_WB =>
                 operand_a <= mem_result_wb;
         end case;

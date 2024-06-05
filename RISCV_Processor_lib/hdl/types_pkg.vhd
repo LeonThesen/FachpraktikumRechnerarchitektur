@@ -9,12 +9,12 @@
 --
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+
 PACKAGE types IS
     subtype byte_t is std_logic_vector(7 downto 0);
     subtype half_word_t is std_logic_vector(15 downto 0);
     subtype word_t is std_logic_vector(31 downto 0);
     subtype double_word_t is std_logic_vector(63 downto 0);
-    constant ZERO_WORD : word_t := (others => '0');
 
     type memory_access_t is (LOAD, STORE, IDLE);
     type data_width_t is (BYTE, HALFWORD, WORD);
@@ -38,9 +38,21 @@ PACKAGE types IS
         AND_MODE
     );
 
+    type dbpu_mode_t is (
+        NO_BRANCH,
+        JAL,
+        JALR,
+        EQUAL,
+        NOT_EQUAL,
+        LESS_THAN,
+        GREATER_OR_EQUAL,
+        LESS_THAN_UNSIGNED,
+        GREATER_OR_EQUAL_UNSIGNED
+    );
+
     subtype register_file_t is std_logic_vector(4 downto 0);
     constant X0_REG : register_file_t := (others => '0');
-
+    
     type fwd_select_t is (FROM_WB, FROM_MEM, NO_FORWARDING);
 
     type flag_t is record

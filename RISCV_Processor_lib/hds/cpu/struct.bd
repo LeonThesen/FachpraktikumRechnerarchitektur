@@ -279,7 +279,7 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "date"
-value "05/29/24"
+value "06/05/24"
 )
 (vvPair
 variable "day"
@@ -291,7 +291,7 @@ value "Wednesday"
 )
 (vvPair
 variable "dd"
-value "29"
+value "05"
 )
 (vvPair
 variable "entity_name"
@@ -319,7 +319,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/29/24"
+value "06/05/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -331,7 +331,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:56:15"
+value "18:27:56"
 )
 (vvPair
 variable "group"
@@ -350,12 +350,16 @@ variable "library"
 value "RISCV_Processor_lib"
 )
 (vvPair
+variable "library_downstream_HdsLintPlugin"
+value "$HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck"
+)
+(vvPair
 variable "library_downstream_QuestaSimCompiler"
 value "$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim"
 )
 (vvPair
 variable "mm"
-value "05"
+value "06"
 )
 (vvPair
 variable "module_name"
@@ -363,11 +367,11 @@ value "cpu"
 )
 (vvPair
 variable "month"
-value "May"
+value "Jun"
 )
 (vvPair
 variable "month_long"
-value "May"
+value "June"
 )
 (vvPair
 variable "p"
@@ -435,7 +439,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "17:56:15"
+value "18:27:56"
 )
 (vvPair
 variable "unit"
@@ -1675,7 +1679,7 @@ fg "39936,56832,65280"
 lineColor "0,0,32768"
 lineWidth 2
 )
-xt "28000,100000,32000,104000"
+xt "28000,129000,32000,133000"
 )
 oxt "0,0,8000,10000"
 ttg (MlTextGroup
@@ -1688,9 +1692,9 @@ uid 1241,0
 va (VaSet
 font "courier,8,1"
 )
-xt "33000,100650,43000,101550"
+xt "33000,129650,43000,130550"
 st "RISCV_Processor_lib"
-blo "33000,101350"
+blo "33000,130350"
 tm "BdLibraryNameMgr"
 )
 *62 (Text
@@ -1698,9 +1702,9 @@ uid 1242,0
 va (VaSet
 font "courier,8,1"
 )
-xt "33000,101550,36000,102450"
+xt "33000,130550,36000,131450"
 st "pc_inc"
-blo "33000,102250"
+blo "33000,131250"
 tm "BlkNameMgr"
 )
 *63 (Text
@@ -1708,9 +1712,9 @@ uid 1243,0
 va (VaSet
 font "courier,8,1"
 )
-xt "33000,102450,37000,103350"
+xt "33000,131450,37000,132350"
 st "pc_inc_i"
-blo "33000,103150"
+blo "33000,132150"
 tm "InstanceNameMgr"
 )
 ]
@@ -1725,7 +1729,7 @@ uid 1246,0
 va (VaSet
 font "courier,8,0"
 )
-xt "29000,106650,29000,106650"
+xt "29000,135650,29000,135650"
 )
 header ""
 )
@@ -1739,7 +1743,7 @@ va (VaSet
 vasetType 1
 fg "49152,49152,49152"
 )
-xt "28250,102250,29750,103750"
+xt "28250,131250,29750,132750"
 iconName "VhdlFileViewIcon.png"
 iconMaskName "VhdlFileViewIcon.msk"
 ftype 10
@@ -2577,6 +2581,7 @@ st "SIGNAL stall_dc             : boolean"
 *107 (Blk
 uid 3530,0
 shape (Alu
+uid 4043,0
 va (VaSet
 vasetType 1
 fg "39936,56832,65280"
@@ -2675,6 +2680,7 @@ st "SIGNAL pc_dc                : word_t"
 *112 (Blk
 uid 3576,0
 shape (Mux
+uid 4044,0
 va (VaSet
 vasetType 1
 fg "39936,56832,65280"
@@ -2908,6 +2914,7 @@ viewiconposition 0
 *124 (Blk
 uid 3646,0
 shape (Mux
+uid 4045,0
 va (VaSet
 vasetType 1
 fg "39936,56832,65280"
@@ -3087,6 +3094,7 @@ st "SIGNAL return_addr          : word_t"
 *133 (Blk
 uid 3730,0
 shape (Mux
+uid 4046,0
 va (VaSet
 vasetType 1
 fg "39936,56832,65280"
@@ -3221,6 +3229,7 @@ st "SIGNAL dbta                 : word_t"
 *140 (Blk
 uid 3824,0
 shape (Mux
+uid 4047,0
 va (VaSet
 vasetType 1
 fg "39936,56832,65280"
@@ -3393,7 +3402,7 @@ uid 3944,0
 lang 11
 decl (Decl
 n "dbpu_mode_dc"
-t "std_logic"
+t "dbpu_mode_t"
 o 57
 suid 165,0
 )
@@ -3402,8 +3411,8 @@ uid 3945,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,9900,42000,10800"
-st "SIGNAL dbpu_mode_dc         : std_logic"
+xt "22000,9900,43000,10800"
+st "SIGNAL dbpu_mode_dc         : dbpu_mode_t"
 )
 )
 *150 (Net
@@ -3411,7 +3420,7 @@ uid 3958,0
 lang 11
 decl (Decl
 n "dbpu_mode_ex"
-t "std_logic"
+t "dbpu_mode_t"
 o 58
 suid 167,0
 )
@@ -3420,8 +3429,8 @@ uid 3959,0
 va (VaSet
 font "courier,8,0"
 )
-xt "22000,10800,42000,11700"
-st "SIGNAL dbpu_mode_ex         : std_logic"
+xt "22000,10800,43000,11700"
+st "SIGNAL dbpu_mode_ex         : dbpu_mode_t"
 )
 )
 *151 (Net
@@ -4990,7 +4999,7 @@ uid 3551,0
 va (VaSet
 vasetType 1
 )
-xt "29600,96600,30400,97400"
+xt "29600,126600,30400,127400"
 radius 400
 )
 )
@@ -5000,11 +5009,11 @@ uid 1272,0
 va (VaSet
 vasetType 3
 )
-xt "25000,76000,30000,100000"
+xt "25000,76000,30000,129000"
 pts [
 "25000,76000"
 "30000,76000"
-"30000,100000"
+"30000,129000"
 ]
 )
 start &55
@@ -5079,10 +5088,10 @@ uid 1312,0
 va (VaSet
 vasetType 3
 )
-xt "30000,104000,30000,111000"
+xt "30000,133000,30000,139000"
 pts [
-"30000,104000"
-"30000,111000"
+"30000,133000"
+"30000,139000"
 ]
 )
 start &60
@@ -5101,9 +5110,9 @@ ro 90
 va (VaSet
 font "courier,8,0"
 )
-xt "30000,105000,30900,107500"
+xt "30000,134000,30900,136500"
 st "pc_pf"
-blo "30200,105000"
+blo "30200,134000"
 tm "WireNameMgr"
 )
 )
@@ -6486,10 +6495,10 @@ uid 3543,0
 va (VaSet
 vasetType 3
 )
-xt "30000,97000,87000,97000"
+xt "30000,127000,87000,127000"
 pts [
-"30000,97000"
-"87000,97000"
+"30000,127000"
+"87000,127000"
 ]
 )
 start &200
@@ -6508,9 +6517,9 @@ uid 3549,0
 va (VaSet
 font "courier,8,0"
 )
-xt "83000,96100,85500,97000"
+xt "83000,126100,85500,127000"
 st "pc_if"
-blo "83000,96800"
+blo "83000,126800"
 tm "WireNameMgr"
 )
 )
@@ -7692,11 +7701,11 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "-4,5,2556,1413"
-viewArea "241507,32250,413860,123331"
+viewArea "85746,25072,287312,131591"
 cachedDiagramExtent "-13400,0,375000,139400"
 hasePageBreakOrigin 1
 pageBreakOrigin "-69000,0"
-lastUid 4019,0
+lastUid 4431,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
@@ -9501,7 +9510,7 @@ lang 11
 m 4
 decl (Decl
 n "dbpu_mode_dc"
-t "std_logic"
+t "dbpu_mode_t"
 o 57
 suid 165,0
 )
@@ -9514,7 +9523,7 @@ lang 11
 m 4
 decl (Decl
 n "dbpu_mode_ex"
-t "std_logic"
+t "dbpu_mode_t"
 o 58
 suid 167,0
 )

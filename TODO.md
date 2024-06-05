@@ -11,5 +11,6 @@ Vivado Fehlermeldungen:
 [rs2_fwd_mux_behav.vhd]
     - when others entfernen // sonst würden wir ein latch erzeugen
 
-Compiler Flags für GCC:
+Compiler Flags für GCC(riscv64-unknown-elf-gcc):
 -nostdlib -nolibc -nodefaultlibs -nostartfiles -march=rv32i -mabi=ilp32
+

@@ -9,5 +9,6 @@
 --
 ARCHITECTURE behav OF imm_bta_mux IS
 BEGIN
+    imm_or_bta_dc <= bta when is_bta else imm_dc;
 END ARCHITECTURE behav;
 

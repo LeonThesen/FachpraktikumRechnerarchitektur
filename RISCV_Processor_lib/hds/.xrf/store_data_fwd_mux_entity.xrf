@@ -6,16 +6,16 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN store_data_fwd_mux
 VIEW interface
-GRAPHIC 51,0 16 0 
+GRAPHIC 160,0 16 0 
 DESIGN store_data_fwd_mux
 VIEW interface
-GRAPHIC 56,0 17 0 
+GRAPHIC 165,0 17 0 
 DESIGN store_data_fwd_mux
 VIEW interface
-GRAPHIC 61,0 18 0 
+GRAPHIC 170,0 18 0 
 DESIGN store_data_fwd_mux
 VIEW interface
-GRAPHIC 66,0 19 0 
+GRAPHIC 175,0 19 0 
 DESIGN store_data_fwd_mux
 VIEW interface
 GRAPHIC 1,0 22 0 

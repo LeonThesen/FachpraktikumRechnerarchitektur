@@ -13,9 +13,9 @@ use RISCV_Processor_lib.types.ALL;
 ARCHITECTURE behav OF pc_mux IS
 BEGIN
     process(all) is begin
-        if(dbta_valid_ex = '1') then
+        if dbta_valid_ex then
             pc <= dbta;
-        elsif(sbta_valid_dc = '1') then
+        elsif sbta_valid_dc then
             pc <= imm_or_bta_dc;
         else
             pc <= pc_pf;

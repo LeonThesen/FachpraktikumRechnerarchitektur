@@ -9,14 +9,6 @@
 --
 ARCHITECTURE behav OF rs2_mux IS
 BEGIN
-    process(all) is
-        
-    begin
-        if imm_to_alu_ex = '1' then
-            operand_b <= imm_ex;
-        else
-            operand_b <= rs2_fwd_mux_out;
-        end if;
-    end process;
+    operand_b <= imm_or_bta_ex when imm_to_alu_ex else rs2_fwd_mux_out;
 END ARCHITECTURE behav;
 

@@ -19,14 +19,16 @@ BEGIN
             rs2_ex <= (others => '0');
             alu_mode_ex <= ADD_MODE;
             rd_addr_ex <= (others => '0');
-            imm_to_alu_ex <= '0';
-            imm_ex <= (others => '0');
+            imm_to_alu_ex <= false;
+            imm_or_bta_ex <= (others => '0');
             mem_mode_ex.memory_access <= IDLE;
             mem_mode_ex.data_width <= WORD;
             mem_mode_ex.is_signed <= FALSE;
-            fwd_rs1_ex <= FROM_EX;
-            fwd_rs2_ex <= FROM_EX;
-            fwd_store_data_ex <= '0';
+            fwd_rs1_ex <= NO_FORWARDING;
+            fwd_rs2_ex <= NO_FORWARDING;
+            fwd_store_data_ex <= false;
+            pc_ex <= (others => '0');
+            dbpu_mode_ex <= NO_BRANCH;
         else 
             if clk'event and clk = '1' then
                 rs1_ex <= rs1_dc;
@@ -34,11 +36,13 @@ BEGIN
                 alu_mode_ex <= alu_mode_dc;
                 rd_addr_ex <= rd_addr_dc;
                 imm_to_alu_ex <= imm_to_alu_dc;
-                imm_ex <= imm_dc;
+                imm_or_bta_ex <= imm_or_bta_dc;
                 mem_mode_ex <= mem_mode_dc;
                 fwd_rs1_ex <= fwd_rs1_dc;
                 fwd_rs2_ex <= fwd_rs2_dc;
                 fwd_store_data_ex <= fwd_store_data_dc;
+                pc_ex <= pc_dc;
+                dbpu_mode_ex <= dbpu_mode_dc;
             end if;
         end if;
     end process;

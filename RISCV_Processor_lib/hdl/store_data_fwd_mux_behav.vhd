@@ -9,14 +9,6 @@
 --
 ARCHITECTURE behav OF store_data_fwd_mux IS
 BEGIN
-    process(all) is
-        begin 
-            case fwd_store_data_mem is        
-                when '1' =>
-                    store_data <= mem_result_wb;
-                when others =>
-                    store_data <= rs2_mem; 
-            end case;
-    end process;
+    store_data <= mem_result_wb when fwd_store_data_mem else rs2_mem;  
 END ARCHITECTURE behav;
 

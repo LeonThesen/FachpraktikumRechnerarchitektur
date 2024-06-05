@@ -1,3 +1,5 @@
+[DesignChecker]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck
 [QuestaSim]
 RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/questasim
 [hdl]

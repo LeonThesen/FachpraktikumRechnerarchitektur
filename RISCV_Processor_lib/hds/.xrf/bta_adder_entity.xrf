@@ -1,0 +1,21 @@
+DESIGN bta_adder
+VIEW interface
+NO_GRAPHIC 0
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 56,0 16 0 
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 61,0 17 0 
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 51,0 18 0 
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 1,0 21 0 
+DESIGN bta_adder
+VIEW interface
+GRAPHIC 1,0 22 0 

@@ -1,5 +1,5 @@
 # vsim -f hds_args.tmp -no_autoacc -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 12:34:14 on May 29,2024
+# Start time: 16:06:28 on Jun 05,2024
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -9,16 +9,23 @@
 # Loading work.clk_res_gen(behav)#1
 # Loading work.types
 # Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.data_memory(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
 # Loading work.mem_mode_mux(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
 # Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
@@ -29,14 +36,51 @@
 # Loading work.rs2_mux(behav)#1
 # Loading work.store_data_fwd_mux(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-add wave -position end  sim:/top_tb/cpu_i/clk
-add wave -position end  sim:/top_tb/cpu_i/res_n
-add wave -position end  sim:/top_tb/cpu_i/register_file_i/register_array
-add wave -position end  sim:/top_tb/cpu_i/store_data_fwd_mux_i/rs2_mem
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
+add wave -position end  sim:/top_tb/clk
+add wave -position end  sim:/top_tb/res_n
+add wave -position end  sim:/top_tb/cpu_i/data_memory_i/memory_array
+add wave -position 2  sim:/top_tb/cpu_i/register_file_i/register_array
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -53,8 +97,6 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -82,63 +124,77 @@ run
 run
 # 0
 # 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_wb
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-add wave -position 2  sim:/top_tb/cpu_i/alu_i/alu_mode_ex
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-add wave -position 3  sim:/top_tb/cpu_i/decoder_i/instruction_word_dc
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -151,8 +207,6 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -175,14 +229,71 @@ run
 run
 # 0
 # 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/rom_i/instruction_word_rom
 add wave -position 3  sim:/top_tb/cpu_i/fwd_rs1_dc
 add wave -position 4  sim:/top_tb/cpu_i/fwd_rs2_dc
-add wave -position 5  sim:/top_tb/cpu_i/fwd_store_data_dc
+add wave -position 5  sim:/top_tb/cpu_i/imm_to_alu_dc
+add wave -position 6  sim:/top_tb/cpu_i/is_return_addr
+add wave -position 3  sim:/top_tb/cpu_i/instruction_word_dc
+add wave -position 7  sim:/top_tb/cpu_i/mem_mode_dc
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -197,6 +308,343 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position 3  sim:/top_tb/cpu_i/instruction_word_if
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/sbta_valid_dc
+add wave -position end  sim:/top_tb/cpu_i/dbta_valid_ex
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# ** Note: Error: Unaligned memory access[write]: Trying to write word into unaligned address
+#    Time: 150 ns  Iteration: 2  Instance: /top_tb/cpu_i/data_memory_i
+# ** Note: Error: Unaligned memory access[write]: Trying to write word into unaligned address
+#    Time: 150 ns  Iteration: 3  Instance: /top_tb/cpu_i/data_memory_i
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position 10  sim:/top_tb/cpu_i/data_memory_i/ex_out_mem
+add wave -position 2  sim:/top_tb/cpu_i/data_memory_i/ex_out_mem
+add wave -position 3  sim:/top_tb/cpu_i/data_memory_i/mem_mode_mem
+add wave -position 4  sim:/top_tb/cpu_i/data_memory_i/store_data
+add wave -position 2  sim:/top_tb/cpu_i/instruction_word_dc
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# ** Note: Error: Unaligned memory access[write]: Trying to write word into unaligned address
+#    Time: 150 ns  Iteration: 2  Instance: /top_tb/cpu_i/data_memory_i
+# ** Note: Error: Unaligned memory access[write]: Trying to write word into unaligned address
+#    Time: 150 ns  Iteration: 3  Instance: /top_tb/cpu_i/data_memory_i
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -231,16 +679,23 @@ restart -force
 # Loading work.clk_res_gen(behav)#1
 # Loading work.types
 # Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.data_memory(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
 # Loading work.mem_mode_mux(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
 # Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
@@ -252,20 +707,20 @@ restart -force
 # Loading work.store_data_fwd_mux(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -291,12 +746,15 @@ run
 run
 # 0
 # 
-add wave -position end  sim:/top_tb/cpu_i/data_memory_i/memory_array
+add wave -position 6  sim:/top_tb/cpu_i/data_memory_i/byte_enable
+add wave -position 7  sim:/top_tb/cpu_i/data_memory_i/data_to_be_written
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -311,6 +769,80 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -336,60 +868,1300 @@ run
 run
 # 0
 # 
+run
+# 0
+# 
+restart
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Fatal: (vsim-3420) Array lengths do not match. Left is 8 (7 downto 0). Right is 1 (24 downto 24).
+#    Time: 0 ns  Iteration: 0  Process: /top_tb/cpu_i/data_memory_i/read File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd
+# Fatal error in Process read at /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd line 89
+# 
+# HDL call sequence:
+# Stopped at /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd 89 Process read
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd 89 Process read
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd 89 Process read
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd 89 Process read
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position 3  sim:/top_tb/cpu_i/dbpu_i/alu_flags
+add wave -position 4  sim:/top_tb/cpu_i/dbpu_i/dbpu_mode_ex
+add wave -position 4  sim:/top_tb/cpu_i/dbpu_i/alu_result_ex
+add wave -position 6  sim:/top_tb/cpu_i/dbpu_i/imm_or_bta_ex
+add wave -position 7  sim:/top_tb/cpu_i/dbpu_i/dbta
+add wave -position 8  sim:/top_tb/cpu_i/dbpu_i/dbta_valid_ex
+add wave -position 9  sim:/top_tb/cpu_i/dbpu_i/is_return_addr
 # Causality operation skipped due to absence of debug database file
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.data_memory(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.isa_defines(body)
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.register_file(behav)#1
-# Loading work.rom(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 restart
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
@@ -412,42 +2184,39 @@ run
 run
 # 0
 # 
-add wave -position 6  sim:/top_tb/cpu_i/decoder_i/stall_dc
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt2
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -459,7 +2228,6 @@ run
 # 
 # hds_restart
 restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -469,16 +2237,23 @@ restart -force
 # Loading work.clk_res_gen(behav)#1
 # Loading work.types
 # Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.data_memory(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
 # Loading work.mem_mode_mux(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
 # Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
@@ -489,10 +2264,140 @@ restart -force
 # Loading work.rs2_mux(behav)#1
 # Loading work.store_data_fwd_mux(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+add wave -position end  sim:/top_tb/cpu_i/alu_i/operand_a
+add wave -position end  sim:/top_tb/cpu_i/alu_i/operand_b
+add wave -position end  sim:/top_tb/cpu_i/alu_i/alu_flags
+add wave -position end  sim:/top_tb/cpu_i/alu_i/alu_result_ex
 restart
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -509,8 +2414,6 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -523,6 +2426,30 @@ run
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -531,7 +2458,6 @@ run
 # 
 # hds_restart
 restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-3813) Design is being optimized due to module recompilation...
 # Loading std.standard
 # Loading std.textio(body)
@@ -541,16 +2467,23 @@ restart -force
 # Loading work.clk_res_gen(behav)#1
 # Loading work.types
 # Loading work.cpu(struct)#1
-# Loading work.alu(behav)#1
-# Loading work.data_memory(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
 # Loading work.decoder(behav)#1
 # Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
 # Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
 # Loading work.mem_mode_mux(behav)#1
 # Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
 # Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
 # Loading work.pf_if_pipeline_reg(behav)#1
 # Loading ieee.std_logic_arith(body)
 # Loading ieee.std_logic_unsigned(body)
@@ -562,6 +2495,8 @@ restart -force
 # Loading work.store_data_fwd_mux(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -578,6 +2513,48 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/alu_i/alu_mode_ex
+run
+# 0
+# 
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -592,6 +2569,408 @@ run
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+add wave -position end  sim:/top_tb/cpu_i/alu_i/add_sub_result_int
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+restart
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# hds_restart
+restart -force
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.types
+# Loading work.cpu(struct)#1
+# Loading work.isa_defines(body)
+# Loading work.alu(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.register_file(behav)#1
+# Loading work.rom(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
+run
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/rom_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
+#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -599,5 +2978,5 @@ run
 # 0
 # 
 # The connection to HDS has been closed
-# End time: 17:56:29 on May 29,2024, Elapsed time: 5:22:15
-# Errors: 0, Warnings: 15
+# End time: 18:28:22 on Jun 05,2024, Elapsed time: 2:21:54
+# Errors: 0, Warnings: 0

@@ -6,19 +6,19 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN rs2_fwd_mux
 VIEW interface
-GRAPHIC 51,0 16 0 
+GRAPHIC 167,0 16 0 
 DESIGN rs2_fwd_mux
 VIEW interface
-GRAPHIC 56,0 17 0 
+GRAPHIC 172,0 17 0 
 DESIGN rs2_fwd_mux
 VIEW interface
-GRAPHIC 61,0 18 0 
+GRAPHIC 177,0 18 0 
 DESIGN rs2_fwd_mux
 VIEW interface
-GRAPHIC 66,0 19 0 
+GRAPHIC 182,0 19 0 
 DESIGN rs2_fwd_mux
 VIEW interface
-GRAPHIC 71,0 20 0 
+GRAPHIC 187,0 20 0 
 DESIGN rs2_fwd_mux
 VIEW interface
 GRAPHIC 1,0 23 0 

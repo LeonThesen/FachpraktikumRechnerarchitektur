@@ -20,8 +20,9 @@ BEGIN
             pc_dc <= (others => '0');
         else 
             if clk'event and clk = '1' then
-                if stall_dc = '0' then
+                if not stall_dc then
                     instruction_word_dc <= instruction_word_if;
+                    pc_dc <= pc_if;
                 end if;
             end if;
         end if;

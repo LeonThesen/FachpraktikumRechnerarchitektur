@@ -17,12 +17,15 @@ ARCHITECTURE behav OF decoder IS
     signal rs2_addr_int : register_file_t;
     signal rd_addr_int : register_file_t;
     signal alu_mode_int : alu_mode_t;
-    signal imm_to_alu_int : std_logic;
+    signal imm_to_alu_int : boolean;
     signal imm_int : word_t;
     signal mem_mode_dc_int : mem_mode_t; 
     signal fwd_rs1_dc_int : fwd_select_t;
     signal fwd_rs2_dc_int : fwd_select_t;
-    signal fwd_store_data_dc_int : std_logic;
+    signal fwd_store_data_dc_int : boolean;
+    signal is_bta_int : boolean;
+    signal sbta_valid_dc_int : boolean;
+    signal dbpu_mode_int : dbpu_mode_t;
 BEGIN
 
     decode: process(instruction_word_dc) is 
@@ -32,48 +35,53 @@ BEGIN
         rs2_addr_int <= (others => '0');
         rd_addr_int <= (others => '0');
         alu_mode_int <= ADD_MODE;
-        imm_to_alu_int <= '0';
+        imm_to_alu_int <= false;
         imm_int <= (others => '0');
         mem_mode_dc_int.memory_access <= IDLE;
         mem_mode_dc_int.data_width <= WORD;
         mem_mode_dc_int.is_signed <= FALSE;
+        is_bta_int <= false;
+        sbta_valid_dc_int <= false;
+        dbpu_mode_int <= NO_BRANCH;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
             when U_FORMAT_LUI =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_u_format_imm(instruction_word_dc);
-                alu_mode_int <= ADD_MODE;
             when U_FORMAT_AUIPC =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_u_format_imm(instruction_word_dc);
-                alu_mode_int <= ADD_MODE; 
+                is_bta_int <= true;
             when J_FORMAT =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
                 imm_int <= get_j_format_imm(instruction_word_dc);
-                alu_mode_int <= ADD_MODE;  
+                is_bta_int <= true;  
+                sbta_valid_dc_int <= true;
+                dbpu_mode_int <= JAL;
             when B_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
-                imm_to_alu_int <= '1';
                 imm_int <= get_b_format_imm(instruction_word_dc);
+                is_bta_int <= true;
+                alu_mode_int <= SUB_MODE;
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when BEQ_INSTR =>
-                        alu_mode_int <= ADD_MODE;
+                        dbpu_mode_int <= EQUAL;
                     when BNE_INSTR =>
-                        alu_mode_int <= ADD_MODE;
+                        dbpu_mode_int <= NOT_EQUAL;
                     when BLT_INSTR =>
-                        alu_mode_int <= ADD_MODE;
+                        dbpu_mode_int <= LESS_THAN;
                     when BGE_INSTR =>
-                        alu_mode_int <= ADD_MODE;
+                        dbpu_mode_int <= GREATER_OR_EQUAL;
                     when BLTU_INSTR =>
-                        alu_mode_int <= ADD_MODE;
+                        dbpu_mode_int <= LESS_THAN_UNSIGNED;
                     when BGEU_INSTR =>
-                        alu_mode_int <= ADD_MODE;
-                    when others => null;
+                        dbpu_mode_int <= GREATER_OR_EQUAL_UNSIGNED;
+                    when others => 
+                        dbpu_mode_int <= NO_BRANCH;
                 end case;
             when R_FORMAT => 
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
@@ -114,7 +122,7 @@ BEGIN
             when I_FORMAT_LOAD =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_i_format_imm(instruction_word_dc);
                 
                 case instruction_word_dc(FUNCT3_RANGE) is
@@ -147,7 +155,7 @@ BEGIN
             when I_FORMAT_ARITHMETIC => 
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_i_format_imm(instruction_word_dc);
 
                 case instruction_word_dc(FUNCT3_RANGE) is 
@@ -179,16 +187,14 @@ BEGIN
                 end case;
             when I_FORMAT_JUMP =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
-                rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_i_format_imm(instruction_word_dc);
-
-                alu_mode_int <= ADD_MODE;   
+                dbpu_mode_int <= JALR;
             when S_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
-                imm_to_alu_int <= '1';
+                imm_to_alu_int <= true;
                 imm_int <= get_s_format_imm(instruction_word_dc);
                 
                 case instruction_word_dc(FUNCT3_RANGE) is 
@@ -212,8 +218,8 @@ BEGIN
 
     forwarding: process(rs1_addr_int, rs2_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
         begin
-            stall_dc <= '0';
-            fwd_store_data_dc_int <= '0';
+            stall_dc <= false;
+            fwd_store_data_dc_int <= false;
 
             -- RAW        
             fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
@@ -223,21 +229,21 @@ BEGIN
                 if mem_mode_dc_int.memory_access = STORE then
                     if rs1_addr_int = rd_addr_ex and rs1_addr_int /= X0_REG then
                         -- RAL
-                        stall_dc <= '1';
-                        fwd_rs1_dc_int <= FROM_EX;
-                        fwd_rs2_dc_int <= FROM_EX;
+                        stall_dc <= true;
+                        fwd_rs1_dc_int <= NO_FORWARDING;
+                        fwd_rs2_dc_int <= NO_FORWARDING;
                     elsif rs2_addr_int = rd_addr_ex and rs2_addr_int /= X0_REG then
                         -- SAL
-                        fwd_store_data_dc_int <= '1';
-                        fwd_rs1_dc_int <= FROM_EX;
-                        fwd_rs2_dc_int <= FROM_EX;
+                        fwd_store_data_dc_int <= true;
+                        fwd_rs1_dc_int <= NO_FORWARDING;
+                        fwd_rs2_dc_int <= NO_FORWARDING;
                     end if;
                 else 
                     if (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) and (rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex) then
                         -- RAL
-                        stall_dc <= '1';
-                        fwd_rs1_dc_int <= FROM_EX;
-                        fwd_rs2_dc_int <= FROM_EX;
+                        stall_dc <= true;
+                        fwd_rs1_dc_int <= NO_FORWARDING;
+                        fwd_rs2_dc_int <= NO_FORWARDING;
                     end if;
                 end if;
             end if;
@@ -255,12 +261,16 @@ BEGIN
         fwd_rs1_dc <= fwd_rs1_dc_int;
         fwd_rs2_dc <= fwd_rs2_dc_int;
         fwd_store_data_dc <= fwd_store_data_dc_int;
-        -- When stalling we have to insert NOP
-        if stall_dc = '1' then
+        is_bta <= is_bta_int;
+        sbta_valid_dc <= sbta_valid_dc_int;
+        dbpu_mode_dc <= dbpu_mode_int;
+
+        -- When stalling or jumping we have to kill the current instruction by insertin a NOP
+        if stall_dc or dbta_valid_ex then
             alu_mode_dc <= ADD_MODE;
             rs1_addr <= (others => '0');
             rd_addr_dc <= (others => '0');
-            imm_to_alu_dc <= '1';
+            imm_to_alu_dc <= true;
             imm_dc <= (others => '0');
             rs2_addr <= (others => '0');
             mem_mode_dc.memory_access <= IDLE;

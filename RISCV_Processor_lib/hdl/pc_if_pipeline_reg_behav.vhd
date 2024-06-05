@@ -18,7 +18,7 @@ BEGIN
             pc_if <= (others => '0');
         else 
             if clk'event and clk = '1' then
-                if stall_dc = '0' then
+                if not stall_dc then
                     pc_if <= pc;
                 end if;
             end if;

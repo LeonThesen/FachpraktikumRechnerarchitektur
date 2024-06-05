@@ -100,14 +100,13 @@ PACKAGE isa_defines IS
     subtype RS1_RANGE is natural range 19 downto 15;
     subtype RD_RANGE is natural range 11 downto 7;
     subtype FUNCT3_RANGE is natural range 14 downto 12;
-
-    -- R-Format-Ranges
     subtype R_FORMAT_FUNCT7_RANGE is natural range 31 downto 25;
-    -- I-Format-Ranges
     subtype I_FORMAT_FUNCT7_RANGE is natural range 31 downto 25;
-    -- B-Format-Ranges
-    -- U-Format-Ranges
 
+    -- Constants
+    constant NOP_INSTR : word_t := X"00000013";
+    constant ZERO_WORD : word_t := (others => '0');
+    
     -- Functions for extracting immediates from instruction word (and shift amount)
     pure function get_i_format_imm(instruction_word: word_t) return word_t;
     pure function get_s_format_imm(instruction_word: word_t) return word_t;
@@ -117,5 +116,4 @@ PACKAGE isa_defines IS
     pure function get_shift_amount(instruction_word: word_t) return word_t;
 
     pure function determine_rs_fwd_signal(rs_addr : register_file_t; rd_addr_ex : register_file_t; rd_addr_mem : register_file_t) return fwd_select_t;
-    --pure function determine_store_data_fwd_signal(rs_addr : register_file_t; rd_addr_ex : register_file_t) return std_logic;
 END isa_defines;
