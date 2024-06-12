@@ -6,16 +6,16 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN bta_adder
 VIEW interface
-GRAPHIC 56,0 16 0 
+GRAPHIC 202,0 19 0 
 DESIGN bta_adder
 VIEW interface
-GRAPHIC 61,0 17 0 
+GRAPHIC 207,0 20 0 
 DESIGN bta_adder
 VIEW interface
-GRAPHIC 51,0 18 0 
+GRAPHIC 197,0 21 0 
 DESIGN bta_adder
 VIEW interface
-GRAPHIC 1,0 21 0 
+GRAPHIC 1,0 24 0 
 DESIGN bta_adder
 VIEW interface
-GRAPHIC 1,0 22 0 
+GRAPHIC 1,0 25 0 

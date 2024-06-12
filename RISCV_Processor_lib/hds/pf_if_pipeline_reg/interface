@@ -16,10 +16,20 @@ library "RISCV_Processor_lib"
 unitName "types"
 itemName "ALL"
 )
+(DmPackageRef
+library "RISCV_Processor_lib"
+unitName "isa_defines"
+itemName "ALL"
+)
+(DmPackageRef
+library "altera_mf"
+unitName "altera_mf_components"
+)
 ]
 libraryRefs [
 "ieee"
 "RISCV_Processor_lib"
+"altera_mf"
 ]
 )
 version "27.1"
@@ -27,7 +37,7 @@ appVersion "2022.3 Built on 14 Jul 2022 at 13:56:12"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 46,0
+suid 56,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -73,10 +83,10 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 42,0
+suid 52,0
 )
 )
-uid 696,0
+uid 812,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -85,10 +95,10 @@ decl (Decl
 n "pc"
 t "word_t"
 o 50
-suid 43,0
+suid 53,0
 )
 )
-uid 698,0
+uid 814,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -98,10 +108,10 @@ decl (Decl
 n "pc_if"
 t "word_t"
 o 3
-suid 44,0
+suid 54,0
 )
 )
-uid 700,0
+uid 816,0
 )
 *17 (LogPort
 port (LogicalPort
@@ -110,10 +120,10 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 45,0
+suid 55,0
 )
 )
-uid 702,0
+uid 818,0
 )
 *18 (LogPort
 port (LogicalPort
@@ -122,10 +132,10 @@ decl (Decl
 n "stall_dc"
 t "boolean"
 o 43
-suid 46,0
+suid 56,0
 )
 )
-uid 704,0
+uid 820,0
 )
 ]
 )
@@ -181,31 +191,31 @@ uid 78,0
 litem &14
 pos 0
 dimension 20
-uid 697,0
+uid 813,0
 )
 *25 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 699,0
+uid 815,0
 )
 *26 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 701,0
+uid 817,0
 )
 *27 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 703,0
+uid 819,0
 )
 *28 (MRCItem
 litem &18
 pos 4
 dimension 20
-uid 705,0
+uid 821,0
 )
 ]
 )
@@ -476,7 +486,7 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "date"
-value "05/29/24"
+value "06/12/24"
 )
 (vvPair
 variable "day"
@@ -488,7 +498,7 @@ value "Wednesday"
 )
 (vvPair
 variable "dd"
-value "29"
+value "12"
 )
 (vvPair
 variable "entity_name"
@@ -516,7 +526,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/29/24"
+value "06/12/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -528,7 +538,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:44:33"
+value "18:34:21"
 )
 (vvPair
 variable "group"
@@ -547,12 +557,16 @@ variable "library"
 value "RISCV_Processor_lib"
 )
 (vvPair
+variable "library_downstream_HdsLintPlugin"
+value "$HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck"
+)
+(vvPair
 variable "library_downstream_QuestaSimCompiler"
 value "$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim"
 )
 (vvPair
 variable "mm"
-value "05"
+value "06"
 )
 (vvPair
 variable "module_name"
@@ -560,11 +574,11 @@ value "pf_if_pipeline_reg"
 )
 (vvPair
 variable "month"
-value "May"
+value "Jun"
 )
 (vvPair
 variable "month_long"
-value "May"
+value "June"
 )
 (vvPair
 variable "p"
@@ -632,7 +646,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "17:44:33"
+value "18:34:21"
 )
 (vvPair
 variable "unit"
@@ -667,10 +681,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *62 (CptPort
-uid 671,0
+uid 787,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 672,0
+uid 788,0
 ro 90
 va (VaSet
 vasetType 1
@@ -679,11 +693,11 @@ fg "0,65535,0"
 xt "14250,8625,15000,9375"
 )
 tg (CPTG
-uid 673,0
+uid 789,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 674,0
+uid 790,0
 va (VaSet
 font "courier,8,0"
 )
@@ -694,7 +708,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 675,0
+uid 791,0
 va (VaSet
 font "courier,8,0"
 )
@@ -708,15 +722,15 @@ decl (Decl
 n "clk"
 t "std_logic"
 o 1
-suid 42,0
+suid 52,0
 )
 )
 )
 *63 (CptPort
-uid 676,0
+uid 792,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 677,0
+uid 793,0
 ro 90
 va (VaSet
 vasetType 1
@@ -725,11 +739,11 @@ fg "0,65535,0"
 xt "14250,21625,15000,22375"
 )
 tg (CPTG
-uid 678,0
+uid 794,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 679,0
+uid 795,0
 va (VaSet
 font "courier,8,0"
 )
@@ -740,7 +754,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 680,0
+uid 796,0
 va (VaSet
 font "courier,8,0"
 )
@@ -754,15 +768,15 @@ decl (Decl
 n "pc"
 t "word_t"
 o 50
-suid 43,0
+suid 53,0
 )
 )
 )
 *64 (CptPort
-uid 681,0
+uid 797,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 682,0
+uid 798,0
 ro 90
 va (VaSet
 vasetType 1
@@ -771,11 +785,11 @@ fg "0,65535,0"
 xt "19000,21625,19750,22375"
 )
 tg (CPTG
-uid 683,0
+uid 799,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 684,0
+uid 800,0
 va (VaSet
 font "courier,8,0"
 )
@@ -787,7 +801,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 685,0
+uid 801,0
 va (VaSet
 font "courier,8,0"
 )
@@ -802,15 +816,15 @@ decl (Decl
 n "pc_if"
 t "word_t"
 o 3
-suid 44,0
+suid 54,0
 )
 )
 )
 *65 (CptPort
-uid 686,0
+uid 802,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 687,0
+uid 803,0
 ro 90
 va (VaSet
 vasetType 1
@@ -819,11 +833,11 @@ fg "0,65535,0"
 xt "14250,9625,15000,10375"
 )
 tg (CPTG
-uid 688,0
+uid 804,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 689,0
+uid 805,0
 va (VaSet
 font "courier,8,0"
 )
@@ -834,7 +848,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 690,0
+uid 806,0
 va (VaSet
 font "courier,8,0"
 )
@@ -848,15 +862,15 @@ decl (Decl
 n "res_n"
 t "std_logic"
 o 2
-suid 45,0
+suid 55,0
 )
 )
 )
 *66 (CptPort
-uid 691,0
+uid 807,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 692,0
+uid 808,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
@@ -864,11 +878,11 @@ fg "0,65535,0"
 xt "16625,77000,17375,77750"
 )
 tg (CPTG
-uid 693,0
+uid 809,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 694,0
+uid 810,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -880,7 +894,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 695,0
+uid 811,0
 va (VaSet
 font "courier,8,0"
 )
@@ -894,7 +908,7 @@ decl (Decl
 n "stall_dc"
 t "boolean"
 o 43
-suid 46,0
+suid 56,0
 )
 )
 )
@@ -1326,12 +1340,15 @@ uid 50,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,17500,5400"
+xt "0,900,20500,8100"
 st "LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 LIBRARY RISCV_Processor_lib;
-USE RISCV_Processor_lib.types.ALL;"
+USE RISCV_Processor_lib.types.ALL;
+USE RISCV_Processor_lib.isa_defines.ALL;
+LIBRARY altera_mf;
+USE altera_mf.altera_mf_components.all;"
 tm "PackageList"
 )
 ]
@@ -1610,6 +1627,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 705,0
+lastUid 821,0
 activeModelName "Symbol:CDM"
 )

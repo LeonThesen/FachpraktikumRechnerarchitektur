@@ -16,10 +16,20 @@ library "RISCV_Processor_lib"
 unitName "types"
 itemName "ALL"
 )
+(DmPackageRef
+library "RISCV_Processor_lib"
+unitName "isa_defines"
+itemName "ALL"
+)
+(DmPackageRef
+library "altera_mf"
+unitName "altera_mf_components"
+)
 ]
 libraryRefs [
 "ieee"
 "RISCV_Processor_lib"
+"altera_mf"
 ]
 )
 version "27.1"
@@ -27,7 +37,7 @@ appVersion "2022.3 Built on 14 Jul 2022 at 13:56:12"
 model (Symbol
 commonDM (CommonDM
 ldm (LogicalDM
-suid 8,0
+suid 16,0
 usingSuid 1
 emptyRow *1 (LEmptyRow
 )
@@ -73,10 +83,10 @@ decl (Decl
 n "bta"
 t "word_t"
 o 45
-suid 5,0
+suid 13,0
 )
 )
-uid 180,0
+uid 282,0
 )
 *15 (LogPort
 port (LogicalPort
@@ -85,10 +95,10 @@ decl (Decl
 n "imm_dc"
 t "word_t"
 o 8
-suid 6,0
+suid 14,0
 )
 )
-uid 182,0
+uid 284,0
 )
 *16 (LogPort
 port (LogicalPort
@@ -98,10 +108,10 @@ decl (Decl
 n "imm_or_bta_dc"
 t "word_t"
 o 46
-suid 7,0
+suid 15,0
 )
 )
-uid 184,0
+uid 286,0
 )
 *17 (LogPort
 port (LogicalPort
@@ -110,10 +120,10 @@ decl (Decl
 n "is_bta"
 t "boolean"
 o 55
-suid 8,0
+suid 16,0
 )
 )
-uid 186,0
+uid 288,0
 )
 ]
 )
@@ -169,25 +179,25 @@ uid 99,0
 litem &14
 pos 0
 dimension 20
-uid 181,0
+uid 283,0
 )
 *24 (MRCItem
 litem &15
 pos 1
 dimension 20
-uid 183,0
+uid 285,0
 )
 *25 (MRCItem
 litem &16
 pos 2
 dimension 20
-uid 185,0
+uid 287,0
 )
 *26 (MRCItem
 litem &17
 pos 3
 dimension 20
-uid 187,0
+uid 289,0
 )
 ]
 )
@@ -458,7 +468,7 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "date"
-value "05/29/24"
+value "06/12/24"
 )
 (vvPair
 variable "day"
@@ -470,7 +480,7 @@ value "Wednesday"
 )
 (vvPair
 variable "dd"
-value "29"
+value "12"
 )
 (vvPair
 variable "entity_name"
@@ -498,7 +508,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "05/29/24"
+value "06/12/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -510,7 +520,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "17:44:43"
+value "18:34:21"
 )
 (vvPair
 variable "group"
@@ -529,12 +539,16 @@ variable "library"
 value "RISCV_Processor_lib"
 )
 (vvPair
+variable "library_downstream_HdsLintPlugin"
+value "$HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck"
+)
+(vvPair
 variable "library_downstream_QuestaSimCompiler"
 value "$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim"
 )
 (vvPair
 variable "mm"
-value "05"
+value "06"
 )
 (vvPair
 variable "module_name"
@@ -542,11 +556,11 @@ value "imm_bta_mux"
 )
 (vvPair
 variable "month"
-value "May"
+value "Jun"
 )
 (vvPair
 variable "month_long"
-value "May"
+value "June"
 )
 (vvPair
 variable "p"
@@ -614,7 +628,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "17:44:43"
+value "18:34:21"
 )
 (vvPair
 variable "unit"
@@ -649,10 +663,10 @@ optionalChildren [
 uid 8,0
 optionalChildren [
 *60 (CptPort
-uid 160,0
+uid 262,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 161,0
+uid 263,0
 ro 90
 va (VaSet
 vasetType 1
@@ -661,11 +675,11 @@ fg "0,65535,0"
 xt "147250,107625,148000,108375"
 )
 tg (CPTG
-uid 162,0
+uid 264,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 163,0
+uid 265,0
 va (VaSet
 font "courier,8,0"
 )
@@ -676,7 +690,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 164,0
+uid 266,0
 va (VaSet
 font "courier,8,0"
 )
@@ -690,15 +704,15 @@ decl (Decl
 n "bta"
 t "word_t"
 o 45
-suid 5,0
+suid 13,0
 )
 )
 )
 *61 (CptPort
-uid 165,0
+uid 267,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 166,0
+uid 268,0
 ro 90
 va (VaSet
 vasetType 1
@@ -707,11 +721,11 @@ fg "0,65535,0"
 xt "147250,102625,148000,103375"
 )
 tg (CPTG
-uid 167,0
+uid 269,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 168,0
+uid 270,0
 va (VaSet
 font "courier,8,0"
 )
@@ -722,7 +736,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 169,0
+uid 271,0
 va (VaSet
 font "courier,8,0"
 )
@@ -736,15 +750,15 @@ decl (Decl
 n "imm_dc"
 t "word_t"
 o 8
-suid 6,0
+suid 14,0
 )
 )
 )
 *62 (CptPort
-uid 170,0
+uid 272,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 171,0
+uid 273,0
 ro 90
 va (VaSet
 vasetType 1
@@ -753,11 +767,11 @@ fg "0,65535,0"
 xt "160000,105625,160750,106375"
 )
 tg (CPTG
-uid 172,0
+uid 274,0
 ps "CptPortTextPlaceStrategy"
 stg "RightVerticalLayoutStrategy"
 f (Text
-uid 173,0
+uid 275,0
 va (VaSet
 font "courier,8,0"
 )
@@ -769,7 +783,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 174,0
+uid 276,0
 va (VaSet
 font "courier,8,0"
 )
@@ -784,15 +798,15 @@ decl (Decl
 n "imm_or_bta_dc"
 t "word_t"
 o 46
-suid 7,0
+suid 15,0
 )
 )
 )
 *63 (CptPort
-uid 175,0
+uid 277,0
 ps "OnEdgeStrategy"
 shape (Triangle
-uid 176,0
+uid 278,0
 va (VaSet
 vasetType 1
 fg "0,65535,0"
@@ -800,11 +814,11 @@ fg "0,65535,0"
 xt "153625,109333,154375,110083"
 )
 tg (CPTG
-uid 177,0
+uid 279,0
 ps "CptPortTextPlaceStrategy"
 stg "VerticalLayoutStrategy"
 f (Text
-uid 178,0
+uid 280,0
 ro 270
 va (VaSet
 font "courier,8,0"
@@ -816,7 +830,7 @@ tm "CptPortNameMgr"
 )
 )
 dt (MLText
-uid 179,0
+uid 281,0
 va (VaSet
 font "courier,8,0"
 )
@@ -830,7 +844,7 @@ decl (Decl
 n "is_bta"
 t "boolean"
 o 55
-suid 8,0
+suid 16,0
 )
 )
 )
@@ -1261,12 +1275,15 @@ uid 50,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,17500,5400"
+xt "0,900,20500,8100"
 st "LIBRARY ieee;
 USE ieee.std_logic_1164.all;
 USE ieee.numeric_std.all;
 LIBRARY RISCV_Processor_lib;
-USE RISCV_Processor_lib.types.ALL;"
+USE RISCV_Processor_lib.types.ALL;
+USE RISCV_Processor_lib.isa_defines.ALL;
+LIBRARY altera_mf;
+USE altera_mf.altera_mf_components.all;"
 tm "PackageList"
 )
 ]
@@ -1545,6 +1562,6 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 187,0
+lastUid 289,0
 activeModelName "Symbol:CDM"
 )

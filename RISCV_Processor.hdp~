@@ -1,0 +1,17 @@
+[DesignChecker]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck
+[QuestaSim]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/questasim
+[hdl]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/hdl
+[hds]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/hds
+[hds_settings]
+default_library = RISCV_Processor_lib
+design_root = RISCV_Processor_lib.top_tb(struct)top_tb/struct.bd
+project_description = RISCV processor in VHDL
+version = 3
+[library_type]
+RISCV_Processor_lib = regular
+[shared]
+others = $HDS_TEAM_HOME/shared.hdp

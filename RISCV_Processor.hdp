@@ -14,4 +14,4 @@ version = 3
 [library_type]
 RISCV_Processor_lib = regular
 [shared]
-others = $HDS_TEAM_HOME/shared.hdp
+others = /ext/eda/vendor_libs/quartus21_1_1/shared.hdp

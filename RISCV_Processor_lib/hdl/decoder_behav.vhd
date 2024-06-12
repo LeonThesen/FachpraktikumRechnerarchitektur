@@ -190,6 +190,7 @@ BEGIN
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 imm_to_alu_int <= true;
                 imm_int <= get_i_format_imm(instruction_word_dc);
+                is_bta_int <= true;
                 dbpu_mode_int <= JALR;
             when S_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
@@ -217,36 +218,34 @@ BEGIN
     end process decode;
 
     forwarding: process(rs1_addr_int, rs2_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
-        begin
-            stall_dc <= false;
-            fwd_store_data_dc_int <= false;
+        variable rs1_ral_detected : boolean;
+        variable rs2_ral_detected : boolean;
+    begin
+        stall_dc <= false;
+        fwd_store_data_dc_int <= false;
 
-            -- RAW        
-            fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
-            fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
+        -- RAW        
+        fwd_rs1_dc_int <= determine_rs_fwd_signal(rs1_addr_int, rd_addr_ex, rd_addr_mem);
+        fwd_rs2_dc_int <= determine_rs_fwd_signal(rs2_addr_int, rd_addr_ex, rd_addr_mem);
 
-            if mem_mode_ex.memory_access = LOAD then      
-                if mem_mode_dc_int.memory_access = STORE then
-                    if rs1_addr_int = rd_addr_ex and rs1_addr_int /= X0_REG then
-                        -- RAL
-                        stall_dc <= true;
-                        fwd_rs1_dc_int <= NO_FORWARDING;
-                        fwd_rs2_dc_int <= NO_FORWARDING;
-                    elsif rs2_addr_int = rd_addr_ex and rs2_addr_int /= X0_REG then
-                        -- SAL
-                        fwd_store_data_dc_int <= true;
-                        fwd_rs1_dc_int <= NO_FORWARDING;
-                        fwd_rs2_dc_int <= NO_FORWARDING;
-                    end if;
-                else 
-                    if (rs1_addr_int /= X0_REG or rs2_addr_int /= X0_REG) and (rs1_addr_int = rd_addr_ex or rs2_addr_int = rd_addr_ex) then
-                        -- RAL
-                        stall_dc <= true;
-                        fwd_rs1_dc_int <= NO_FORWARDING;
-                        fwd_rs2_dc_int <= NO_FORWARDING;
-                    end if;
+        if mem_mode_ex.memory_access = LOAD then
+            rs1_ral_detected := (rs1_addr_int /= X0_REG and rs1_addr_int = rd_addr_ex);
+            rs2_ral_detected := (rs2_addr_int /= X0_REG and rs2_addr_int = rd_addr_ex and mem_mode_dc_int.memory_access /= STORE);
+
+            if rs1_ral_detected or rs2_ral_detected then
+                -- RAL
+                stall_dc <= true;
+                fwd_rs1_dc_int <= NO_FORWARDING;
+                fwd_rs2_dc_int <= NO_FORWARDING;
+            elsif mem_mode_dc_int.memory_access = STORE then                        
+                if rs2_addr_int = rd_addr_ex and rs2_addr_int /= X0_REG then
+                    -- SAL
+                    fwd_store_data_dc_int <= true;
+                    fwd_rs1_dc_int <= NO_FORWARDING;
+                    fwd_rs2_dc_int <= NO_FORWARDING;
                 end if;
             end if;
+        end if;
     end process forwarding;
 
     set_outputs: process(all) is 

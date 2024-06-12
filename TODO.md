@@ -1,16 +1,5 @@
 TODO: 
-    - Forwarding Logik Prozess
-    - NOP und Stall Erzeugung
-
-Vivado Fehlermeldungen:
-[alu_behav.vhd]
-    - unnötiges Signal: signal substract_result_int: word_t; 
-    - when others => alu_result_int <= (others => '0'); // sonst würden wir ein latch erzeugen
-[rs1_fwd_mux_behav.vhd]
-    - when others entfernen // sonst würden wir ein latch erzeugen
-[rs2_fwd_mux_behav.vhd]
-    - when others entfernen // sonst würden wir ein latch erzeugen
-
+    - Addresse von pc_if(32 bit breit) auf ADDR_WIDTH umsetzen)
 Compiler Flags für GCC(riscv64-unknown-elf-gcc):
 -nostdlib -nolibc -nodefaultlibs -nostartfiles -march=rv32i -mabi=ilp32
 
