@@ -14,16 +14,15 @@ use RISCV_Processor_lib.types.ALL;
 ARCHITECTURE behav OF if_dc_pipeline_reg IS
 BEGIN
     process(clk, res_n) is
+    variable is_startup : boolean;
     begin
         if res_n = '0' then
             instruction_word_dc <= (others => '0');
             pc_dc <= (others => '0');
-        else 
+        else
             if clk'event and clk = '1' then
-                if not stall_dc then
-                    instruction_word_dc <= instruction_word_if;
-                    pc_dc <= pc_if;
-                end if;
+                instruction_word_dc <= instruction_word_if;
+                pc_dc <= pc_pre_if;
             end if;
         end if;
     end process;

@@ -15,11 +15,11 @@ BEGIN
     process(clk, res_n) is
     begin
         if res_n = '0' then
-            pc_if <= (others => '0');
+            pc_pre_if <= (others => '0');
         else 
             if clk'event and clk = '1' then
                 if not stall_dc then
-                    pc_if <= pc;
+                    pc_pre_if <= pc;
                 end if;
             end if;
         end if;

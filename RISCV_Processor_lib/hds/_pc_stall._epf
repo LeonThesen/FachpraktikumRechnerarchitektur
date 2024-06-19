@@ -1,0 +1,2 @@
+DEFAULT_FILE atom pc_stall_behav.vhd
+DEFAULT_ARCHITECTURE atom behav

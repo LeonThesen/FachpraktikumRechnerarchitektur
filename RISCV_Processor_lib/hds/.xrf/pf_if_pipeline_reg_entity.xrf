@@ -6,19 +6,19 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
-GRAPHIC 787,0 19 0 
+GRAPHIC 845,0 19 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
-GRAPHIC 792,0 20 0 
+GRAPHIC 850,0 20 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
-GRAPHIC 802,0 21 0 
+GRAPHIC 860,0 21 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
-GRAPHIC 807,0 22 0 
+GRAPHIC 865,0 22 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
-GRAPHIC 797,0 23 0 
+GRAPHIC 855,0 23 0 
 DESIGN pf_if_pipeline_reg
 VIEW interface
 GRAPHIC 1,0 26 0 
