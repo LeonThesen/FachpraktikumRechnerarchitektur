@@ -1,0 +1,55 @@
+
+*** Running vivado
+    with args -log top_tb.vds -m64 -tempDir . -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_tb.tcl
+
+
+****** Vivado v2023.2 (64-bit)
+  **** SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+  **** IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+  **** SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2023 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source top_tb.tcl -notrace
+Command: synth_design -top top_tb -part xc7a35tcpg236-1
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7a35t'
+INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 4 processes.
+INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
+INFO: [Synth 8-7075] Helper process launched with PID 41758
+---------------------------------------------------------------------------------
+Starting Synthesize : Time (s): cpu = 00:00:02 ; elapsed = 00:00:03 . Memory (MB): peak = 1690.875 ; gain = 414.652 ; free physical = 3466 ; free virtual = 28548
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'top_tb' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/top_tb.vhd:28]
+INFO: [Synth 8-3491] module 'divider_wrapper' declared at '/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/divider_wrapper.vhd:5' bound to instance 'dut' of component 'divider_wrapper' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/top_tb.vhd:49]
+INFO: [Synth 8-638] synthesizing module 'divider_wrapper' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/divider_wrapper.vhd:15]
+INFO: [Synth 8-638] synthesizing module 'radix4_32' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:20]
+WARNING: [Synth 8-153] case item 16'b1xxxxxxxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b01xxxxxxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b001xxxxxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b0001xxxxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b00001xxxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b000001xxxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b0000001xxxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b00000001xxxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b000000001xxxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b0000000001xxxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b00000000001xxxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b000000000001xxxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b0000000000001xxx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b00000000000001xx will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+WARNING: [Synth 8-153] case item 16'b000000000000001x will never be executed [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:101]
+ERROR: [Synth 8-690] width mismatch in assignment; target has 32 bits, source has 18 bits [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:280]
+ERROR: [Synth 8-285] failed synthesizing module 'radix4_32' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/radix4_32.vhd:20]
+ERROR: [Synth 8-285] failed synthesizing module 'divider_wrapper' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/divider_wrapper.vhd:15]
+ERROR: [Synth 8-285] failed synthesizing module 'top_tb' [/home/leon/source/srt_verilog/srt_verilog.srcs/sources_1/new/top_tb.vhd:28]
+---------------------------------------------------------------------------------
+Finished Synthesize : Time (s): cpu = 00:00:03 ; elapsed = 00:00:03 . Memory (MB): peak = 1767.812 ; gain = 491.590 ; free physical = 3370 ; free virtual = 28452
+---------------------------------------------------------------------------------
+synthesize failed
+INFO: [Common 17-83] Releasing license: Synthesis
+9 Infos, 15 Warnings, 0 Critical Warnings and 5 Errors encountered.
+synth_design failed
+ERROR: [Common 17-69] Command failed: Vivado Synthesis failed
+INFO: [Common 17-206] Exiting Vivado at Sun Jun 23 19:18:04 2024...

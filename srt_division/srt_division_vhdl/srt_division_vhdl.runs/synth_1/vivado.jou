@@ -1,0 +1,14 @@
+#-----------------------------------------------------------
+# Vivado v2023.2 (64-bit)
+# SW Build 4029153 on Fri Oct 13 20:13:54 MDT 2023
+# IP Build 4028589 on Sat Oct 14 00:45:43 MDT 2023
+# SharedData Build 4025554 on Tue Oct 10 17:18:54 MDT 2023
+# Start of session at: Sun Jun 23 19:17:55 2024
+# Process ID: 41742
+# Current directory: /home/leon/source/srt_verilog/srt_verilog.runs/synth_1
+# Command line: vivado -log top_tb.vds -tempDir . -product Vivado -mode batch -messageDb vivado.pb -notrace -source top_tb.tcl
+# Log file: /home/leon/source/srt_verilog/srt_verilog.runs/synth_1/top_tb.vds
+# Journal file: /home/leon/source/srt_verilog/srt_verilog.runs/synth_1/vivado.jou
+# Running On: leon-desktop-pc, OS: Linux, CPU Frequency: 4896.582 MHz, CPU Physical cores: 8, Host memory: 33573 MB
+#-----------------------------------------------------------
+source top_tb.tcl -notrace
