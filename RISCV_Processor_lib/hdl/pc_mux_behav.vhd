@@ -13,12 +13,18 @@ use RISCV_Processor_lib.types.ALL;
 ARCHITECTURE behav OF pc_mux IS
 BEGIN
     process(all) is begin
-        if dbta_valid_ex then
-            pc <= dbta;
-        elsif sbta_valid_dc then
-            pc <= imm_or_bta_dc;
+        if wrong_jump_prediction then
+            if dbta_valid_ex then
+                pc <= dbta;
+            else
+                pc <= return_addr;
+            end if;
         else
-            pc <= pc_pf;
+            if sbta_valid_dc or jump_predicted_dc then
+                pc <= imm_or_bta_dc;
+            else
+                pc <= pc_pf;
+            end if;
         end if;
     end process;
 END ARCHITECTURE behav;

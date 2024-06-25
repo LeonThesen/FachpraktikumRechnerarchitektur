@@ -12,6 +12,7 @@ use RISCV_Processor_lib.isa_defines.ALL;
 
 ARCHITECTURE behav OF instruction_word_mux IS
 BEGIN
-    instruction_word_if <= NOP_INSTR when (sbta_valid_dc or dbta_valid_ex) else instruction_word_umgenudelt;
+-- TODO: this is wrong
+    instruction_word_if <= NOP_INSTR when (sbta_valid_dc or dbta_valid_ex or jump_predicted_dc) else instruction_word_umgenudelt;
 END ARCHITECTURE behav;
 

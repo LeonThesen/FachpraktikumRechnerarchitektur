@@ -26,6 +26,8 @@ ARCHITECTURE behav OF decoder IS
     signal is_bta_int : boolean;
     signal sbta_valid_dc_int : boolean;
     signal dbpu_mode_int : dbpu_mode_t;
+    signal stall_dc_int : boolean;
+    signal jump_relevant_for_bpb_int : boolean;
 BEGIN
 
     decode: process(instruction_word_dc) is 
@@ -43,6 +45,7 @@ BEGIN
         is_bta_int <= false;
         sbta_valid_dc_int <= false;
         dbpu_mode_int <= NO_BRANCH;
+        jump_relevant_for_bpb_int <= false;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
@@ -58,7 +61,7 @@ BEGIN
             when J_FORMAT =>
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 imm_int <= get_j_format_imm(instruction_word_dc);
-                is_bta_int <= true;  
+                is_bta_int <= true;
                 sbta_valid_dc_int <= true;
                 dbpu_mode_int <= JAL;
             when B_FORMAT =>
@@ -66,6 +69,7 @@ BEGIN
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 imm_int <= get_b_format_imm(instruction_word_dc);
                 is_bta_int <= true;
+                jump_relevant_for_bpb_int <= true;
                 alu_mode_int <= SUB_MODE;
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when BEQ_INSTR =>
@@ -190,7 +194,6 @@ BEGIN
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
                 imm_to_alu_int <= true;
                 imm_int <= get_i_format_imm(instruction_word_dc);
-                is_bta_int <= true;
                 dbpu_mode_int <= JALR;
             when S_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
@@ -221,7 +224,7 @@ BEGIN
         variable rs1_ral_detected : boolean;
         variable rs2_ral_detected : boolean;
     begin
-        stall_dc <= false;
+        stall_dc_int <= false;
         fwd_store_data_dc_int <= false;
 
         -- RAW        
@@ -234,7 +237,7 @@ BEGIN
 
             if rs1_ral_detected or rs2_ral_detected then
                 -- RAL
-                stall_dc <= true;
+                stall_dc_int <= true;
                 fwd_rs1_dc_int <= NO_FORWARDING;
                 fwd_rs2_dc_int <= NO_FORWARDING;
             elsif mem_mode_dc_int.memory_access = STORE then                        
@@ -247,8 +250,10 @@ BEGIN
             end if;
         end if;
     end process forwarding;
-
+   
     set_outputs: process(all) is 
+    variable jalr_bta_valid : boolean;
+    variable insert_nop : boolean;
     begin
         rs1_addr <= rs1_addr_int;
         rs2_addr <= rs2_addr_int;
@@ -263,9 +268,18 @@ BEGIN
         is_bta <= is_bta_int;
         sbta_valid_dc <= sbta_valid_dc_int;
         dbpu_mode_dc <= dbpu_mode_int;
+        stall_dc <= stall_dc_int;
+        jump_relevant_for_bpb_dc <= jump_relevant_for_bpb_int;
 
-        -- When stalling or jumping we have to kill the current instruction by insertin a NOP
-        if stall_dc or dbta_valid_ex then
+        -- Check wether NOP is required (for RAL, dynamic jumps and wrong jump predictions)
+        jalr_bta_valid := false;
+        if dbpu_mode_ex = JALR and dbta_valid_ex then
+            jalr_bta_valid := true;
+        end if;
+
+        insert_nop := stall_dc_int or wrong_jump_prediction or jalr_bta_valid;
+
+        if insert_nop then
             alu_mode_dc <= ADD_MODE;
             rs1_addr <= (others => '0');
             rd_addr_dc <= (others => '0');
