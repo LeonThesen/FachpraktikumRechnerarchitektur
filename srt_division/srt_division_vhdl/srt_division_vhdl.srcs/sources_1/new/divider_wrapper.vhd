@@ -19,12 +19,12 @@ architecture behav of divider_wrapper is
     signal remainder : std_logic_vector(31 downto 0);
 begin
 
-    correct <= '1' when (signed(quotient) = to_signed(2, 32) and signed(remainder) = to_signed(940, 32)) else '0';
+    correct <= '1' when (signed(quotient) = to_signed(9, 32) and signed(remainder) = to_signed(0, 32)) else '0';
 
-    dividend <= std_logic_vector(to_signed(18300, 32)); 
-    divisor <= std_logic_vector(to_signed(8680, 32));
-
-    div_inst : entity work.radix4_32
+    dividend <= std_logic_vector(to_signed(99, 32)); 
+    divisor <= std_logic_vector(to_signed(11, 32));
+    
+    divider_i : entity work.radix4_srt_divider
         port map (
             clk => clk,
             res_n => res_n,

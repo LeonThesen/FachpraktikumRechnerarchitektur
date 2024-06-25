@@ -1,4 +1,0 @@
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/leon/source/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_32.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'radix4_32'
-INFO: [VRFC 10-163] Analyzing VHDL file "/home/leon/source/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/divider_wrapper.vhd" into library xil_defaultlib
-INFO: [VRFC 10-3107] analyzing entity 'divider_wrapper'

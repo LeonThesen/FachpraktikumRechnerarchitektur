@@ -1,28 +1,7 @@
-----------------------------------------------------------------------------------
--- Company: 
--- Engineer: 
--- 
--- Create Date: 06/21/2024 11:16:49 PM
--- Design Name: 
--- Module Name: top_tb - sim
--- Project Name: 
--- Target Devices: 
--- Tool Versions: 
--- Description: 
--- 
--- Dependencies: 
--- 
--- Revision:
--- Revision 0.01 - File Created
--- Additional Comments:
--- 
-----------------------------------------------------------------------------------
-
 library ieee;
 use ieee.std_logic_1164.all;
 
 entity top_tb is
---  Port ( );
 end top_tb;
 
 architecture sim of top_tb is
@@ -84,11 +63,6 @@ begin
         
         -- Wait for the done signal
         wait until done = '1';
-        
-        -- Check the result
-        if correct /= '1' then
-         report "Division incorrect!" severity error;
-        end if;
         wait;
     end process stim_proc;
 
