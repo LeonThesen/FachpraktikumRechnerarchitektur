@@ -9,7 +9,7 @@
 --
 ARCHITECTURE behav OF pc_ex_inc IS
 BEGIN
-    process(all) is 
+    process(pc_ex) is 
     begin
         return_addr <= std_logic_vector(unsigned(pc_ex) + 4);
     end process;

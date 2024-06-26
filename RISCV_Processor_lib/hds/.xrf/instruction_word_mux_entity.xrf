@@ -6,22 +6,25 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 473,0 19 0 
+GRAPHIC 531,0 19 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 483,0 20 0 
+GRAPHIC 541,0 20 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 488,0 21 0 
+GRAPHIC 546,0 21 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 493,0 22 0 
+GRAPHIC 551,0 22 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 478,0 23 0 
+GRAPHIC 556,0 23 0 
 DESIGN instruction_word_mux
 VIEW interface
-GRAPHIC 1,0 26 0 
+GRAPHIC 536,0 24 0 
 DESIGN instruction_word_mux
 VIEW interface
 GRAPHIC 1,0 27 0 
+DESIGN instruction_word_mux
+VIEW interface
+GRAPHIC 1,0 28 0 

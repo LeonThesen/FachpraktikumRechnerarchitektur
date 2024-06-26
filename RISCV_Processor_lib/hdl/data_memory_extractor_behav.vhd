@@ -24,9 +24,11 @@ BEGIN
                     read_byte := rdata(31 - (index * 8) downto 24 - (index * 8));
                     -- Sign extension
                     if mem_mode_mem.is_signed then
-                        data_memory_result <= (7 downto 0 => read_byte, others => read_byte(read_byte'left));
+                        data_memory_result <= (others => read_byte(read_byte'left));
+                        data_memory_result(7 downto 0) <= read_byte;
                     else
-                        data_memory_result <= (7 downto 0 => read_byte, others => '0');
+                        data_memory_result <= (others => '0');
+                        data_memory_result(7 downto 0) <= read_byte;
                     end if;                  
                 when HALFWORD =>
                     if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
@@ -36,13 +38,13 @@ BEGIN
                         index := to_integer(unsigned(ex_out_mem(1 downto 1))); -- 0, 1
                         read_halfword := rdata(31 - (16 * index) downto 16 - (16 * index));
                         if mem_mode_mem.is_signed then
-                            data_memory_result <= (7 downto 0 => read_halfword(15 downto 8),
-                                                   15 downto 8 => read_halfword(7 downto 0),
-                                                   others => read_halfword(read_halfword'left));
+                            data_memory_result <= (others => read_halfword(read_halfword'left));
+                            data_memory_result(7 downto 0) <= read_halfword(15 downto 8);
+                            data_memory_result(15 downto 8) <= read_halfword(7 downto 0);
                         else
-                            data_memory_result <= (7 downto 0 => read_halfword(15 downto 8),
-                                                   15 downto 8 => read_halfword(7 downto 0),
-                                                   others => '0');
+                            data_memory_result <= (others => '0');
+                            data_memory_result(7 downto 0) <= read_halfword(15 downto 8);
+                            data_memory_result(15 downto 8) <= read_halfword(7 downto 0);
                         end if;
                     end if;
                 when WORD =>

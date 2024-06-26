@@ -14,17 +14,22 @@ use IEEE.NUMERIC_STD.ALL;
 
 ARCHITECTURE behav OF bpb IS
     constant K : positive := 8;
-    subtype PC_RANGE is natural range (K - 1) downto 0;
+    subtype PC_RANGE is natural range (K + 1) downto 2;
     constant BUFF_SIZE : integer := 2**K;
-    type bpb_t is array (0 to BUFF_SIZE - 1) of boolean;
+    subtype branch_prediction_state_t is std_logic_vector(1 downto 0);
+    type bpb_t is array (0 to BUFF_SIZE - 1) of branch_prediction_state_t;
     signal branch_prediction_buffer : bpb_t;
     signal jump_predicted_dc_int : boolean;
     signal wrong_jump_prediction_int : boolean;
 BEGIN
     bpb_predict: process(all) is
     begin
-        if jump_relevant_for_bpb_dc then
-            jump_predicted_dc_int <= branch_prediction_buffer(to_integer(unsigned(pc_dc(PC_RANGE))));
+        if is_conditional_jump_dc then
+            if branch_prediction_buffer(to_integer(unsigned(pc_dc(PC_RANGE))))(1) = '1' then
+                jump_predicted_dc_int <= true;
+            else
+                jump_predicted_dc_int <= false;
+            end if;
         else
             jump_predicted_dc_int <= false;
         end if;
@@ -33,11 +38,38 @@ BEGIN
     bpb_update: process(clk, res_n) is
     begin
         if res_n = '0' then
-            branch_prediction_buffer <= (others => false);
+            branch_prediction_buffer <= (others => "00");
         else
             if clk'event and clk = '1' then
-                if jump_relevant_for_bpb_ex then
-                    branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= dbta_valid_ex;
+                if is_conditional_jump_ex then
+                    case branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) is
+                        when "00" =>
+                            if dbta_valid_ex then
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "01";
+                            else
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "00";
+                            end if;
+                        when "01" =>
+                            if dbta_valid_ex then
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "11";
+                            else
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "00";
+                            end if;
+                        when "10" =>
+                             if dbta_valid_ex then
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "11";
+                            else
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "00";
+                            end if;
+                        when "11" =>
+                             if dbta_valid_ex then
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "11";
+                            else
+                                branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "10";
+                            end if;
+                        when others =>
+                            branch_prediction_buffer(to_integer(unsigned(pc_ex(PC_RANGE)))) <= "XX";
+                    end case;
                 end if;
             end if;
         end if;
@@ -46,7 +78,7 @@ BEGIN
     validate_prediction: process(all) is
     begin
         wrong_jump_prediction_int <= false;
-        if jump_relevant_for_bpb_ex then
+        if is_conditional_jump_ex then
             if (dbta_valid_ex and not jump_predicted_ex) or (not dbta_valid_ex and jump_predicted_ex) then
                 wrong_jump_prediction_int <= true;
             end if;

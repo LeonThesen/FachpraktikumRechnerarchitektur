@@ -6,9 +6,10 @@ add wave -noupdate /top_tb/res_n
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider IF
-add wave -noupdate /top_tb/cpu_i/pf_if_pipeline_reg_i/pc_if
-add wave -noupdate /top_tb/cpu_i/instruction_word_mux_i/instruction_word_rom
 add wave -noupdate /top_tb/cpu_i/instruction_word_mux_i/instruction_word_if
+add wave -noupdate /top_tb/cpu_i/if_dc_pipeline_reg_i/pc_pre_if
+add wave -noupdate /top_tb/cpu_i/pc_mux_i/pc
+add wave -noupdate /top_tb/cpu_i/pc_mux_i/pc_pf
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider DC
@@ -29,6 +30,8 @@ add wave -noupdate /top_tb/cpu_i/decoder_i/rs2_addr
 add wave -noupdate /top_tb/cpu_i/decoder_i/sbta_valid_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/stall_dc
 add wave -noupdate /top_tb/cpu_i/dc_ex_pipeline_reg_i/imm_or_bta_dc
+add wave -noupdate /top_tb/cpu_i/bpb_i/wrong_jump_prediction
+add wave -noupdate -expand /top_tb/cpu_i/bpb_i/branch_prediction_buffer
 add wave -noupdate /top_tb/cpu_i/register_file_i/register_array
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
@@ -54,6 +57,7 @@ add wave -noupdate /top_tb/cpu_i/dbpu_i/dbta
 add wave -noupdate /top_tb/cpu_i/dbpu_i/dbta_valid_ex
 add wave -noupdate /top_tb/cpu_i/dbpu_i/is_return_addr
 add wave -noupdate /top_tb/cpu_i/ex_out_mux_i/ex_out_ex
+add wave -noupdate /top_tb/cpu_i/bpb_i/jump_predicted_ex
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider MEM
@@ -62,9 +66,6 @@ add wave -noupdate /top_tb/cpu_i/ex_mem_pipeline_reg_i/fwd_store_data_mem
 add wave -noupdate /top_tb/cpu_i/ex_mem_pipeline_reg_i/mem_mode_mem
 add wave -noupdate /top_tb/cpu_i/ex_mem_pipeline_reg_i/rd_addr_mem
 add wave -noupdate /top_tb/cpu_i/ex_mem_pipeline_reg_i/rs2_mem
-add wave -noupdate /top_tb/cpu_i/data_memory_i/store_data
-add wave -noupdate /top_tb/cpu_i/data_memory_i/data_memory_result
-add wave -noupdate /top_tb/cpu_i/data_memory_i/memory_array
 add wave -noupdate /top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_mem
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
@@ -72,9 +73,9 @@ add wave -noupdate -divider WB
 add wave -noupdate /top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_wb
 add wave -noupdate /top_tb/cpu_i/mem_wb_pipeline_reg_i/rd_addr_wb
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {14 ns} 0}
+WaveRestoreCursors {{Cursor 1} {508 ns} 0}
 quietly wave cursor active 1
-configure wave -namecolwidth 149
+configure wave -namecolwidth 168
 configure wave -valuecolwidth 100
 configure wave -justifyvalue left
 configure wave -signalnamewidth 1
@@ -88,4 +89,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {0 ns} {413 ns}
+WaveRestoreZoom {1746 ns} {1803 ns}

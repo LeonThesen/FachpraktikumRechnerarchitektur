@@ -13,7 +13,7 @@ use IEEE.NUMERIC_STD.ALL;
 
 ARCHITECTURE behav OF pc_inc IS
 BEGIN
-    process(all) is 
+    process(res_n, pc_pre_if) is 
     begin
         if res_n = '0' then
             pc_pf <= (others => '0');
