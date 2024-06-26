@@ -17,12 +17,14 @@ architecture behav of divider_wrapper is
     signal dividend : std_logic_vector(31 downto 0) := (others => '0');
     signal quotient : std_logic_vector(31 downto 0);
     signal remainder : std_logic_vector(31 downto 0);
+    constant MOST_POSITIVE_UINT : integer := (2**dividend'length) - 1;
+    constant MOST_NEGATIVE_INT : integer := -2**(dividend'length - 1);
 begin
 
-    correct <= '1' when (signed(quotient) = to_signed(9, 32) and signed(remainder) = to_signed(0, 32)) else '0';
+    correct <= '1' when (signed(quotient) = to_signed(-1, dividend'length) and signed(remainder) = to_signed(99, dividend'length)) else '0';
 
-    dividend <= std_logic_vector(to_signed(99, 32)); 
-    divisor <= std_logic_vector(to_signed(11, 32));
+    dividend <= std_logic_vector(to_signed(MOST_NEGATIVE_INT, 32)); 
+    divisor <= std_logic_vector(to_signed(-1, 32));
     
     divider_i : entity work.radix4_srt_divider
         port map (

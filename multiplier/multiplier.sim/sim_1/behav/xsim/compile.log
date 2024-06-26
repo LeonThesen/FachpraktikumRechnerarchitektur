@@ -1,0 +1,6 @@
+INFO: [VRFC 10-163] Analyzing VHDL file "/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd" into library xil_defaultlib
+ERROR: [VRFC 10-2987] 'types' is not compiled in library 'xil_defaultlib' [/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd:4]
+INFO: [VRFC 10-3107] analyzing entity 'multiplier'
+ERROR: [VRFC 10-2989] 'multiply_mode_t' is not declared [/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd:11]
+ERROR: [VRFC 10-9458] unit 'multiplier' is ignored due to previous errors [/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd:6]
+INFO: [VRFC 10-8704] VHDL file '/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd' is ignored due to errors

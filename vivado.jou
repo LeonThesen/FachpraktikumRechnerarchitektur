@@ -1,0 +1,217 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Wed Jun 26 13:11:25 2024
+# Process ID: 5038
+# Current directory: /u/home/clab/st186447/FachpraktikumRechnerarchitektur
+# Command line: vivado
+# Log file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/vivado.log
+# Journal file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/vivado.jou
+# Running On: pc040, OS: Linux, CPU Frequency: 2012.948 MHz, CPU Physical cores: 16, Host memory: 32836 MB
+#-----------------------------------------------------------
+start_gui
+open_project /u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+launch_simulation
+set_property file_type {VHDL 2008} [get_files  /u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd]
+set_property file_type {VHDL 2008} [get_files  /u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/divider_wrapper.vhd]
+set_property file_type {VHDL 2008} [get_files  /u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/top_tb.vhd]
+launch_simulation
+open_wave_config /u/home/clab/st186447/srt_division_vhdl/top_tb_behav.wcfg
+source top_tb.tcl
+run 500 ns
+run 500 ns
+close_sim
+launch_simulation
+open_wave_config /u/home/clab/st186447/srt_division_vhdl/top_tb_behav.wcfg
+source top_tb.tcl
+run 500 ns
+run 500 ns
+add_bp {/u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd} 124
+relaunch_sim
+step
+close_sim
+launch_simulation
+open_wave_config /u/home/clab/st186447/srt_division_vhdl/top_tb_behav.wcfg
+source top_tb.tcl
+run 500 ns
+relaunch_sim
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+update_compile_order -fileset sources_1
+relaunch_sim
+run 500 ns
+add_bp {/u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd} 124
+relaunch_sim
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+step
+save_wave_config {/u/home/clab/st186447/srt_division_vhdl/top_tb_behav.wcfg}
+step
+step
+step
+step
+run 500 ns
+remove_bps -file {/u/home/clab/st186447/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd} -line 124
+relaunch_sim
+relaunch_sim
+run 500 ns
+close_sim
+launch_simulation
+open_wave_config /u/home/clab/st186447/srt_division_vhdl/top_tb_behav.wcfg
+source top_tb.tcl
+xhub::refresh_catalog [xhub::get_xstores xilinx_board_store]
+set_param board.repoPaths {/u/home/clab/st186447/.Xilinx/Vivado/2022.2/xhub/board_store/xilinx_board_store}
+xhub::install [xhub::get_xitems digilentinc.com:xilinx_board_store:basys3:1.2]
+xhub::install [xhub::get_xitems digilentinc.com:xilinx_board_store:basys3:1.1]
+create_project multiplier /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier -part xqvm1802-vsrd1760-1MP-i-S
+file mkdir /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new
+close [ open /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd w ]
+add_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd
+close [ open /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/top_tb.vhd w ]
+add_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/top_tb.vhd
+close [ open /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier_wrapper.vhd w ]
+add_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier_wrapper.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+set_property target_language VHDL [current_project]
+set_property dataflow_viewer_settings "min_width=16"   [current_fileset]
+set_property simulator_language VHDL [current_project]
+set_property file_type {VHDL 2008} [get_files  {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier.vhd /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/multiplier_wrapper.vhd /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/top_tb.vhd}]
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+launch_simulation
+source top_tb.tcl
+restart
+relaunch_sim
+relaunch_sim
+close_sim
+launch_simulation
+source top_tb.tcl
+relaunch_sim
+close [ open /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd w ]
+add_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+restart
+restart
+run 500 ns
+relaunch_sim
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+relaunch_sim
+relaunch_sim
+relaunch_sim
+set_property library work [get_files  /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd]
+update_compile_order -fileset sources_1
+relaunch_sim
+set_property library xil_defaultlib [get_files  /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd]
+update_compile_order -fileset sources_1
+set_property file_type {VHDL 2008} [get_files  /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd]
+set_property IS_GLOBAL_INCLUDE 1 [get_files -all /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd]
+relaunch_sim
+export_ip_user_files -of_objects  [get_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd] -no_script -reset -force -quiet
+remove_files  /u/home/clab/st186447/FachpraktikumRechnerarchitektur/multiplier/multiplier.srcs/sources_1/new/types_pkg.vhd
+relaunch_sim
+close_sim
+close_project
