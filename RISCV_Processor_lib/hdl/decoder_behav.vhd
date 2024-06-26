@@ -27,7 +27,7 @@ ARCHITECTURE behav OF decoder IS
     signal sbta_valid_dc_int : boolean;
     signal dbpu_mode_int : dbpu_mode_t;
     signal stall_dc_int : boolean;
-    signal jump_relevant_for_bpb_int : boolean;
+    signal is_conditional_jump_int : boolean;
 BEGIN
 
     decode: process(instruction_word_dc) is 
@@ -45,7 +45,7 @@ BEGIN
         is_bta_int <= false;
         sbta_valid_dc_int <= false;
         dbpu_mode_int <= NO_BRANCH;
-        jump_relevant_for_bpb_int <= false;
+        is_conditional_jump_int <= false;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
@@ -69,7 +69,7 @@ BEGIN
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 imm_int <= get_b_format_imm(instruction_word_dc);
                 is_bta_int <= true;
-                jump_relevant_for_bpb_int <= true;
+                is_conditional_jump_int <= true;
                 alu_mode_int <= SUB_MODE;
                 case instruction_word_dc(FUNCT3_RANGE) is
                     when BEQ_INSTR =>
@@ -220,7 +220,7 @@ BEGIN
         end case;
     end process decode;
 
-    forwarding: process(rs1_addr_int, rs2_addr_int, rd_addr_ex, rd_addr_mem, mem_mode_ex) is
+    forwarding: process(all) is
         variable rs1_ral_detected : boolean;
         variable rs2_ral_detected : boolean;
     begin
@@ -269,7 +269,7 @@ BEGIN
         sbta_valid_dc <= sbta_valid_dc_int;
         dbpu_mode_dc <= dbpu_mode_int;
         stall_dc <= stall_dc_int;
-        jump_relevant_for_bpb_dc <= jump_relevant_for_bpb_int;
+        is_conditional_jump_dc <= is_conditional_jump_int;
 
         -- Check wether NOP is required (for RAL, dynamic jumps and wrong jump predictions)
         jalr_bta_valid := false;

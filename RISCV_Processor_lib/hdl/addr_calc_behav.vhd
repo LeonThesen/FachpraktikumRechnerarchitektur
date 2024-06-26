@@ -7,6 +7,9 @@
 --
 -- using Mentor Graphics HDL Designer(TM) 2022.3 Built on 14 Jul 2022 at 13:56:12
 --
+library ieee;
+use ieee.std_logic_1164;
+
 ARCHITECTURE behav OF addr_calc IS
 BEGIN
 -- Inputs: ex_out_ex, ex_out_mem, mem_mode_mem     type memory_access_t is (LOAD, STORE, IDLE);
@@ -21,16 +24,19 @@ BEGIN
             case mem_mode_mem.data_width is
                 when BYTE =>
                     wdata <= store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0);
-                    be <= ((3 - to_integer(unsigned(ex_out_mem(1 downto 0)))) => '1', others => '0');
+                    be <= (others => '0');
+                    be(3 - to_integer(unsigned(ex_out_mem(1 downto 0)))) <= '1';
                 when HALFWORD =>
                     if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
                         report "Error: Unaligned memory access[write]: Trying to write halfword into unaligned address";
                     else
                         wdata <= store_data(7 downto 0) & store_data(15 downto 8) & store_data(7 downto 0) & store_data(15 downto 8);
                         if to_integer(unsigned(ex_out_mem(1 downto 1))) = 1 then
-                            be <= (1 downto 0 => '1', others => '0');
+                            be <= (others => '0');
+                            be(1 downto 0) <= "11";
                         else
-                            be <= (3 downto 2 => '1', others => '0');
+                            be <= (others => '0');
+                            be(3 downto 2) <= "11";
                         end if;
                     end if;
                 when WORD =>

@@ -9,7 +9,7 @@
 --
 ARCHITECTURE behav OF rs2_fwd_mux IS
 BEGIN
-    process(all) is
+    process(fwd_rs2_ex, rs2_ex, ex_out_mem, mem_result_wb) is
         begin 
             case fwd_rs2_ex is 
                 when NO_FORWARDING => 
