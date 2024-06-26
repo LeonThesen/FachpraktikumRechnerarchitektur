@@ -11,6 +11,11 @@ unitName "std_logic_1164"
 library "ieee"
 unitName "numeric_std"
 )
+(DmPackageRef
+library "RISCV_Processor_lib"
+unitName "types"
+itemName "ALL"
+)
 ]
 instances [
 (Instance
@@ -34,6 +39,7 @@ uid 129,0
 ]
 libraryRefs [
 "ieee"
+"RISCV_Processor_lib"
 ]
 )
 version "32.1"
@@ -136,7 +142,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "16:56:51"
+value "17:11:54"
 )
 (vvPair
 variable "group"
@@ -256,7 +262,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "16:56:51"
+value "17:11:54"
 )
 (vvPair
 variable "unit"
@@ -1031,10 +1037,13 @@ uid 43,0
 va (VaSet
 font "courier,8,0"
 )
-xt "0,900,14500,3600"
+xt "0,900,17500,5400"
 st "LIBRARY ieee;
 USE ieee.std_logic_1164.all;
-USE ieee.numeric_std.all;"
+USE ieee.numeric_std.all;
+LIBRARY RISCV_Processor_lib;
+USE RISCV_Processor_lib.types.ALL;
+"
 tm "PackageList"
 )
 ]
@@ -1115,8 +1124,8 @@ tm "BdCompilerDirectivesTextMgr"
 ]
 associable 1
 )
-windowSize "-4,5,2556,1413"
-viewArea "-25912,-11858,105544,57611"
+windowSize "-4,5,2564,1413"
+viewArea "-25912,-11858,105994,57611"
 cachedDiagramExtent "0,0,69000,51000"
 hasePageBreakOrigin 1
 pageBreakOrigin "0,0"

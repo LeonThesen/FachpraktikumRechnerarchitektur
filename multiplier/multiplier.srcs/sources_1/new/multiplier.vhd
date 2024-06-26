@@ -1,7 +1,6 @@
 library ieee;
 use ieee.STD_LOGIC_1164.ALL;
 use ieee.numeric_std.all;
-use work.types.all;
 
 entity multiplier is
         generic(

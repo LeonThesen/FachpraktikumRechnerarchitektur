@@ -92,36 +92,52 @@ BEGIN
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
 
-                 case instruction_word_dc(FUNCT3_RANGE) is
-                    when ADD_SUB_INSTR => 
-                        if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = ADD_INSTR_FUNCT7 then
-                            alu_mode_int <= ADD_MODE;
-                        elsif instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SUB_INSTR_FUNCT7 then
-                            alu_mode_int <= SUB_MODE;
-                        else 
-                            null;
-                        end if; 
-                    when SLL_INSTR =>
-                        alu_mode_int <= SLL_MODE;
-                    when SLT_INSTR =>
-                        alu_mode_int <= SLT_MODE;
-                    when SLTU_INSTR =>
-                        alu_mode_int <= SLTU_MODE;
-                    when XOR_INSTR =>
-                        alu_mode_int <= XOR_MODE;
-                    when SR_INSTR =>
-                        if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRL_INSTR_FUNCT7 then
-                            alu_mode_int <= SRL_MODE;
-                        elsif instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRA_INSTR_FUNCT7 then
-                            alu_mode_int <= SRA_MODE;
-                        else 
-                            null;
-                        end if; 
-                    when OR_INSTR =>
-                        alu_mode_int <= OR_MODE;
-                    when AND_INSTR =>
-                        alu_mode_int <= AND_MODE;
-                    when others => null;
+                case instruction_word_dc(R_FORMAT_FUNCT7_RANGE) is
+                    when MUL_INSTR_FUNCT7 => 
+                        case instruction_word_dc(FUNCT3_RANGE) is
+                            when MUL_INSTR =>
+                                alu_mode_int <= MUL_MODE;
+                            when MULH_INSTR =>
+                                alu_mode_int <= MULH_MODE;
+                            when MULHSU_INSTR =>
+                                alu_mode_int <= MULHSU_MODE;
+                            when MULHU_INSTR =>
+                                alu_mode_int <= MULHU_MODE;
+                            when others =>
+                                null;
+                        end case;
+                    when others =>
+                        case instruction_word_dc(FUNCT3_RANGE) is
+                            when ADD_SUB_INSTR => 
+                                if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = ADD_INSTR_FUNCT7 then
+                                    alu_mode_int <= ADD_MODE;
+                                elsif instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SUB_INSTR_FUNCT7 then
+                                    alu_mode_int <= SUB_MODE;
+                                else 
+                                    null;
+                                end if; 
+                            when SLL_INSTR =>
+                                alu_mode_int <= SLL_MODE;
+                            when SLT_INSTR =>
+                                alu_mode_int <= SLT_MODE;
+                            when SLTU_INSTR =>
+                                alu_mode_int <= SLTU_MODE;
+                            when XOR_INSTR =>
+                                alu_mode_int <= XOR_MODE;
+                            when SR_INSTR =>
+                                if instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRL_INSTR_FUNCT7 then
+                                    alu_mode_int <= SRL_MODE;
+                                elsif instruction_word_dc(R_FORMAT_FUNCT7_RANGE) = SRA_INSTR_FUNCT7 then
+                                    alu_mode_int <= SRA_MODE;
+                                else 
+                                    null;
+                                end if; 
+                            when OR_INSTR =>
+                                alu_mode_int <= OR_MODE;
+                            when AND_INSTR =>
+                                alu_mode_int <= AND_MODE;
+                            when others => null;
+                        end case;
                 end case;
             when I_FORMAT_LOAD =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);

@@ -136,7 +136,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "16:56:18"
+value "16:56:51"
 )
 (vvPair
 variable "group"
@@ -256,7 +256,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "16:56:18"
+value "16:56:51"
 )
 (vvPair
 variable "unit"
@@ -798,8 +798,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3600,38500,4500"
-st "SIGNAL clk           : std_logic
-"
+st "SIGNAL clk           : std_logic"
 )
 )
 *21 (Net
@@ -817,8 +816,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,5400,38500,6300"
-st "SIGNAL res_n         : std_logic
-"
+st "SIGNAL res_n         : std_logic"
 )
 )
 *22 (Net
@@ -836,8 +834,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,37000,3600"
-st "SIGNAL alu_result_ex : word_t
-"
+st "SIGNAL alu_result_ex : word_t"
 )
 )
 *23 (Net
@@ -855,8 +852,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,4500,37000,5400"
-st "SIGNAL pc            : word_t
-"
+st "SIGNAL pc            : word_t"
 )
 )
 *24 (Wire
@@ -940,10 +936,10 @@ uid 308,0
 va (VaSet
 vasetType 3
 )
-xt "54000,16000,64000,16000"
+xt "54000,17000,64000,17000"
 pts [
-"54000,16000"
-"64000,16000"
+"54000,17000"
+"64000,17000"
 ]
 )
 start &16
@@ -961,9 +957,9 @@ uid 314,0
 va (VaSet
 font "courier,8,0"
 )
-xt "56000,15100,63000,16000"
+xt "56000,16100,63000,17000"
 st "alu_result_ex"
-blo "56000,15800"
+blo "56000,16800"
 tm "WireNameMgr"
 )
 )
@@ -976,10 +972,10 @@ uid 318,0
 va (VaSet
 vasetType 3
 )
-xt "54000,17000,64000,17000"
+xt "54000,18000,64000,18000"
 pts [
-"54000,17000"
-"64000,17000"
+"54000,18000"
+"64000,18000"
 ]
 )
 start &16
@@ -997,9 +993,9 @@ uid 324,0
 va (VaSet
 font "courier,8,0"
 )
-xt "56000,16100,57000,17000"
+xt "56000,17100,57000,18000"
 st "pc"
-blo "56000,16800"
+blo "56000,17800"
 tm "WireNameMgr"
 )
 )
@@ -1120,11 +1116,11 @@ tm "BdCompilerDirectivesTextMgr"
 associable 1
 )
 windowSize "-4,5,2556,1413"
-viewArea "-29800,-8600,61343,39565"
+viewArea "-25912,-11858,105544,57611"
 cachedDiagramExtent "0,0,69000,51000"
 hasePageBreakOrigin 1
 pageBreakOrigin "0,0"
-lastUid 330,0
+lastUid 369,0
 defaultCommentText (CommentText
 shape (Rectangle
 layer 0
@@ -2301,7 +2297,7 @@ font "courier,10,0"
 )
 emptyMRCItem *77 (MRCItem
 litem &59
-pos 2
+pos 4
 dimension 20
 )
 uid 69,0

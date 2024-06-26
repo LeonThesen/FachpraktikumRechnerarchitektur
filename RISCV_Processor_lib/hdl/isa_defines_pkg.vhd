@@ -13,6 +13,7 @@ library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.ALL;
 
 PACKAGE isa_defines IS
+    constant XLEN : positive := 32;
     constant ADDR_WIDTH : positive := 10;  
     constant NUM_BYTES : positive := 4;
     constant BYTE_WIDTH : positive := 8;
@@ -91,12 +92,19 @@ PACKAGE isa_defines IS
     constant I_FORMAT_JUMP : opcode_t := "1100111";
     constant JALR_INSTR : funct3_t := "000";
 
--- S-Format: Store
+    -- S-Format: Store
     
     constant S_FORMAT : opcode_t := "0100011";
     constant SB_INSTR : funct3_t := "000";
     constant SH_INSTR : funct3_t := "001";
     constant SW_INSTR : funct3_t := "010";
+
+    -- M-Extension (extends R-Format)
+    constant MUL_INSTR_FUNCT7 : funct7_t := "0000001";
+    constant MUL_INSTR: funct3_t := "000";
+    constant MULH_INSTR: funct3_t := "001";
+    constant MULHSU_INSTR: funct3_t := "010";
+    constant MULHU_INSTR: funct3_t := "011";
 
     -- Range defines
     subtype OPCODE_RANGE is natural range 6 downto 0;

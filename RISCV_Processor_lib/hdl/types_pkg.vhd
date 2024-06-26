@@ -35,7 +35,11 @@ PACKAGE types IS
         SRL_MODE,
         SRA_MODE,
         OR_MODE,
-        AND_MODE
+        AND_MODE,
+        MUL_MODE,
+        MULH_MODE,
+        MULHSU_MODE,
+        MULHU_MODE
     );
 
     type dbpu_mode_t is (

@@ -42,9 +42,11 @@ BEGIN
         end if;
     end process add_sub;
 
-
-    process(all) is 
+    process(all) is
+        variable intermediate_product : std_logic_vector(XLEN * 2 - 1 downto 0); 
     begin
+        intermediate_product := (others => '0');
+
         case alu_mode_ex is            
             when ADD_MODE =>
                 alu_result_int <= add_sub_result_int;
@@ -74,9 +76,22 @@ BEGIN
                 alu_result_int <= word_t(shift_right(unsigned(operand_a), to_integer(unsigned(operand_b))));
             when SRA_MODE => 
                 alu_result_int <= word_t(shift_right(signed(operand_a), to_integer(unsigned(operand_b))));
+            when MUL_MODE =>
+                intermediate_product := std_logic_vector(signed(operand_a) * signed(operand_b));
+                alu_result_int <= intermediate_product(XLEN - 1 downto 0); 
+            when MULH_MODE =>
+                intermediate_product := std_logic_vector(signed(operand_a) * signed(operand_b));
+                alu_result_int <= intermediate_product(XLEN * 2 - 1 downto XLEN);
+            when MULHSU_MODE =>
+                intermediate_product := std_logic_vector(signed(operand_a) * signed(operand_b));
+                alu_result_int <= intermediate_product(XLEN * 2 - 1 downto XLEN);
+            when MULHU_MODE =>
+                intermediate_product := std_logic_vector(unsigned(operand_a) * unsigned(operand_b));
+                alu_result_int <= intermediate_product(XLEN * 2 - 1 downto XLEN);            
             when others =>
                 alu_result_int <= (others => '0');
         end case;
+        
     end process;
 
     alu_result_ex <= alu_result_int;
