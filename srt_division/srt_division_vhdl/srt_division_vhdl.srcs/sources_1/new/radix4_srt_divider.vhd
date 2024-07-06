@@ -9,7 +9,7 @@ use ieee.math_real.all;
 -- POSSIBLE OPTIMIZATIONS: 1) If divisor is greater than dividend quotient is zero and remainder is divisor
 --                         2) If divisor fits within 16 bits we could resort to 32 bit division
 
--- CODE CLEANUP: rename OP_WIDTH, make the name more expressive
+-- CODE CLEANUP: rename OP_WIDTH, i, j, make the name more expressive
 
 entity radix4_srt_divider is
     generic(
@@ -20,6 +20,7 @@ entity radix4_srt_divider is
         res_n     : in  std_logic;
         start     : in  std_logic;
         done      : out std_logic;
+        signed_mode : in boolean;
         divisor   : in  std_logic_vector(31 downto 0);
         dividend  : in  std_logic_vector(31 downto 0);
         quotient  : out std_logic_vector(31 downto 0);
@@ -131,34 +132,38 @@ begin
                     if signed(divisor) = 0 then
                         is_div_by_zero <= true;
                     -- Check for division overflow
-                    elsif signed(dividend) = MOST_NEGATIVE_INT and signed(divisor) = -1 then
-                        is_div_overflow <= true;
+                    elsif signed_mode then
+                        if signed(dividend) = MOST_NEGATIVE_INT and signed(divisor) = -1 then
+                            is_div_overflow <= true;
+                        end if;
                     end if;
                     
                     -- Determine sign of divisor and dividend and convert them to unsigned if negative
                     dividend_int := dividend;
-                    if signed(dividend) < 0 then
-                        is_dividend_negative := true;
-                        -- Convert to unsigned
-                        dividend_int := std_logic_vector(-signed(dividend));
-                    end if; 
-                    
                     divisor_int := divisor;
-                    if signed(divisor) < 0 then
-                        is_divisor_negative := true;
-                        -- Convert to unsigned
-                        divisor_int := std_logic_vector(-signed(divisor));
-                    end if;
                     
-
-                    -- Determine signs of quotient and remainder:
-                    -- Case 1: +a/+b => +q, +r 
-                    -- Case 2: -a/+b => -q, -r 
-                    -- Case 3: +a/-b => -q, +r 
-                    -- Case 4: -a/-b => +q, -r 
-                    -- In all cases the remainder sign follows the dividends sign
-                    is_remainder_negative := is_dividend_negative;
-                    is_quotient_negative := is_dividend_negative xor is_divisor_negative;
+                    if signed_mode then
+                        if signed(dividend) < 0 then
+                            is_dividend_negative := true;
+                            -- Convert to unsigned
+                            dividend_int := std_logic_vector(-signed(dividend));
+                        end if; 
+                        
+                        
+                        if signed(divisor) < 0 then
+                            is_divisor_negative := true;
+                            -- Convert to unsigned
+                            divisor_int := std_logic_vector(-signed(divisor));
+                        end if;
+                        -- Determine signs of quotient and remainder:
+                        -- Case 1: +a/+b => +q, +r 
+                        -- Case 2: -a/+b => -q, -r 
+                        -- Case 3: +a/-b => -q, +r 
+                        -- Case 4: -a/-b => +q, -r 
+                        -- In all cases the remainder sign follows the dividends sign
+                        is_remainder_negative := is_dividend_negative;
+                        is_quotient_negative := is_dividend_negative xor is_divisor_negative;
+                    end if;
         
                     divisor_r <= unsigned('0' & divisor_int(half_width downto 0));
                     remainder <= (others => '0');

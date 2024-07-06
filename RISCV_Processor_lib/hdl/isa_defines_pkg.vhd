@@ -100,11 +100,15 @@ PACKAGE isa_defines IS
     constant SW_INSTR : funct3_t := "010";
 
     -- M-Extension (extends R-Format)
-    constant MUL_INSTR_FUNCT7 : funct7_t := "0000001";
+    constant M_EXT_INSTR_FUNCT7 : funct7_t := "0000001";
     constant MUL_INSTR: funct3_t := "000";
     constant MULH_INSTR: funct3_t := "001";
     constant MULHSU_INSTR: funct3_t := "010";
     constant MULHU_INSTR: funct3_t := "011";
+    constant DIV_INSTR: funct3_t := "100";
+    constant DIVU_INSTR: funct3_t := "101";
+    constant REM_INSTR: funct3_t := "110";
+    constant REMU_INSTR: funct3_t := "111";
 
     -- Range defines
     subtype OPCODE_RANGE is natural range 6 downto 0;
