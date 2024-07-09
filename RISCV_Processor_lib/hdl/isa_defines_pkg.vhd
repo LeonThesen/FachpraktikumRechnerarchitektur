@@ -13,6 +13,7 @@ library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.ALL;
 
 PACKAGE isa_defines IS
+    constant BP_K : positive := 10;
     constant XLEN : positive := 32;
     constant ADDR_WIDTH : positive := 10;  
     constant NUM_BYTES : positive := 4;

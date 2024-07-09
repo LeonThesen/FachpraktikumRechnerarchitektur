@@ -10,7 +10,7 @@ RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/hdl
 RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/hds
 [hds_settings]
 default_library = RISCV_Processor_lib
-design_root = RISCV_Processor_lib.cpu(struct)cpu/struct.bd
+design_root = RISCV_Processor_lib.top_tb(struct)top_tb/struct.bd
 project_description = RISCV processor in VHDL
 version = 3
 [library_type]

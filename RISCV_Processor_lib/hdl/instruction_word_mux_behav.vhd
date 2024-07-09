@@ -14,14 +14,10 @@ ARCHITECTURE behav OF instruction_word_mux IS
 BEGIN
     process(wrong_jump_prediction, sbta_valid_dc, jump_predicted_dc, instruction_word_umgenudelt) is
     begin
-        if wrong_jump_prediction then
+        if wrong_jump_prediction or sbta_valid_dc then
             instruction_word_if <= NOP_INSTR;
         else
-            if sbta_valid_dc or jump_predicted_dc then
-                instruction_word_if <= NOP_INSTR;
-            else
-                instruction_word_if <= instruction_word_umgenudelt;
-            end if;
+            instruction_word_if <= instruction_word_umgenudelt;
         end if;
     end process;
 END ARCHITECTURE behav;

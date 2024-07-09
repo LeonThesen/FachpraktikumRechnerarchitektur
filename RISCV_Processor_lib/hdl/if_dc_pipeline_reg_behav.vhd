@@ -19,10 +19,16 @@ BEGIN
         if res_n = '0' then
             instruction_word_dc <= (others => '0');
             pc_dc <= (others => '0');
+            jump_predicted_dc <= false;
+            bpb_state_dc <= (others => '0');
         else
             if clk'event and clk = '1' then
-                instruction_word_dc <= instruction_word_if;
-                pc_dc <= pc_pre_if;
+                if not stall_dc then
+                    instruction_word_dc <= instruction_word_if;
+                    pc_dc <= pc_pre_if;
+                    jump_predicted_dc <= jump_predicted_if;
+                    bpb_state_dc <= bpb_state_if;
+                end if;
             end if;
         end if;
     end process;

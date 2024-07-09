@@ -1,13 +1,13 @@
 # vsim -f hds_args.tmp -no_autoacc -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 13:16:25 on Jun 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Start time: 13:29:52 on Jul 03,2024
+# ** Note: (vsim-3812) Design is being optimized...
 # Loading std.standard
 # Loading std.textio(body)
 # Loading ieee.std_logic_1164(body)
 # Loading ieee.numeric_std(body)
+# Loading work.types
 # Loading work.top_tb(struct)#1
 # Loading work.clk_res_gen(behav)#1
-# Loading work.types
 # Loading work.isa_defines(body)
 # Loading altera_mf.altera_mf_components
 # Loading work.cpu(struct)#1
@@ -46,24 +46,6 @@
 # Loading work.umnudler(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 do /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/pf_if_pipeline_reg_i/pc_if'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 9
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/instruction_word_mux_i/instruction_word_rom'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 10
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/data_memory_i/store_data'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 65
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/data_memory_i/data_memory_result'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 66
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/data_memory_i/memory_array'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 67
-add wave -position end  sim:/top_tb/cpu_i/if_dc_pipeline_reg_i/pc_pre_if
-add wave -position end  sim:/top_tb/cpu_i/pc_mux_i/pc
-add wave -position end  sim:/top_tb/cpu_i/pc_mux_i/pc_pf
-# Error Undo Start called while in Redo capture mode
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
@@ -95,7 +77,6 @@ run
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
-run
 # 0
 # 
 run
@@ -137,212 +118,6 @@ run
 run
 # 0
 # 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-add wave -position 18  sim:/top_tb/cpu_i/bpb_i/wrong_jump_prediction
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-add wave -position end  sim:/top_tb/cpu_i/bpb_i/jump_relevant_for_bpb_ex
-add wave -position end  sim:/top_tb/cpu_i/bpb_i/jump_predicted_ex
-restart
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.isa_defines(body)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpu(struct)#1
-# Loading work.addr_calc(behav)#1
-# Loading work.addr_width_reducer(behav)#1
-# Loading work.alu(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.bpb(behav)#1
-# Loading work.bta_adder(behav)#1
-# Loading work.data_memory_extractor(behav)#1
-# Loading work.dbpu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.ex_out_mux(behav)#1
-# Loading work.gen_ram_be(behav)#1
-# Loading work.gen_rom(syn)#1
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.imm_bta_mux(behav)#1
-# Loading work.instruction_word_mux(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_ex_inc(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pc_mux(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading work.register_file(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading work.umnudler(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-add wave -position 19  sim:/top_tb/cpu_i/bpb_i/branch_prediction_buffer
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
 run
 # 0
 # 
@@ -373,53 +148,8 @@ run
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.isa_defines(body)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpu(struct)#1
-# Loading work.addr_calc(behav)#1
-# Loading work.addr_width_reducer(behav)#1
-# Loading work.alu(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.bpb(behav)#1
-# Loading work.branch_target_cache(generatedinstance)#1
-# Loading work.bta_adder(behav)#1
-# Loading work.data_memory_extractor(behav)#1
-# Loading work.dbpu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.ex_out_mux(behav)#1
-# Loading work.gen_ram_be(behav)#1
-# Loading work.gen_rom(syn)#1
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.imm_bta_mux(behav)#1
-# Loading work.instruction_word_mux(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_ex_inc(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pc_mux(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading work.register_file(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading work.umnudler(behav)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-# Warning in wave window restart: (vish-4014) No objects found matching '/top_tb/cpu_i/bpb_i/jump_relevant_for_bpb_ex'. 
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
@@ -469,357 +199,74 @@ run
 run
 # 0
 # 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-write format wave -window .main_pane.wave.interior.cs.body.pw.wf /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.types
-# Loading work.isa_defines(body)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpu(struct)#1
-# Loading work.addr_calc(behav)#1
-# Loading work.addr_width_reducer(behav)#1
-# Loading work.alu(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.bpb(behav)#1
-# Loading work.bta_adder(behav)#1
-# Loading work.data_memory_extractor(behav)#1
-# Loading work.dbpu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.ex_out_mux(behav)#1
-# Loading work.gen_ram_be(behav)#1
-# Loading work.gen_rom(syn)#1
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.imm_bta_mux(behav)#1
-# Loading work.instruction_word_mux(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_ex_inc(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pc_mux(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading work.register_file(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading work.umnudler(behav)#1
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-# hds_start \$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim/work
-# End time: 18:05:46 on Jun 26,2024, Elapsed time: 4:49:21
-# Errors: 0, Warnings: 0
-# reading modelsim.ini
-vsim -L RISCV_Processor_lib -L altera_mf -l ../transcript.txt -i -t ns -multisource_delay latest +typdelays RISCV_Processor_lib.cpu(struct)
-# vsim -L RISCV_Processor_lib -L altera_mf -l ../transcript.txt -i -t ns -multisource_delay latest "+typdelays" RISCV_Processor_lib.cpu(struct) -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 18:05:46 on Jun 26,2024
-# ** Note: (vsim-3812) Design is being optimized...
-# ** Warning: (vsim-3865) Due to PLI being present, global +acc is being enabled automatically. This will cause your simulation to run very slowly. Please use vsim -no_autoacc to disable this feature. This feature is now deprecated and will be removed from future releases.
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.types
-# Loading work.isa_defines(body)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpu(struct)#1
-# Loading work.addr_calc(behav)#1
-# Loading work.addr_width_reducer(behav)#1
-# Loading work.alu(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.bpb(behav)#1
-# Loading work.bta_adder(behav)#1
-# Loading work.data_memory_extractor(behav)#1
-# Loading work.dbpu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.ex_out_mux(behav)#1
-# Loading work.gen_ram_be(behav)#1
-# Loading work.gen_rom(syn)#1
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.imm_bta_mux(behav)#1
-# Loading work.instruction_word_mux(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_ex_inc(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pc_mux(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading work.register_file(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading work.umnudler(behav)#1
+# hds_restart
+restart -force
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /cpu/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /cpu/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /cpu/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 2  Instance: /cpu/register_file_i
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
+# ** Warning: (vsim-7) Failed to open VHDL file "/u/home/clab/st161569/Downloads/main.mif" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_rom_i/altsyncram_component
+# ** Fatal: (vsim-7) Failed to open VHDL file "/u/home/clab/st161569/Downloads/main.mif" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /top_tb/cpu_i/gen_rom_i/altsyncram_component/MEMORY File: /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd
+# Fatal error in Process MEMORY at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd line 40292
+# 
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
+# 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
+# 
+run
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 restart
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
 # ** Note: (vsim-8009) Loading existing optimized design _opt2
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-do /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/clk'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 4
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/res_n'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 5
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/instruction_word_mux_i/instruction_word_if'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 9
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/if_dc_pipeline_reg_i/pc_pre_if'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 10
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/pc_mux_i/pc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 11
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/pc_mux_i/pc_pf'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 12
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/pc_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 16
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/instruction_word_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 17
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/alu_mode_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 18
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/dbpu_mode_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 19
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/fwd_rs1_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 20
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/fwd_rs2_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 21
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/fwd_store_data_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 22
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/imm_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 23
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/imm_to_alu_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 24
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/is_bta'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 25
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/mem_mode_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 26
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/rd_addr_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 27
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/rs1_addr'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 28
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/rs2_addr'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 29
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/sbta_valid_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 30
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/decoder_i/stall_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 31
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/imm_or_bta_dc'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 32
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/bpb_i/wrong_jump_prediction'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 33
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/bpb_i/branch_prediction_buffer'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 34
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/register_file_i/register_array'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 35
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/pc_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 39
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/alu_mode_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 40
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/dbpu_mode_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 41
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/fwd_rs1_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 42
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/fwd_rs2_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 43
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/fwd_store_data_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 44
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/imm_or_bta_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 45
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/imm_to_alu_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 46
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/mem_mode_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 47
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/rd_addr_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 48
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/rs1_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 49
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dc_ex_pipeline_reg_i/rs2_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 50
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/alu_i/operand_a'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 51
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/alu_i/operand_b'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 52
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/rs2_fwd_mux_i/rs2_fwd_mux_out'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 53
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/alu_i/alu_flags'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 54
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dbpu_i/alu_result_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 55
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dbpu_i/dbta'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 56
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dbpu_i/dbta_valid_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 57
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/dbpu_i/is_return_addr'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 58
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_out_mux_i/ex_out_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 59
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/bpb_i/jump_predicted_ex'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 60
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_mem_pipeline_reg_i/ex_out_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 64
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_mem_pipeline_reg_i/fwd_store_data_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 65
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_mem_pipeline_reg_i/mem_mode_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 66
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_mem_pipeline_reg_i/rd_addr_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 67
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/ex_mem_pipeline_reg_i/rs2_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 68
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_mem'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 69
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_wb'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 73
-# ** UI-Msg (Warning): (vish-4014) No objects found matching '/top_tb/cpu_i/mem_wb_pipeline_reg_i/rd_addr_wb'.
-# Executing ONERROR command at macro /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do line 74
-# hds_start \$HDS_PROJECT_DIR/RISCV_Processor_lib/questasim/work
-# End time: 18:06:26 on Jun 26,2024, Elapsed time: 0:00:40
-# Errors: 0, Warnings: 1
-# reading modelsim.ini
-vsim -L RISCV_Processor_lib -L altera_mf -l ../transcript.txt -i -t ns -multisource_delay latest +typdelays RISCV_Processor_lib.top_tb(struct)
-# vsim -L RISCV_Processor_lib -L altera_mf -l ../transcript.txt -i -t ns -multisource_delay latest "+typdelays" RISCV_Processor_lib.top_tb(struct) -foreign "hdsInit /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll" -pli ""/ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll"" 
-# Start time: 18:06:26 on Jun 26,2024
-# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
-# ** Warning: (vsim-3865) Due to PLI being present, global +acc is being enabled automatically. This will cause your simulation to run very slowly. Please use vsim -no_autoacc to disable this feature. This feature is now deprecated and will be removed from future releases.
-# ** Warning: (vopt-10587) Some optimizations are turned off because the +acc switch is in effect. This will cause your simulation to run slowly. Please use -access/-debug to maintain needed visibility.
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=2.
-# Loading std.standard
-# Loading std.textio(body)
-# Loading ieee.std_logic_1164(body)
-# Loading ieee.numeric_std(body)
-# Loading work.types
-# Loading work.top_tb(struct)#1
-# Loading work.clk_res_gen(behav)#1
-# Loading work.isa_defines(body)
-# Loading altera_mf.altera_mf_components
-# Loading work.cpu(struct)#1
-# Loading work.addr_calc(behav)#1
-# Loading work.addr_width_reducer(behav)#1
-# Loading work.alu(behav)#1
-# Loading ieee.std_logic_arith(body)
-# Loading ieee.std_logic_unsigned(body)
-# Loading work.bpb(behav)#1
-# Loading work.bta_adder(behav)#1
-# Loading work.data_memory_extractor(behav)#1
-# Loading work.dbpu(behav)#1
-# Loading work.dc_ex_pipeline_reg(behav)#1
-# Loading work.decoder(behav)#1
-# Loading work.ex_mem_pipeline_reg(behav)#1
-# Loading work.ex_out_mux(behav)#1
-# Loading work.gen_ram_be(behav)#1
-# Loading work.gen_rom(syn)#1
-# Loading altera_mf.altera_common_conversion(body)
-# Loading altera_mf.altera_device_families(body)
-# Loading altera_mf.altsyncram(translated)#1
-# Loading work.if_dc_pipeline_reg(behav)#1
-# Loading work.imm_bta_mux(behav)#1
-# Loading work.instruction_word_mux(behav)#1
-# Loading work.mem_mode_mux(behav)#1
-# Loading work.mem_wb_pipeline_reg(behav)#1
-# Loading work.pc_ex_inc(behav)#1
-# Loading work.pc_inc(behav)#1
-# Loading work.pc_mux(behav)#1
-# Loading work.pf_if_pipeline_reg(behav)#1
-# Loading work.register_file(behav)#1
-# Loading work.rs1_fwd_mux(behav)#1
-# Loading work.rs2_fwd_mux(behav)#1
-# Loading work.rs2_mux(behav)#1
-# Loading work.store_data_fwd_mux(behav)#1
-# Loading work.umnudler(behav)#1
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-do /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/questasim/work/wave.do
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
@@ -833,64 +280,70 @@ run
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
 #    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# 0
+# ** Warning: (vsim-7) Failed to open VHDL file "/u/home/clab/st161569/Downloads/main.mif" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_rom_i/altsyncram_component
+# ** Fatal: (vsim-7) Failed to open VHDL file "/u/home/clab/st161569/Downloads/main.mif" in r mode.
+# No such file or directory. (errno = ENOENT)
+#    Time: 0 ns  Iteration: 0  Process: /top_tb/cpu_i/gen_rom_i/altsyncram_component/MEMORY File: /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd
+# Fatal error in Process MEMORY at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd line 40292
+# 
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
+# Cannot continue because of fatal error.
+# HDL call sequence:
+# Stopped at /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 40292 Subprogram read_my_memory
+# called from  /ext/eda/quartus/21_1_1/quartus/eda/sim_lib/altera_mf.vhd 41911 Process MEMORY
 # 
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -923,6 +376,36 @@ run
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
 # ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
 #    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
 run
 # 0
 # 
@@ -951,56 +434,15 @@ run
 # 0
 # 
 # Causality operation skipped due to absence of debug database file
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-run
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/gen_ram_be_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 0  Instance: /top_tb/cpu_i/data_memory_extractor_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/register_file_i
-# ** Warning: NUMERIC_STD.TO_INTEGER: metavalue detected, returning 0
-#    Time: 0 ns  Iteration: 1  Instance: /top_tb/cpu_i/data_memory_extractor_i
-run
-# 0
-# 
-run
-# 0
-# 
-run
-# 0
-# 
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Note: (vsim-8009) Loading existing optimized design _opt2
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -1045,22 +487,65 @@ run
 run
 # 0
 # 
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
+# Error: invalid command name "::.main_pane.dataflow.interior.cs.body.pw.df.c"
 # hds_restart
 restart -force
 # ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-# hds_restart
-restart -force
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
-# Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
-restart
-# ** Note: (vsim-12125) Error and warning message counts have been reset to '0' because of 'restart'.
-# ** Note: (vsim-8009) Loading existing optimized design _opt1
-# ** Note: (vsim-12126) Error and warning message counts have been restored: Errors=0, Warnings=1.
+# ** Note: (vsim-3813) Design is being optimized due to module recompilation...
+# Loading std.standard
+# Loading std.textio(body)
+# Loading ieee.std_logic_1164(body)
+# Loading ieee.numeric_std(body)
+# Loading work.types
+# Loading work.top_tb(struct)#1
+# Loading work.clk_res_gen(behav)#1
+# Loading work.isa_defines(body)
+# Loading altera_mf.altera_mf_components
+# Loading work.cpu(struct)#1
+# Loading work.addr_calc(behav)#1
+# Loading work.addr_width_reducer(behav)#1
+# Loading work.alu(behav)#1
+# Loading ieee.std_logic_arith(body)
+# Loading ieee.std_logic_unsigned(body)
+# Loading work.bpb(behav)#1
+# Loading work.bta_adder(behav)#1
+# Loading work.data_memory_extractor(behav)#1
+# Loading work.dbpu(behav)#1
+# Loading work.dc_ex_pipeline_reg(behav)#1
+# Loading work.decoder(behav)#1
+# Loading work.ex_mem_pipeline_reg(behav)#1
+# Loading work.ex_out_mux(behav)#1
+# Loading work.gen_ram_be(behav)#1
+# Loading work.gen_rom(syn)#1
+# Loading altera_mf.altera_common_conversion(body)
+# Loading altera_mf.altera_device_families(body)
+# Loading altera_mf.altsyncram(translated)#1
+# Loading work.if_dc_pipeline_reg(behav)#1
+# Loading work.imm_bta_mux(behav)#1
+# Loading work.instruction_word_mux(behav)#1
+# Loading work.mem_mode_mux(behav)#1
+# Loading work.mem_wb_pipeline_reg(behav)#1
+# Loading work.pc_ex_inc(behav)#1
+# Loading work.pc_inc(behav)#1
+# Loading work.pc_mux(behav)#1
+# Loading work.pf_if_pipeline_reg(behav)#1
+# Loading work.register_file(behav)#1
+# Loading work.rs1_fwd_mux(behav)#1
+# Loading work.rs2_fwd_mux(behav)#1
+# Loading work.rs2_mux(behav)#1
+# Loading work.store_data_fwd_mux(behav)#1
+# Loading work.umnudler(behav)#1
 # Loading /ext/eda/hds/2022_3/resources/downstream/modelsim/ModelSim_64Bit.dll
 run
 # ** Warning: There is an 'U'|'X'|'W'|'Z'|'-' in an arithmetic operand, the result will be 'X'(es).
@@ -1099,5 +584,260 @@ run
 run
 # 0
 # 
-# End time: 18:21:00 on Jun 26,2024, Elapsed time: 0:14:34
-# Errors: 0, Warnings: 16
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+run
+# 0
+# 
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"
+# Region not found: "/top_tb/cpu_i/branch_target_cache_i/"

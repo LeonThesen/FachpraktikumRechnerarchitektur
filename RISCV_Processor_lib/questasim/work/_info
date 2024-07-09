@@ -114,6 +114,9 @@ R0
 R0
 R0
 R0
+R0
+R0
+R0
 !s11e MIXED_VERSIONS
 13
 !s112 1.1
@@ -123,14 +126,14 @@ R0
 cModel Technology
 Z1 d/u/home/clab/st161569
 T_opt
-!s110 1719409855
-VCVf?AKZ?F0Sk3OYL;dH1]1
-Z2 04 6 6 work top_tb struct 1
-=8-a8a159d1485b-667c1cbf-24b3f-155d
+!s110 1720006031
+V2gW;h5VAQ:Ao5mb@=oj<[0
+04 3 6 work cpu struct 1
+=1-a8a159d147e5-6685358e-90223-1e07
 R0
-Z3 !s12b OEM100
-Z4 !s124 OEM100
-o-quiet -work RISCV_Processor_lib -L RISCV_Processor_lib -L altera_mf
+Z2 !s12b OEM100
+Z3 !s124 OEM100
+Z4 o-quiet -work RISCV_Processor_lib -L RISCV_Processor_lib -L altera_mf
 Z5 tCvgOpt 0
 n@_opt
 Z6 OL;O;2022.4_2;75
@@ -138,28 +141,28 @@ R1
 T_opt1
 !s110 1719417986
 V2BLk1n=Cd[KSIjUkGLhDe1
-R2
+Z7 04 6 6 work top_tb struct 1
 =1-a8a159d1485b-667c3c82-b1a25-34fd
 R0
+R2
 R3
-R4
-Z7 o-quiet +acc -auto_acc_if_foreign -work RISCV_Processor_lib -L RISCV_Processor_lib -L altera_mf
+o-quiet +acc -auto_acc_if_foreign -work RISCV_Processor_lib -L RISCV_Processor_lib -L altera_mf
 R5
 n@_opt1
 R6
+R1
 T_opt2
-!s110 1719417946
-VK>a4f_kIZDAEkcBd:GmTN3
-04 3 6 work cpu struct 1
-=1-a8a159d1485b-667c3c5a-6ab62-3453
+!s110 1720007588
+VOkQA^E40RUCHLf99NBz_c3
+R7
+=8-a8a159d147e5-66853ba4-1e7bc-1f82
 R0
+R2
 R3
 R4
-R7
 R5
 n@_opt2
 R6
-R1
 Eaddr_calc
 Z8 w1718809240
 Z9 DPx9 altera_mf 20 altera_mf_components 0 22 OKTj^lfNo1d0g@n2BS^KA3
@@ -569,7 +572,7 @@ R11
 R12
 R13
 R14
-!i122 197
+!i122 202
 R15
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd
@@ -579,16 +582,16 @@ VVV4hPZOIF:iQMBmB0TO>g0
 !s100 _WnH4DK`@1mjEASPRD?Qh1
 R17
 33
-Z44 !s110 1719417462
+Z44 !s110 1720007587
 !i10b 1
-Z45 !s108 1719417462.000000
+Z45 !s108 1720007586.000000
 R20
-Z46 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd|
+Z46 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd|
 !i113 0
 R22
 R23
 Astruct
-w1719417944
+Z47 w1720007586
 DEx19 riscv_processor_lib 8 umnudler 0 22 GbBoHF?e[^8Y9QQM@icM?3
 DEx19 riscv_processor_lib 18 store_data_fwd_mux 0 22 <Wcf;Nz7eJKHDWGQ9Mz6P0
 DEx19 riscv_processor_lib 7 rs2_mux 0 22 kTQ[]L3j=CPVak<HHhzc91
@@ -624,7 +627,7 @@ R11
 R12
 R13
 R14
-!i122 200
+!i122 202
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd
 l445
@@ -633,11 +636,11 @@ VGl>n;mZJ:MaTOzSE0SE:L0
 !s100 OS;7B=CEK6[adh9MYGAZ>0
 R17
 33
-Z47 !s110 1719417944
+R44
 !i10b 1
-Z48 !s108 1719417944.000000
+R45
 R20
-Z49 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|
+R46
 !i113 0
 R22
 R23
@@ -690,7 +693,7 @@ R20
 R22
 R23
 Edata_memory_extractor
-Z50 w1718809241
+Z48 w1718809241
 R9
 R10
 R11
@@ -742,7 +745,7 @@ R21
 R22
 R23
 Edbpu
-R50
+R48
 R9
 R10
 R11
@@ -888,16 +891,16 @@ VzVbXKU^R`=KF4UN<^SZXR1
 !s100 <jF0I@2JYfzEC_UWM25=E1
 R17
 33
-R47
+Z49 !s110 1719417944
 !i10b 1
-R48
+Z50 !s108 1719417944.000000
 R20
-R49
+Z51 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|
 !i113 0
 R22
 R23
 Eex_mem_pipeline_reg
-R50
+R48
 R9
 R10
 R11
@@ -914,11 +917,11 @@ V?KYjDZg:LON;3PJN]W4@12
 !s100 6@:V:=[95^aC6;Em;M2Dm3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -939,16 +942,16 @@ VQobgbH3IfYgVYTel0;44X1
 !s100 DJYOV1QA>1WSL=MzV6DP:3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Eex_out_mux
-R50
+R48
 R9
 R10
 R11
@@ -965,11 +968,11 @@ VPCLd[QTDzkNJMBdCl3nNK1
 !s100 ha3nX0nDVfBk:n[U7`?5R0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -990,16 +993,16 @@ V`Gc6LbGmDO2G>H_M3I5l@2
 !s100 Q4NfkQD3j[TBnHNlhBX131
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Egen_ram_be
-Z51 w1718190653
+Z52 w1718190653
 R13
 R14
 !i122 183
@@ -1012,13 +1015,13 @@ V6@dP_4[TMgREcmCaR;_X30
 !s100 1O[?Na0zV:9?d2GNDf9LX2
 R17
 31
-Z52 !s110 1718809242
+Z53 !s110 1718809242
 !i10b 1
-Z53 !s108 1718809242.000000
-Z54 !s90 -work|RISCV_Processor_lib|-nologo|-93|-f|/tmp/Files1|
-Z55 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_entity.vhd|
+Z54 !s108 1718809242.000000
+Z55 !s90 -work|RISCV_Processor_lib|-nologo|-93|-f|/tmp/Files1|
+Z56 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_entity.vhd|
 !i113 0
-Z56 o-nologo -work RISCV_Processor_lib -93
+Z57 o-nologo -work RISCV_Processor_lib -93
 R23
 Abehav
 DEx4 work 10 gen_ram_be 0 22 6@dP_4[TMgREcmCaR;_X30
@@ -1034,36 +1037,36 @@ Vego4XT>aLS:N0Vcg[lAQ20
 !s100 :cog;8MY<3@?9MoU_3^?40
 R17
 31
-R52
-!i10b 1
 R53
+!i10b 1
 R54
 R55
-!i113 0
 R56
+!i113 0
+R57
 R23
 Egen_rom
-Z57 w1718190661
+Z58 w1718190661
 R9
 R13
 R14
 !i122 183
 R15
-Z58 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd
-Z59 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd
+Z59 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd
+Z60 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd
 l0
 L43 1
 VUA4k0<1znmPB_gQdR=c_72
 !s100 E6Z^j2Qo]1AF@0KKc?9J=0
 R17
 31
-R52
-!i10b 1
 R53
+!i10b 1
 R54
 R55
-!i113 0
 R56
+!i113 0
+R57
 R23
 Asyn
 R9
@@ -1077,16 +1080,16 @@ VkS^<<WCbn]g;9d=`AHoUh0
 !s100 ;8fPJg>mR?;R<cmZMHnlK3
 R17
 31
-R52
-!i10b 1
 R53
+!i10b 1
 R54
 R55
-!i113 0
 R56
+!i113 0
+R57
 R23
 Eif_dc_pipeline_reg
-R50
+R48
 R9
 R10
 R11
@@ -1103,15 +1106,16 @@ VE=U0a@SmSh>9WaEkm2RZ`3
 !s100 RWM9PD^@THc]]2EmaT2O`1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Abehav
+w1720007565
 R9
 R10
 R12
@@ -1119,25 +1123,25 @@ DEx4 work 18 if_dc_pipeline_reg 0 22 E=U0a@SmSh>9WaEkm2RZ`3
 R13
 R14
 R11
-!i122 200
+!i122 202
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd
 l15
-L14 16
-VHWSIz@>6GgQW4^G8J9VeA0
-!s100 j<n@IaONliFXalNTZi?Lf0
+L14 18
+VOBEj:PZC?aVJYC2YMKg1o2
+!s100 d59=LU:P9jdKD]06]keXN0
 R17
 33
-R47
+R44
 !i10b 1
-R48
+R45
 R20
-R49
+R46
 !i113 0
 R22
 R23
 Eimm_bta_mux
-R50
+R48
 R9
 R10
 R11
@@ -1154,11 +1158,11 @@ VLEi^9A5L9W?zEd3zn73V>0
 !s100 <6eEG7@ZLOJ[0l=^:?KbN1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1179,11 +1183,11 @@ VhA_JBKLcEPE^FTibF[emM0
 !s100 iG_j1k?<L<;zT1z:XAF>:0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1205,11 +1209,11 @@ V<R<nH^5TK0giU]Elg5c@n2
 !s100 FAO=_<zHJj4_MIneW8Sdc3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1226,16 +1230,16 @@ R10
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd
 l14
-Z60 L13 15
+Z61 L13 15
 V`_4C;zNcenEkeSE_X4R^b1
 !s100 odZTa0eA:i;jTHR=oDnb^1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1287,8 +1291,8 @@ R21
 R22
 R23
 Emem_mode_multiplexer
-Z61 w1716303456
-Z62 DPx19 riscv_processor_lib 5 types 0 22 nX[8i@_T4Rakh^@M5abhQ2
+Z62 w1716303456
+Z63 DPx19 riscv_processor_lib 5 types 0 22 nX[8i@_T4Rakh^@M5abhQ2
 R12
 R13
 R14
@@ -1302,39 +1306,39 @@ V^Wa9GT2_3l[z1HcZ67<a^3
 !s100 NmnZc1JEWjQ1>9]4fH5Z`1
 R17
 33
-Z63 !s110 1716303456
+Z64 !s110 1716303456
 !i10b 1
-Z64 !s108 1716303456.000000
+Z65 !s108 1716303456.000000
 R20
-Z65 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rom_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rom_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/clk_res_gen_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/clk_res_gen_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_entity.vhd|
+Z66 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rom_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rom_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/clk_res_gen_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/clk_res_gen_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_entity.vhd|
 !i113 0
 R22
 R23
 Abehav
-R62
+R63
 R12
 R13
 R14
 DEx4 work 20 mem_mode_multiplexer 0 22 ^Wa9GT2_3l[z1HcZ67<a^3
 !i122 43
-Z66 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd
-Z67 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd
+Z67 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd
+Z68 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd
 l11
-Z68 L10 12
+Z69 L10 12
 VSSGI7:JYa4kzMTjAHJ^K:0
 !s100 a=kQ^j[9m:2;<oZW<YL3K3
 R17
 33
-R63
-!i10b 1
 R64
-R20
+!i10b 1
 R65
+R20
+R66
 !i113 0
 R22
 R23
 Emem_mode_mux
-R50
+R48
 R9
 R10
 R11
@@ -1351,11 +1355,11 @@ Vl:4PTDlH:;flHl3mA?6C93
 !s100 ZDN8OKRN1D3iDaHOJP;m<1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1368,24 +1372,24 @@ R13
 R14
 DEx4 work 12 mem_mode_mux 0 22 l:4PTDlH:;flHl3mA?6C93
 !i122 200
-R66
 R67
+R68
 l11
 R24
 VIdKZnc?NbNkdP2azf]bg:1
 !s100 DzQlW8Uc<]>1>n^8ISbXJ3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Emem_wb_pipeline_reg
-R50
+R48
 R9
 R10
 R11
@@ -1402,11 +1406,11 @@ VEhJ]:<jkf:A^N6L7z]VS70
 !s100 NQH3YGFMHZcQnCkIeg;>^2
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1422,21 +1426,21 @@ R11
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd
 l14
-R60
+R61
 V;jX1>>Dfd=@I^7@PGV>fE1
 !s100 zCdHTQWm^WbB_TZU_[;G82
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Epc_ex_inc
-R50
+R48
 R9
 R10
 R11
@@ -1453,11 +1457,11 @@ VQjabT`Qen_??Kb5>ad2i20
 !s100 UNhT2:@fLnGC88oEiO12H3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1474,21 +1478,21 @@ DEx4 work 9 pc_ex_inc 0 22 QjabT`Qen_??Kb5>ad2i20
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd
 l11
-Z69 L10 7
+Z70 L10 7
 V6_bSd0lziFY_3h1i2`N@P3
 !s100 L8k2B[m[cfdh>BC<F8cRJ1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Epc_inc
-R50
+R48
 R9
 R10
 R11
@@ -1505,11 +1509,11 @@ Vm@fUljgg^PZVK_1B0NX8o2
 !s100 `h2]S1JzIbNEeDG42[h[]1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1526,21 +1530,21 @@ R14
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd
 l15
-Z70 L14 11
+Z71 L14 11
 Vm5I55QTiR6[0G6cXo5FR>3
 !s100 ^n?:Tb3?CBlZOE2@okbz^0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Epc_inc1
-Z71 w1718803695
+Z72 w1718803695
 R9
 R34
 R35
@@ -1557,11 +1561,11 @@ VVmd=mRV6YQ78^6oVd99=j3
 !s100 V`z^hZnFTe:z844=42^hI0
 R17
 33
-Z72 !s110 1718803696
+Z73 !s110 1718803696
 !i10b 1
-Z73 !s108 1718803696.000000
-Z74 !s90 -work|RISCV_Processor_lib|-nologo|-2008|-f|/tmp/Files2|
-Z75 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|
+Z74 !s108 1718803696.000000
+Z75 !s90 -work|RISCV_Processor_lib|-nologo|-2008|-f|/tmp/Files2|
+Z76 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|
 !i113 0
 R22
 R23
@@ -1577,16 +1581,16 @@ R14
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc1_behav.vhd
 l15
-R70
+R71
 VbM>F@@h@>gFL0EF=zoJBT0
 !s100 QmKJ6RT6ecH=;jPS5O8:P2
 R17
 33
-R72
-!i10b 1
 R73
+!i10b 1
 R74
 R75
+R76
 !i113 0
 R22
 R23
@@ -1608,11 +1612,11 @@ V?3Z]Cd;?ODS[X^[3Fh62^1
 !s100 >>jTYPb4OE<TTiE4KK3Nj0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1634,16 +1638,16 @@ VfV5mSgMME2PlUNUb5nT650
 !s100 _G60l=ObRhe0EHd[o=oS20
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Epc_stall
-Z76 w1718807884
+Z77 w1718807884
 R9
 R34
 R35
@@ -1663,8 +1667,8 @@ R17
 !s110 1718807885
 !i10b 1
 !s108 1718807885.000000
-R74
-Z77 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|
+R75
+Z78 !s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|
 !i113 0
 R22
 R23
@@ -1680,7 +1684,7 @@ R14
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_stall_behav.vhd
 l15
-R70
+R71
 VeSKKU51N9m]N9SnIL<L>j3
 !s100 0SlW@5kzmUDaM2<BCkfbC1
 R17
@@ -1688,13 +1692,13 @@ R17
 !s110 1718806405
 !i10b 1
 !s108 1718806405.000000
-R74
-R77
+R75
+R78
 !i113 0
 R22
 R23
 Epf_if_pipeline_reg
-R50
+R48
 R9
 R10
 R11
@@ -1711,11 +1715,11 @@ V8GUe@AKS``gPTLlU=;ZWA3
 !s100 an<UHdDKgTJ<WPNXm2Xcf3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1731,21 +1735,21 @@ R11
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd
 l14
-R60
+R61
 VL3mj=X[NjbSD89hkmh9Ed0
 !s100 iT77b2LW]_<U[mM_g:^<R0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Eregister_file
-R50
+R48
 R9
 R10
 R11
@@ -1762,11 +1766,11 @@ V28h69aCCPaT;OQ@Ua6M370
 !s100 X@>zLj:cCTVSI8JS?WO`N3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1789,11 +1793,11 @@ VZ>>>CIe6;0Id2D6BVmWGB1
 !s100 <^P[z?gBb4d8eoz^KWEna3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1847,7 +1851,7 @@ R20
 R22
 R23
 Ers1_fwd_mux
-R50
+R48
 R9
 R10
 R11
@@ -1864,11 +1868,11 @@ Vm=f0gZZ9>5E]:E]=G=P?P2
 !s100 `WR8YR4ele3@9f>n_cD9@0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1885,21 +1889,21 @@ DEx4 work 11 rs1_fwd_mux 0 22 m=f0gZZ9>5E]:E]=G=P?P2
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd
 l11
-Z78 L10 14
+Z79 L10 14
 V6ke371z[3V6e:mbh]d0g01
 !s100 a_MeDM9X14lnk:@2QX`GG2
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Ers2_fwd_mux
-R50
+R48
 R9
 R10
 R11
@@ -1916,11 +1920,11 @@ VL4?`@B;RXB]]>3ngZQEgl1
 !s100 Nm8CO:lK2QbPX_N05@f_@3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -1937,22 +1941,22 @@ DEx4 work 11 rs2_fwd_mux 0 22 L4?`@B;RXB]]>3ngZQEgl1
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd
 l11
-R78
+R79
 VhdJXib6kjSZW5im@>5WS22
 !s100 ?j3DnRajH];zV=zAU3DM31
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Ers2_multiplexer
-R61
 R62
+R63
 R12
 R13
 R14
@@ -1966,39 +1970,39 @@ V=F;i95KDFHY0_7PJ_?bl_3
 !s100 bXaQU`CA`WK<;0b_4<1cF1
 R17
 33
-R63
-!i10b 1
 R64
-R20
+!i10b 1
 R65
+R20
+R66
 !i113 0
 R22
 R23
 Abehav
-R62
+R63
 R12
 R13
 R14
 DEx4 work 15 rs2_multiplexer 0 22 =F;i95KDFHY0_7PJ_?bl_3
 !i122 43
-Z79 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
-Z80 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
+Z80 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
+Z81 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
 l11
-R68
+R69
 V6[fmn[U:3hU@;TT^z^^Fm3
 !s100 c:X_e9QF>3YF3PzEUWS:L3
 R17
 33
-R63
-!i10b 1
 R64
-R20
+!i10b 1
 R65
+R20
+R66
 !i113 0
 R22
 R23
 Ers2_mux
-R50
+R48
 R9
 R10
 R11
@@ -2015,11 +2019,11 @@ VkTQ[]L3j=CPVak<HHhzc91
 !s100 MzY[T8Y4Y_Mg=NClo7MUX0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -2032,24 +2036,24 @@ R13
 R14
 DEx4 work 7 rs2_mux 0 22 kTQ[]L3j=CPVak<HHhzc91
 !i122 200
-R79
 R80
+R81
 l11
 R24
 VK`OXB3g>eHmL556AS1>4G3
 !s100 E4h17<TP3Uj<Eoz0I_O]z3
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
 Estore_data_fwd_mux
-R50
+R48
 R9
 R10
 R11
@@ -2066,11 +2070,11 @@ V<Wcf;Nz7eJKHDWGQ9Mz6P0
 !s100 CH8hc;QClI=VO6UDMVI`D1
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -2091,11 +2095,11 @@ V5Gn^Q=_HT]TU6ZfDedGk92
 !s100 R:cGMSAlL6_e<ZFdG@>F73
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -2123,7 +2127,7 @@ R43
 R22
 R23
 Astruct
-R39
+R47
 DEx19 riscv_processor_lib 3 cpu 0 22 VV4hPZOIF:iQMBmB0TO>g0
 DEx19 riscv_processor_lib 11 clk_res_gen 0 22 b1bA5gzD<_4J2<M`^4jb]2
 DEx4 work 6 top_tb 0 22 oBRM8hI=mA:Ha=PZQf:PP3
@@ -2131,7 +2135,7 @@ R11
 R12
 R13
 R14
-!i122 201
+!i122 202
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/top_tb_struct.vhd
 l51
@@ -2140,11 +2144,11 @@ V9Ga`^1>Nm?1EN@7EHnl6L3
 !s100 T<2g`ijDj3>8SAj1O4YbZ3
 R17
 33
-R41
+R44
 !i10b 1
-R42
+R45
 R20
-R43
+R46
 !i113 0
 R22
 R23
@@ -2162,16 +2166,16 @@ Vi]Z^LX4j1f0C];;6:RhC;2
 !s100 1lQ`Ofh3Q^gadbc5fNm9o3
 R17
 33
-R44
+!s110 1719417462
 !i10b 1
-R45
+!s108 1719417462.000000
 R20
-R46
+!s107 /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_behav.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd|/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd|
 !i113 0
 R22
 R23
 Eumnudler
-R50
+R48
 R9
 R10
 R11
@@ -2188,11 +2192,11 @@ VGbBoHF?e[^8Y9QQM@icM?3
 !s100 le?9KY2[LLEb?en4gS?i00
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23
@@ -2208,16 +2212,16 @@ DEx4 work 8 umnudler 0 22 GbBoHF?e[^8Y9QQM@icM?3
 8/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd
 F/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd
 l11
-R69
+R70
 V3CDEKPHe7^=90bRF7^;`X2
 !s100 dEdh=Y9BJ^c49IHbEXR>d0
 R17
 33
-R47
-!i10b 1
-R48
-R20
 R49
+!i10b 1
+R50
+R20
+R51
 !i113 0
 R22
 R23

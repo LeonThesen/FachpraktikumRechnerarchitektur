@@ -16,6 +16,8 @@ PACKAGE types IS
     subtype word_t is std_logic_vector(31 downto 0);
     subtype double_word_t is std_logic_vector(63 downto 0);
 
+    subtype branch_prediction_state_t is std_logic_vector(1 downto 0);
+
     type memory_access_t is (LOAD, STORE, IDLE);
     type data_width_t is (BYTE, HALFWORD, WORD);
 

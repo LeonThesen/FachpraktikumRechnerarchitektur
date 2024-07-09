@@ -30,7 +30,7 @@ BEGIN
             pc_ex <= (others => '0');
             dbpu_mode_ex <= NO_BRANCH;
             jump_predicted_ex <= false;
-            is_conditional_jump_ex <= false;
+            bpb_state_ex <= (others => '0');
         else 
             if clk'event and clk = '1' then
                 rs1_ex <= rs1_dc;
@@ -46,7 +46,7 @@ BEGIN
                 pc_ex <= pc_dc;
                 dbpu_mode_ex <= dbpu_mode_dc;
                 jump_predicted_ex <= jump_predicted_dc;
-                is_conditional_jump_ex <= is_conditional_jump_dc;
+                bpb_state_ex <= bpb_state_dc;
             end if;
         end if;
     end process;
