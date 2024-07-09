@@ -1,17 +1,235 @@
 Time resolution is 1 ps
 Note: Starting Division
 Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: un-normalized divisor = 1, dividend = -2147483648
+Note: un-normalized divisor = 3, dividend = 10
 Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: Starting Division
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: un-normalized divisor = 1, dividend = -2147483648
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: Starting Division
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: un-normalized divisor = 1, dividend = -2147483648
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: Starting Division
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
-Note: un-normalized divisor = 1, dividend = -2147483648
-Time: 20 ns  Iteration: 1  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: leading_zeros is 31
+Time: 50 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: j is 00000000
+Time: 50 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: divisor_r is 000000000000000000000000000000011
+Time: 50 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: leading_zeros is 1
+Time: 70 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: j is 00011110
+Time: 70 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: divisor_r is 011000000000000000000000000000000
+Time: 70 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: divisor shifted by 30 for normalization. normalized divisor = -1073741824
+Time: 70 ns  Iteration: 2  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: iterations necessary for division are (width+amount shifted / 2) = 30
+Time: 70 ns  Iteration: 2  Process: /top_tb/dut/divider_i/state_transition  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: j is 00011110
+Time: 90 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r gets shifted by 30 to align the number
+Time: 90 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 60
+Time: 110 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000000000000010100 <- quotient[60] = 0. decision bits are 000000
+Time: 110 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 110 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 110 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 58
+Time: 130 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000000000001010000 <- quotient[58] = 0. decision bits are 000000
+Time: 130 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 130 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 130 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 56
+Time: 150 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000000000101000000 <- quotient[56] = 0. decision bits are 000000
+Time: 150 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 150 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 150 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 54
+Time: 170 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000000010100000000 <- quotient[54] = 0. decision bits are 000000
+Time: 170 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 170 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 170 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 52
+Time: 190 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000001010000000000 <- quotient[52] = 0. decision bits are 000000
+Time: 190 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 190 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 190 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 50
+Time: 210 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000000101000000000000 <- quotient[50] = 0. decision bits are 000000
+Time: 210 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 210 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 210 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 48
+Time: 230 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000000010100000000000000 <- quotient[48] = 0. decision bits are 000000
+Time: 230 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 230 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 230 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 46
+Time: 250 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000001010000000000000000 <- quotient[46] = 0. decision bits are 000000
+Time: 250 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 250 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 250 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 44
+Time: 270 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000000101000000000000000000 <- quotient[44] = 0. decision bits are 000000
+Time: 270 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 270 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 270 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 42
+Time: 290 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000000010100000000000000000000 <- quotient[42] = 0. decision bits are 000000
+Time: 290 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 290 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 290 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 40
+Time: 310 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000001010000000000000000000000 <- quotient[40] = 0. decision bits are 000000
+Time: 310 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 310 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 310 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 38
+Time: 330 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000000101000000000000000000000000 <- quotient[38] = 0. decision bits are 000000
+Time: 330 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 330 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 330 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 36
+Time: 350 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000000010100000000000000000000000000 <- quotient[36] = 0. decision bits are 000000
+Time: 350 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 350 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 350 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 34
+Time: 370 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000001010000000000000000000000000000 <- quotient[34] = 0. decision bits are 000000
+Time: 370 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 370 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 370 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 32
+Time: 390 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000000101000000000000000000000000000000 <- quotient[32] = 0. decision bits are 000000
+Time: 390 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 390 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 390 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 30
+Time: 410 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000000010100000000000000000000000000000000 <- quotient[30] = 0. decision bits are 000000
+Time: 410 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 410 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 410 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 28
+Time: 430 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000001010000000000000000000000000000000000 <- quotient[28] = 0. decision bits are 000000
+Time: 430 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 430 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 430 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 26
+Time: 450 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000000101000000000000000000000000000000000000 <- quotient[26] = 0. decision bits are 000000
+Time: 450 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 450 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 450 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 24
+Time: 470 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000000010100000000000000000000000000000000000000 <- quotient[24] = 0. decision bits are 000000
+Time: 470 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 470 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 470 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 22
+Time: 490 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000001010000000000000000000000000000000000000000 <- quotient[22] = 0. decision bits are 000000
+Time: 490 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 490 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 490 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 20
+Time: 510 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000000101000000000000000000000000000000000000000000 <- quotient[20] = 0. decision bits are 000000
+Time: 510 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 510 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 510 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 18
+Time: 530 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000000010100000000000000000000000000000000000000000000 <- quotient[18] = 0. decision bits are 000000
+Time: 530 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 530 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 530 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 16
+Time: 550 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000001010000000000000000000000000000000000000000000000 <- quotient[16] = 0. decision bits are 000000
+Time: 550 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 550 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 550 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 14
+Time: 570 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000000101000000000000000000000000000000000000000000000000 <- quotient[14] = 0. decision bits are 000000
+Time: 570 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 570 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 570 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 12
+Time: 590 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000000010100000000000000000000000000000000000000000000000000 <- quotient[12] = 0. decision bits are 000000
+Time: 590 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 590 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 590 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 10
+Time: 610 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: remainder_r is 000000000001010000000000000000000000000000000000000000000000000000 <- quotient[10] = 0. decision bits are 000000
+Time: 610 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note:         just shift
+Time: 610 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: quotient_int = 0000000000000000000000000000000000000000000000000000000000000000
+Time: 610 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd
+Note: shift_amount = 8
+Time: 630 ns  Iteration: 1  Process: /top_tb/dut/divider_i/line__114  File: /home/leon/Desktop/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.srcs/sources_1/new/radix4_srt_divider.vhd

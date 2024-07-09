@@ -45,6 +45,20 @@ architecture behav of radix4_srt_divider is
     signal is_div_by_zero : boolean;
     signal is_div_overflow: boolean;
     constant MOST_NEGATIVE_INT : signed(dividend'range) := to_signed(-2**(dividend'length - 1), dividend'length);
+    
+    
+    -- Define a function to count leading zeros
+    function count_leading_zeros(signal vector : unsigned) return integer is
+        variable i : integer := 0;
+    begin
+        for idx in vector'length - 1 downto 0 loop
+            if vector(idx) = '1' then
+                return i;
+            end if;
+            i := i + 1;
+        end loop;
+        return i; -- If all are zeros, return the length of the vector
+    end function;
 begin
     negative_divisor <= not(divisor_r) + 1;
     left_half_remainder <= remainder_r(width + 2 downto (width + 1) / 2);
@@ -77,7 +91,7 @@ begin
             when norm =>
                 if is_div_by_zero or is_div_overflow then
                     next_state <= finished_error;
-                elsif divisor_r(half_width) = '1' or divisor_r(half_width-1) = '1' then
+                elsif divisor_r(half_width) = '1' or divisor_r(half_width - 1) = '1' then
                     next_state <= norm2;
                 else
                     next_state <= norm;
@@ -106,6 +120,7 @@ begin
         variable is_divisor_negative : boolean;
         variable is_quotient_negative : boolean;
         variable is_remainder_negative : boolean;
+        variable leading_zeros : integer;
     begin
         if res_n = '0' then
             quotient <= (others => '0');
@@ -127,7 +142,7 @@ begin
                     is_remainder_negative := false;
                     is_div_by_zero <= false;
                     is_div_overflow <= false;
-                    
+
                     -- Check for division by zero
                     if signed(divisor) = 0 then
                         is_div_by_zero <= true;
@@ -170,26 +185,16 @@ begin
                     remainder_r(OP_WIDTH downto 1) <= resize(unsigned(dividend_int), remainder_r'length - 2);
                 when norm =>
                     -- Check for leading zeros in divisor and remove them
-                    case divisor_r(half_width downto half_width-15) is
-                        when "1---------------" => divisor_r <= divisor_r sll 0;  j <= j + 0;
-                        when "01--------------" => divisor_r <= divisor_r sll 1;  j <= j + 1;
-                        when "001-------------" => divisor_r <= divisor_r sll 2;  j <= j + 2;
-                        when "0001------------" => divisor_r <= divisor_r sll 3;  j <= j + 3;
-                        when "00001-----------" => divisor_r <= divisor_r sll 4;  j <= j + 4;
-                        when "000001----------" => divisor_r <= divisor_r sll 5;  j <= j + 5;
-                        when "0000001---------" => divisor_r <= divisor_r sll 6;  j <= j + 6;
-                        when "00000001--------" => divisor_r <= divisor_r sll 7;  j <= j + 7;
-                        when "000000001-------" => divisor_r <= divisor_r sll 8;  j <= j + 8;
-                        when "0000000001------" => divisor_r <= divisor_r sll 9;  j <= j + 9;
-                        when "00000000001-----" => divisor_r <= divisor_r sll 10; j <= j + 10;
-                        when "000000000001----" => divisor_r <= divisor_r sll 11; j <= j + 11;
-                        when "0000000000001---" => divisor_r <= divisor_r sll 12; j <= j + 12;
-                        when "00000000000001--" => divisor_r <= divisor_r sll 13; j <= j + 13;
-                        when "000000000000001-" => divisor_r <= divisor_r sll 14; j <= j + 14;
-                        when "0000000000000001" => divisor_r <= divisor_r sll 15; j <= j + 15;
-                        when others             => divisor_r <= divisor_r sll 16; j <= j + 16;
-                    end case;
+                    leading_zeros := count_leading_zeros(divisor_r);
+                    report "leading_zeros is " & to_string(leading_zeros);
+                    divisor_r <= divisor_r sll (leading_zeros - 1);
+                    if leading_zeros > 0 then
+                        j <= j + (leading_zeros - 1);
+                    end if;
+                    report "j is " & to_string(j);
+                    report "divisor_r is " & to_string(divisor_r);
                 when norm2 =>
+                    report "j is " & to_string(j);
                     i <= half_width + j - 2; -- Keep track of how far divisor gets shifted
                     remainder_r <= remainder_r sll to_integer(unsigned(j(0 downto 0)));
                     report "remainder_r gets shifted by " & integer'image(to_integer(j)) & " to align the number";

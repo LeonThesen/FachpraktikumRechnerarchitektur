@@ -11,12 +11,12 @@
    </db_ref_list>
    <zoom_setting>
       <ZoomStartTime time="0.000 ns"></ZoomStartTime>
-      <ZoomEndTime time="383.350 ns"></ZoomEndTime>
-      <Cursor1Time time="40.509 ns"></Cursor1Time>
+      <ZoomEndTime time="258.201 ns"></ZoomEndTime>
+      <Cursor1Time time="1,000.000 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="276"></NameColumnWidth>
-      <ValueColumnWidth column_width="76"></ValueColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
    <WVObjectSize size="6" />
    <wvobject type="logic" fp_name="/top_tb/clk">
@@ -75,10 +75,12 @@
       <wvobject type="array" fp_name="/top_tb/dut/divider_i/i">
          <obj_property name="ElementShortName">i[7:0]</obj_property>
          <obj_property name="ObjectShortName">i[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/top_tb/dut/divider_i/j">
          <obj_property name="ElementShortName">j[7:0]</obj_property>
          <obj_property name="ObjectShortName">j[7:0]</obj_property>
+         <obj_property name="Radix">SIGNEDDECRADIX</obj_property>
       </wvobject>
       <wvobject type="array" fp_name="/top_tb/dut/divider_i/remainder_r">
          <obj_property name="ElementShortName">remainder_r[65:0]</obj_property>

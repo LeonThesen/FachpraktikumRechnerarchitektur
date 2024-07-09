@@ -22,10 +22,10 @@ architecture behav of divider_wrapper is
     constant MOST_NEGATIVE_INT : integer := -2**(dividend'length - 1);
 begin
 
-    correct <= '1' when (signed(quotient) = to_signed(MOST_NEGATIVE_INT, dividend'length) and signed(remainder) = to_signed(0, dividend'length)) else '0';
+    correct <= '1' when (signed(quotient) = to_signed(3, quotient'length) and signed(remainder) = to_signed(1, remainder'length)) else '0';
     
-    dividend <= std_logic_vector(to_signed(MOST_NEGATIVE_INT, 32)); 
-    divisor <= std_logic_vector(to_signed(-1, 32));
+    dividend <= std_logic_vector(to_signed(10, 32)); 
+    divisor <= std_logic_vector(to_signed(3, 32));
     signed_mode <= true;
     
     divider_i : entity work.radix4_srt_divider
