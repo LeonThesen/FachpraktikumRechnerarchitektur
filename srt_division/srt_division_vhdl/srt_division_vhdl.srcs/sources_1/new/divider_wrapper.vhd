@@ -24,8 +24,8 @@ begin
 
     correct <= '1' when (signed(quotient) = to_signed(1, quotient'length) and signed(remainder) = to_signed(3, remainder'length)) else '0';
     
-    dividend <= std_logic_vector(to_signed(MOST_POSITIVE_UINT, 32)); 
-    divisor <= std_logic_vector(to_signed(MOST_POSITIVE_UINT - 3, 32));
+    dividend <= std_logic_vector(to_signed(100, 32)); 
+    divisor <= std_logic_vector(to_signed(99, 32));
     signed_mode <= false;
     
     divider_i : entity work.radix4_srt_divider
