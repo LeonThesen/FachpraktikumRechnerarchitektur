@@ -9,14 +9,22 @@
 --
 LIBRARY ieee;
 USE ieee.std_logic_1164.all;
+-- library RISCV_Processor_lib;
+-- use RISCV_Processor_lib.isa_defines.all;
 
 PACKAGE types IS
+    constant BP_K : positive := 10;
+    constant XLEN : positive := 32;
+    constant ADDR_WIDTH : positive := 10;  
+    constant NUM_BYTES : positive := 4;
+    constant BYTE_WIDTH : positive := 8;
+
     subtype byte_t is std_logic_vector(7 downto 0);
     subtype half_word_t is std_logic_vector(15 downto 0);
     subtype word_t is std_logic_vector(31 downto 0);
     subtype double_word_t is std_logic_vector(63 downto 0);
 
-    subtype branch_prediction_state_t is std_logic_vector(1 downto 0);
+    subtype bpb_state_t is std_logic_vector(1 downto 0);
 
     type memory_access_t is (LOAD, STORE, IDLE);
     type data_width_t is (BYTE, HALFWORD, WORD);
@@ -46,6 +54,27 @@ PACKAGE types IS
         DIVU_MODE,
         REM_MODE,
         REMU_MODE
+    );
+
+    type btc_controls_t is record
+        waddr : std_logic_vector(BP_K - 1 downto 0);
+        wena_valid_bit : std_logic;
+        wena_tag : std_logic;
+        wena_target_addr : std_logic;
+        wdata_valid_bit : std_logic_vector(0 downto 0);
+        wdata_tag : std_logic_vector(XLEN - BP_K - 3 downto 0);
+        wdata_target_addr : word_t;
+    end record btc_controls_t;
+
+    type bpb_controls_t is record
+        waddr : std_logic_vector(BP_K - 1 downto 0);
+        wena : std_logic;
+        wdata : bpb_state_t;
+    end record bpb_controls_t;
+
+    type sbpu_mode_t is (
+        NO_BRANCH,
+        JAL
     );
 
     type dbpu_mode_t is (

@@ -6,28 +6,46 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 997,0 19 0 
+GRAPHIC 1574,0 19 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1007,0 20 0 
+GRAPHIC 1579,0 20 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1017,0 21 0 
+GRAPHIC 1589,0 21 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1022,0 22 0 
+GRAPHIC 1599,0 22 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1027,0 23 0 
+GRAPHIC 1609,0 23 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1002,0 24 0 
+GRAPHIC 1619,0 24 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1012,0 25 0 
+GRAPHIC 1624,0 25 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 28 0 
+GRAPHIC 1629,0 26 0 
 DESIGN if_dc_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 29 0 
+GRAPHIC 1569,0 27 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1584,0 28 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1594,0 29 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1604,0 30 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1614,0 31 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 34 0 
+DESIGN if_dc_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 35 0 

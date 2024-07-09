@@ -12,9 +12,9 @@ use RISCV_Processor_lib.isa_defines.ALL;
 
 ARCHITECTURE behav OF instruction_word_mux IS
 BEGIN
-    process(wrong_jump_prediction, sbta_valid_dc, jump_predicted_dc, instruction_word_umgenudelt) is
+    process(all) is
     begin
-        if wrong_jump_prediction or sbta_valid_dc then
+        if wrong_jump_prediction_dbpu or wrong_jump_prediction_sbpu then
             instruction_word_if <= NOP_INSTR;
         else
             instruction_word_if <= instruction_word_umgenudelt;

@@ -12,20 +12,20 @@ use RISCV_Processor_lib.types.ALL;
 
 ARCHITECTURE behav OF pc_mux IS
 BEGIN
-    process(wrong_jump_prediction, dbta_valid_ex, sbta_valid_dc, jump_predicted_dc, dbta, return_addr, imm_or_bta_dc, pc_pf) is
+    process(all) is
     begin
-        if wrong_jump_prediction then
+        if wrong_jump_prediction_dbpu then
             if dbta_valid_ex then
                 pc <= dbta;
             else
                 pc <= return_addr;
             end if;
+        elsif wrong_jump_prediction_sbpu and sbta_valid_dc then
+            pc <= imm_or_bta_dc;
+        elsif jump_predicted_if then
+            pc <= predicted_target_addr_if;
         else
-            if sbta_valid_dc or jump_predicted_dc then
-                pc <= imm_or_bta_dc;
-            else
-                pc <= pc_pf;
-            end if;
+            pc <= pc_pf;
         end if;
     end process;
 END ARCHITECTURE behav;

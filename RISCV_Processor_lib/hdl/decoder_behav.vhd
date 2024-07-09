@@ -27,6 +27,7 @@ ARCHITECTURE behav OF decoder IS
     signal sbta_valid_dc_int : boolean;
     signal dbpu_mode_int : dbpu_mode_t;
     signal stall_dc_int : boolean;
+    signal sbpu_mode_int : sbpu_mode_t;
 BEGIN
 
     decode: process(instruction_word_dc) is 
@@ -44,6 +45,7 @@ BEGIN
         is_bta_int <= false;
         sbta_valid_dc_int <= false;
         dbpu_mode_int <= NO_BRANCH;
+        sbpu_mode_int <= NO_BRANCH;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
@@ -62,6 +64,7 @@ BEGIN
                 is_bta_int <= true;
                 sbta_valid_dc_int <= true;
                 dbpu_mode_int <= JAL;
+                sbpu_mode_int <= JAL;
             when B_FORMAT =>
                 rs1_addr_int <= instruction_word_dc(RS1_RANGE);
                 rs2_addr_int <= instruction_word_dc(RS2_RANGE);
@@ -273,8 +276,6 @@ BEGIN
     end process forwarding;
    
     set_outputs: process(all) is 
-    variable jalr_bta_valid : boolean;
-    variable insert_nop : boolean;
     begin
         rs1_addr <= rs1_addr_int;
         rs2_addr <= rs2_addr_int;
@@ -290,16 +291,9 @@ BEGIN
         sbta_valid_dc <= sbta_valid_dc_int;
         dbpu_mode_dc <= dbpu_mode_int;
         stall_dc <= stall_dc_int;
+        sbpu_mode_dc <= sbpu_mode_int;
 
-        -- Check wether NOP is required (for RAL, dynamic jumps and wrong jump predictions)
-        jalr_bta_valid := false;
-        if dbpu_mode_ex = JALR and dbta_valid_ex then
-            jalr_bta_valid := true;
-        end if;
-
-        insert_nop := stall_dc_int or wrong_jump_prediction or jalr_bta_valid;
-
-        if insert_nop then
+        if stall_dc_int or wrong_jump_prediction_dbpu then
             alu_mode_dc <= ADD_MODE;
             rs1_addr <= (others => '0');
             rd_addr_dc <= (others => '0');

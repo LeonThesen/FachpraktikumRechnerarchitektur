@@ -21,6 +21,7 @@ BEGIN
             pc_dc <= (others => '0');
             jump_predicted_dc <= false;
             bpb_state_dc <= (others => '0');
+            predicted_target_addr_dc <= (others => '0');
         else
             if clk'event and clk = '1' then
                 if not stall_dc then
@@ -28,6 +29,7 @@ BEGIN
                     pc_dc <= pc_pre_if;
                     jump_predicted_dc <= jump_predicted_if;
                     bpb_state_dc <= bpb_state_if;
+                    predicted_target_addr_dc <= predicted_target_addr_if;
                 end if;
             end if;
         end if;

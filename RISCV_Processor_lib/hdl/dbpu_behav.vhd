@@ -62,68 +62,76 @@ BEGIN
 
 
     validate_prediction: process(all) is
-    variable invalidate_btc_entry : boolean;
-    variable write_btc_line : boolean;
     begin
-        btc_wena_valid_bit <= '0';
-        btc_wena_tag <= '0';
-        btc_wena_target_addr <= '0';
-        btc_wdata_valid_bit <= (others => '0');
-        btc_wdata_tag <= (others => '0');
-        btc_wdata_target_addr <= (others => '0');
-        bpb_wena <= '0';
-        bpb_wdata <= (others => '0');
-        wrong_jump_prediction <= false;
+        btc_controls_dbpu.wena_valid_bit <= '0';
+        btc_controls_dbpu.wena_tag <= '0';
+        btc_controls_dbpu.wena_target_addr <= '0';
+        btc_controls_dbpu.wdata_valid_bit <= (others => '0');
+        btc_controls_dbpu.wdata_tag <= (others => '0');
+        btc_controls_dbpu.wdata_target_addr <= (others => '0');
+        bpb_controls.wena <= '0';
+        bpb_controls.wdata <= (others => '0');
+        wrong_jump_prediction_dbpu <= false;
 
-        bpb_waddr <= pc_ex(BP_K + 1 downto 2);
-        btc_waddr <= (BP_K + 1 downto 2);
+        bpb_controls.waddr <= pc_ex(BP_K + 1 downto 2);
+        btc_controls_dbpu.waddr <= pc_ex(BP_K + 1 downto 2);
 
         if dbpu_mode_ex = JALR then
-            -- if equal to predicted pc
-        if dbpu_mode_ex /= NO_BRANCH and dbpu_mode_ex /= JAL then
+            if (jump_predicted_ex and predicted_target_addr_ex /= dbta) or not jump_predicted_ex then
+                btc_controls_dbpu.wena_tag <= '1';
+                btc_controls_dbpu.wena_valid_bit <= '1';
+                btc_controls_dbpu.wena_target_addr <= '1';
+                btc_controls_dbpu.wdata_target_addr <= dbta;
+                btc_controls_dbpu.wdata_valid_bit <= "1";
+                btc_controls_dbpu.wdata_tag <= pc_ex(pc_ex'left downto BP_K + 2);
+                wrong_jump_prediction_dbpu <= true;
+            end if;
+        elsif dbpu_mode_ex /= NO_BRANCH and dbpu_mode_ex /= JAL then
+            if dbta_valid_ex xor jump_predicted_ex then
+                wrong_jump_prediction_dbpu <= true;
+            end if;
+
             case bpb_state_ex is
                 when "00" =>
-                    if dbta_valid_ex then
-                        bpb_wdata <= "01";
-                        bpb_wena <= '1';
+                    if wrong_jump_prediction_dbpu then
+                        bpb_controls.wdata <= "01";
+                        bpb_controls.wena <= '1';
                     else
-                        bpb_wdata <= "00";
+                        bpb_controls.wdata <= "00";
                     end if;
                 when "01" =>
-                    bpb_wena <= '1';
+                    bpb_controls.wena <= '1';
 
-                    if dbta_valid_ex then
-                        btc_wena_tag <= '1';
-                        btc_wena_valid_bit <= '1';
-                        btc_wena_target_addr <= '1';
-                        btc_wdata_target_addr <= dbta;
-                        btc_wdata_valid_bit <= '1';
-                        btc_wdata_tag <= pc_ex(pc_ex'left downto BP_K);
-                        wrong_jump_prediction <= true;
-                        bpb_wdata <= "11";
+                    if wrong_jump_prediction_dbpu then
+                        btc_controls_dbpu.wena_tag <= '1';
+                        btc_controls_dbpu.wena_valid_bit <= '1';
+                        btc_controls_dbpu.wena_target_addr <= '1';
+                        btc_controls_dbpu.wdata_target_addr <= dbta;
+                        btc_controls_dbpu.wdata_valid_bit <= "1";
+                        btc_controls_dbpu.wdata_tag <= pc_ex(pc_ex'left downto BP_K + 2);
+                        bpb_controls.wdata <= "11";
                     else
-                        bpb_wdata <= "00";
+                        bpb_controls.wdata <= "00";
                     end if;
                 when "10" =>
-                    bpb_wena <= '1';
+                    bpb_controls.wena <= '1';
 
-                    if dbta_valid_ex then
-                        bpb_wdata <= "11";
+                    if wrong_jump_prediction_dbpu then
+                        btc_controls_dbpu.wena_valid_bit <= '1';
+                        btc_controls_dbpu.wdata_valid_bit <= "0";
+                        bpb_controls.wdata <= "00";
                     else
-                        btc_wena_valid_bit <= '1';
-                        btc_wdata_valid_bit <= '0';
-                        wrong_jump_prediction <= true;
-                        bpb_wdata <= "00";
+                        bpb_controls.wdata <= "11";
                     end if;
                 when "11" =>
-                    if dbta_valid_ex then
-                        bpb_wdata <= "11";
+                    if wrong_jump_prediction_dbpu then
+                        bpb_controls.wdata <= "10";
+                        bpb_controls.wena <= '1';
                     else
-                        bpb_wdata <= "10";
-                        bpb_wena <= '1';
+                        bpb_controls.wdata <= "11";
                     end if;
                 when others =>
-                    bpb_wdata <= "XX";
+                    bpb_controls.wdata <= "XX";
             end case;
         end if;
     end process validate_prediction;

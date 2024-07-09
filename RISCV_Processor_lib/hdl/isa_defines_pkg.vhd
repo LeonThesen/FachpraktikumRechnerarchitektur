@@ -13,12 +13,6 @@ library RISCV_Processor_lib;
 use RISCV_Processor_lib.types.ALL;
 
 PACKAGE isa_defines IS
-    constant BP_K : positive := 10;
-    constant XLEN : positive := 32;
-    constant ADDR_WIDTH : positive := 10;  
-    constant NUM_BYTES : positive := 4;
-    constant BYTE_WIDTH : positive := 8;
-
     subtype opcode_t is std_logic_vector(6 downto 0);
     subtype funct3_t is std_logic_vector(2 downto 0);
     subtype funct7_t is std_logic_vector(6 downto 0);

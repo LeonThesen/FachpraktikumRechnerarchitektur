@@ -7,14 +7,26 @@ TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider IF
 add wave -noupdate /top_tb/cpu_i/instruction_word_mux_i/instruction_word_if
-add wave -noupdate /top_tb/cpu_i/if_dc_pipeline_reg_i/pc_pre_if
-add wave -noupdate /top_tb/cpu_i/pc_mux_i/pc
+add wave -noupdate -radix decimal /top_tb/cpu_i/if_dc_pipeline_reg_i/pc_pre_if
+add wave -noupdate -radix decimal /top_tb/cpu_i/pc_mux_i/pc
 add wave -noupdate /top_tb/cpu_i/pc_mux_i/pc_pf
+add wave -noupdate /top_tb/cpu_i/bpu_i/jump_predicted_if
+add wave -noupdate /top_tb/cpu_i/bpu_i/bpb_state_if
+add wave -noupdate /top_tb/cpu_i/bpu_i/predicted_target_addr_if
+add wave -noupdate /top_tb/cpu_i/bpu_i/wrong_jump_prediction_sbpu
+add wave -noupdate /top_tb/cpu_i/bpu_i/wrong_jump_prediction_dbpu
+add wave -noupdate /top_tb/cpu_i/bpu_i/btc_sbpu_wena_valid_bit
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_wena_target_addr
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_wena_tag
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_wdata_valid_bit
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_waddr
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_wdata_tag
+add wave -noupdate /top_tb/cpu_i/sbpu_i/btc_sbpu_wdata_target_addr
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider DC
-add wave -noupdate /top_tb/cpu_i/dc_ex_pipeline_reg_i/pc_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/instruction_word_dc
+add wave -noupdate /top_tb/cpu_i/dc_ex_pipeline_reg_i/pc_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/alu_mode_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/dbpu_mode_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/fwd_rs1_dc
@@ -30,9 +42,7 @@ add wave -noupdate /top_tb/cpu_i/decoder_i/rs2_addr
 add wave -noupdate /top_tb/cpu_i/decoder_i/sbta_valid_dc
 add wave -noupdate /top_tb/cpu_i/decoder_i/stall_dc
 add wave -noupdate /top_tb/cpu_i/dc_ex_pipeline_reg_i/imm_or_bta_dc
-add wave -noupdate /top_tb/cpu_i/bpb_i/wrong_jump_prediction
-add wave -noupdate -expand /top_tb/cpu_i/bpb_i/branch_prediction_buffer
-add wave -noupdate /top_tb/cpu_i/register_file_i/register_array
+add wave -noupdate -radix decimal -childformat {{/top_tb/cpu_i/register_file_i/register_array(0) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(1) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(2) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(3) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(4) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(5) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(6) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(7) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(8) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(9) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(10) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(11) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(12) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(13) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(14) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(15) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(16) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(17) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(18) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(19) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(20) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(21) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(22) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(23) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(24) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(25) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(26) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(27) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(28) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(29) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(30) -radix decimal} {/top_tb/cpu_i/register_file_i/register_array(31) -radix decimal}} -expand -subitemconfig {/top_tb/cpu_i/register_file_i/register_array(0) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(1) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(2) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(3) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(4) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(5) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(6) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(7) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(8) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(9) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(10) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(11) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(12) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(13) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(14) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(15) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(16) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(17) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(18) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(19) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(20) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(21) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(22) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(23) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(24) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(25) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(26) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(27) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(28) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(29) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(30) {-radix decimal} /top_tb/cpu_i/register_file_i/register_array(31) {-radix decimal}} /top_tb/cpu_i/register_file_i/register_array
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider EX
@@ -57,7 +67,6 @@ add wave -noupdate /top_tb/cpu_i/dbpu_i/dbta
 add wave -noupdate /top_tb/cpu_i/dbpu_i/dbta_valid_ex
 add wave -noupdate /top_tb/cpu_i/dbpu_i/is_return_addr
 add wave -noupdate /top_tb/cpu_i/ex_out_mux_i/ex_out_ex
-add wave -noupdate /top_tb/cpu_i/bpb_i/jump_predicted_ex
 TreeUpdate [SetDefaultTree]
 quietly WaveActivateNextPane
 add wave -noupdate -divider MEM
@@ -73,7 +82,7 @@ add wave -noupdate -divider WB
 add wave -noupdate /top_tb/cpu_i/mem_wb_pipeline_reg_i/mem_result_wb
 add wave -noupdate /top_tb/cpu_i/mem_wb_pipeline_reg_i/rd_addr_wb
 TreeUpdate [SetDefaultTree]
-WaveRestoreCursors {{Cursor 1} {508 ns} 0}
+WaveRestoreCursors {{Cursor 1} {6150 ns} 0}
 quietly wave cursor active 1
 configure wave -namecolwidth 168
 configure wave -valuecolwidth 100
@@ -89,4 +98,4 @@ configure wave -griddelta 40
 configure wave -timeline 0
 configure wave -timelineunits ns
 update
-WaveRestoreZoom {1746 ns} {1803 ns}
+WaveRestoreZoom {5133 ns} {5870 ns}
