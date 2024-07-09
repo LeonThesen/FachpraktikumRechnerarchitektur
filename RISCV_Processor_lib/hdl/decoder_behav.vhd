@@ -90,7 +90,7 @@ BEGIN
                 rd_addr_int <= instruction_word_dc(RD_RANGE);
 
                 case instruction_word_dc(R_FORMAT_FUNCT7_RANGE) is
-                    when MUL_INSTR_FUNCT7 => 
+                    when M_EXT_INSTR_FUNCT7 => 
                         case instruction_word_dc(FUNCT3_RANGE) is
                             when MUL_INSTR =>
                                 alu_mode_int <= MUL_MODE;
@@ -100,6 +100,14 @@ BEGIN
                                 alu_mode_int <= MULHSU_MODE;
                             when MULHU_INSTR =>
                                 alu_mode_int <= MULHU_MODE;
+                            when DIV_INSTR =>
+                                alu_mode_int <= DIV_MODE;
+                            when DIVU_INSTR =>
+                                alu_mode_int <= DIVU_MODE;
+                            when REM_INSTR =>
+                                alu_mode_int <= REM_MODE;
+                            when REMU_INSTR =>
+                                alu_mode_int <= REMU_MODE;
                             when others =>
                                 null;
                         end case;

@@ -41,7 +41,11 @@ PACKAGE types IS
         MUL_MODE,
         MULH_MODE,
         MULHSU_MODE,
-        MULHU_MODE
+        MULHU_MODE,
+        DIV_MODE,
+        DIVU_MODE,
+        REM_MODE,
+        REMU_MODE
     );
 
     type dbpu_mode_t is (
