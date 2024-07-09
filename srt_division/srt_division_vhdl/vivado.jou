@@ -1,0 +1,49 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Jul  9 14:26:18 2024
+# Process ID: 14772
+# Current directory: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl
+# Command line: vivado
+# Log file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/vivado.log
+# Journal file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/vivado.jou
+# Running On: pc040, OS: Linux, CPU Frequency: 1281.613 MHz, CPU Physical cores: 16, Host memory: 32836 MB
+#-----------------------------------------------------------
+start_gui
+open_project /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor/srt_division_vhdl_labor.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+source top_tb.tcl
+open_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/top_tb_behav.wcfg}
+restart
+run 500 ns
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+relaunch_sim
+save_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/top_tb_behav.wcfg}
+relaunch_sim
+save_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/top_tb_behav.wcfg}
+relaunch_sim
+relaunch_sim
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close [ open /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor/srt_division_vhdl_labor.srcs/sources_1/new/top.vhd w ]
+add_files /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor/srt_division_vhdl_labor.srcs/sources_1/new/top.vhd
+update_compile_order -fileset sources_1
+# Disabling source management mode.  This is to allow the top design properties to be set without GUI intervention.
+set_property source_mgmt_mode None [current_project]
+set_property top top [current_fileset]
+# Re-enabling previously disabled source management mode.
+set_property source_mgmt_mode All [current_project]
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+open_run synth_1 -name synth_1
+reset_run synth_1
+launch_runs synth_1 -jobs 8
+wait_on_run synth_1
+close_design
+open_run synth_1 -name synth_1
