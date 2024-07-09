@@ -32,23 +32,29 @@ BEGIN
             jump_predicted_ex <= false;
             bpb_state_ex <= (others => '0');
             predicted_target_addr_ex <= (others => '0');
+            divider_control_ex.is_signed <= false;
+            divider_control_ex.start <= '0';
+            divider_control_ex.mode <= DIV_MODE;
         else 
             if clk'event and clk = '1' then
-                rs1_ex <= rs1_dc;
-                rs2_ex <= rs2_dc;
-                alu_mode_ex <= alu_mode_dc;
-                rd_addr_ex <= rd_addr_dc;
-                imm_to_alu_ex <= imm_to_alu_dc;
-                imm_or_bta_ex <= imm_or_bta_dc;
-                mem_mode_ex <= mem_mode_dc;
-                fwd_rs1_ex <= fwd_rs1_dc;
-                fwd_rs2_ex <= fwd_rs2_dc;
-                fwd_store_data_ex <= fwd_store_data_dc;
-                pc_ex <= pc_dc;
-                dbpu_mode_ex <= dbpu_mode_dc;
-                jump_predicted_ex <= jump_predicted_dc;
-                bpb_state_ex <= bpb_state_dc;
-                predicted_target_addr_ex <= predicted_target_addr_dc;
+                if not stall_rest_dc then
+                    rs1_ex <= rs1_dc;
+                    rs2_ex <= rs2_dc;
+                    alu_mode_ex <= alu_mode_dc;
+                    rd_addr_ex <= rd_addr_dc;
+                    imm_to_alu_ex <= imm_to_alu_dc;
+                    imm_or_bta_ex <= imm_or_bta_dc;
+                    mem_mode_ex <= mem_mode_dc;
+                    fwd_rs1_ex <= fwd_rs1_dc;
+                    fwd_rs2_ex <= fwd_rs2_dc;
+                    fwd_store_data_ex <= fwd_store_data_dc;
+                    pc_ex <= pc_dc;
+                    dbpu_mode_ex <= dbpu_mode_dc;
+                    jump_predicted_ex <= jump_predicted_dc;
+                    bpb_state_ex <= bpb_state_dc;
+                    predicted_target_addr_ex <= predicted_target_addr_dc;
+                    divider_control_ex <= divider_control_dc;
+                end if;
             end if;
         end if;
     end process;

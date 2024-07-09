@@ -28,6 +28,7 @@ ARCHITECTURE behav OF decoder IS
     signal dbpu_mode_int : dbpu_mode_t;
     signal stall_dc_int : boolean;
     signal sbpu_mode_int : sbpu_mode_t;
+    signal divider_control_int : divider_control_t;
 BEGIN
 
     decode: process(instruction_word_dc) is 
@@ -46,6 +47,9 @@ BEGIN
         sbta_valid_dc_int <= false;
         dbpu_mode_int <= NO_BRANCH;
         sbpu_mode_int <= NO_BRANCH;
+        divider_control_int.is_signed <= false;
+        divider_control_int.start <= '0';
+        divider_control_int.mode <= DIV_MODE;
 
         -- Decode
         case instruction_word_dc(OPCODE_RANGE) is 
@@ -105,12 +109,24 @@ BEGIN
                                 alu_mode_int <= MULHU_MODE;
                             when DIV_INSTR =>
                                 alu_mode_int <= DIV_MODE;
+                                divider_control_int.is_signed <= true;
+                                divider_control_int.start <= '1';
+                                divider_control_int.mode <= DIV_MODE;
                             when DIVU_INSTR =>
                                 alu_mode_int <= DIVU_MODE;
+                                divider_control_int.is_signed <= false;
+                                divider_control_int.start <= '1';
+                                divider_control_int.mode <= DIV_MODE;  
                             when REM_INSTR =>
                                 alu_mode_int <= REM_MODE;
+                                divider_control_int.is_signed <= true;
+                                divider_control_int.start <= '1';
+                                divider_control_int.mode <= REM_MODE;
                             when REMU_INSTR =>
                                 alu_mode_int <= REMU_MODE;
+                                divider_control_int.is_signed <= false;
+                                divider_control_int.start <= '1';
+                                divider_control_int.mode <= REM_MODE;
                             when others =>
                                 null;
                         end case;
@@ -290,8 +306,21 @@ BEGIN
         is_bta <= is_bta_int;
         sbta_valid_dc <= sbta_valid_dc_int;
         dbpu_mode_dc <= dbpu_mode_int;
-        stall_dc <= stall_dc_int;
         sbpu_mode_dc <= sbpu_mode_int;
+        divider_control_dc <= divider_control_int;
+
+        if divider_control_ex.start then
+            if division_done then
+                stall_rest_dc <= false;
+                stall_dc <= stall_dc_int;
+            else
+                stall_rest_dc <= true;
+                stall_dc <= true;
+            end if;
+        else
+            stall_rest_dc <= false;
+            stall_dc <= stall_dc_int;
+        end if;
 
         if stall_dc_int or wrong_jump_prediction_dbpu then
             alu_mode_dc <= ADD_MODE;

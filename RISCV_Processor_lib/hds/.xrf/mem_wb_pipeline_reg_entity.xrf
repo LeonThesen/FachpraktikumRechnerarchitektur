@@ -6,25 +6,28 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 930,0 19 0 
+GRAPHIC 995,0 19 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 935,0 20 0 
+GRAPHIC 1000,0 20 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 945,0 21 0 
+GRAPHIC 1010,0 21 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 955,0 22 0 
+GRAPHIC 1020,0 22 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 940,0 23 0 
+GRAPHIC 1025,0 23 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 950,0 24 0 
+GRAPHIC 1005,0 24 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 27 0 
+GRAPHIC 1015,0 25 0 
 DESIGN mem_wb_pipeline_reg
 VIEW interface
 GRAPHIC 1,0 28 0 
+DESIGN mem_wb_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 29 0 

@@ -6,43 +6,46 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2466,0 19 0 
+GRAPHIC 2573,0 19 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2471,0 20 0 
+GRAPHIC 2578,0 20 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2481,0 21 0 
+GRAPHIC 2588,0 21 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2491,0 22 0 
+GRAPHIC 2598,0 22 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2501,0 23 0 
+GRAPHIC 2608,0 23 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2511,0 24 0 
+GRAPHIC 2618,0 24 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2516,0 25 0 
+GRAPHIC 2623,0 25 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2476,0 26 0 
+GRAPHIC 2633,0 26 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2486,0 27 0 
+GRAPHIC 2583,0 27 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2496,0 28 0 
+GRAPHIC 2593,0 28 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2506,0 29 0 
+GRAPHIC 2603,0 29 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 2521,0 30 0 
+GRAPHIC 2613,0 30 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
-GRAPHIC 1,0 33 0 
+GRAPHIC 2628,0 31 0 
 DESIGN ex_mem_pipeline_reg
 VIEW interface
 GRAPHIC 1,0 34 0 
+DESIGN ex_mem_pipeline_reg
+VIEW interface
+GRAPHIC 1,0 35 0 

@@ -100,5 +100,13 @@ PACKAGE types IS
         overflow: boolean;
         carry: boolean;
     end record flag_t;
+
+    type divider_mode_t is (DIV_MODE, REM_MODE);
+
+    type divider_control_t is record
+        is_signed : boolean;
+        start : std_logic;
+        mode : divider_mode_t;
+    end record divider_control_t;
 END types;
 

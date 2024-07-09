@@ -24,11 +24,13 @@ BEGIN
             fwd_store_data_mem <= false;
         else 
             if clk'event and clk = '1' then
-                ex_out_mem <= ex_out_ex;
-                rd_addr_mem <= rd_addr_ex;
-                rs2_mem <= rs2_fwd_mux_out;
-                mem_mode_mem <= mem_mode_ex;
-                fwd_store_data_mem <= fwd_store_data_ex;
+                if not stall_rest_dc then
+                    ex_out_mem <= ex_out_ex;
+                    rd_addr_mem <= rd_addr_ex;
+                    rs2_mem <= rs2_fwd_mux_out;
+                    mem_mode_mem <= mem_mode_ex;
+                    fwd_store_data_mem <= fwd_store_data_ex;
+                end if;
             end if;
         end if;
     end process;

@@ -9,6 +9,15 @@
 --
 ARCHITECTURE behav OF ex_out_mux IS
 BEGIN
-    ex_out_ex <= return_addr when is_return_addr else alu_result_ex;
+    process(all) is
+    begin
+        if division_done then
+            ex_out_ex <= divider_result;
+        elsif is_return_addr then
+            ex_out_ex <= return_addr;
+        else 
+            ex_out_ex <= alu_result_ex;
+        end if;
+    end process;
 END ARCHITECTURE behav;
 

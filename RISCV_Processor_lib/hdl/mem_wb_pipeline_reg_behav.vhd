@@ -19,8 +19,10 @@ BEGIN
             rd_addr_wb <= (others => '0');
         else 
             if clk'event and clk = '1' then
-                mem_result_wb <= mem_result_mem;
-                rd_addr_wb <= rd_addr_mem;
+                if not stall_rest_dc then
+                    mem_result_wb <= mem_result_mem;
+                    rd_addr_wb <= rd_addr_mem;
+                end if;
             end if;
         end if;
     end process;
