@@ -1,5 +1,5 @@
 Analysis & Synthesis report for cpu
-Wed Jun 26 18:24:09 2024
+Wed Jul 10 18:02:15 2024
 Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
 
 
@@ -10,39 +10,7 @@ Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Source Files Read
-  6. Analysis & Synthesis Resource Usage Summary
-  7. Analysis & Synthesis Resource Utilization by Entity
-  8. Analysis & Synthesis RAM Summary
-  9. Analysis & Synthesis DSP Block Usage Summary
- 10. State Machine - |cpu|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.data_width
- 11. State Machine - |cpu|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.memory_access
- 12. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|dbpu_mode_ex
- 13. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs2_ex
- 14. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs1_ex
- 15. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.data_width
- 16. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.memory_access
- 17. State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|alu_mode_ex
- 18. Registers Removed During Synthesis
- 19. Removed Registers Triggering Further Register Optimizations
- 20. General Register Statistics
- 21. Multiplexer Restructuring Statistics (Restructuring Performed)
- 22. Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1|altsyncram_09n1:auto_generated
- 23. Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2|altsyncram_09n1:auto_generated
- 24. Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3|altsyncram_09n1:auto_generated
- 25. Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4|altsyncram_09n1:auto_generated
- 26. Source assignments for gen_rom:gen_rom_i|altsyncram:altsyncram_component|altsyncram_f544:auto_generated
- 27. Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i
- 28. Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1
- 29. Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2
- 30. Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3
- 31. Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4
- 32. Parameter Settings for User Entity Instance: gen_rom:gen_rom_i
- 33. Parameter Settings for User Entity Instance: gen_rom:gen_rom_i|altsyncram:altsyncram_component
- 34. altsyncram Parameter Settings by Entity Instance
- 35. Post-Synthesis Netlist Statistics for Top Partition
- 36. Elapsed Time Per Partition
- 37. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Messages
 
 
 
@@ -66,27 +34,22 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+-----------------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                                      ;
-+---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Wed Jun 26 18:24:09 2024           ;
-; Quartus Prime Version           ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
-; Revision Name                   ; cpu                                             ;
-; Top-level Entity Name           ; cpu                                             ;
-; Family                          ; Cyclone V                                       ;
-; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 1935                                            ;
-; Total pins                      ; 66                                              ;
-; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 65,536                                          ;
-; Total DSP Blocks                ; 6                                               ;
-; Total HSSI RX PCSs              ; 0                                               ;
-; Total HSSI PMA RX Deserializers ; 0                                               ;
-; Total HSSI TX PCSs              ; 0                                               ;
-; Total HSSI PMA TX Serializers   ; 0                                               ;
-; Total PLLs                      ; 0                                               ;
-; Total DLLs                      ; 0                                               ;
-+---------------------------------+-------------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++-----------------------------+-------------------------------------------------+
+; Analysis & Synthesis Status ; Failed - Wed Jul 10 18:02:15 2024               ;
+; Quartus Prime Version       ; 21.1.1 Build 850 06/23/2022 SJ Standard Edition ;
+; Revision Name               ; cpu                                             ;
+; Top-level Entity Name       ; cpu                                             ;
+; Family                      ; Cyclone V                                       ;
+; Logic utilization (in ALMs) ; N/A until Partition Merge                       ;
+; Total registers             ; N/A until Partition Merge                       ;
+; Total pins                  ; N/A until Partition Merge                       ;
+; Total virtual pins          ; N/A until Partition Merge                       ;
+; Total block memory bits     ; N/A until Partition Merge                       ;
+; Total PLLs                  ; N/A until Partition Merge                       ;
+; Total DLLs                  ; N/A until Partition Merge                       ;
++-----------------------------+-------------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -185,950 +148,12 @@ https://fpgasoftware.intel.com/eula.
 ; Number detected on machine ; 16          ;
 ; Maximum allowed            ; 16          ;
 ;                            ;             ;
-; Average used               ; 1.01        ;
-; Maximum used               ; 16          ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
 ;                            ;             ;
 ; Usage by Processor         ; % Time Used ;
 ;     Processor 1            ; 100.0%      ;
-;     Processor 2            ;   0.2%      ;
-;     Processor 3            ;   0.0%      ;
-;     Processor 4            ;   0.0%      ;
-;     Processor 5            ;   0.0%      ;
-;     Processor 6            ;   0.0%      ;
-;     Processor 7            ;   0.0%      ;
-;     Processor 8            ;   0.0%      ;
-;     Processor 9            ;   0.0%      ;
-;     Processor 10           ;   0.0%      ;
-;     Processor 11           ;   0.0%      ;
-;     Processor 12           ;   0.0%      ;
-;     Processor 13           ;   0.0%      ;
-;     Processor 14           ;   0.0%      ;
-;     Processor 15           ;   0.0%      ;
-;     Processor 16           ;   0.0%      ;
 +----------------------------+-------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Source Files Read                                                                                                                                                                                            ;
-+--------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------+
-; File Name with User-Entered Path           ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                                                                    ; Library ;
-+--------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------+
-; ../../hdl/cpu_entity.vhd                   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd                    ;         ;
-; ../../hdl/types_pkg.vhd                    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd                     ;         ;
-; ../../hdl/isa_defines_pkg.vhd              ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd               ;         ;
-; ../../hdl/isa_defines_pkg_body.vhd         ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd          ;         ;
-; ../../hdl/addr_calc_entity.vhd             ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_entity.vhd              ;         ;
-; ../../hdl/addr_calc_behav.vhd              ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_behav.vhd               ;         ;
-; ../../hdl/addr_width_reducer_entity.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_entity.vhd     ;         ;
-; ../../hdl/addr_width_reducer_behav.vhd     ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_behav.vhd      ;         ;
-; ../../hdl/alu_entity.vhd                   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd                    ;         ;
-; ../../hdl/alu_behav.vhd                    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd                     ;         ;
-; ../../hdl/bpb_entity.vhd                   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd                    ;         ;
-; ../../hdl/bpb_behav.vhd                    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd                     ;         ;
-; ../../hdl/bta_adder_entity.vhd             ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd              ;         ;
-; ../../hdl/bta_adder_behav.vhd              ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_behav.vhd               ;         ;
-; ../../hdl/data_memory_extractor_entity.vhd ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_entity.vhd  ;         ;
-; ../../hdl/data_memory_extractor_behav.vhd  ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_behav.vhd   ;         ;
-; ../../hdl/dbpu_entity.vhd                  ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_entity.vhd                   ;         ;
-; ../../hdl/dbpu_behav.vhd                   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd                    ;         ;
-; ../../hdl/dc_ex_pipeline_reg_entity.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd     ;         ;
-; ../../hdl/dec_exe_pipeline_reg_behav.vhd   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd    ;         ;
-; ../../hdl/decoder_entity.vhd               ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd                ;         ;
-; ../../hdl/decoder_behav.vhd                ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd                 ;         ;
-; ../../hdl/ex_mem_pipeline_reg_entity.vhd   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd    ;         ;
-; ../../hdl/ex_mem_pipeline_reg_behav.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd     ;         ;
-; ../../hdl/ex_out_mux_entity.vhd            ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd             ;         ;
-; ../../hdl/ex_out_mux_behav.vhd             ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_behav.vhd              ;         ;
-; ../../hdl/gen_ram_be_entity.vhd            ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_entity.vhd             ;         ;
-; ../../hdl/gen_ram_be_behav.vhd             ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_be_behav.vhd              ;         ;
-; ../../hdl/gen_rom.vhd                      ; yes             ; User Wizard-Generated File             ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd                       ;         ;
-; ../../hdl/if_dc_pipeline_reg_entity.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_entity.vhd     ;         ;
-; ../../hdl/if_dc_pipeline_reg_behav.vhd     ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/if_dc_pipeline_reg_behav.vhd      ;         ;
-; ../../hdl/imm_bta_mux_entity.vhd           ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_entity.vhd            ;         ;
-; ../../hdl/imm_bta_mux_behav.vhd            ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/imm_bta_mux_behav.vhd             ;         ;
-; ../../hdl/instruction_word_mux_entity.vhd  ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_entity.vhd   ;         ;
-; ../../hdl/instruction_word_mux_behav.vhd   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/instruction_word_mux_behav.vhd    ;         ;
-; ../../hdl/mem_mode_mux_entity.vhd          ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_mux_entity.vhd           ;         ;
-; ../../hdl/mem_mode_multiplexer_behav.vhd   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_mode_multiplexer_behav.vhd    ;         ;
-; ../../hdl/mem_wb_pipeline_reg_entity.vhd   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_entity.vhd    ;         ;
-; ../../hdl/mem_wb_pipeline_reg_behav.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/mem_wb_pipeline_reg_behav.vhd     ;         ;
-; ../../hdl/pc_ex_inc_entity.vhd             ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_entity.vhd              ;         ;
-; ../../hdl/pc_ex_inc_behav.vhd              ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_ex_inc_behav.vhd               ;         ;
-; ../../hdl/pc_inc_entity.vhd                ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_entity.vhd                 ;         ;
-; ../../hdl/pc_inc_behav.vhd                 ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_inc_behav.vhd                  ;         ;
-; ../../hdl/pc_mux_entity.vhd                ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_entity.vhd                 ;         ;
-; ../../hdl/pc_mux_behav.vhd                 ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_mux_behav.vhd                  ;         ;
-; ../../hdl/pf_if_pipeline_reg_entity.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pf_if_pipeline_reg_entity.vhd     ;         ;
-; ../../hdl/pc_if_pipeline_reg_behav.vhd     ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/pc_if_pipeline_reg_behav.vhd      ;         ;
-; ../../hdl/register_file_entity.vhd         ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_entity.vhd          ;         ;
-; ../../hdl/register_file_behav.vhd          ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/register_file_behav.vhd           ;         ;
-; ../../hdl/rs1_fwd_mux_entity.vhd           ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_entity.vhd            ;         ;
-; ../../hdl/rs1_fwd_mux_behav.vhd            ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs1_fwd_mux_behav.vhd             ;         ;
-; ../../hdl/rs2_fwd_mux_entity.vhd           ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_entity.vhd            ;         ;
-; ../../hdl/rs2_fwd_mux_behav.vhd            ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd             ;         ;
-; ../../hdl/rs2_mux_entity.vhd               ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd                ;         ;
-; ../../hdl/rs2_multiplexer_behav.vhd        ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd         ;         ;
-; ../../hdl/store_data_fwd_mux_entity.vhd    ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd     ;         ;
-; ../../hdl/store_data_fwd_mux_behav.vhd     ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd      ;         ;
-; ../../hdl/umnudler_entity.vhd              ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd               ;         ;
-; ../../hdl/umnudler_behav.vhd               ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_behav.vhd                ;         ;
-; ../../hdl/cpu_struct.vhd                   ; yes             ; User VHDL File                         ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd                    ;         ;
-; altsyncram.tdf                             ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altsyncram.tdf                                          ;         ;
-; stratix_ram_block.inc                      ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/stratix_ram_block.inc                                   ;         ;
-; lpm_mux.inc                                ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/lpm_mux.inc                                             ;         ;
-; lpm_decode.inc                             ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/lpm_decode.inc                                          ;         ;
-; aglobal211.inc                             ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/aglobal211.inc                                          ;         ;
-; a_rdenreg.inc                              ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/a_rdenreg.inc                                           ;         ;
-; altrom.inc                                 ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altrom.inc                                              ;         ;
-; altram.inc                                 ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altram.inc                                              ;         ;
-; altdpram.inc                               ; yes             ; Megafunction                           ; /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altdpram.inc                                            ;         ;
-; db/altsyncram_09n1.tdf                     ; yes             ; Auto-Generated Megafunction            ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/qis/cpu_struct/db/altsyncram_09n1.tdf ;         ;
-; db/altsyncram_f544.tdf                     ; yes             ; Auto-Generated Megafunction            ; /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/qis/cpu_struct/db/altsyncram_f544.tdf ;         ;
-; /u/home/clab/st161569/Downloads/main.mif   ; yes             ; Auto-Found Memory Initialization File  ; /u/home/clab/st161569/Downloads/main.mif                                                                        ;         ;
-+--------------------------------------------+-----------------+----------------------------------------+-----------------------------------------------------------------------------------------------------------------+---------+
-
-
-+---------------------------------------------------------+
-; Analysis & Synthesis Resource Usage Summary             ;
-+---------------------------------------------+-----------+
-; Resource                                    ; Usage     ;
-+---------------------------------------------+-----------+
-; Estimate of Logic utilization (ALMs needed) ; 2217      ;
-;                                             ;           ;
-; Combinational ALUT usage for logic          ; 3017      ;
-;     -- 7 input functions                    ; 17        ;
-;     -- 6 input functions                    ; 1272      ;
-;     -- 5 input functions                    ; 579       ;
-;     -- 4 input functions                    ; 692       ;
-;     -- <=3 input functions                  ; 457       ;
-;                                             ;           ;
-; Dedicated logic registers                   ; 1935      ;
-;                                             ;           ;
-; I/O pins                                    ; 66        ;
-; Total MLAB memory bits                      ; 0         ;
-; Total block memory bits                     ; 65536     ;
-;                                             ;           ;
-; Total DSP Blocks                            ; 6         ;
-;                                             ;           ;
-; Maximum fan-out node                        ; clk~input ;
-; Maximum fan-out                             ; 1999      ;
-; Total fan-out                               ; 24044     ;
-; Average fan-out                             ; 4.67      ;
-+---------------------------------------------+-----------+
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                         ;
-+----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------------+--------------+
-; Compilation Hierarchy Node                         ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                    ; Entity Name           ; Library Name ;
-+----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------------+--------------+
-; |cpu                                               ; 3017 (1)            ; 1935 (0)                  ; 65536             ; 6          ; 66   ; 0            ; |cpu                                                                                   ; cpu                   ; work         ;
-;    |addr_calc:addr_calc_i|                         ; 69 (69)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|addr_calc:addr_calc_i                                                             ; addr_calc             ; work         ;
-;    |alu:alu_i|                                     ; 556 (556)           ; 0 (0)                     ; 0                 ; 6          ; 0    ; 0            ; |cpu|alu:alu_i                                                                         ; alu                   ; work         ;
-;    |bpb:bpb_i|                                     ; 1093 (1093)         ; 512 (512)                 ; 0                 ; 0          ; 0    ; 0            ; |cpu|bpb:bpb_i                                                                         ; bpb                   ; work         ;
-;    |bta_adder:bta_adder_i|                         ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|bta_adder:bta_adder_i                                                             ; bta_adder             ; work         ;
-;    |data_memory_extractor:data_memory_extractor_i| ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|data_memory_extractor:data_memory_extractor_i                                     ; data_memory_extractor ; work         ;
-;    |dbpu:dbpu_i|                                   ; 6 (6)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|dbpu:dbpu_i                                                                       ; dbpu                  ; work         ;
-;    |dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|       ; 14 (14)             ; 170 (170)                 ; 0                 ; 0          ; 0    ; 0            ; |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i                                           ; dc_ex_pipeline_reg    ; work         ;
-;    |decoder:decoder_i|                             ; 179 (179)           ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|decoder:decoder_i                                                                 ; decoder               ; work         ;
-;    |ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|     ; 0 (0)               ; 76 (76)                   ; 0                 ; 0          ; 0    ; 0            ; |cpu|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i                                         ; ex_mem_pipeline_reg   ; work         ;
-;    |ex_out_mux:ex_out_mux_i|                       ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|ex_out_mux:ex_out_mux_i                                                           ; ex_out_mux            ; work         ;
-;    |gen_ram_be:gen_ram_be_i|                       ; 24 (24)             ; 52 (52)                   ; 32768             ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i                                                           ; gen_ram_be            ; work         ;
-;       |altsyncram:ram[0][0][7]__1|                 ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1                                ; altsyncram            ; work         ;
-;          |altsyncram_09n1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1|altsyncram_09n1:auto_generated ; altsyncram_09n1       ; work         ;
-;       |altsyncram:ram[0][1][7]__2|                 ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2                                ; altsyncram            ; work         ;
-;          |altsyncram_09n1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2|altsyncram_09n1:auto_generated ; altsyncram_09n1       ; work         ;
-;       |altsyncram:ram[0][2][7]__3|                 ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3                                ; altsyncram            ; work         ;
-;          |altsyncram_09n1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3|altsyncram_09n1:auto_generated ; altsyncram_09n1       ; work         ;
-;       |altsyncram:ram[0][3][7]__4|                 ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4                                ; altsyncram            ; work         ;
-;          |altsyncram_09n1:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 8192              ; 0          ; 0    ; 0            ; |cpu|gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4|altsyncram_09n1:auto_generated ; altsyncram_09n1       ; work         ;
-;    |gen_rom:gen_rom_i|                             ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cpu|gen_rom:gen_rom_i                                                                 ; gen_rom               ; work         ;
-;       |altsyncram:altsyncram_component|            ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cpu|gen_rom:gen_rom_i|altsyncram:altsyncram_component                                 ; altsyncram            ; work         ;
-;          |altsyncram_f544:auto_generated|          ; 0 (0)               ; 0 (0)                     ; 32768             ; 0          ; 0    ; 0            ; |cpu|gen_rom:gen_rom_i|altsyncram:altsyncram_component|altsyncram_f544:auto_generated  ; altsyncram_f544       ; work         ;
-;    |if_dc_pipeline_reg:if_dc_pipeline_reg_i|       ; 0 (0)               ; 64 (64)                   ; 0                 ; 0          ; 0    ; 0            ; |cpu|if_dc_pipeline_reg:if_dc_pipeline_reg_i                                           ; if_dc_pipeline_reg    ; work         ;
-;    |instruction_word_mux:instruction_word_mux_i|   ; 3 (3)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|instruction_word_mux:instruction_word_mux_i                                       ; instruction_word_mux  ; work         ;
-;    |mem_mode_mux:mem_mode_mux_i|                   ; 53 (53)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|mem_mode_mux:mem_mode_mux_i                                                       ; mem_mode_mux          ; work         ;
-;    |mem_wb_pipeline_reg:mem_wb_pipeline_reg_i|     ; 7 (7)               ; 37 (37)                   ; 0                 ; 0          ; 0    ; 0            ; |cpu|mem_wb_pipeline_reg:mem_wb_pipeline_reg_i                                         ; mem_wb_pipeline_reg   ; work         ;
-;    |pc_ex_inc:pc_ex_inc_i|                         ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|pc_ex_inc:pc_ex_inc_i                                                             ; pc_ex_inc             ; work         ;
-;    |pc_inc:pc_inc_i|                               ; 30 (30)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|pc_inc:pc_inc_i                                                                   ; pc_inc                ; work         ;
-;    |pc_mux:pc_mux_i|                               ; 95 (95)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|pc_mux:pc_mux_i                                                                   ; pc_mux                ; work         ;
-;    |pf_if_pipeline_reg:pf_if_pipeline_reg_i|       ; 0 (0)               ; 32 (32)                   ; 0                 ; 0          ; 0    ; 0            ; |cpu|pf_if_pipeline_reg:pf_if_pipeline_reg_i                                           ; pf_if_pipeline_reg    ; work         ;
-;    |register_file:register_file_i|                 ; 684 (684)           ; 992 (992)                 ; 0                 ; 0          ; 0    ; 0            ; |cpu|register_file:register_file_i                                                     ; register_file         ; work         ;
-;    |rs1_fwd_mux:rs1_fwd_mux_i|                     ; 55 (55)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|rs1_fwd_mux:rs1_fwd_mux_i                                                         ; rs1_fwd_mux           ; work         ;
-;    |rs2_fwd_mux:rs2_fwd_mux_i|                     ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|rs2_fwd_mux:rs2_fwd_mux_i                                                         ; rs2_fwd_mux           ; work         ;
-;    |rs2_mux:rs2_mux_i|                             ; 32 (32)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|rs2_mux:rs2_mux_i                                                                 ; rs2_mux               ; work         ;
-;    |store_data_fwd_mux:store_data_fwd_mux_i|       ; 8 (8)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |cpu|store_data_fwd_mux:store_data_fwd_mux_i                                           ; store_data_fwd_mux    ; work         ;
-+----------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+----------------------------------------------------------------------------------------+-----------------------+--------------+
-Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
-
-
-+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis RAM Summary                                                                                                                                                                                                      ;
-+----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------+
-; Name                                                                                         ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size  ; MIF                                      ;
-+----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------+
-; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1|altsyncram_09n1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None                                     ;
-; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2|altsyncram_09n1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None                                     ;
-; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3|altsyncram_09n1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None                                     ;
-; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4|altsyncram_09n1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192  ; None                                     ;
-; gen_rom:gen_rom_i|altsyncram:altsyncram_component|altsyncram_f544:auto_generated|ALTSYNCRAM  ; AUTO ; Single Port      ; 1024         ; 32           ; --           ; --           ; 32768 ; /u/home/clab/st161569/Downloads/main.mif ;
-+----------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+-------+------------------------------------------+
-
-
-+-------------------------------------------------+
-; Analysis & Synthesis DSP Block Usage Summary    ;
-+-----------------------------------+-------------+
-; Statistic                         ; Number Used ;
-+-----------------------------------+-------------+
-; Two Independent 18x18             ; 4           ;
-; Sum of two 18x18                  ; 2           ;
-; Total number of DSP blocks        ; 6           ;
-;                                   ;             ;
-; Fixed Point Signed Multiplier     ; 1           ;
-; Fixed Point Unsigned Multiplier   ; 5           ;
-; Fixed Point Mixed Sign Multiplier ; 2           ;
-+-----------------------------------+-------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.data_width                                                                ;
-+---------------------------------------+-----------------------------------+---------------------------------------+-----------------------------------+
-; Name                                  ; mem_mode_mem.data_width.BYTE~reg0 ; mem_mode_mem.data_width.HALFWORD~reg0 ; mem_mode_mem.data_width.WORD~reg0 ;
-+---------------------------------------+-----------------------------------+---------------------------------------+-----------------------------------+
-; mem_mode_mem.data_width.WORD~reg0     ; 0                                 ; 0                                     ; 0                                 ;
-; mem_mode_mem.data_width.HALFWORD~reg0 ; 0                                 ; 1                                     ; 1                                 ;
-; mem_mode_mem.data_width.BYTE~reg0     ; 1                                 ; 0                                     ; 1                                 ;
-+---------------------------------------+-----------------------------------+---------------------------------------+-----------------------------------+
-
-
-Encoding Type:  One-Hot
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.memory_access                                                                   ;
-+---------------------------------------+--------------------------------------+---------------------------------------+--------------------------------------+
-; Name                                  ; mem_mode_mem.memory_access.LOAD~reg0 ; mem_mode_mem.memory_access.STORE~reg0 ; mem_mode_mem.memory_access.IDLE~reg0 ;
-+---------------------------------------+--------------------------------------+---------------------------------------+--------------------------------------+
-; mem_mode_mem.memory_access.IDLE~reg0  ; 0                                    ; 0                                     ; 0                                    ;
-; mem_mode_mem.memory_access.STORE~reg0 ; 0                                    ; 1                                     ; 1                                    ;
-; mem_mode_mem.memory_access.LOAD~reg0  ; 1                                    ; 0                                     ; 1                                    ;
-+---------------------------------------+--------------------------------------+---------------------------------------+--------------------------------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|dbpu_mode_ex                                                                                                                                                                                                                                                                  ;
-+---------------------------------------------+---------------------------------------------+--------------------------------------+------------------------------------+-----------------------------+-----------------------------+-------------------------+------------------------+-----------------------+-----------------------------+
-; Name                                        ; dbpu_mode_ex.GREATER_OR_EQUAL_UNSIGNED~reg0 ; dbpu_mode_ex.LESS_THAN_UNSIGNED~reg0 ; dbpu_mode_ex.GREATER_OR_EQUAL~reg0 ; dbpu_mode_ex.LESS_THAN~reg0 ; dbpu_mode_ex.NOT_EQUAL~reg0 ; dbpu_mode_ex.EQUAL~reg0 ; dbpu_mode_ex.JALR~reg0 ; dbpu_mode_ex.JAL~reg0 ; dbpu_mode_ex.NO_BRANCH~reg0 ;
-+---------------------------------------------+---------------------------------------------+--------------------------------------+------------------------------------+-----------------------------+-----------------------------+-------------------------+------------------------+-----------------------+-----------------------------+
-; dbpu_mode_ex.NO_BRANCH~reg0                 ; 0                                           ; 0                                    ; 0                                  ; 0                           ; 0                           ; 0                       ; 0                      ; 0                     ; 0                           ;
-; dbpu_mode_ex.JAL~reg0                       ; 0                                           ; 0                                    ; 0                                  ; 0                           ; 0                           ; 0                       ; 0                      ; 1                     ; 1                           ;
-; dbpu_mode_ex.JALR~reg0                      ; 0                                           ; 0                                    ; 0                                  ; 0                           ; 0                           ; 0                       ; 1                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.EQUAL~reg0                     ; 0                                           ; 0                                    ; 0                                  ; 0                           ; 0                           ; 1                       ; 0                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.NOT_EQUAL~reg0                 ; 0                                           ; 0                                    ; 0                                  ; 0                           ; 1                           ; 0                       ; 0                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.LESS_THAN~reg0                 ; 0                                           ; 0                                    ; 0                                  ; 1                           ; 0                           ; 0                       ; 0                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.GREATER_OR_EQUAL~reg0          ; 0                                           ; 0                                    ; 1                                  ; 0                           ; 0                           ; 0                       ; 0                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.LESS_THAN_UNSIGNED~reg0        ; 0                                           ; 1                                    ; 0                                  ; 0                           ; 0                           ; 0                       ; 0                      ; 0                     ; 1                           ;
-; dbpu_mode_ex.GREATER_OR_EQUAL_UNSIGNED~reg0 ; 1                                           ; 0                                    ; 0                                  ; 0                           ; 0                           ; 0                       ; 0                      ; 0                     ; 1                           ;
-+---------------------------------------------+---------------------------------------------+--------------------------------------+------------------------------------+-----------------------------+-----------------------------+-------------------------+------------------------+-----------------------+-----------------------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs2_ex                                            ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-; Name                          ; fwd_rs2_ex.FROM_WB~reg0 ; fwd_rs2_ex.FROM_MEM~reg0 ; fwd_rs2_ex.NO_FORWARDING~reg0 ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-; fwd_rs2_ex.NO_FORWARDING~reg0 ; 0                       ; 0                        ; 0                             ;
-; fwd_rs2_ex.FROM_MEM~reg0      ; 0                       ; 1                        ; 1                             ;
-; fwd_rs2_ex.FROM_WB~reg0       ; 1                       ; 0                        ; 1                             ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs1_ex                                            ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-; Name                          ; fwd_rs1_ex.FROM_WB~reg0 ; fwd_rs1_ex.FROM_MEM~reg0 ; fwd_rs1_ex.NO_FORWARDING~reg0 ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-; fwd_rs1_ex.NO_FORWARDING~reg0 ; 0                       ; 0                        ; 0                             ;
-; fwd_rs1_ex.FROM_MEM~reg0      ; 0                       ; 1                        ; 1                             ;
-; fwd_rs1_ex.FROM_WB~reg0       ; 1                       ; 0                        ; 1                             ;
-+-------------------------------+-------------------------+--------------------------+-------------------------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.data_width                                                               ;
-+--------------------------------------+----------------------------------+--------------------------------------+----------------------------------+
-; Name                                 ; mem_mode_ex.data_width.BYTE~reg0 ; mem_mode_ex.data_width.HALFWORD~reg0 ; mem_mode_ex.data_width.WORD~reg0 ;
-+--------------------------------------+----------------------------------+--------------------------------------+----------------------------------+
-; mem_mode_ex.data_width.WORD~reg0     ; 0                                ; 0                                    ; 0                                ;
-; mem_mode_ex.data_width.HALFWORD~reg0 ; 0                                ; 1                                    ; 1                                ;
-; mem_mode_ex.data_width.BYTE~reg0     ; 1                                ; 0                                    ; 1                                ;
-+--------------------------------------+----------------------------------+--------------------------------------+----------------------------------+
-
-
-Encoding Type:  One-Hot
-+---------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.memory_access                                                                  ;
-+--------------------------------------+-------------------------------------+--------------------------------------+-------------------------------------+
-; Name                                 ; mem_mode_ex.memory_access.LOAD~reg0 ; mem_mode_ex.memory_access.STORE~reg0 ; mem_mode_ex.memory_access.IDLE~reg0 ;
-+--------------------------------------+-------------------------------------+--------------------------------------+-------------------------------------+
-; mem_mode_ex.memory_access.IDLE~reg0  ; 0                                   ; 0                                    ; 0                                   ;
-; mem_mode_ex.memory_access.STORE~reg0 ; 0                                   ; 1                                    ; 1                                   ;
-; mem_mode_ex.memory_access.LOAD~reg0  ; 1                                   ; 0                                    ; 1                                   ;
-+--------------------------------------+-------------------------------------+--------------------------------------+-------------------------------------+
-
-
-Encoding Type:  One-Hot
-+--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|alu_mode_ex                                                                                                                                                                                                                                                                                                                                                                   ;
-+------------------------------+-----------------------------+------------------------------+----------------------------+---------------------------+---------------------------+--------------------------+---------------------------+---------------------------+---------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-; Name                         ; alu_mode_ex.MULHU_MODE~reg0 ; alu_mode_ex.MULHSU_MODE~reg0 ; alu_mode_ex.MULH_MODE~reg0 ; alu_mode_ex.MUL_MODE~reg0 ; alu_mode_ex.AND_MODE~reg0 ; alu_mode_ex.OR_MODE~reg0 ; alu_mode_ex.SRA_MODE~reg0 ; alu_mode_ex.SRL_MODE~reg0 ; alu_mode_ex.XOR_MODE~reg0 ; alu_mode_ex.SLTU_MODE~reg0 ; alu_mode_ex.SLT_MODE~reg0 ; alu_mode_ex.SLL_MODE~reg0 ; alu_mode_ex.SUB_MODE~reg0 ; alu_mode_ex.ADD_MODE~reg0 ;
-+------------------------------+-----------------------------+------------------------------+----------------------------+---------------------------+---------------------------+--------------------------+---------------------------+---------------------------+---------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-; alu_mode_ex.ADD_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 0                         ;
-; alu_mode_ex.SUB_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 1                         ; 1                         ;
-; alu_mode_ex.SLL_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 1                         ; 0                         ; 1                         ;
-; alu_mode_ex.SLT_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 1                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.SLTU_MODE~reg0   ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 1                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.XOR_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 1                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.SRL_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 1                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.SRA_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 1                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.OR_MODE~reg0     ; 0                           ; 0                            ; 0                          ; 0                         ; 0                         ; 1                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.AND_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 0                         ; 1                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.MUL_MODE~reg0    ; 0                           ; 0                            ; 0                          ; 1                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.MULH_MODE~reg0   ; 0                           ; 0                            ; 1                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.MULHSU_MODE~reg0 ; 0                           ; 1                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-; alu_mode_ex.MULHU_MODE~reg0  ; 1                           ; 0                            ; 0                          ; 0                         ; 0                         ; 0                        ; 0                         ; 0                         ; 0                         ; 0                          ; 0                         ; 0                         ; 0                         ; 1                         ;
-+------------------------------+-----------------------------+------------------------------+----------------------------+---------------------------+---------------------------+--------------------------+---------------------------+---------------------------+---------------------------+----------------------------+---------------------------+---------------------------+---------------------------+---------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                           ;
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
-; Register name                                                                  ; Reason for Removal                                          ;
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
-; gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[1..4]                              ; Stuck at GND due to stuck port data_in                      ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[1..4]                              ; Stuck at GND due to stuck port data_in                      ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[1..4]                              ; Stuck at GND due to stuck port data_in                      ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[1..4]                              ; Stuck at GND due to stuck port data_in                      ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[5]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[5]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[5]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[5]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[5]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[5]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[6]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[6]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[6]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[6]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[6]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[6]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[7]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[7]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[7]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[7]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[7]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[7]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[8]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[8]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[8]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[8]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[8]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[8]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[9]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[9]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[9]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[9]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[9]                                 ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[9]  ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[10]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[10] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[10]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[10] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[10]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[10] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[11]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[11] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[11]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[11] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[11]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[11] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[12]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[12] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[12]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[12] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[12]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[12] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[13]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[13] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[13]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[13] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[13]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[13] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[14]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[14] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[14]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[14] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[14]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[14] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[15]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[15] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[15]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[15] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[15]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[15] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[16]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[16] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[16]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[16] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[16]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[16] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[17]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[17] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[17]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[17] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[17]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[17] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[18]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[18] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[18]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[18] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[18]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[18] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[19]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[19] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[19]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[19] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[19]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[19] ;
-; gen_ram_be:gen_ram_be_i|ram_0__1__7__bypass[20]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[20] ;
-; gen_ram_be:gen_ram_be_i|ram_0__2__7__bypass[20]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[20] ;
-; gen_ram_be:gen_ram_be_i|ram_0__3__7__bypass[20]                                ; Merged with gen_ram_be:gen_ram_be_i|ram_0__0__7__bypass[20] ;
-; ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.memory_access.IDLE~reg0 ; Lost fanout                                                 ;
-; dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.memory_access.IDLE~reg0    ; Lost fanout                                                 ;
-; dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs2_ex.NO_FORWARDING~reg0          ; Lost fanout                                                 ;
-; dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs1_ex.NO_FORWARDING~reg0          ; Lost fanout                                                 ;
-; Total Number of Removed Registers = 68                                         ;                                                             ;
-+--------------------------------------------------------------------------------+-------------------------------------------------------------+
-
-
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Removed Registers Triggering Further Register Optimizations                                                                                                                       ;
-+--------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
-; Register name                                                                  ; Reason for Removal ; Registers Removed due to This Register                                      ;
-+--------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
-; ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.memory_access.IDLE~reg0 ; Lost Fanouts       ; dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.memory_access.IDLE~reg0 ;
-+--------------------------------------------------------------------------------+--------------------+-----------------------------------------------------------------------------+
-
-
-+------------------------------------------------------+
-; General Register Statistics                          ;
-+----------------------------------------------+-------+
-; Statistic                                    ; Value ;
-+----------------------------------------------+-------+
-; Total registers                              ; 1935  ;
-; Number of registers using Synchronous Clear  ; 109   ;
-; Number of registers using Synchronous Load   ; 390   ;
-; Number of registers using Asynchronous Clear ; 1883  ;
-; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 1280  ;
-; Number of registers using Preset             ; 0     ;
-+----------------------------------------------+-------+
-
-
-+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                     ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                           ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-; 3:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |cpu|if_dc_pipeline_reg:if_dc_pipeline_reg_i|instruction_word_dc[1]  ;
-; 3:1                ; 29 bits   ; 58 LEs        ; 0 LEs                ; 58 LEs                 ; Yes        ; |cpu|if_dc_pipeline_reg:if_dc_pipeline_reg_i|instruction_word_dc[15] ;
-; 5:1                ; 16 bits   ; 48 LEs        ; 32 LEs               ; 16 LEs                 ; Yes        ; |cpu|mem_wb_pipeline_reg:mem_wb_pipeline_reg_i|mem_result_wb[16]     ;
-; 7:1                ; 4 bits    ; 16 LEs        ; 16 LEs               ; 0 LEs                  ; Yes        ; |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|rd_addr_ex[1]           ;
-; 6:1                ; 2 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |cpu|mem_wb_pipeline_reg:mem_wb_pipeline_reg_i|mem_result_wb[7]      ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 640 LEs              ; 64 LEs                 ; Yes        ; |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|rs1_ex[13]              ;
-; 33:1               ; 32 bits   ; 704 LEs       ; 640 LEs              ; 64 LEs                 ; Yes        ; |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|rs2_ex[16]              ;
-; 7:1                ; 7 bits    ; 28 LEs        ; 28 LEs               ; 0 LEs                  ; Yes        ; |cpu|mem_wb_pipeline_reg:mem_wb_pipeline_reg_i|mem_result_wb[9]      ;
-; 9:1                ; 7 bits    ; 42 LEs        ; 35 LEs               ; 7 LEs                  ; Yes        ; |cpu|mem_wb_pipeline_reg:mem_wb_pipeline_reg_i|mem_result_wb[3]      ;
-; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftLeft0                                            ;
-; 4:1                ; 49 bits   ; 98 LEs        ; 98 LEs               ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftLeft0                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftRight0                                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftRight1                                           ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftLeft0                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftLeft0                                            ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|alu:alu_i|ShiftLeft0                                            ;
-; 3:1                ; 22 bits   ; 44 LEs        ; 44 LEs               ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|Mux79                                         ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|rs2_fwd_mux:rs2_fwd_mux_i|Selector31                            ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|rs1_fwd_mux:rs1_fwd_mux_i|Selector12                            ;
-; 4:1                ; 12 bits   ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|imm_dc[31]                                    ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|alu_mode_dc.MUL_MODE                          ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; No         ; |cpu|addr_calc:addr_calc_i|be[3]                                     ;
-; 6:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; No         ; |cpu|decoder:decoder_i|Mux100                                        ;
-; 7:1                ; 5 bits    ; 20 LEs        ; 15 LEs               ; 5 LEs                  ; No         ; |cpu|decoder:decoder_i|Mux93                                         ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|fwd_rs1_dc_int.NO_FORWARDING                  ;
-; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|fwd_rs2_dc_int.NO_FORWARDING                  ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 16 LEs               ; 8 LEs                  ; No         ; |cpu|addr_calc:addr_calc_i|wdata[26]                                 ;
-; 5:1                ; 8 bits    ; 24 LEs        ; 24 LEs               ; 0 LEs                  ; No         ; |cpu|addr_calc:addr_calc_i|wdata[16]                                 ;
-; 7:1                ; 5 bits    ; 20 LEs        ; 20 LEs               ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|imm_dc[19]                                    ;
-; 6:1                ; 16 bits   ; 64 LEs        ; 64 LEs               ; 0 LEs                  ; No         ; |cpu|addr_calc:addr_calc_i|wdata[6]                                  ;
-; 9:1                ; 5 bits    ; 30 LEs        ; 25 LEs               ; 5 LEs                  ; No         ; |cpu|decoder:decoder_i|imm_dc[0]                                     ;
-; 129:1              ; 2 bits    ; 172 LEs       ; 14 LEs               ; 158 LEs                ; No         ; |cpu|decoder:decoder_i|mem_mode_dc.memory_access.IDLE                ;
-; 256:1              ; 2 bits    ; 340 LEs       ; 340 LEs              ; 0 LEs                  ; No         ; |cpu|bpb:bpb_i|Mux2                                                  ;
-; 130:1              ; 5 bits    ; 430 LEs       ; 40 LEs               ; 390 LEs                ; No         ; |cpu|decoder:decoder_i|alu_mode_dc.AND_MODE                          ;
-; 10:1               ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|imm_dc[14]                                    ;
-; 130:1              ; 2 bits    ; 172 LEs       ; 16 LEs               ; 156 LEs                ; No         ; |cpu|decoder:decoder_i|alu_mode_dc.SRA_MODE                          ;
-; 14:1               ; 6 bits    ; 54 LEs        ; 54 LEs               ; 0 LEs                  ; No         ; |cpu|decoder:decoder_i|imm_dc[9]                                     ;
-; 18:1               ; 32 bits   ; 384 LEs       ; 160 LEs              ; 224 LEs                ; No         ; |cpu|pc_mux:pc_mux_i|pc[21]                                          ;
-; 20:1               ; 5 bits    ; 65 LEs        ; 60 LEs               ; 5 LEs                  ; No         ; |cpu|alu:alu_i|Selector23                                            ;
-; 21:1               ; 8 bits    ; 112 LEs       ; 96 LEs               ; 16 LEs                 ; No         ; |cpu|alu:alu_i|Selector11                                            ;
-; 20:1               ; 3 bits    ; 39 LEs        ; 36 LEs               ; 3 LEs                  ; No         ; |cpu|alu:alu_i|Selector17                                            ;
-; 22:1               ; 2 bits    ; 28 LEs        ; 24 LEs               ; 4 LEs                  ; No         ; |cpu|alu:alu_i|Selector21                                            ;
-; 23:1               ; 3 bits    ; 45 LEs        ; 42 LEs               ; 3 LEs                  ; No         ; |cpu|alu:alu_i|Selector30                                            ;
-; 23:1               ; 2 bits    ; 30 LEs        ; 26 LEs               ; 4 LEs                  ; No         ; |cpu|alu:alu_i|Selector5                                             ;
-; 24:1               ; 3 bits    ; 48 LEs        ; 42 LEs               ; 6 LEs                  ; No         ; |cpu|alu:alu_i|Selector1                                             ;
-+--------------------+-----------+---------------+----------------------+------------------------+------------+----------------------------------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1|altsyncram_09n1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                         ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2|altsyncram_09n1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                         ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3|altsyncram_09n1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                         ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-
-
-+----------------------------------------------------------------------------------------------------------+
-; Source assignments for gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4|altsyncram_09n1:auto_generated ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                         ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                          ;
-+---------------------------------+--------------------+------+--------------------------------------------+
-
-
-+---------------------------------------------------------------------------------------------------------+
-; Source assignments for gen_rom:gen_rom_i|altsyncram:altsyncram_component|altsyncram_f544:auto_generated ;
-+---------------------------------+--------------------+------+-------------------------------------------+
-; Assignment                      ; Value              ; From ; To                                        ;
-+---------------------------------+--------------------+------+-------------------------------------------+
-; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                         ;
-+---------------------------------+--------------------+------+-------------------------------------------+
-
-
-+----------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i ;
-+----------------+-------+---------------------------------------------+
-; Parameter Name ; Value ; Type                                        ;
-+----------------+-------+---------------------------------------------+
-; addr_width     ; 10    ; Signed Integer                              ;
-; num_bytes      ; 4     ; Signed Integer                              ;
-; byte_width     ; 8     ; Signed Integer                              ;
-+----------------+-------+---------------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1 ;
-+------------------------------------+----------------------+-------------------------------------+
-; Parameter Name                     ; Value                ; Type                                ;
-+------------------------------------+----------------------+-------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                             ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                             ;
-; WIDTH_A                            ; 8                    ; Untyped                             ;
-; WIDTHAD_A                          ; 10                   ; Untyped                             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped                             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WIDTH_B                            ; 8                    ; Untyped                             ;
-; WIDTHAD_B                          ; 10                   ; Untyped                             ;
-; NUMWORDS_B                         ; 1024                 ; Untyped                             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                             ;
-; BYTE_SIZE                          ; 8                    ; Untyped                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; INIT_FILE                          ; UNUSED               ; Untyped                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_09n1      ; Untyped                             ;
-+------------------------------------+----------------------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2 ;
-+------------------------------------+----------------------+-------------------------------------+
-; Parameter Name                     ; Value                ; Type                                ;
-+------------------------------------+----------------------+-------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                             ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                             ;
-; WIDTH_A                            ; 8                    ; Untyped                             ;
-; WIDTHAD_A                          ; 10                   ; Untyped                             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped                             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WIDTH_B                            ; 8                    ; Untyped                             ;
-; WIDTHAD_B                          ; 10                   ; Untyped                             ;
-; NUMWORDS_B                         ; 1024                 ; Untyped                             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                             ;
-; BYTE_SIZE                          ; 8                    ; Untyped                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; INIT_FILE                          ; UNUSED               ; Untyped                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_09n1      ; Untyped                             ;
-+------------------------------------+----------------------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3 ;
-+------------------------------------+----------------------+-------------------------------------+
-; Parameter Name                     ; Value                ; Type                                ;
-+------------------------------------+----------------------+-------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                             ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                             ;
-; WIDTH_A                            ; 8                    ; Untyped                             ;
-; WIDTHAD_A                          ; 10                   ; Untyped                             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped                             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WIDTH_B                            ; 8                    ; Untyped                             ;
-; WIDTHAD_B                          ; 10                   ; Untyped                             ;
-; NUMWORDS_B                         ; 1024                 ; Untyped                             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                             ;
-; BYTE_SIZE                          ; 8                    ; Untyped                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; INIT_FILE                          ; UNUSED               ; Untyped                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_09n1      ; Untyped                             ;
-+------------------------------------+----------------------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+-------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4 ;
-+------------------------------------+----------------------+-------------------------------------+
-; Parameter Name                     ; Value                ; Type                                ;
-+------------------------------------+----------------------+-------------------------------------+
-; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                             ;
-; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                          ;
-; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                        ;
-; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                        ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                      ;
-; WIDTH_BYTEENA                      ; 1                    ; Untyped                             ;
-; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                             ;
-; WIDTH_A                            ; 8                    ; Untyped                             ;
-; WIDTHAD_A                          ; 10                   ; Untyped                             ;
-; NUMWORDS_A                         ; 1024                 ; Untyped                             ;
-; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                             ;
-; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                             ;
-; INDATA_ACLR_A                      ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                             ;
-; WIDTH_B                            ; 8                    ; Untyped                             ;
-; WIDTHAD_B                          ; 10                   ; Untyped                             ;
-; NUMWORDS_B                         ; 1024                 ; Untyped                             ;
-; INDATA_REG_B                       ; CLOCK1               ; Untyped                             ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                             ;
-; RDCONTROL_REG_B                    ; CLOCK1               ; Untyped                             ;
-; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                             ;
-; OUTDATA_REG_B                      ; UNREGISTERED         ; Untyped                             ;
-; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                             ;
-; INDATA_ACLR_B                      ; NONE                 ; Untyped                             ;
-; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; ADDRESS_ACLR_B                     ; NONE                 ; Untyped                             ;
-; OUTDATA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                             ;
-; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                             ;
-; WIDTH_BYTEENA_A                    ; 1                    ; Untyped                             ;
-; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                             ;
-; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                             ;
-; BYTE_SIZE                          ; 8                    ; Untyped                             ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA             ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                             ;
-; INIT_FILE                          ; UNUSED               ; Untyped                             ;
-; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                             ;
-; MAXIMUM_DEPTH                      ; 0                    ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_A               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL               ; Untyped                             ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                             ;
-; ENABLE_ECC                         ; FALSE                ; Untyped                             ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                             ;
-; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                             ;
-; DEVICE_FAMILY                      ; Cyclone V            ; Untyped                             ;
-; CBXI_PARAMETER                     ; altsyncram_09n1      ; Untyped                             ;
-+------------------------------------+----------------------+-------------------------------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+----------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_rom:gen_rom_i             ;
-+----------------+------------------------------------------+----------------+
-; Parameter Name ; Value                                    ; Type           ;
-+----------------+------------------------------------------+----------------+
-; addr_width     ; 10                                       ; Signed Integer ;
-; data_width     ; 32                                       ; Signed Integer ;
-; init_file      ; /u/home/clab/st161569/Downloads/main.mif ; String         ;
-+----------------+------------------------------------------+----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; Parameter Settings for User Entity Instance: gen_rom:gen_rom_i|altsyncram:altsyncram_component ;
-+------------------------------------+------------------------------------------+----------------+
-; Parameter Name                     ; Value                                    ; Type           ;
-+------------------------------------+------------------------------------------+----------------+
-; BYTE_SIZE_BLOCK                    ; 8                                        ; Untyped        ;
-; AUTO_CARRY_CHAINS                  ; ON                                       ; AUTO_CARRY     ;
-; IGNORE_CARRY_BUFFERS               ; OFF                                      ; IGNORE_CARRY   ;
-; AUTO_CASCADE_CHAINS                ; ON                                       ; AUTO_CASCADE   ;
-; IGNORE_CASCADE_BUFFERS             ; OFF                                      ; IGNORE_CASCADE ;
-; WIDTH_BYTEENA                      ; 1                                        ; Untyped        ;
-; OPERATION_MODE                     ; SINGLE_PORT                              ; Untyped        ;
-; WIDTH_A                            ; 32                                       ; Signed Integer ;
-; WIDTHAD_A                          ; 10                                       ; Signed Integer ;
-; NUMWORDS_A                         ; 1024                                     ; Signed Integer ;
-; OUTDATA_REG_A                      ; UNREGISTERED                             ; Untyped        ;
-; ADDRESS_ACLR_A                     ; NONE                                     ; Untyped        ;
-; OUTDATA_ACLR_A                     ; NONE                                     ; Untyped        ;
-; WRCONTROL_ACLR_A                   ; NONE                                     ; Untyped        ;
-; INDATA_ACLR_A                      ; NONE                                     ; Untyped        ;
-; BYTEENA_ACLR_A                     ; NONE                                     ; Untyped        ;
-; WIDTH_B                            ; 1                                        ; Signed Integer ;
-; WIDTHAD_B                          ; 1                                        ; Signed Integer ;
-; NUMWORDS_B                         ; 0                                        ; Signed Integer ;
-; INDATA_REG_B                       ; CLOCK1                                   ; Untyped        ;
-; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1                                   ; Untyped        ;
-; RDCONTROL_REG_B                    ; CLOCK1                                   ; Untyped        ;
-; ADDRESS_REG_B                      ; CLOCK1                                   ; Untyped        ;
-; OUTDATA_REG_B                      ; UNREGISTERED                             ; Untyped        ;
-; BYTEENA_REG_B                      ; CLOCK1                                   ; Untyped        ;
-; INDATA_ACLR_B                      ; NONE                                     ; Untyped        ;
-; WRCONTROL_ACLR_B                   ; NONE                                     ; Untyped        ;
-; ADDRESS_ACLR_B                     ; NONE                                     ; Untyped        ;
-; OUTDATA_ACLR_B                     ; NONE                                     ; Untyped        ;
-; RDCONTROL_ACLR_B                   ; NONE                                     ; Untyped        ;
-; BYTEENA_ACLR_B                     ; NONE                                     ; Untyped        ;
-; WIDTH_BYTEENA_A                    ; 1                                        ; Signed Integer ;
-; WIDTH_BYTEENA_B                    ; 1                                        ; Signed Integer ;
-; RAM_BLOCK_TYPE                     ; AUTO                                     ; Untyped        ;
-; BYTE_SIZE                          ; 8                                        ; Signed Integer ;
-; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ                     ; Untyped        ;
-; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ                     ; Untyped        ;
-; INIT_FILE                          ; /u/home/clab/st161569/Downloads/main.mif ; Untyped        ;
-; INIT_FILE_LAYOUT                   ; PORT_A                                   ; Untyped        ;
-; MAXIMUM_DEPTH                      ; 0                                        ; Signed Integer ;
-; CLOCK_ENABLE_INPUT_A               ; BYPASS                                   ; Untyped        ;
-; CLOCK_ENABLE_INPUT_B               ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_A              ; BYPASS                                   ; Untyped        ;
-; CLOCK_ENABLE_OUTPUT_B              ; NORMAL                                   ; Untyped        ;
-; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN                          ; Untyped        ;
-; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN                          ; Untyped        ;
-; ENABLE_ECC                         ; FALSE                                    ; Untyped        ;
-; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                                    ; Untyped        ;
-; WIDTH_ECCSTATUS                    ; 3                                        ; Signed Integer ;
-; DEVICE_FAMILY                      ; Cyclone V                                ; Untyped        ;
-; CBXI_PARAMETER                     ; altsyncram_f544                          ; Untyped        ;
-+------------------------------------+------------------------------------------+----------------+
-Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
-
-
-+------------------------------------------------------------------------------------------------+
-; altsyncram Parameter Settings by Entity Instance                                               ;
-+-------------------------------------------+----------------------------------------------------+
-; Name                                      ; Value                                              ;
-+-------------------------------------------+----------------------------------------------------+
-; Number of entity instances                ; 5                                                  ;
-; Entity Instance                           ; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
-;     -- WIDTH_A                            ; 8                                                  ;
-;     -- NUMWORDS_A                         ; 1024                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
-;     -- WIDTH_B                            ; 8                                                  ;
-;     -- NUMWORDS_B                         ; 1024                                               ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                           ;
-; Entity Instance                           ; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][1][7]__2 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
-;     -- WIDTH_A                            ; 8                                                  ;
-;     -- NUMWORDS_A                         ; 1024                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
-;     -- WIDTH_B                            ; 8                                                  ;
-;     -- NUMWORDS_B                         ; 1024                                               ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                           ;
-; Entity Instance                           ; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][2][7]__3 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
-;     -- WIDTH_A                            ; 8                                                  ;
-;     -- NUMWORDS_A                         ; 1024                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
-;     -- WIDTH_B                            ; 8                                                  ;
-;     -- NUMWORDS_B                         ; 1024                                               ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                           ;
-; Entity Instance                           ; gen_ram_be:gen_ram_be_i|altsyncram:ram[0][3][7]__4 ;
-;     -- OPERATION_MODE                     ; DUAL_PORT                                          ;
-;     -- WIDTH_A                            ; 8                                                  ;
-;     -- NUMWORDS_A                         ; 1024                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
-;     -- WIDTH_B                            ; 8                                                  ;
-;     -- NUMWORDS_B                         ; 1024                                               ;
-;     -- ADDRESS_REG_B                      ; CLOCK0                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; OLD_DATA                                           ;
-; Entity Instance                           ; gen_rom:gen_rom_i|altsyncram:altsyncram_component  ;
-;     -- OPERATION_MODE                     ; SINGLE_PORT                                        ;
-;     -- WIDTH_A                            ; 32                                                 ;
-;     -- NUMWORDS_A                         ; 1024                                               ;
-;     -- OUTDATA_REG_A                      ; UNREGISTERED                                       ;
-;     -- WIDTH_B                            ; 1                                                  ;
-;     -- NUMWORDS_B                         ; 0                                                  ;
-;     -- ADDRESS_REG_B                      ; CLOCK1                                             ;
-;     -- OUTDATA_REG_B                      ; UNREGISTERED                                       ;
-;     -- RAM_BLOCK_TYPE                     ; AUTO                                               ;
-;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                          ;
-+-------------------------------------------+----------------------------------------------------+
-
-
-+-----------------------------------------------------+
-; Post-Synthesis Netlist Statistics for Top Partition ;
-+-----------------------+-----------------------------+
-; Type                  ; Count                       ;
-+-----------------------+-----------------------------+
-; arriav_ff             ; 1935                        ;
-;     CLR               ; 424                         ;
-;     CLR SCLR          ; 45                          ;
-;     CLR SCLR SLD      ; 64                          ;
-;     CLR SLD           ; 70                          ;
-;     ENA CLR           ; 1024                        ;
-;     ENA CLR SLD       ; 256                         ;
-;     plain             ; 52                          ;
-; arriav_lcell_comb     ; 3017                        ;
-;     arith             ; 283                         ;
-;         0 data inputs ; 2                           ;
-;         1 data inputs ; 75                          ;
-;         2 data inputs ; 110                         ;
-;         3 data inputs ; 1                           ;
-;         4 data inputs ; 32                          ;
-;         5 data inputs ; 63                          ;
-;     extend            ; 17                          ;
-;         7 data inputs ; 17                          ;
-;     normal            ; 2717                        ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 79                          ;
-;         3 data inputs ; 189                         ;
-;         4 data inputs ; 660                         ;
-;         5 data inputs ; 516                         ;
-;         6 data inputs ; 1272                        ;
-; arriav_mac            ; 6                           ;
-; boundary_port         ; 66                          ;
-; stratixv_ram_block    ; 64                          ;
-;                       ;                             ;
-; Max LUT depth         ; 14.70                       ;
-; Average LUT depth     ; 7.69                        ;
-+-----------------------+-----------------------------+
-
-
-+-------------------------------+
-; Elapsed Time Per Partition    ;
-+----------------+--------------+
-; Partition Name ; Elapsed Time ;
-+----------------+--------------+
-; Top            ; 00:00:05     ;
-+----------------+--------------+
 
 
 +-------------------------------+
@@ -1137,14 +162,14 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
-    Info: Processing started: Wed Jun 26 18:23:56 2024
+    Info: Processing started: Wed Jul 10 18:02:09 2024
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off cpu -c cpu
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 16 of the 16 processors detected
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd
+    Info (12022): Found design unit 1: types File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd
     Info (12023): Found entity 1: cpu File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd Line: 15
-Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd
-    Info (12022): Found design unit 1: types File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd Line: 13
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd
     Info (12022): Found design unit 1: isa_defines File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd Line: 15
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd
@@ -1161,10 +186,14 @@ Info (12021): Found 1 design units, including 1 entities, in source file /u/home
     Info (12023): Found entity 1: alu File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd
     Info (12022): Found design unit 1: alu-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd Line: 16
-Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd
-    Info (12023): Found entity 1: bpb File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd Line: 18
-Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd
-    Info (12022): Found design unit 1: bpb-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_entity.vhd
+    Info (12023): Found entity 1: bpu File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_entity.vhd
+    Info (12023): Found entity 1: gen_ram File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_entity.vhd Line: 14
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_behav.vhd
+    Info (12022): Found design unit 1: gen_ram-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_behav.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd
+    Info (12022): Found design unit 1: bpu-mixed File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd Line: 15
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd
     Info (12023): Found entity 1: bta_adder File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_behav.vhd
@@ -1176,7 +205,7 @@ Info (12021): Found 1 design units, including 0 entities, in source file /u/home
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_entity.vhd
     Info (12023): Found entity 1: dbpu File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd
-    Info (12022): Found design unit 1: dbpu-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd Line: 13
+    Info (12022): Found design unit 1: dbpu-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dbpu_behav.vhd Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd
     Info (12023): Found entity 1: dc_ex_pipeline_reg File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dc_ex_pipeline_reg_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd
@@ -1185,6 +214,13 @@ Info (12021): Found 1 design units, including 1 entities, in source file /u/home
     Info (12023): Found entity 1: decoder File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd
     Info (12022): Found design unit 1: decoder-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd Line: 15
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_entity.vhd
+    Info (12023): Found entity 1: divider File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_entity.vhd Line: 18
+Info (12021): Found 2 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/radix4_srt_divider.vhd
+    Info (12022): Found design unit 1: radix4_srt_divider-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/radix4_srt_divider.vhd Line: 30
+    Info (12023): Found entity 1: radix4_srt_divider File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/radix4_srt_divider.vhd Line: 13
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_behav.vhd
+    Info (12022): Found design unit 1: divider-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_behav.vhd Line: 16
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd
     Info (12023): Found entity 1: ex_mem_pipeline_reg File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd
@@ -1252,6 +288,10 @@ Info (12021): Found 1 design units, including 1 entities, in source file /u/home
     Info (12023): Found entity 1: rs2_mux File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
     Info (12022): Found design unit 1: rs2_mux-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd Line: 10
+Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_entity.vhd
+    Info (12023): Found entity 1: sbpu File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_entity.vhd Line: 18
+Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_behav.vhd
+    Info (12022): Found design unit 1: sbpu-behav File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_behav.vhd Line: 14
 Info (12021): Found 1 design units, including 1 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd
     Info (12023): Found entity 1: store_data_fwd_mux File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd Line: 18
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd
@@ -1263,18 +303,25 @@ Info (12021): Found 1 design units, including 0 entities, in source file /u/home
 Info (12021): Found 1 design units, including 0 entities, in source file /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd
     Info (12022): Found design unit 1: cpu-struct File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 20
 Info (12127): Elaborating entity "cpu" for the top level hierarchy
-Info (12128): Elaborating entity "addr_calc" for hierarchy "addr_calc:addr_calc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 448
-Info (12128): Elaborating entity "addr_width_reducer" for hierarchy "addr_width_reducer:addr_width_reducer_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 459
-Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 464
-Info (12128): Elaborating entity "bpb" for hierarchy "bpb:bpb_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 472
-Info (12128): Elaborating entity "bta_adder" for hierarchy "bta_adder:bta_adder_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 485
-Info (12128): Elaborating entity "data_memory_extractor" for hierarchy "data_memory_extractor:data_memory_extractor_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 491
-Info (12128): Elaborating entity "dbpu" for hierarchy "dbpu:dbpu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 498
-Info (12128): Elaborating entity "dc_ex_pipeline_reg" for hierarchy "dc_ex_pipeline_reg:dc_ex_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 508
-Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 541
-Info (12128): Elaborating entity "ex_mem_pipeline_reg" for hierarchy "ex_mem_pipeline_reg:ex_mem_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 566
-Info (12128): Elaborating entity "ex_out_mux" for hierarchy "ex_out_mux:ex_out_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 581
-Info (12128): Elaborating entity "gen_ram_be" for hierarchy "gen_ram_be:gen_ram_be_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 588
+Info (12128): Elaborating entity "addr_calc" for hierarchy "addr_calc:addr_calc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 542
+Info (12128): Elaborating entity "addr_width_reducer" for hierarchy "addr_width_reducer:addr_width_reducer_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 556
+Info (12128): Elaborating entity "alu" for hierarchy "alu:alu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 563
+Info (12128): Elaborating entity "bpu" for hierarchy "bpu:bpu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 570
+Info (12128): Elaborating entity "gen_ram" for hierarchy "bpu:bpu_i|gen_ram:btc_valid_bits" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd Line: 24
+Info (12128): Elaborating entity "gen_ram" for hierarchy "bpu:bpu_i|gen_ram:btc_tags" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd Line: 28
+Info (12128): Elaborating entity "gen_ram" for hierarchy "bpu:bpu_i|gen_ram:btc_target_addresses" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd Line: 32
+Info (12128): Elaborating entity "gen_ram" for hierarchy "bpu:bpu_i|gen_ram:bpb" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd Line: 36
+Info (12128): Elaborating entity "bta_adder" for hierarchy "bta_adder:bta_adder_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 585
+Info (12128): Elaborating entity "data_memory_extractor" for hierarchy "data_memory_extractor:data_memory_extractor_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 591
+Info (12128): Elaborating entity "dbpu" for hierarchy "dbpu:dbpu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 598
+Info (12128): Elaborating entity "dc_ex_pipeline_reg" for hierarchy "dc_ex_pipeline_reg:dc_ex_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 615
+Info (12128): Elaborating entity "decoder" for hierarchy "decoder:decoder_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 653
+Info (12128): Elaborating entity "divider" for hierarchy "divider:divider_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 682
+Info (12128): Elaborating entity "radix4_srt_divider" for hierarchy "divider:divider_i|radix4_srt_divider:divider_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_behav.vhd Line: 24
+Warning (10639): VHDL warning at radix4_srt_divider.vhd(47): constant value overflow File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/radix4_srt_divider.vhd Line: 47
+Info (12128): Elaborating entity "ex_mem_pipeline_reg" for hierarchy "ex_mem_pipeline_reg:ex_mem_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 692
+Info (12128): Elaborating entity "ex_out_mux" for hierarchy "ex_out_mux:ex_out_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 708
+Info (12128): Elaborating entity "gen_ram_be" for hierarchy "gen_ram_be:gen_ram_be_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 717
 Info (10008): Verilog HDL or VHDL information: EDA Netlist Writer cannot regroup multidimensional array "ram" into its bus
 Info (12128): Elaborating entity "altsyncram" for hierarchy "gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1"
 Info (12130): Elaborated megafunction instantiation "gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1"
@@ -1297,7 +344,7 @@ Info (12133): Instantiated megafunction "gen_ram_be:gen_ram_be_i|altsyncram:ram[
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_09n1.tdf
     Info (12023): Found entity 1: altsyncram_09n1 File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/qis/cpu_struct/db/altsyncram_09n1.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_09n1" for hierarchy "gen_ram_be:gen_ram_be_i|altsyncram:ram[0][0][7]__1|altsyncram_09n1:auto_generated" File: /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Info (12128): Elaborating entity "gen_rom" for hierarchy "gen_rom:gen_rom_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 602
+Info (12128): Elaborating entity "gen_rom" for hierarchy "gen_rom:gen_rom_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 731
 Info (12128): Elaborating entity "altsyncram" for hierarchy "gen_rom:gen_rom_i|altsyncram:altsyncram_component" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd Line: 69
 Info (12130): Elaborated megafunction instantiation "gen_rom:gen_rom_i|altsyncram:altsyncram_component" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd Line: 69
 Info (12133): Instantiated megafunction "gen_rom:gen_rom_i|altsyncram:altsyncram_component" with the following parameter: File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_rom.vhd Line: 69
@@ -1354,37 +401,28 @@ Info (12133): Instantiated megafunction "gen_rom:gen_rom_i|altsyncram:altsyncram
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_f544.tdf
     Info (12023): Found entity 1: altsyncram_f544 File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/qis/cpu_struct/db/altsyncram_f544.tdf Line: 28
 Info (12128): Elaborating entity "altsyncram_f544" for hierarchy "gen_rom:gen_rom_i|altsyncram:altsyncram_component|altsyncram_f544:auto_generated" File: /ext/eda/quartus/21_1_1/quartus/libraries/megafunctions/altsyncram.tdf Line: 792
-Warning (113028): 1012 out of 1024 addresses are uninitialized. The Quartus Prime software will initialize them to "0". There are 1 warnings found, and 1 warnings are reported. File: /u/home/clab/st161569/Downloads/main.mif Line: 1
-    Warning (113027): Addresses ranging from 12 to 1023 are not initialized File: /u/home/clab/st161569/Downloads/main.mif Line: 1
-Info (12128): Elaborating entity "if_dc_pipeline_reg" for hierarchy "if_dc_pipeline_reg:if_dc_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 613
-Info (12128): Elaborating entity "imm_bta_mux" for hierarchy "imm_bta_mux:imm_bta_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 623
-Info (12128): Elaborating entity "instruction_word_mux" for hierarchy "instruction_word_mux:instruction_word_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 630
-Info (12128): Elaborating entity "mem_mode_mux" for hierarchy "mem_mode_mux:mem_mode_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 639
-Info (12128): Elaborating entity "mem_wb_pipeline_reg" for hierarchy "mem_wb_pipeline_reg:mem_wb_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 646
-Info (12128): Elaborating entity "pc_ex_inc" for hierarchy "pc_ex_inc:pc_ex_inc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 655
-Info (12128): Elaborating entity "pc_inc" for hierarchy "pc_inc:pc_inc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 660
-Info (12128): Elaborating entity "pc_mux" for hierarchy "pc_mux:pc_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 666
-Info (12128): Elaborating entity "pf_if_pipeline_reg" for hierarchy "pf_if_pipeline_reg:pf_if_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 678
-Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register_file_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 686
-Info (12128): Elaborating entity "rs1_fwd_mux" for hierarchy "rs1_fwd_mux:rs1_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 697
-Info (12128): Elaborating entity "rs2_fwd_mux" for hierarchy "rs2_fwd_mux:rs2_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 705
-Info (12128): Elaborating entity "rs2_mux" for hierarchy "rs2_mux:rs2_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 713
-Info (12128): Elaborating entity "store_data_fwd_mux" for hierarchy "store_data_fwd_mux:store_data_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 720
-Info (12128): Elaborating entity "umnudler" for hierarchy "umnudler:umnudler_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 727
-Info (286030): Timing-Driven Synthesis is running
-Info (17049): 4 registers lost all their fanouts during netlist optimizations.
-Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
-    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 4438 device resources after synthesis - the final resource count might be different
-    Info (21058): Implemented 2 input pins
-    Info (21059): Implemented 64 output pins
-    Info (21061): Implemented 4302 logic cells
-    Info (21064): Implemented 64 RAM segments
-    Info (21062): Implemented 6 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 3 warnings
-    Info: Peak virtual memory: 663 megabytes
-    Info: Processing ended: Wed Jun 26 18:24:09 2024
-    Info: Elapsed time: 00:00:13
-    Info: Total CPU time (on all processors): 00:00:22
+Info (12128): Elaborating entity "if_dc_pipeline_reg" for hierarchy "if_dc_pipeline_reg:if_dc_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 742
+Info (12128): Elaborating entity "imm_bta_mux" for hierarchy "imm_bta_mux:imm_bta_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 758
+Info (12128): Elaborating entity "instruction_word_mux" for hierarchy "instruction_word_mux:instruction_word_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 765
+Info (12128): Elaborating entity "mem_mode_mux" for hierarchy "mem_mode_mux:mem_mode_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 790
+Info (12128): Elaborating entity "mem_wb_pipeline_reg" for hierarchy "mem_wb_pipeline_reg:mem_wb_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 797
+Info (12128): Elaborating entity "pc_ex_inc" for hierarchy "pc_ex_inc:pc_ex_inc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 807
+Info (12128): Elaborating entity "pc_inc" for hierarchy "pc_inc:pc_inc_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 812
+Info (12128): Elaborating entity "pc_mux" for hierarchy "pc_mux:pc_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 818
+Info (12128): Elaborating entity "pf_if_pipeline_reg" for hierarchy "pf_if_pipeline_reg:pf_if_pipeline_reg_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 832
+Info (12128): Elaborating entity "register_file" for hierarchy "register_file:register_file_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 840
+Info (12128): Elaborating entity "rs1_fwd_mux" for hierarchy "rs1_fwd_mux:rs1_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 851
+Info (12128): Elaborating entity "rs2_fwd_mux" for hierarchy "rs2_fwd_mux:rs2_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 859
+Info (12128): Elaborating entity "rs2_mux" for hierarchy "rs2_mux:rs2_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 867
+Info (12128): Elaborating entity "sbpu" for hierarchy "sbpu:sbpu_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 874
+Info (12128): Elaborating entity "store_data_fwd_mux" for hierarchy "store_data_fwd_mux:store_data_fwd_mux_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 883
+Info (12128): Elaborating entity "umnudler" for hierarchy "umnudler:umnudler_i" File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 890
+Error (12006): Node instance "io_controller_i" instantiates undefined entity "io_controller". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 772
+Error (12006): Node instance "io_ram_mux_i" instantiates undefined entity "io_ram_mux". Ensure that required library paths are specified correctly, define the specified entity, or change the instantiation. If this entity represents Intel FPGA or third-party IP, generate the synthesis files for the IP. File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_struct.vhd Line: 783
+Error: Quartus Prime Analysis & Synthesis was unsuccessful. 2 errors, 2 warnings
+    Error: Peak virtual memory: 577 megabytes
+    Error: Processing ended: Wed Jul 10 18:02:15 2024
+    Error: Elapsed time: 00:00:06
+    Error: Total CPU time (on all processors): 00:00:15
 
 

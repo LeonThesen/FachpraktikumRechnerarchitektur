@@ -9,6 +9,13 @@
 --
 ARCHITECTURE behav OF addr_width_reducer IS
 BEGIN
-    rom_addr <= pc(ADDR_WIDTH + 1 downto 2);
+    process(all) is
+    begin
+        if stall_dc then
+            rom_addr <= pc_pre_if(ADDR_WIDTH + 1 downto 2);
+        else
+            rom_addr <= pc(ADDR_WIDTH + 1 downto 2);
+        end if;
+    end process;
 END ARCHITECTURE behav;
 

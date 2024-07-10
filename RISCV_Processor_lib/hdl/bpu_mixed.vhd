@@ -49,7 +49,7 @@ BEGIN
         jump_predicted_if <= false;
         predicted_target_addr_if <= (others => '0');
 
-        if (tag = pc(pc'left downto BP_K + 2)) and valid_bit = "1" then
+        if (tag = pc_pre_if(pc_pre_if'left downto BP_K + 2)) and valid_bit = "1" then
             jump_predicted_if <= true;
             predicted_target_addr_if <= target_addr;
         end if;

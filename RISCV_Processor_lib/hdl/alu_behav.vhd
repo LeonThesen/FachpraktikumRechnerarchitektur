@@ -95,5 +95,4 @@ BEGIN
     end process;
 
     alu_result_ex <= alu_result_int;
-    alu_flags <= alu_flags_int;
 END ARCHITECTURE behav;

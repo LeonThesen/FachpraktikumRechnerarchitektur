@@ -12,45 +12,60 @@ use ieee.std_logic_1164;
 
 ARCHITECTURE behav OF addr_calc IS
 BEGIN
--- Inputs: ex_out_ex, ex_out_mem, mem_mode_mem     type memory_access_t is (LOAD, STORE, IDLE);
-    --type data_width_t is (BYTE, HALFWORD, WORD);
-    
     prepare_write: process (all) is
     begin
         be <= (others => '0');
         wdata <= (others => '0');
-        waddr <= ex_out_mem(ADDR_WIDTH - 1 downto 2) & "00"; -- Alignment on word boundary
+        waddr <= ex_out_mem(ADDR_WIDTH + 1 downto 2); -- Alignment on word boundary
+        io_control_cpu.wena <= false;
+        io_wdata_cpu <= (others => '0');
+        io_control_cpu.waddr <= ex_out_mem(IO_MEM_WIDTH - 1 downto 0); -- Alignment on word boundary;
         if mem_mode_mem.memory_access = STORE then
-            case mem_mode_mem.data_width is
-                when BYTE =>
-                    wdata <= store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0);
-                    be <= (others => '0');
-                    be(3 - to_integer(unsigned(ex_out_mem(1 downto 0)))) <= '1';
-                when HALFWORD =>
-                    if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
-                        report "Error: Unaligned memory access[write]: Trying to write halfword into unaligned address";
-                    else
-                        wdata <= store_data(7 downto 0) & store_data(15 downto 8) & store_data(7 downto 0) & store_data(15 downto 8);
-                        if to_integer(unsigned(ex_out_mem(1 downto 1))) = 1 then
-                            be <= (others => '0');
-                            be(1 downto 0) <= "11";
+            if ex_out_mem(ex_out_mem'left) = '1' then -- IO memory
+                io_wdata_cpu <= store_data;
+                io_control_cpu.wena <= true;
+            else
+                case mem_mode_mem.data_width is
+                    when BYTE =>
+                        wdata <= store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0) & store_data(7 downto 0);
+                        be <= (others => '0');
+                        be(3 - to_integer(unsigned(ex_out_mem(1 downto 0)))) <= '1';
+                    when HALFWORD =>
+                        if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
+                            report "Error: Unaligned memory access[write]: Trying to write halfword into unaligned address";
                         else
-                            be <= (others => '0');
-                            be(3 downto 2) <= "11";
+                            wdata <= store_data(7 downto 0) & store_data(15 downto 8) & store_data(7 downto 0) & store_data(15 downto 8);
+                            if to_integer(unsigned(ex_out_mem(1 downto 1))) = 1 then
+                                be <= (others => '0');
+                                be(1 downto 0) <= "11";
+                            else
+                                be <= (others => '0');
+                                be(3 downto 2) <= "11";
+                            end if;
                         end if;
-                    end if;
-                when WORD =>
-                    if to_integer(unsigned(ex_out_mem(1 downto 0))) /= 0 then
-                        report "Error: Unaligned memory access[write]: Trying to write word into unaligned address";
-                    else
-                        wdata <= store_data(7 downto 0) & store_data(15 downto 8) & store_data(23 downto 16) & store_data(31 downto 24);
-                        be <= (others => '1');
-                    end if;
-            end case;
+                    when WORD =>
+                        if to_integer(unsigned(ex_out_mem(1 downto 0))) /= 0 then
+                            report "Error: Unaligned memory access[write]: Trying to write word into unaligned address";
+                        else
+                            wdata <= store_data(7 downto 0) & store_data(15 downto 8) & store_data(23 downto 16) & store_data(31 downto 24);
+                            be <= (others => '1');
+                        end if;
+                end case;
+            end if;
         end if;
     end process prepare_write;
 
-    raddr <= ex_out_ex(ADDR_WIDTH - 1 downto 2) & "00";
+    process(all) is
+    begin
+        is_io_access <= false;
+
+        if ex_out_ex(ADDR_WIDTH + 2) = '1' then
+            is_io_access <= true;
+        end if;
+    end process;    
+
+    raddr <= ex_out_ex(ADDR_WIDTH + 1 downto 2);
+    io_control_cpu.raddr <= ex_out_mem(IO_MEM_WIDTH - 1 downto 0);
 
 END ARCHITECTURE behav;
 

@@ -1,0 +1,3 @@
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/gen_ram_be_entity.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/gen_ram_be_behav.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/gen_rom.vhd"

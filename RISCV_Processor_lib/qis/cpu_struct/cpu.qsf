@@ -19,7 +19,7 @@
 #
 # Quartus Prime
 # Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
-# Date created = 16:38:09  June 26, 2024
+# Date created = 12:24:16  July 10, 2024
 #
 # -------------------------------------------------------------------------- #
 #
@@ -40,12 +40,12 @@
 set_global_assignment -name FAMILY "cyclone v"
 set_global_assignment -name DEVICE 5cgxfc5c6f27c7
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 21.1.1
-set_global_assignment -name PROJECT_CREATION_TIME_DATE "16:38:09  JUNE 26, 2024"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "12:24:16  JULY 10, 2024"
 set_global_assignment -name LAST_QUARTUS_VERSION "21.1.1 Standard Edition"
 set_global_assignment -name FMAX_REQUIREMENT "50 MHz"
 set_global_assignment -name TOP_LEVEL_ENTITY cpu
-set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/types_pkg.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/cpu_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_calc_entity.vhd
@@ -54,8 +54,10 @@ set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechner
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/addr_width_reducer_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/alu_behav.vhd
-set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_entity.vhd
-set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpb_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/gen_ram_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bpu_mixed.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/bta_adder_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/data_memory_extractor_entity.vhd
@@ -66,6 +68,9 @@ set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechner
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/dec_exe_pipeline_reg_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/decoder_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/radix4_srt_divider.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/divider_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_mem_pipeline_reg_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/ex_out_mux_entity.vhd
@@ -99,6 +104,8 @@ set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechner
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_fwd_mux_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_mux_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/rs2_multiplexer_behav.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_entity.vhd
+set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/sbpu_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_entity.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/store_data_fwd_mux_behav.vhd
 set_global_assignment -name VHDL_FILE /u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib/hdl/umnudler_entity.vhd

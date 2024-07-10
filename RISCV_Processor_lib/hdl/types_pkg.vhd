@@ -13,6 +13,7 @@ USE ieee.std_logic_1164.all;
 -- use RISCV_Processor_lib.isa_defines.all;
 
 PACKAGE types IS
+    constant IO_MEM_WIDTH : positive := 4;
     constant BP_K : positive := 10;
     constant XLEN : positive := 32;
     constant ADDR_WIDTH : positive := 10;  
@@ -108,5 +109,11 @@ PACKAGE types IS
         start : std_logic;
         mode : divider_mode_t;
     end record divider_control_t;
+
+    type io_control_t is record
+        raddr : std_logic_vector(IO_MEM_WIDTH - 1 downto 0);
+        waddr : std_logic_vector(IO_MEM_WIDTH - 1 downto 0);
+        wena : boolean;
+    end record io_control_t;
 END types;
 

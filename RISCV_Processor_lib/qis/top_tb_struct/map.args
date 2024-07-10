@@ -1,0 +1,8 @@
+--optimize=balanced
+--state_machine_encoding=auto
+--enable_register_retiming=off
+--enable_wysiwyg_resynthesis=off
+--ignore_carry_buffers=off
+--ignore_cascade_buffers=off
+--export_settings_files=on
+

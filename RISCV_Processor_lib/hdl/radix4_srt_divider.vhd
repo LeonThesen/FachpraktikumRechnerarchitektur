@@ -82,8 +82,6 @@ begin
         case state is
             when init =>
                 if start = '1' then
-                    report "Starting Division";
-                    report "un-normalized divisor = " & integer'image(to_integer(unsigned(divisor_r))) & ", dividend = " & integer'image(to_integer(unsigned(dividend)));
                     next_state <= norm;
                 else
                     next_state <= init;
@@ -97,8 +95,6 @@ begin
                     next_state <= norm;
                 end if;
             when norm2 =>
-                report "divisor shifted by " & integer'image(to_integer(normalization_shift)) & " for normalization. normalized divisor = " & integer'image(to_integer(unsigned(divisor_r)));
-                report "iterations necessary for division are (width+amount shifted / 2) = " & integer'image((half_width + to_integer(normalization_shift)) / 2);
                 next_state <= divide;
             when divide =>
                 if iteration = 0 or iteration(iteration'left) = '1' then
@@ -135,9 +131,15 @@ begin
             normalization_shift <= (others => '0');
             is_div_by_zero <= false;
             is_div_overflow <= false;
+            is_divisor_greater_than_dividend <= false;
         elsif rising_edge(clk) then
             case state is
                 when init =>
+                    quotient <= (others => '0');
+                    quotient_int <= (others => '0');
+                    iteration <= (others => '0');
+                    done <= '0';
+                    normalization_shift <= (others => '0');
                     is_dividend_negative := false;
                     is_divisor_negative := false;
                     is_quotient_negative := false;
@@ -145,6 +147,7 @@ begin
                     is_div_by_zero <= false;
                     is_div_overflow <= false;
                     is_divisor_greater_than_dividend <= false;
+
                     -- Check for division by zero
                     if signed(divisor) = 0 then
                         is_div_by_zero <= true;
@@ -191,18 +194,13 @@ begin
                 when norm =>
                     -- Check for leading zeros in divisor and remove them
                     leading_zeros := count_leading_zeros(divisor_r);
-                    report "leading_zeros is " & to_string(leading_zeros);
                     divisor_r <= divisor_r sll (leading_zeros - 1);
                     if leading_zeros > 0 then
                         normalization_shift <= normalization_shift + (leading_zeros - 1);
                     end if;
-                    report "normalization_shift is " & to_string(normalization_shift);
-                    report "divisor_r is " & to_string(divisor_r);
                 when norm2 =>
-                    report "normalization_shift is " & to_string(normalization_shift);
                     iteration <= half_width + normalization_shift - 2; -- Keep track of how far divisor gets shifted
                     remainder_r <= remainder_r sll to_integer(unsigned(normalization_shift(0 downto 0)));
-                    report "remainder_r gets shifted by " & integer'image(to_integer(normalization_shift)) & " to align the number";
                 when divide =>
                     -- Lookup Table for Quotient Selection
                     case divisor_r(divisor_r'left - 1 downto divisor_r'left - 4) is
@@ -339,36 +337,24 @@ begin
                         shift_amount := 0;
                     end if;
 
-                    report "shift_amount = " & integer'image(shift_amount);
                     remainder_r((width+1)/2+1 downto 0) <= remainder_r((width-1)/2 downto 0) & "00";
 
                     case selected_quotient is 
                         when -2 =>
                             remainder_r(width+2 downto (width+1)/2+2) <= rem_add2(half_width+2 downto 2);
                             quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(-2, DIVISOR_WIDTH) sll shift_amount));
-                            report "remainder_r is " & to_string(remainder_r) & " <- quotient[" &  to_string(shift_amount) & "] = -2. decision bits are " & to_string(remainder_r(width + 2 downto width - 3));
-                            report "        add 2*divisor_r";     
                         when -1 =>
                             remainder_r(width+2 downto (width+1)/2+2) <= rem_add(half_width+2 downto 2);
-                            quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(-1, DIVISOR_WIDTH) sll shift_amount));
-                            report "remainder_r is " & to_string(remainder_r) & " <- quotient[" &  to_string(shift_amount) & "] = -1. decision bits are " & to_string(remainder_r(width + 2 downto width - 3));
-                            report "        add 1*divisor_r";    
+                            quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(-1, DIVISOR_WIDTH) sll shift_amount));   
                         when 1 =>
                             remainder_r(width+2 downto (width+1)/2+2) <= rem_sub(half_width+2 downto 2);
-                            quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(1, DIVISOR_WIDTH) sll shift_amount));
-                            report "remainder_r is " & to_string(remainder_r) & " <- quotient[" &  to_string(shift_amount) & "] = 1. decision bits are " & to_string(remainder_r(width + 2 downto width - 3));
-                            report "        subtract 1*divisor_r";  
+                            quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(1, DIVISOR_WIDTH) sll shift_amount)); 
                         when 2 =>
                             remainder_r(width+2 downto (width+1)/2+2) <= rem_sub2(half_width+2 downto 2);
                             quotient_int <= std_logic_vector(signed(quotient_int) + (to_signed(2, DIVISOR_WIDTH) sll shift_amount));
-                            report "remainder_r is " & to_string(remainder_r) & " <- quotient[" &  to_string(shift_amount) & "] = 2. decision bits are " & to_string(remainder_r(width + 2 downto width - 3));
-                            report "        subtract 2*divisor_r";
                         when others =>
                             remainder_r <= remainder_r sll 2;
-                            report "remainder_r is " & to_string(remainder_r) & " <- quotient[" &  to_string(shift_amount) & "] = 0. decision bits are " & to_string(remainder_r(width + 2 downto width - 3));
-                            report "        just shift";
                     end case;
-                    report "quotient_int = " & to_string(quotient_int);
                     iteration <= iteration - to_unsigned(2, iteration'length); 
                 when finished_normal =>
                     -- Correction step            
@@ -384,10 +370,6 @@ begin
                         else 
                             quotient <= std_logic_vector(resize(signed(quotient_int) - 1, quotient'length));
                         end if;
-                        
-                        report "remainder is negative so shift remainder add divisor. Also subtract 1 from quotient";
-                        report "remainder_r plus divisor is " & integer'image(to_integer(remainder_correction));
-                        report "remainder = " & integer'image(to_integer(remainder_correction srl (to_integer(normalization_shift) + 1))) & ", quotient = " & integer'image(to_integer(signed(quotient) - 1));
                     else -- Shift remainder without correction
                         if is_quotient_negative then
                             quotient <= std_logic_vector(resize(-signed(quotient_int), quotient'length));
@@ -400,10 +382,7 @@ begin
                         else
                             remainder <= std_logic_vector(resize(remainder_r(width + 1 downto (width + 1) / 2) srl (to_integer(normalization_shift) + 1), remainder'length));
                         end if;
-                        report "remainder is positive so shift remainder";
-                        report "remainder = " & integer'image(to_integer(remainder_r(width + 1 downto (width + 1) / 2) srl (to_integer(normalization_shift) + 1))) & ", quotient = " & integer'image(to_integer(unsigned(quotient_int)));
                     end if;
-                    report "remainder_r is " & to_string(remainder_r);
                     done <= '1';
                 when finished_error =>
                     if is_div_overflow then

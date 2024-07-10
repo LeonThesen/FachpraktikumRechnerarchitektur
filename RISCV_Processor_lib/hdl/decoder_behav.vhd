@@ -323,15 +323,15 @@ BEGIN
         end if;
 
         if stall_dc_int or wrong_jump_prediction_dbpu then
-            alu_mode_dc <= ADD_MODE;
-            rs1_addr <= (others => '0');
+            --alu_mode_dc <= ADD_MODE;
+            --rs1_addr <= (others => '0');
             rd_addr_dc <= (others => '0');
-            imm_to_alu_dc <= true;
-            imm_dc <= (others => '0');
-            rs2_addr <= (others => '0');
+            --imm_to_alu_dc <= true;
+            --imm_dc <= (others => '0');
+            --rs2_addr <= (others => '0');
             mem_mode_dc.memory_access <= IDLE;
-            mem_mode_dc.data_width <= WORD;
-            mem_mode_dc.is_signed <= FALSE;
+            --mem_mode_dc.data_width <= WORD;
+            --mem_mode_dc.is_signed <= FALSE;
         end if;
     end process set_outputs;
 END ARCHITECTURE behav;

@@ -48,6 +48,22 @@
 <TD >0</TD>
 </TR>
 <TR >
+<TD >sbpu_i</TD>
+<TD >66</TD>
+<TD >0</TD>
+<TD >2</TD>
+<TD >0</TD>
+<TD >67</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
 <TD >rs2_mux_i</TD>
 <TD >65</TD>
 <TD >0</TD>
@@ -129,7 +145,7 @@
 </TR>
 <TR >
 <TD >pc_mux_i</TD>
-<TD >132</TD>
+<TD >165</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -177,7 +193,7 @@
 </TR>
 <TR >
 <TD >mem_wb_pipeline_reg_i</TD>
-<TD >39</TD>
+<TD >40</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -209,9 +225,9 @@
 </TR>
 <TR >
 <TD >instruction_word_mux_i</TD>
-<TD >36</TD>
+<TD >34</TD>
 <TD >0</TD>
-<TD >1</TD>
+<TD >0</TD>
 <TD >0</TD>
 <TD >32</TD>
 <TD >0</TD>
@@ -241,11 +257,11 @@
 </TR>
 <TR >
 <TD >if_dc_pipeline_reg_i</TD>
-<TD >67</TD>
+<TD >102</TD>
 <TD >0</TD>
-<TD >1</TD>
 <TD >0</TD>
-<TD >64</TD>
+<TD >0</TD>
+<TD >99</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -369,7 +385,7 @@
 </TR>
 <TR >
 <TD >ex_out_mux_i</TD>
-<TD >65</TD>
+<TD >98</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -385,11 +401,43 @@
 </TR>
 <TR >
 <TD >ex_mem_pipeline_reg_i</TD>
-<TD >79</TD>
+<TD >80</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >77</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >divider_i|divider_i</TD>
+<TD >68</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >65</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >divider_i</TD>
+<TD >69</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >33</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -401,11 +449,11 @@
 </TR>
 <TR >
 <TD >decoder_i</TD>
-<TD >60</TD>
+<TD >64</TD>
 <TD >0</TD>
-<TD >14</TD>
+<TD >18</TD>
 <TD >0</TD>
-<TD >89</TD>
+<TD >97</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -417,11 +465,11 @@
 </TR>
 <TR >
 <TD >dc_ex_pipeline_reg_i</TD>
-<TD >175</TD>
+<TD >216</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
-<TD >173</TD>
+<TD >213</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -433,11 +481,11 @@
 </TR>
 <TR >
 <TD >dbpu_i</TD>
-<TD >77</TD>
+<TD >172</TD>
 <TD >0</TD>
+<TD >2</TD>
 <TD >0</TD>
-<TD >0</TD>
-<TD >34</TD>
+<TD >114</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -480,10 +528,10 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >bpb_i</TD>
-<TD >70</TD>
+<TD >bpu_i|bpb</TD>
+<TD >24</TD>
 <TD >0</TD>
-<TD >48</TD>
+<TD >0</TD>
 <TD >0</TD>
 <TD >2</TD>
 <TD >0</TD>
@@ -496,12 +544,76 @@
 <TD >0</TD>
 </TR>
 <TR >
-<TD >alu_i</TD>
-<TD >78</TD>
+<TD >bpu_i|btc_target_addresses</TD>
+<TD >54</TD>
 <TD >0</TD>
 <TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >bpu_i|btc_tags</TD>
+<TD >42</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >20</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >bpu_i|btc_valid_bits</TD>
+<TD >23</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >1</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >bpu_i</TD>
+<TD >213</TD>
 <TD >0</TD>
 <TD >36</TD>
+<TD >0</TD>
+<TD >35</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+</TR>
+<TR >
+<TD >alu_i</TD>
+<TD >82</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >0</TD>
+<TD >32</TD>
 <TD >0</TD>
 <TD >0</TD>
 <TD >0</TD>
@@ -513,9 +625,9 @@
 </TR>
 <TR >
 <TD >addr_width_reducer_i</TD>
-<TD >32</TD>
+<TD >65</TD>
 <TD >0</TD>
-<TD >22</TD>
+<TD >44</TD>
 <TD >0</TD>
 <TD >10</TD>
 <TD >0</TD>

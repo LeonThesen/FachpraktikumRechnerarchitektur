@@ -1,7 +1,11 @@
+[AutoCheck]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/questa_ac
 [DesignChecker]
 RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/designcheck
 [QuartusQIS]
 RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/qis
+[QuestaLint]
+RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/questa_lint
 [QuestaSim]
 RISCV_Processor_lib = $HDS_PROJECT_DIR/RISCV_Processor_lib/questasim
 [hdl]

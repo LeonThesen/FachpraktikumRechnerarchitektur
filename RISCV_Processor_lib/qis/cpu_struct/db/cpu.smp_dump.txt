@@ -11,6 +11,16 @@ mem_mode_mem.memory_access.IDLE~reg0 0 0 0
 mem_mode_mem.memory_access.STORE~reg0 0 1 1 
 mem_mode_mem.memory_access.LOAD~reg0 1 0 1 
 
+State Machine - |cpu|divider:divider_i|radix4_srt_divider:divider_i|state
+Name state.result_available state.finished_error state.finished_normal state.divide state.norm2 state.norm state.init 
+state.init 0 0 0 0 0 0 0 
+state.norm 0 0 0 0 0 1 1 
+state.norm2 0 0 0 0 1 0 1 
+state.divide 0 0 0 1 0 0 1 
+state.finished_normal 0 0 1 0 0 0 1 
+state.finished_error 0 1 0 0 0 0 1 
+state.result_available 1 0 0 0 0 0 1 
+
 State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|dbpu_mode_ex
 Name dbpu_mode_ex.GREATER_OR_EQUAL_UNSIGNED~reg0 dbpu_mode_ex.LESS_THAN_UNSIGNED~reg0 dbpu_mode_ex.GREATER_OR_EQUAL~reg0 dbpu_mode_ex.LESS_THAN~reg0 dbpu_mode_ex.NOT_EQUAL~reg0 dbpu_mode_ex.EQUAL~reg0 dbpu_mode_ex.JALR~reg0 dbpu_mode_ex.JAL~reg0 dbpu_mode_ex.NO_BRANCH~reg0 
 dbpu_mode_ex.NO_BRANCH~reg0 0 0 0 0 0 0 0 0 0 
@@ -48,18 +58,22 @@ mem_mode_ex.memory_access.STORE~reg0 0 1 1
 mem_mode_ex.memory_access.LOAD~reg0 1 0 1 
 
 State Machine - |cpu|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|alu_mode_ex
-Name alu_mode_ex.MULHU_MODE~reg0 alu_mode_ex.MULHSU_MODE~reg0 alu_mode_ex.MULH_MODE~reg0 alu_mode_ex.MUL_MODE~reg0 alu_mode_ex.AND_MODE~reg0 alu_mode_ex.OR_MODE~reg0 alu_mode_ex.SRA_MODE~reg0 alu_mode_ex.SRL_MODE~reg0 alu_mode_ex.XOR_MODE~reg0 alu_mode_ex.SLTU_MODE~reg0 alu_mode_ex.SLT_MODE~reg0 alu_mode_ex.SLL_MODE~reg0 alu_mode_ex.SUB_MODE~reg0 alu_mode_ex.ADD_MODE~reg0 
-alu_mode_ex.ADD_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
-alu_mode_ex.SUB_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
-alu_mode_ex.SLL_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
-alu_mode_ex.SLT_MODE~reg0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
-alu_mode_ex.SLTU_MODE~reg0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
-alu_mode_ex.XOR_MODE~reg0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
-alu_mode_ex.SRL_MODE~reg0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
-alu_mode_ex.SRA_MODE~reg0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
-alu_mode_ex.OR_MODE~reg0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
-alu_mode_ex.AND_MODE~reg0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
-alu_mode_ex.MUL_MODE~reg0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
-alu_mode_ex.MULH_MODE~reg0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
-alu_mode_ex.MULHSU_MODE~reg0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
-alu_mode_ex.MULHU_MODE~reg0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+Name alu_mode_ex.REMU_MODE~reg0 alu_mode_ex.REM_MODE~reg0 alu_mode_ex.DIVU_MODE~reg0 alu_mode_ex.DIV_MODE~reg0 alu_mode_ex.MULHU_MODE~reg0 alu_mode_ex.MULHSU_MODE~reg0 alu_mode_ex.MULH_MODE~reg0 alu_mode_ex.MUL_MODE~reg0 alu_mode_ex.AND_MODE~reg0 alu_mode_ex.OR_MODE~reg0 alu_mode_ex.SRA_MODE~reg0 alu_mode_ex.SRL_MODE~reg0 alu_mode_ex.XOR_MODE~reg0 alu_mode_ex.SLTU_MODE~reg0 alu_mode_ex.SLT_MODE~reg0 alu_mode_ex.SLL_MODE~reg0 alu_mode_ex.SUB_MODE~reg0 alu_mode_ex.ADD_MODE~reg0 
+alu_mode_ex.ADD_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+alu_mode_ex.SUB_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+alu_mode_ex.SLL_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+alu_mode_ex.SLT_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+alu_mode_ex.SLTU_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+alu_mode_ex.XOR_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+alu_mode_ex.SRL_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+alu_mode_ex.SRA_MODE~reg0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+alu_mode_ex.OR_MODE~reg0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+alu_mode_ex.AND_MODE~reg0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MUL_MODE~reg0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULH_MODE~reg0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULHSU_MODE~reg0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULHU_MODE~reg0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.DIV_MODE~reg0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.DIVU_MODE~reg0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.REM_MODE~reg0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.REMU_MODE~reg0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 

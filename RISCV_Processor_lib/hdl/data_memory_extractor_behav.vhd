@@ -15,7 +15,7 @@ BEGIN
     variable read_byte: byte_t;
     variable index: integer;
     begin
-        data_memory_result <= (others => '0');
+        ram_result <= (others => '0');
         if mem_mode_mem.memory_access = LOAD then                   
             case mem_mode_mem.data_width is 
                 when BYTE =>
@@ -24,11 +24,11 @@ BEGIN
                     read_byte := rdata(31 - (index * 8) downto 24 - (index * 8));
                     -- Sign extension
                     if mem_mode_mem.is_signed then
-                        data_memory_result <= (others => read_byte(read_byte'left));
-                        data_memory_result(7 downto 0) <= read_byte;
+                        ram_result <= (others => read_byte(read_byte'left));
+                        ram_result(7 downto 0) <= read_byte;
                     else
-                        data_memory_result <= (others => '0');
-                        data_memory_result(7 downto 0) <= read_byte;
+                        ram_result <= (others => '0');
+                        ram_result(7 downto 0) <= read_byte;
                     end if;                  
                 when HALFWORD =>
                     if to_integer(unsigned(ex_out_mem(0 downto 0))) /= 0 then
@@ -38,20 +38,20 @@ BEGIN
                         index := to_integer(unsigned(ex_out_mem(1 downto 1))); -- 0, 1
                         read_halfword := rdata(31 - (16 * index) downto 16 - (16 * index));
                         if mem_mode_mem.is_signed then
-                            data_memory_result <= (others => read_halfword(read_halfword'left));
-                            data_memory_result(7 downto 0) <= read_halfword(15 downto 8);
-                            data_memory_result(15 downto 8) <= read_halfword(7 downto 0);
+                            ram_result <= (others => read_halfword(read_halfword'left));
+                            ram_result(7 downto 0) <= read_halfword(15 downto 8);
+                            ram_result(15 downto 8) <= read_halfword(7 downto 0);
                         else
-                            data_memory_result <= (others => '0');
-                            data_memory_result(7 downto 0) <= read_halfword(15 downto 8);
-                            data_memory_result(15 downto 8) <= read_halfword(7 downto 0);
+                            ram_result <= (others => '0');
+                            ram_result(7 downto 0) <= read_halfword(15 downto 8);
+                            ram_result(15 downto 8) <= read_halfword(7 downto 0);
                         end if;
                     end if;
                 when WORD =>
                     if to_integer(unsigned(ex_out_mem(1 downto 0))) /= 0 then
                         report "Error: Unaligned memory access[read]: Trying to read word from unaligned address";
                     else
-                        data_memory_result <= rdata(7 downto 0) & rdata(15 downto 8) & rdata(23 downto 16) & rdata(31 downto 24);
+                        ram_result <= rdata(7 downto 0) & rdata(15 downto 8) & rdata(23 downto 16) & rdata(31 downto 24);
                     end if;
             end case;
         end if;

@@ -1,0 +1,85 @@
+
+State Machine - |top_tb|io:io_i|button:button_i_1|current_state
+Name current_state.HOLD_OFF_ST current_state.PULSE_ST current_state.IDLE_ST 
+current_state.IDLE_ST 0 0 0 
+current_state.PULSE_ST 0 1 1 
+current_state.HOLD_OFF_ST 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.data_width
+Name mem_mode_mem.data_width.BYTE~reg0 mem_mode_mem.data_width.HALFWORD~reg0 mem_mode_mem.data_width.WORD~reg0 
+mem_mode_mem.data_width.WORD~reg0 0 0 0 
+mem_mode_mem.data_width.HALFWORD~reg0 0 1 1 
+mem_mode_mem.data_width.BYTE~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|ex_mem_pipeline_reg:ex_mem_pipeline_reg_i|mem_mode_mem.memory_access
+Name mem_mode_mem.memory_access.LOAD~reg0 mem_mode_mem.memory_access.STORE~reg0 mem_mode_mem.memory_access.IDLE~reg0 
+mem_mode_mem.memory_access.IDLE~reg0 0 0 0 
+mem_mode_mem.memory_access.STORE~reg0 0 1 1 
+mem_mode_mem.memory_access.LOAD~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|divider:divider_i|radix4_srt_divider:divider_i|state
+Name state.result_available state.finished_error state.finished_normal state.divide state.norm2 state.norm state.init 
+state.init 0 0 0 0 0 0 0 
+state.norm 0 0 0 0 0 1 1 
+state.norm2 0 0 0 0 1 0 1 
+state.divide 0 0 0 1 0 0 1 
+state.finished_normal 0 0 1 0 0 0 1 
+state.finished_error 0 1 0 0 0 0 1 
+state.result_available 1 0 0 0 0 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|dbpu_mode_ex
+Name dbpu_mode_ex.GREATER_OR_EQUAL_UNSIGNED~reg0 dbpu_mode_ex.LESS_THAN_UNSIGNED~reg0 dbpu_mode_ex.GREATER_OR_EQUAL~reg0 dbpu_mode_ex.LESS_THAN~reg0 dbpu_mode_ex.NOT_EQUAL~reg0 dbpu_mode_ex.EQUAL~reg0 dbpu_mode_ex.JALR~reg0 dbpu_mode_ex.JAL~reg0 dbpu_mode_ex.NO_BRANCH~reg0 
+dbpu_mode_ex.NO_BRANCH~reg0 0 0 0 0 0 0 0 0 0 
+dbpu_mode_ex.JAL~reg0 0 0 0 0 0 0 0 1 1 
+dbpu_mode_ex.JALR~reg0 0 0 0 0 0 0 1 0 1 
+dbpu_mode_ex.EQUAL~reg0 0 0 0 0 0 1 0 0 1 
+dbpu_mode_ex.NOT_EQUAL~reg0 0 0 0 0 1 0 0 0 1 
+dbpu_mode_ex.LESS_THAN~reg0 0 0 0 1 0 0 0 0 1 
+dbpu_mode_ex.GREATER_OR_EQUAL~reg0 0 0 1 0 0 0 0 0 1 
+dbpu_mode_ex.LESS_THAN_UNSIGNED~reg0 0 1 0 0 0 0 0 0 1 
+dbpu_mode_ex.GREATER_OR_EQUAL_UNSIGNED~reg0 1 0 0 0 0 0 0 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs2_ex
+Name fwd_rs2_ex.FROM_WB~reg0 fwd_rs2_ex.FROM_MEM~reg0 fwd_rs2_ex.NO_FORWARDING~reg0 
+fwd_rs2_ex.NO_FORWARDING~reg0 0 0 0 
+fwd_rs2_ex.FROM_MEM~reg0 0 1 1 
+fwd_rs2_ex.FROM_WB~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|fwd_rs1_ex
+Name fwd_rs1_ex.FROM_WB~reg0 fwd_rs1_ex.FROM_MEM~reg0 fwd_rs1_ex.NO_FORWARDING~reg0 
+fwd_rs1_ex.NO_FORWARDING~reg0 0 0 0 
+fwd_rs1_ex.FROM_MEM~reg0 0 1 1 
+fwd_rs1_ex.FROM_WB~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.data_width
+Name mem_mode_ex.data_width.BYTE~reg0 mem_mode_ex.data_width.HALFWORD~reg0 mem_mode_ex.data_width.WORD~reg0 
+mem_mode_ex.data_width.WORD~reg0 0 0 0 
+mem_mode_ex.data_width.HALFWORD~reg0 0 1 1 
+mem_mode_ex.data_width.BYTE~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|mem_mode_ex.memory_access
+Name mem_mode_ex.memory_access.LOAD~reg0 mem_mode_ex.memory_access.STORE~reg0 mem_mode_ex.memory_access.IDLE~reg0 
+mem_mode_ex.memory_access.IDLE~reg0 0 0 0 
+mem_mode_ex.memory_access.STORE~reg0 0 1 1 
+mem_mode_ex.memory_access.LOAD~reg0 1 0 1 
+
+State Machine - |top_tb|cpu:cpu_i|dc_ex_pipeline_reg:dc_ex_pipeline_reg_i|alu_mode_ex
+Name alu_mode_ex.REMU_MODE~reg0 alu_mode_ex.REM_MODE~reg0 alu_mode_ex.DIVU_MODE~reg0 alu_mode_ex.DIV_MODE~reg0 alu_mode_ex.MULHU_MODE~reg0 alu_mode_ex.MULHSU_MODE~reg0 alu_mode_ex.MULH_MODE~reg0 alu_mode_ex.MUL_MODE~reg0 alu_mode_ex.AND_MODE~reg0 alu_mode_ex.OR_MODE~reg0 alu_mode_ex.SRA_MODE~reg0 alu_mode_ex.SRL_MODE~reg0 alu_mode_ex.XOR_MODE~reg0 alu_mode_ex.SLTU_MODE~reg0 alu_mode_ex.SLT_MODE~reg0 alu_mode_ex.SLL_MODE~reg0 alu_mode_ex.SUB_MODE~reg0 alu_mode_ex.ADD_MODE~reg0 
+alu_mode_ex.ADD_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 
+alu_mode_ex.SUB_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 1 
+alu_mode_ex.SLL_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 1 
+alu_mode_ex.SLT_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 1 
+alu_mode_ex.SLTU_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 1 
+alu_mode_ex.XOR_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 1 
+alu_mode_ex.SRL_MODE~reg0 0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 1 
+alu_mode_ex.SRA_MODE~reg0 0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 1 
+alu_mode_ex.OR_MODE~reg0 0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 1 
+alu_mode_ex.AND_MODE~reg0 0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MUL_MODE~reg0 0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULH_MODE~reg0 0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULHSU_MODE~reg0 0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.MULHU_MODE~reg0 0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.DIV_MODE~reg0 0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.DIVU_MODE~reg0 0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.REM_MODE~reg0 0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
+alu_mode_ex.REMU_MODE~reg0 1 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 1 
