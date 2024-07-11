@@ -6,13 +6,13 @@ VIEW interface
 GRAPHIC 50,0 8 0 
 DESIGN clk_res_gen
 VIEW interface
-GRAPHIC 459,0 16 0 
+GRAPHIC 533,0 14 0 
 DESIGN clk_res_gen
 VIEW interface
-GRAPHIC 464,0 17 0 
+GRAPHIC 538,0 15 0 
 DESIGN clk_res_gen
 VIEW interface
-GRAPHIC 1,0 20 0 
+GRAPHIC 1,0 18 0 
 DESIGN clk_res_gen
 VIEW interface
-GRAPHIC 1,0 21 0 
+GRAPHIC 1,0 19 0 

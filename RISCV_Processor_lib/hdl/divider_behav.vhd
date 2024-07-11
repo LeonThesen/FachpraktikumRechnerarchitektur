@@ -17,7 +17,6 @@ architecture behav of divider is
     signal mode_int : divider_mode_t;
     signal quotient_int : std_logic_vector(XLEN - 1 downto 0);
     signal remainder_int : std_logic_vector(XLEN - 1 downto 0);
-    signal divider_result_int : std_logic_vector(XLEN - 1 downto 0);
     signal done_int : std_logic;
 begin
 

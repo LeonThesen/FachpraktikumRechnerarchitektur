@@ -332,6 +332,7 @@ BEGIN
             mem_mode_dc.memory_access <= IDLE;
             --mem_mode_dc.data_width <= WORD;
             --mem_mode_dc.is_signed <= FALSE;
+            dbpu_mode_dc <= NO_BRANCH;
         end if;
     end process set_outputs;
 END ARCHITECTURE behav;

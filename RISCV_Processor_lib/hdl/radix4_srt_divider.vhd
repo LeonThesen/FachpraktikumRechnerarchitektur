@@ -137,16 +137,20 @@ begin
                 when init =>
                     quotient <= (others => '0');
                     quotient_int <= (others => '0');
+                    remainder <= (others => '0');
+                    divisor_r <= (others => '0');
                     iteration <= (others => '0');
                     done <= '0';
+                    remainder_r <= (others => '0');
                     normalization_shift <= (others => '0');
+                    is_div_by_zero <= false;
+                    is_div_overflow <= false;
+                    is_divisor_greater_than_dividend <= false;
+
                     is_dividend_negative := false;
                     is_divisor_negative := false;
                     is_quotient_negative := false;
                     is_remainder_negative := false;
-                    is_div_by_zero <= false;
-                    is_div_overflow <= false;
-                    is_divisor_greater_than_dividend <= false;
 
                     -- Check for division by zero
                     if signed(divisor) = 0 then
@@ -189,7 +193,6 @@ begin
                     end if;
         
                     divisor_r <= unsigned('0' & divisor_int(half_width downto 0));
-                    remainder <= (others => '0');
                     remainder_r(DIVISOR_WIDTH downto 1) <= resize(unsigned(dividend_int), remainder_r'length - 2);
                 when norm =>
                     -- Check for leading zeros in divisor and remove them

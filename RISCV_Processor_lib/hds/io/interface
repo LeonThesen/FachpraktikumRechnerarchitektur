@@ -629,19 +629,19 @@ value "/u/home/clab/st161569/FachpraktikumRechnerarchitektur/RISCV_Processor_lib
 )
 (vvPair
 variable "date"
-value "07/10/24"
+value "07/11/24"
 )
 (vvPair
 variable "day"
-value "Wed"
+value "Thu"
 )
 (vvPair
 variable "day_long"
-value "Wednesday"
+value "Thursday"
 )
 (vvPair
 variable "dd"
-value "10"
+value "11"
 )
 (vvPair
 variable "entity_name"
@@ -669,7 +669,7 @@ value "st161569"
 )
 (vvPair
 variable "graphical_source_date"
-value "07/10/24"
+value "07/11/24"
 )
 (vvPair
 variable "graphical_source_group"
@@ -681,7 +681,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "20:41:04"
+value "16:21:05"
 )
 (vvPair
 variable "group"
@@ -809,7 +809,7 @@ value "interface"
 )
 (vvPair
 variable "time"
-value "20:41:04"
+value "16:21:05"
 )
 (vvPair
 variable "unit"
@@ -1965,7 +1965,7 @@ tm "PanelText"
 )
 parentGraphicsRef (HdmGraphicsRef
 libraryName "RISCV_Processor_lib"
-entityName "top_tb"
+entityName "top"
 viewName "struct.bd"
 )
 defaultSymbolBody (SymbolBody
@@ -2157,6 +2157,8 @@ xt "42000,0,42000,0"
 tm "SyDeclarativeTextMgr"
 )
 )
-lastUid 1004,0
+lastUid 1050,0
+okToSyncOnLoad 1
+OkToSyncGenericsOnLoad 1
 activeModelName "Symbol:CDM"
 )

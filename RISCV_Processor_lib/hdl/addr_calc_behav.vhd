@@ -59,7 +59,7 @@ BEGIN
     begin
         is_io_access <= false;
 
-        if ex_out_ex(ADDR_WIDTH + 2) = '1' then
+        if ex_out_mem(ex_out_mem'left) = '1' then
             is_io_access <= true;
         end if;
     end process;    

@@ -28,7 +28,7 @@ mwi 0
 uid 157,0
 )
 (Instance
-name "button_1"
+name "button_i_1"
 duLibraryName "RISCV_Processor_lib"
 duName "button"
 elements [
@@ -142,7 +142,7 @@ value "pc043"
 )
 (vvPair
 variable "graphical_source_time"
-value "20:40:41"
+value "20:41:04"
 )
 (vvPair
 variable "group"
@@ -270,7 +270,7 @@ value "struct"
 )
 (vvPair
 variable "time"
-value "20:40:41"
+value "20:41:04"
 )
 (vvPair
 variable "unit"
@@ -362,8 +362,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,3600,34000,4500"
-st "io_rdata       : word_t
-"
+st "io_rdata       : word_t"
 )
 )
 *3 (PortIoIn
@@ -933,8 +932,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,-900,35500,0"
-st "clk            : std_logic
-"
+st "clk            : std_logic"
 )
 )
 *22 (Net
@@ -952,8 +950,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,1800,35500,2700"
-st "res_n          : std_logic
-"
+st "res_n          : std_logic"
 )
 )
 *23 (PortIoIn
@@ -1109,8 +1106,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,-1800,35500,-900"
-st "button_3       : std_logic
-"
+st "button_3       : std_logic"
 )
 )
 *27 (Net
@@ -1128,8 +1124,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,-2700,35500,-1800"
-st "button_2       : std_logic
-"
+st "button_2       : std_logic"
 )
 )
 *28 (Net
@@ -1147,8 +1142,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,-3600,35500,-2700"
-st "button_1       : std_logic
-"
+st "button_1       : std_logic"
 )
 )
 *29 (Net
@@ -1166,8 +1160,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,0,37000,900"
-st "io_control_cpu : io_control_t
-"
+st "io_control_cpu : io_control_t"
 )
 )
 *30 (Net
@@ -1185,8 +1178,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,900,34000,1800"
-st "io_wdata_cpu   : word_t
-"
+st "io_wdata_cpu   : word_t"
 )
 )
 *31 (PortIoOut
@@ -1430,8 +1422,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,4500,45000,5400"
-st "seven_seg_1    : std_logic_vector(6 downto 0)
-"
+st "seven_seg_1    : std_logic_vector(6 downto 0)"
 )
 )
 *37 (Net
@@ -1450,8 +1441,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,5400,45000,6300"
-st "seven_seg_2    : std_logic_vector(6 downto 0)
-"
+st "seven_seg_2    : std_logic_vector(6 downto 0)"
 )
 )
 *38 (Net
@@ -1470,8 +1460,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,6300,45000,7200"
-st "seven_seg_3    : std_logic_vector(6 downto 0)
-"
+st "seven_seg_3    : std_logic_vector(6 downto 0)"
 )
 )
 *39 (Net
@@ -1490,8 +1479,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,7200,45000,8100"
-st "seven_seg_4    : std_logic_vector(6 downto 0)
-"
+st "seven_seg_4    : std_logic_vector(6 downto 0)"
 )
 )
 *40 (PortIoIn
@@ -1556,8 +1544,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,2700,45000,3600"
-st "switches       : std_logic_vector(9 downto 0)
-"
+st "switches       : std_logic_vector(9 downto 0)"
 )
 )
 *42 (SaComponent
@@ -1743,8 +1730,8 @@ uid 521,0
 va (VaSet
 font "courier,8,1"
 )
-xt "1000,28800,5000,29700"
-st "button_1"
+xt "1000,28800,6500,29700"
+st "button_i_1"
 blo "1000,29500"
 tm "InstanceNameMgr"
 )
@@ -1799,8 +1786,7 @@ va (VaSet
 font "courier,8,0"
 )
 xt "22000,9000,39000,9900"
-st "SIGNAL button_1_out   : std_logic
-"
+st "SIGNAL button_1_out   : std_logic"
 )
 )
 *51 (Wire

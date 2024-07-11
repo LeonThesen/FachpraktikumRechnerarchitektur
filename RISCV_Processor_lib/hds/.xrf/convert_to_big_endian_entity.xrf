@@ -1,0 +1,18 @@
+DESIGN convert_to_big_endian
+VIEW interface
+NO_GRAPHIC 0
+DESIGN convert_to_big_endian
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN convert_to_big_endian
+VIEW interface
+GRAPHIC 150,0 19 0 
+DESIGN convert_to_big_endian
+VIEW interface
+GRAPHIC 145,0 20 0 
+DESIGN convert_to_big_endian
+VIEW interface
+GRAPHIC 1,0 23 0 
+DESIGN convert_to_big_endian
+VIEW interface
+GRAPHIC 1,0 24 0 

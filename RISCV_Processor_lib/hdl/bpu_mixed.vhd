@@ -40,8 +40,13 @@ BEGIN
 
     process(all) is
     begin
-        btc_raddr <= pc(BP_K + 1 downto 2);
-        bpb_raddr <= pc(BP_K + 1 downto 2);
+        if stall_dc then
+            btc_raddr <= pc_pre_if(BP_K + 1 downto 2);
+            bpb_raddr <= pc_pre_if(BP_K + 1 downto 2);
+        else
+            btc_raddr <= pc(BP_K + 1 downto 2);
+            bpb_raddr <= pc(BP_K + 1 downto 2);
+        end if;
     end process;
 
     make_prediction: process(all) is

@@ -17,7 +17,7 @@ BEGIN
         if wrong_jump_prediction_dbpu or wrong_jump_prediction_sbpu then
             instruction_word_if <= NOP_INSTR;
         else
-            instruction_word_if <= instruction_word_umgenudelt;
+            instruction_word_if <= instruction_word_big_endian;
         end if;
     end process;
 END ARCHITECTURE behav;
