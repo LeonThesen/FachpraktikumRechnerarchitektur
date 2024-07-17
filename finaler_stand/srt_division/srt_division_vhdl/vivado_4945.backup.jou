@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2022.2 (64-bit)
+# SW Build 3671981 on Fri Oct 14 04:59:54 MDT 2022
+# IP Build 3669848 on Fri Oct 14 08:30:02 MDT 2022
+# Start of session at: Tue Jul  9 13:57:17 2024
+# Process ID: 4945
+# Current directory: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl
+# Command line: vivado
+# Log file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/vivado.log
+# Journal file: /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/vivado.jou
+# Running On: pc040, OS: Linux, CPU Frequency: 4787.671 MHz, CPU Physical cores: 16, Host memory: 32836 MB
+#-----------------------------------------------------------
+start_gui
+open_project -part xcvc1502-nsvg1369-1LHP-i-L /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/srt_division_vhdl.xpr
+update_compile_order -fileset sources_1
+save_project_as srt_division_vhdl_labor /u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor -force
+launch_simulation
+source top_tb.tcl
+open_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl/top_tb_behav.wcfg}
+save_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor/top_tb_behav.wcfg}
+open_wave_config {/u/home/clab/st186447/FachpraktikumRechnerarchitektur/srt_division/srt_division_vhdl_labor/top_tb_behav.wcfg}
+restart
+run 500 ns
+restart

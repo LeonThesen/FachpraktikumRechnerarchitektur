@@ -1,0 +1,21 @@
+DESIGN res_synchronizer
+VIEW interface
+NO_GRAPHIC 0
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 145,0 16 0 
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 150,0 17 0 
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 155,0 18 0 
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 1,0 21 0 
+DESIGN res_synchronizer
+VIEW interface
+GRAPHIC 1,0 22 0 

@@ -1,0 +1,36 @@
+DESIGN register_file
+VIEW interface
+NO_GRAPHIC 0
+DESIGN register_file
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1575,0 19 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1580,0 20 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1585,0 21 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1590,0 22 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1595,0 23 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1605,0 24 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1600,0 25 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1610,0 26 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1,0 29 0 
+DESIGN register_file
+VIEW interface
+GRAPHIC 1,0 30 0 

@@ -1,0 +1,27 @@
+DESIGN cpu
+VIEW interface
+NO_GRAPHIC 0
+DESIGN cpu
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1285,0 16 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1295,0 17 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1305,0 18 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1290,0 19 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1300,0 20 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1,0 23 0 
+DESIGN cpu
+VIEW interface
+GRAPHIC 1,0 24 0 

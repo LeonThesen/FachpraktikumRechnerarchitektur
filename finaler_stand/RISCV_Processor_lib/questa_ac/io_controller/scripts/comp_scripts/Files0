@@ -1,0 +1,5 @@
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/types_pkg.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/isa_defines_pkg.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/isa_defines_pkg_body.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/io_controller_entity.vhd"
+"$HDS_PROJECT_DIR/RISCV_Processor_lib/hdl/io_controller_behav.vhd"

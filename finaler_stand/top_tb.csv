@@ -1,0 +1,65 @@
+# Copyright (C) 2022  Intel Corporation. All rights reserved.
+# Your use of Intel Corporation's design tools, logic functions 
+# and other software and tools, and any partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Intel Program License 
+# Subscription Agreement, the Intel Quartus Prime License Agreement,
+# the Intel FPGA IP License Agreement, or other applicable license
+# agreement, including, without limitation, that your use is for
+# the sole purpose of programming logic devices manufactured by
+# Intel and sold by Intel or its authorized distributors.  Please
+# refer to the applicable agreement for further details, at
+# https://fpgasoftware.intel.com/eula.
+
+# Quartus Prime Version 21.1.1 Build 850 06/23/2022 SJ Standard Edition
+# File: /u/home/clab/st161569/FachpraktikumRechnerarchitektur/top_tb.csv
+# Generated on: Wed Jul 10 18:35:54 2024
+
+# Note: The column header names should not be changed if you wish to import this .csv file into the Quartus Prime software.
+
+To,Direction,Location,I/O Bank,VREF Group,Fitter Location,I/O Standard,Reserved,Current Strength,Slew Rate,Differential Pair,Transceiver Analog Settings Protocol,VCCR_GXB/VCCT_GXB Voltage,Transceiver I/O Pin Termination,Transceiver Dedicated Refclk Pin Termination,Transmitter Common Mode Driver Voltage,Transmitter Slew Rate Control,Transmitter Differential Output Voltage,Receiver Buffer Common Mode Voltage,Strict Preservation
+button_1,Input,PIN_P11,3B,B3B_N0,PIN_J25,,,,,,,,,,,,,,
+button_2,Input,PIN_P12,3B,B3B_N0,PIN_AB16,,,,,,,,,,,,,,
+button_3,Input,PIN_Y15,4A,B4A_N0,PIN_W10,,,,,,,,,,,,,,
+clk,Input,PIN_R20,5B,B5B_N0,PIN_T21,,,,,,,,,,,,,,
+res_n,Input,PIN_AB24,5A,B5A_N0,PIN_P20,,,,,,,,,,,,,,
+seven_seg_1[6],Output,PIN_Y18,4A,B4A_N0,PIN_F26,,,,,,,,,,,,,,
+seven_seg_1[5],Output,PIN_Y19,4A,B4A_N0,PIN_J26,,,,,,,,,,,,,,
+seven_seg_1[4],Output,PIN_Y20,4A,B4A_N0,PIN_W12,,,,,,,,,,,,,,
+seven_seg_1[3],Output,PIN_W18,4A,B4A_N0,PIN_G12,,,,,,,,,,,,,,
+seven_seg_1[2],Output,PIN_V17,4A,B4A_N0,PIN_N20,,,,,,,,,,,,,,
+seven_seg_1[1],Output,PIN_V18,4A,B4A_N0,PIN_AE11,,,,,,,,,,,,,,
+seven_seg_1[0],Output,PIN_V19,4A,B4A_N0,PIN_B6,,,,,,,,,,,,,,
+seven_seg_2[6],Output,PIN_AF24,4A,B4A_N0,PIN_V13,,,,,,,,,,,,,,
+seven_seg_2[5],Output,PIN_AC19,4A,B4A_N0,PIN_Y14,,,,,,,,,,,,,,
+seven_seg_2[4],Output,PIN_AE25,4A,B4A_N0,PIN_AA6,,,,,,,,,,,,,,
+seven_seg_2[3],Output,PIN_AE26,4A,B4A_N0,PIN_P22,,,,,,,,,,,,,,
+seven_seg_2[2],Output,PIN_AB19,4A,B4A_N0,PIN_B12,,,,,,,,,,,,,,
+seven_seg_2[1],Output,PIN_AD26,4A,B4A_N0,PIN_M21,,,,,,,,,,,,,,
+seven_seg_2[0],Output,PIN_AA18,4A,B4A_N0,PIN_G26,,,,,,,,,,,,,,
+seven_seg_3[6],Output,PIN_W20,5A,B5A_N0,PIN_E13,,,,,,,,,,,,,,
+seven_seg_3[5],Output,PIN_W21,5A,B5A_N0,PIN_D11,,,,,,,,,,,,,,
+seven_seg_3[4],Output,PIN_V20,5A,B5A_N0,PIN_M11,,,,,,,,,,,,,,
+seven_seg_3[3],Output,PIN_V22,5A,B5A_N0,PIN_W25,,,,,,,,,,,,,,
+seven_seg_3[2],Output,PIN_U20,5A,B5A_N0,PIN_D12,,,,,,,,,,,,,,
+seven_seg_3[1],Output,PIN_AD6,3A,B3A_N0,PIN_M24,,,,,,,,,,,,,,
+seven_seg_3[0],Output,PIN_AD7,3A,B3A_N0,PIN_U25,,,,,,,,,,,,,,
+seven_seg_4[6],Output,PIN_AC22,5A,B5A_N0,PIN_A12,,,,,,,,,,,,,,
+seven_seg_4[5],Output,PIN_AC23,5A,B5A_N0,PIN_AD8,,,,,,,,,,,,,,
+seven_seg_4[4],Output,PIN_AC24,5A,B5A_N0,PIN_AD10,,,,,,,,,,,,,,
+seven_seg_4[3],Output,PIN_AA22,5A,B5A_N0,PIN_AA14,,,,,,,,,,,,,,
+seven_seg_4[2],Output,PIN_AA23,5A,B5A_N0,PIN_R8,,,,,,,,,,,,,,
+seven_seg_4[1],Output,PIN_Y23,5A,B5A_N0,PIN_U26,,,,,,,,,,,,,,
+seven_seg_4[0],Output,PIN_Y24,5A,B5A_N0,PIN_AC9,,,,,,,,,,,,,,
+switches[9],Input,PIN_AE19,4A,B4A_N0,PIN_V9,,,,,,,,,,,,,,
+switches[8],Input,PIN_Y11,3B,B3B_N0,PIN_AE9,,,,,,,,,,,,,,
+switches[7],Input,PIN_AC10,3B,B3B_N0,PIN_V10,,,,,,,,,,,,,,
+switches[6],Input,PIN_V10,3B,B3B_N0,PIN_AE8,,,,,,,,,,,,,,
+switches[5],Input,PIN_AB10,3B,B3B_N0,PIN_T13,,,,,,,,,,,,,,
+switches[4],Input,PIN_W11,3B,B3B_N0,PIN_AD11,,,,,,,,,,,,,,
+switches[3],Input,PIN_AC8,3B,B3B_N0,PIN_W13,,,,,,,,,,,,,,
+switches[2],Input,PIN_AD13,4A,B4A_N0,PIN_T12,,,,,,,,,,,,,,
+switches[1],Input,PIN_AE10,4A,B4A_N0,PIN_N10,,,,,,,,,,,,,,
+switches[0],Input,PIN_AC9,3B,B3B_N0,PIN_P26,,,,,,,,,,,,,,

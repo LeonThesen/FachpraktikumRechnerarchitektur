@@ -1,0 +1,18 @@
+DESIGN clk_res_gen
+VIEW interface
+NO_GRAPHIC 0
+DESIGN clk_res_gen
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN clk_res_gen
+VIEW interface
+GRAPHIC 533,0 14 0 
+DESIGN clk_res_gen
+VIEW interface
+GRAPHIC 538,0 15 0 
+DESIGN clk_res_gen
+VIEW interface
+GRAPHIC 1,0 18 0 
+DESIGN clk_res_gen
+VIEW interface
+GRAPHIC 1,0 19 0 

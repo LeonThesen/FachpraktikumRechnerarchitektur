@@ -1,0 +1,199 @@
+ 
+ 
+.equ addr_button_1, 2147483648
+.equ addr_button_2, 2147483649
+.equ addr_button_3, 2147483650
+.equ addr_switches, 2147483651
+.equ addr_seg_1, 2147483652
+.equ addr_seg_2, 2147483653
+.equ addr_seg_3, 2147483654
+.equ addr_seg_4, 2147483655
+
+
+li x1, addr_seg_1
+li x2, 16
+sw x2, 0(x1)
+li x1, addr_seg_2
+sw x2, 0(x1)
+li x1, addr_seg_3
+sw x2, 0(x1)
+li x1, addr_seg_4
+sw x2, 0(x1)
+
+init_state:
+	li x1, addr_button_1
+	li x3, 1
+init_loop:
+	lw x4, 0(x1) 
+	beq x4, x3, op_a_state ; check if button 1 was pressed
+	j init_loop
+
+op_a_state:
+	li x1, addr_button_2
+	li x3, 1
+op_a_show_state:
+	li x20, 0
+	li x21, addr_seg_1
+	li x22, addr_seg_2
+	li x23, addr_seg_3
+	li x24, addr_seg_4
+	li x25, 0
+	li x26, 17
+	li x27, 10
+	li x28, 100
+	li x29, 20000000
+	sw x25, 0(x24)
+	sw x26, 0(x23)
+	sw x28, 0(x22)
+	sw x27, 0(x21)
+op_a_delay_loop:
+	bge x20, x29, op_a_show_state_finished
+	addi x20, x20, 1
+	j op_a_delay_loop
+op_a_show_state_finished:
+	sw x28, 0(x24)
+	sw x28, 0(x23)
+	sw x28, 0(x22)
+	sw x28, 0(x21)
+op_a_loop:
+	lw x4, 0(x1)
+	beq x4, x3, op_b_state ; check if button 2 was pressed
+read_switches_a:
+	li x5, addr_switches 
+	lw x6, 0(x5) ; load 10 bit signed number into x6
+	slli x15, x6, 23
+	srai x15, x15, 23 ; Store value for division
+extract_sign_a:
+	li x8, addr_seg_4
+	li x7, 100
+	sw x7, 0(x8) ; turn off sign
+	srli x7, x6, 9 
+	bne x7, x3, extract_high_digit_a
+is_negative_a:
+	neg x15, x15
+	li x9, 16
+	sw x9 , 0(x8) ; show negative sign
+extract_high_digit_a:
+	slli x10, x6, 23
+	srli x10, x10, 23 ; remove sign bit
+	li x11, 100
+	div x12, x10, x11 ; highest digit
+	li x8, addr_seg_3
+	sw x12, 0(x8) ; store highest digit
+extract_mid_digit_a:
+	li x13, 100
+	mul x12, x12, x13 ; multiply by 100
+	sub x11, x10, x12 ; subtract from original number (without sign bit)
+	li x14, 10
+	div x12, x11, x14 ; middle digit
+	li x8, addr_seg_2
+	sw x12, 0(x8) ; store highest digit
+extract_low_digit_a:
+	mul x12, x12, x14 ; multiply by 10
+	sub x11, x11, x12 ; subtract from middle number (without sign bit)
+	li x8, addr_seg_1
+	sw x11, 0(x8) ; store highest digit
+return_to_loop_head_a:
+	j op_a_loop
+
+op_b_state:
+	li x1, addr_button_3
+	li x3, 1
+op_b_show_state:
+	li x20, 0
+	li x21, addr_seg_1
+	li x22, addr_seg_2
+	li x23, addr_seg_3
+	li x24, addr_seg_4
+	li x25, 0
+	li x26, 17
+	li x27, 8
+	li x28, 100
+	li x29, 20000000
+	sw x25, 0(x24)
+	sw x26, 0(x23)
+	sw x28, 0(x22)
+	sw x27, 0(x21)
+op_b_delay_loop:
+	bge x20, x29, op_b_show_state_finished
+	addi x20, x20, 1
+	j op_b_delay_loop
+op_b_show_state_finished:
+	sw x28, 0(x24)
+	sw x28, 0(x23)
+	sw x28, 0(x22)
+	sw x28, 0(x21)
+op_b_loop:
+	lw x4, 0(x1)
+	beq x4, x3, result_state ; check if button 2 was pressed
+read_switches_b:
+	li x5, addr_switches 
+	lw x6, 0(x5) ; load 10 bit signed number into x6
+	slli x16, x6, 23
+	srai x16, x16, 23 ; Store value for division
+extract_sign_b:
+	li x8, addr_seg_4
+	li x7, 100
+	sw x7, 0(x8) ; turn off sign
+	srli x7, x6, 9 
+	bne x7, x3, extract_high_digit_b
+is_negative_b:
+	neg x16, x16
+	li x9, 16
+	sw x9 , 0(x8) ; show negative sign
+extract_high_digit_b:
+	slli x10, x6, 23
+	srli x10, x10, 23 ; remove sign bit
+	li x11, 100
+	div x12, x10, x11 ; highest digit
+	li x8, addr_seg_3
+	sw x12, 0(x8) ; store highest digit
+extract_mid_digit_b:
+	li x13, 100
+	mul x12, x12, x13 ; multiply by 100
+	sub x11, x10, x12 ; subtract from original number (without sign bit)
+	li x14, 10
+	div x12, x11, x14 ; middle digit
+	li x8, addr_seg_2
+	sw x12, 0(x8) ; store highest digit
+extract_low_digit_b:
+	mul x12, x12, x14 ; multiply by 10
+	sub x11, x11, x12 ; subtract from middle number (without sign bit)
+	li x8, addr_seg_1
+	sw x11, 0(x8) ; store highest digit
+return_to_loop_head_b:
+	j op_b_loop
+
+result_state:
+	div x17, x15, x16
+extract_sign:
+	li x8, addr_seg_4
+	li x7, 100
+	sw x7, 0(x8) ; turn off sign
+	addi x7, x17, 0
+	bge x7, x0, extract_high_digit
+is_negative:
+	neg x7, x7
+	li x9, 16
+	sw x9 , 0(x8) ; show negative sign
+extract_high_digit:
+	addi x10, x7, 0
+	li x11, 100
+	div x12, x10, x11 ; highest digit
+	li x8, addr_seg_3
+	sw x12, 0(x8) ; store highest digit
+extract_mid_digit:
+	li x13, 100
+	mul x12, x12, x13 ; multiply by 100
+	sub x11, x10, x12 ; subtract from original number (without sign bit)
+	li x14, 10
+	div x12, x11, x14 ; middle digit
+	li x8, addr_seg_2
+	sw x12, 0(x8) ; store highest digit
+extract_low_digit:
+	mul x12, x12, x14 ; multiply by 10
+	sub x11, x11, x12 ; subtract from middle number (without sign bit)
+	li x8, addr_seg_1
+	sw x11, 0(x8) ; store highest digit
+	j init_state
+

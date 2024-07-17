@@ -1,0 +1,45 @@
+DESIGN addr_calc
+VIEW interface
+NO_GRAPHIC 0
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 50,0 8 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1162,0 19 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1167,0 20 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1187,0 21 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1197,0 22 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1157,0 23 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1172,0 24 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1177,0 25 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1182,0 26 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1192,0 27 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1202,0 28 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1207,0 29 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1,0 32 0 
+DESIGN addr_calc
+VIEW interface
+GRAPHIC 1,0 33 0 
